@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* header */
+.trip_main_hd_top_nav {
+	position: relative;
+}
+
+.main_hd_logo {
+	float: left;
+	padding: 16px 24px 14px 0;
+}
+
+.trip {
+	background: url(/nadri/repository/img/main/main_hd_logo.jfif) no-repeat 100% 50%;
+	display: inline-block;
+	width: 130px;
+	height: 40px;
+	text-indent: -9999px;
+	background-size: 124px 30px;
+}
+
+.trip_main_hd_login_write {
+	float: right;
+}
+
+.login_btn {
+	display: inline-block;
+	box-sizing: border-box;
+	height: 37px;
+	line-height: 37px;
+	font-size: 12px;
+	border-radius: 2px;
+	padding: 0 12px;
+	margin: 0 4px;
+	border: 1px solid #287dfa;
+	cursor: pointer;
+	color: #287dfa;
+	background-color: #fff;
+}

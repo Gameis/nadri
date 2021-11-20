@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+ul, li {
+	list-style: none;
+}
+
+.trip_main_footer {
+	vertical-align: baseline; /* 수직정렬 */
+	position: relative;
+}
+
+.trip_main_footer_line {
+	margin: 0;
+	list-style: none;
+}
+
+.trip_main_footer_inner {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+.foot_clearfix_block {
+	display: inline-block;
+	
+}
+
+.foot_clearfix_icon {
+	display: flex;
+}
+
+.payment_list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.payment_icon {
+	margin-right: 8px;
+	margin-bottom: 5px;
+	width: 36px;
+	height: 24px;
+	display: inline-block;
+	background-image: url(../img/payment.png);
+	background-repeat: no-repeat;
+	background-size: 500%;
+	display: inline-block;
+}
+
+.foot_awards_body {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+}
+
+.foot_awards_items {
+	display: inline-block;
+	margin: auto;
+}
+
+.foot_awards_items img {
+	vertical-align: middle;
+}
+
+.foot_awards_text {
+	display: inline-block;
+	text-align: left;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+.trip_main_foot_rights {
+	text-align: center;;
+}
