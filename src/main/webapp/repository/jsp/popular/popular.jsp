@@ -50,7 +50,7 @@
 	    		</span><!-- pop-score -->
 	    		
 	    		<span class="pop-review-reviewIcon">
-	    			<a href="#">
+	    			<a href="#" style="text-decoration-line: none;">
 		    			<div class="pop-review">
 		    				5,811건의 리뷰
 		    			</div>
@@ -61,7 +61,7 @@
 	    		</span><!-- pop-review-reviewIcon -->
 	    	</div><!-- score-review-wrap -->
 	    	
-	    	<a href="#">
+	    	<a href="#" style="text-decoration-line: none;">
 		    	<div class="favoeriete-wrap">
 		    		<i class="fas fa-heart" style="margin:0; padding:3px 5px; color: rgb(206, 210, 217); vertical-align: center;"></i>
 		    		
@@ -72,6 +72,7 @@
 	    	</a>
 
 	    </div><!-- popularLocation-score-review-like -->
+	    
 	    <div class="content-wrap">
 		    <div class="pop-content-nav">
 		    	<div class="pop-businesstime">
@@ -122,62 +123,40 @@
 		    	</div>
 		    	
 		    </div><!-- pop-content-nav -->
-		    <div class="carouselWrap">
-			    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-				  <div class="carousel-inner">
-				    <div class="carousel-item active">
-				      <img src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
-				    </div>
-				    <div class="carousel-item">
-				      <img src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
-				    </div>
-				    <div class="carousel-item">
-				      <img src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
-				    </div>
-				  </div>
-				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				    <span class="visually-hidden">Previous</span>
-				  </button>
-				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-				    <span class="visually-hidden">Next</span>
-				  </button>
-				</div>
-		   	</div> 
-		   
-				
-				
-		    	
-		    	
-		    	<!-- <div class="carousel">
-		    		<div class="burited_point">
-		    			<div class="carousel-item carousel-exit-done">
-		    				<img alt="명동" src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip" width="640" height="470">
-	    				</div>
-	    				<div class="carousel-item carousel-enter-done">
-	    					<img alt="명동1" src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_640_470.jpg_.webp?proc=source%2ftrip" width="640" height="470">
-    					</div>
-    					<div class="carousel-item carousel-exit-done">
-    						<img alt="명동2" src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_640_470.jpg_.webp?proc=source%2ftrip" width="640" height="470">
-   						</div>
-   						<div class="carousel-item carousel-exit-done">
-   							<img alt="명동3" src="https://youimg1.tripcdn.com/target/10050z000000nf6sl9C57_C_640_470.jpg_.webp?proc=source%2ftrip" width="640" height="470">
-						</div>
-						<div class="carousel-list burited_point">
-							<div style="background-image:url(https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_196_150.jpg_.webp?proc=source%2ftrip )" class=""></div>
-							<div style="background-image:url(https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_196_150.jpg_.webp?proc=source%2ftrip )" class="gl-poi-detail_show-list-selected"></div>
-							<div style="background-image:url(https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_196_150.jpg_.webp?proc=source%2ftrip )" class=""></div>
-							<div style="background-image:url(https://youimg1.tripcdn.com/target/10050z000000nf6sl9C57_C_196_150.jpg_.webp?proc=source%2ftrip )" class=""></div>
-							<span class="carousel-amount burited_point">
-								<span class="carousel-text">사진 575장 모두 보기</span>
-								<i class="gs-trip-iconfont"></i>
-							</span>
-						</div>
+			    <div class="carouselWrap">
+				    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+					      <img src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
+					    </div>
+					    <div class="carousel-item">
+					      <img src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
+					    </div>
+					  </div>
+					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+					    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Previous</span>
+					  </button>
+					  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+					    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					    <span class="visually-hidden">Next</span>
+					  </button>
 					</div>
-				</div> -->
-	    	</div><!-- pop-image-nav-container -->
-	    </div><!-- content-wrap -->
+			   	 
+				   	
+			   		<div class="container">
+					  	<div class="row-cols-4">
+			    			<img class="col" src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
+						    <img class="col" src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
+						    <img class="col" src="https://youimg1.tripcdn.com/target/10050z000000nf6sl9C57_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
+						    <img class="col" src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
+				  		</div><!-- row-cols-4 -->
+					</div><!-- container -->
+				</div><!-- carouselWrap -->
+		    </div><!-- content-wrap -->
 	</div><!-- areaWrap -->
 	
         

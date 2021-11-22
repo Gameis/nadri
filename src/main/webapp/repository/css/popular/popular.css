@@ -4,11 +4,11 @@ body {
     font-family: "Helvetica Neue", "Helvetica", "Arial"
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.3;
 }
 
 a {
     text-decoration: none;
+    text-decoration-line: none;
     color: #4978CE;
 }
 
@@ -279,7 +279,6 @@ button, input, optgroup, select, textarea {
 	cursor: pointer;
 	font-weight: 400;
 	font-size: 14px;
-	line-height: 1.3;
 }
 .pop-call{
 	display: flex;
@@ -290,12 +289,21 @@ button, input, optgroup, select, textarea {
 	border: 0;
 	vertical-align: baseline;
 }
-.carousel-item{
-	object-fit: contain;
-	overflow: hidden;
-}
+
 .carouselWrap{
-	width: 640px;
+	width: 670px;
+	height: 100%;
+}
+.carousel-inner img{
+	height: 550px;
+}
+.container{
+	padding: 10px 0;
+	display: inline-block;
+}
+.row-cols-4 > img{
+	 height: 150px;
+	 padding: 0;
 }
 /* popularLocation */
 /* areaHeader */
