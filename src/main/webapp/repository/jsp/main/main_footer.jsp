@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/main/main_footer.css">
 </head>
 <body>
+<hr>
 <div class="trip_main_footer">
 		<div class="trip_main_footer_line">
 			<div class="trip_main_footer_inner">
@@ -21,11 +22,11 @@
 						</ul>
 
 						<ul class="foot_clearfix_icon">
-							<li><a target=""><img src="../img/facebook.png"></a></li>
-							<li><a target=""><img src="../img/instagram.png"></a></li>
-							<li><a target=""><img src="../img/naver.png"></a></li>
-							<li><a target=""><img src="../img/youtube.png"></a></li>
-							<li><a target=""><img src="../img/kakao.png"></a></li>
+							<li><a target=""><img src="./repository/img/main/facebook.png"></a></li>
+							<li><a target=""><img src="./repository/img/main/instagram.png"></a></li>
+							<li><a target=""><img src="./repository/img/main/naver.png"></a></li>
+							<li><a target=""><img src="./repository/img/main/youtube.png"></a></li>
+							<li><a target=""><img src="./repository/img/main/kakao.png"></a></li>
 						</ul>
 					</div>
 
@@ -72,7 +73,7 @@
 				<div class="trip_main_foot_awards">
 					<div class="foot_awards_body">
 						<div class="foot_awards_items">
-							<img alt="수상" src="../img/Awards.png">
+							<img alt="수상" src="./repository/img/main/Awards.png">
 							<div class="foot_awards_text">
 								"한국소비자포럼 주관" <br> "올해의브랜드대상 2년 연속 수상"
 							</div>
