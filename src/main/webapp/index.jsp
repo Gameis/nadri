@@ -86,8 +86,9 @@
 							<i class="JGMKr_seoul"></i>
 							<div class="Video_module_jeju"
 								style="width: 100%; height: 350px;">
-
-								<video autoplay muted loop controls src="./repository/img/main/Jeju_intro.mp4" class="Video_module" style="width: 100%; height: 100%;"></video>
+								<video autoplay muted loop controls
+									src="./repository/img/main/Jeju_intro.mp4" class="Video_module"
+									style="width: 100%; height: 100%;"></video>
 								<img src="./repository/img/main/jeju_2.jpg" alt="제주사진좀보여주라좀"></img>
 								<p class="img-wrap_title">
 									<a class="title" title="제주" href="">제주</a>
@@ -137,10 +138,9 @@
 				<div class="release_btn">포스팅하러 가기</div>
 			</div>
 
-			<!-- 트립모먼트 슬라이드 -->
+			<!-- tripmoment slide -->
 			<div id="tripmoment_slide">
-				<div id="carouselExampleControls" class="carousel slide"
-					data-bs-ride="carousel">
+				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active">
 							<div class="card-group">
@@ -174,47 +174,45 @@
 									</div>
 								</div>
 							</div>
-
-							<div class="carousel-item">
-								<div class="card-group">
-									<div class="card">
-										<img src="..." class="card-img-top" alt="...">
-										<div class="card-body">
-											<h5 class="card-title">Card title</h5>
-											<p class="card-text"></p>
-										</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card-group">
+								<div class="card">
+									<img src="..." class="card-img-top" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text"></p>
 									</div>
-									<div class="card">
-										<img src="..." class="card-img-top" alt="...">
-										<div class="card-body">
-											<h5 class="card-title">Card title</h5>
-											<p class="card-text"></p>
-										</div>
+								</div>
+								<div class="card">
+									<img src="..." class="card-img-top" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text"></p>
 									</div>
-									<div class="card">
-										<img src="..." class="card-img-top" alt="...">
-										<div class="card-body">
-											<h5 class="card-title">Card title</h5>
-											<p class="card-text"></p>
-										</div>
+								</div>
+								<div class="card">
+									<img src="..." class="card-img-top" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text"></p>
 									</div>
-									<div class="card">
-										<img src="..." class="card-img-top" alt="...">
-										<div class="card-body">
-											<h5 class="card-title">Card title</h5>
-											<p class="card-text"></p>
-										</div>
+								</div>
+								<div class="card">
+									<img src="..." class="card-img-top" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">Card title</h5>
+										<p class="card-text"></p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<button class="carousel-control-prev" type="button"
-							data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 							<span class="visually-hidden">Previous</span>
 						</button>
-						<button class="carousel-control-next" type="button"
-							data-bs-target="#carouselExampleControls" data-bs-slide="next">
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="visually-hidden">Next</span>
 						</button>
@@ -223,7 +221,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<!-- footer -->
 	<div id="wrap_foot">
