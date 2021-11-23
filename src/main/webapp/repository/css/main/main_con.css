@@ -255,11 +255,30 @@ a, a:hover {
 	z-index: 10;
 }
 
-.img-wrap_title .title {
-	color: #fff;
-	font-size: 25px;
-	font-weight: 12px;
-	font-family: 'Jua', sans-serif;
+/* 인기여행지 - 제주 */
+.Video_module {
+	transition: opacity .5s ease-in-out;
+}
+
+video {
+	border-radius: 90px;
+	position: absolute;
+	top: 0px;
+	opacity: 0;
+}
+
+.Video_module_jeju {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
+
+.Video_module_jeju:hover img {
+	opacity: 0;
+}
+
+.Video_module_jeju:hover video {
+	opacity: 1;
 }
 
 .img-wrap .Video_module {
@@ -270,6 +289,15 @@ a, a:hover {
 	z-index: -1;
 }
 
+/* 인기여행지 타이틀(전체) */
+.img-wrap_title .title {
+	color: #fff;
+	font-size: 25px;
+	font-weight: 12px;
+	font-family: 'Jua', sans-serif;
+}
+
+/* 인기여행지 더보기 버튼 */
 .MoreBtnStyle {
 	text-align: center;
 	margin-top: 32px;
@@ -297,11 +325,12 @@ a, a:hover {
 	color: rgb(15, 41, 77);
 	line-height: 34px;
 	font-family: arial, sans-serif;
-	margin: 64px 0px 24px;
+	margin: 32px 0px 24px;
 	display: block;
 	font-weight: bold;
 }
 
+/* 포스팅하러가기 버튼 */
 .index_trip_moment_con .release_btn_con {
 	position: absolute;
 	right: 10px;
@@ -317,30 +346,132 @@ a, a:hover {
 }
 
 /* 트립모먼트 slide */
-.tripmoment_slide {
-	margin-top: 10px;
-	margin-bottom: 50px;
-	background: rgba(40, 125, 250, .1);
-	padding: 16px;
-	margin-left: 8px;
+.trip-con_carousel {
+	position: relative;
 }
 
-.card {
-	max-height: 500px;
+.trip-con_carousel .content {
+	overflow: hidden;
+	text-align: center;
 }
 
-.card-img-top {
-	max-height: 150px;
+.carouselItemStyle {
+	width: 16.6667%;
+	text-align: left;
+	float: left;
+	display: grid;
+	grid-template-columns: 24% 24% 24% 24%;
+	grid-column-gap: 1%;
 }
 
-.carousel-control-next, .carousel-control-prev {
-	width: auto;
+.index_card_con {
+	padding: 0 8px !important;
 }
 
-.carousel-inner button {
-	border: 1px red solid;
+.index_card_con .sub_con {
+	position: relative;
 }
 
+.imagewrap {
+	background: rgb(235, 235, 242);
+	width: 100%;
+	height: 0px;
+	overflow: hidden;
+	margin: 0px;
+	position: relative;
+	border-radius: 2px;
+}
+
+.imagewrap .img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all 1.2s ease 0s;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: fLRwcH;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out !important;
+}
+
+.imagewrap .img img {
+	transition: all 1.2s ease 0s;
+	width: 100%;
+	object-fit: cover;
+	height: 100%;
+	font-family: "object-fit: cover";
+}
+
+.index_card_con .bottom_con {
+	padding: 16px 16px 13px;
+	border: 1px solid #dadfe6;
+	border-top: none;
+}
+
+.bottom_desc {
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	margin-bottom: 8px !important;
+}
+
+.bottom_con .bottom_user_con {
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.index_card_con .bottom_con .bottom_user_con .bottom_user_left {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 8px;
+}
+
+.index_card_con .bottom_con .bottom_user_con .user_ {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.index_card_con .bottom_con .bottom_user_con .bottom_user_right {
+	flex-shrink: 0;
+}
+
+.index_card_con .bottom_con .bottom_user_con .count {
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.index_card_con .bottom_con .bottom_user_right i {
+	color: #455873;
+	font-size: 14px;
+}
+
+.iconfont_class {
+	font-family: gs_trip_font !important;
+}
+
+.index_card_con .bottom_con .bottom_user_right span {
+	font-size: 13px;
+	color: #455873;
+	line-height: 18px;
+}
 /* footer */
 #wrap_foot {
 	min-height: 100vh;

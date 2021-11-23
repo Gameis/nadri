@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>전 세계 인기 여행지 & 꼭 가봐야 할 명소 추천 | 트립닷컴</title>
 <link rel="stylesheet" type="text/css"
 	href="./repository/css/main/main_con.css">
@@ -53,6 +54,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- 매력 탐구 리스트 -->
 	<div class="component-destinationrecommend burited_point">
 		<div class="description">
 			<img alt="서울" src="./repository/img/main/trip.png"> <span
@@ -62,34 +64,47 @@
 			<div class="button">더 보기</div>
 		</a>
 	</div>
+
+	<!-- 인기여행지 -->
 	<span class="popular_trip_destination">인기여행지</span>
+
 	<div class="popular_trip_destination_index_content">
 		<div class="popularcitylist">
 			<div class="index_content_popular">
 				<div class="index_popular-dest"
 					style="z-index: 1; position: relative">
+
 					<div class="index_popular-dest_seoul">
 						<div class="DestinationStyle">
-							<i class="JGMKr_seoul"></i>
-							<div class="img-wrap">
-								<a title="서울" href=""> <img alt="서울"
-									src="./repository/img/main/seoul_1.jpg">
-								</a>
+							<i class="img-wrap"></i>
+							<div class="Video_module_seoul"
+								style="width: 100%; height: 350px;">
+								<video id="video" class="Video_module"
+									style="width: 100%; height: 100%;">
+									<source src="./repository/img/main/Seoul_intro.mp4"
+										type="video/mp4">
+								</video>
+								<img alt="서울" class="Video_module"
+									src="./repository/img/main/seoul_3.jpg"
+									style="width: 100%; height: 100%;">
 								<p class="img-wrap_title">
 									<a class="title" title="서울" href="">서울</a>
 								</p>
 							</div>
 						</div>
 					</div>
-					<div class="index_popular-dest_seoul">
+					<div class="index_popular-dest_jeju">
 						<div class="DestinationStyle">
-							<i class="JGMKr_seoul"></i>
+							<i class="img-wrap"></i>
 							<div class="Video_module_jeju"
 								style="width: 100%; height: 350px;">
-								<video autoplay muted loop controls
-									src="./repository/img/main/Jeju_intro.mp4" class="Video_module"
-									style="width: 100%; height: 100%;"></video>
-								<img src="./repository/img/main/jeju_2.jpg" alt="제주사진좀보여주라좀"></img>
+								<video id="video" class="Video_module"
+									style="width: 100%; height: 100%;">
+									<source src="./repository/img/main/Jeju_intro.mp4"
+										type="video/mp4">
+								</video>
+								<img class="Video_module" src="./repository/img/main/jeju_2.jpg"
+									alt="제주" style="width: 100%; height: 100%;"></img>
 								<p class="img-wrap_title">
 									<a class="title" title="제주" href="">제주</a>
 								</p>
@@ -97,15 +112,16 @@
 						</div>
 					</div>
 
-					<div class="index_popular-dest_jeju">
+					<div class="index_popular-dest_gangneung">
 						<div class="DestinationStyle">
-							<i class="JGMKr_jeju"></i>
-							<div class="img-wrap">
-								<a title="" href=""> <img alt=""
-									src="./repository/img/main/jeju_1.jpg">
-								</a>
+							<i class="img-wrap"></i>
+							<div class="Video_module_suwon"
+								style="width: 100%; height: 350px;">
+								<img class="Video_module"
+									src="./repository/img/main/seoul_4.jpg" alt="제주"
+									style="width: 100%; height: 100%;"></img>
 								<p class="img-wrap_title">
-									<a class="title" title="" href=""></a>
+									<a class="title" title="수원" href="">수원</a>
 								</p>
 							</div>
 						</div>
@@ -113,10 +129,9 @@
 
 					<div class="index_popular-dest_jeju">
 						<div class="DestinationStyle">
-							<i class="JGMKr"></i>
 							<div class="img-wrap">
 								<a title="" href=""> <img alt=""
-									src="./repository/img/main/jeju_1.jpg">
+									src="./repository/img/main/jeonju_1.jpg">
 								</a>
 								<p class="img-wrap_title">
 									<a class="title" title="" href=""></a>
@@ -131,96 +146,148 @@
 				</div>
 			</div>
 		</div>
-		<div class="index_trip_moment_con"
-			style="position: relative; background-color: #fff; max-width: 1160px; margin: 0px auto;">
-			<h2 class="trip_moment_title">트립 모먼트</h2>
-			<div class="release_btn_con">
-				<div class="release_btn">포스팅하러 가기</div>
-			</div>
+	</div>
 
-			<!-- tripmoment slide -->
-			<div id="tripmoment_slide">
-				<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<div class="card-group">
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
+	<!-- 트립모먼트 -->
+	<div class="index_trip_moment_con"
+		style="position: relative; background-color: #fff; max-width: 1160px; margin: 0px auto;">
+		<h2 class="trip_moment_title">트립 모먼트</h2>
+		<div class="release_btn_con">
+			<div class="release_btn">포스팅하러 가기</div>
+		</div>
+	</div>
+
+	<!-- tripmoment slide -->
+	<div class="tripmoment trip-con_carousel">
+		<div class="tripmoment" style="overflow: hidden;">
+			<div class="tripmoment content"
+				style="transition: margin 0.4s ease 0s; margin-left: 0%; width: 600%;">
+				<div class="carouselItemStyle">
+					<div class="CardStyle index_card_con">
+						<div class="sub_con">
+							<div>
+								<div style="padding-bottom: 106%" class="ImgWrapStyle imagewrap">
+									<div class="img">
+										<img class src="./repository/img/main/seoul_3.jpg">
 									</div>
 								</div>
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
-									</div>
+							</div>
+							<div class="bottom_con">
+								<div style="-webkit-box-orient: vertical" class="bottom_desc">
+									여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
+									예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
+									친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히 멋졌습니다.~!
 								</div>
-								<div class="card">
-									<img src="./repository/img/main/trip_seoul_1.jpg"
-										class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
+								<div class="bottom_user_con">
+									<div class="bottom_user_left">
+										<img class="user_" src=""> <span>개복치</span>
 									</div>
-								</div>
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
+									<div class="bottom_user_right">
+										<i class="iconfont_class count"></i>
+										<!-- 좋아요 아이콘 -->
+										<span>34</span>
+										<!-- 좋아요 수 -->
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="carousel-item">
-							<div class="card-group">
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
+					</div>
+
+					<div class="CardStyle index_card_con">
+						<div class="sub_con">
+							<div>
+								<div style="padding-bottom: 106%" class="ImgWrapStyle imagewrap">
+									<div class="img">
+										<img class src="./repository/img/main/seoul_3.jpg">
 									</div>
 								</div>
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
-									</div>
+							</div>
+							<div class="bottom_con">
+								<div style="-webkit-box-orient: vertical" class="bottom_desc">
+									여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
+									예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
+									친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히 멋졌습니다.~!
 								</div>
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
+								<div class="bottom_user_con">
+									<div class="bottom_user_left">
+										<img class="user_" src=""> <span>개복치</span>
 									</div>
-								</div>
-								<div class="card">
-									<img src="..." class="card-img-top" alt="...">
-									<div class="card-body">
-										<h5 class="card-title">Card title</h5>
-										<p class="card-text"></p>
+									<div class="bottom_user_right">
+										<i class="iconfont_class count"></i>
+										<!-- 좋아요 아이콘 -->
+										<span>34</span>
+										<!-- 좋아요 수 -->
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
 
-						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Next</span>
-						</button>
+					<div class="CardStyle index_card_con">
+						<div class="sub_con">
+							<div>
+								<div style="padding-bottom: 106%" class="ImgWrapStyle imagewrap">
+									<div class="img">
+										<img class src="./repository/img/main/seoul_3.jpg">
+									</div>
+								</div>
+							</div>
+							<div class="bottom_con">
+								<div style="-webkit-box-orient: vertical" class="bottom_desc">
+									여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
+									예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
+									친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히 멋졌습니다.~!
+								</div>
+								<div class="bottom_user_con">
+									<div class="bottom_user_left">
+										<img class="user_" src=""> <span>개복치</span>
+									</div>
+									<div class="bottom_user_right">
+										<i class="iconfont_class count"></i>
+										<!-- 좋아요 아이콘 -->
+										<span>34</span>
+										<!-- 좋아요 수 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="CardStyle index_card_con">
+						<div class="sub_con">
+							<div>
+								<div style="padding-bottom: 106%" class="ImgWrapStyle imagewrap">
+									<div class="img">
+										<img class src="./repository/img/main/seoul_3.jpg">
+									</div>
+								</div>
+							</div>
+							<div class="bottom_con">
+								<div style="-webkit-box-orient: vertical" class="bottom_desc">
+									여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
+									예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
+									친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히 멋졌습니다.~!
+								</div>
+								<div class="bottom_user_con">
+									<div class="bottom_user_left">
+										<img class="user_" src=""> <span>개복치</span>
+									</div>
+									<div class="bottom_user_right">
+										<i class="iconfont_class count"></i>
+										<!-- 좋아요 아이콘 -->
+										<span>34</span>
+										<!-- 좋아요 수 -->
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 
 	<!-- footer -->
 	<div id="wrap_foot">
@@ -231,7 +298,16 @@
 		</footer>
 	</div>
 </body>
+
 <script type="text/javascript">
-	
+	var Video_module_jeju = document
+			.getElementsByClassName('Video_module_jeju')[0]
+	var video = document.getElementById('video')
+	Video_module_jeju.addEventListener('mouseover', function() {
+		video.play()
+	}, false);
+	Video_module_jeju.addEventListener('mouseout', function() {
+		video.pause()
+	}, false);
 </script>
 </html>
