@@ -96,7 +96,7 @@ button, input, optgroup, select, textarea {
     position: absolute;
     text-align: center;
     vertical-align: middle;
-    padding: 7px 0;
+    padding: 0;
     height: 50%;
     border-radius: 0 4px 4px 0;
 }
@@ -133,6 +133,10 @@ button, input, optgroup, select, textarea {
 	margin: 0 8px 0 0;
 	padding: 0px 3px;
 	font-family: "Helvetica Neue", "Helvetica", "Arial";
+	font-size: 32px;
+	vertical-align: baseline;
+	font-weight: bold;
+	color: rgb(15,41,77);
 	
 }
 .popularLocation-score-review-like{
@@ -167,7 +171,7 @@ button, input, optgroup, select, textarea {
 	
 	margin: 0px 8px;
 }
-.favoeriete-wrap{
+.favorite-wrap{
 	display:flex;
 	padding : 5px 8px;
 	box-shadow: 1px 1px 1px 1px gray;
@@ -179,13 +183,11 @@ button, input, optgroup, select, textarea {
 .content-wrap{
 	display:flex;
 	justify-content: space-between;
-	margin: 16px;
-	border: 1px solid red;
+	margin: 0;
 }
 .pop-content-nav{
 	width: 400px;
 	height: 570px;
-	margin-top: 23px;
 	display: flex;
 	flex-direction: column;
 	border: 1px solid rgb(218, 223, 230);
@@ -193,6 +195,8 @@ button, input, optgroup, select, textarea {
 	padding-bottom: 24px;
 	vertical-align: baseline;
 	position: relative;
+	justify-content: space-between;
+	
 }
 .pop-businesstime{
 	align-items:center;
@@ -270,7 +274,7 @@ button, input, optgroup, select, textarea {
 	border: 0;
 	vertical-align: baseline;
 }
-.detail-map{
+#map{
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -298,12 +302,16 @@ button, input, optgroup, select, textarea {
 	height: 550px;
 }
 .container{
-	padding: 10px 0;
 	display: inline-block;
+  	height: 150px;
 }
 .row-cols-4 > img{
-	 height: 150px;
-	 padding: 0;
+	padding: 0;
+	text-align: center;
+ 	height: 120px;
+ 	width: 25%;
+	border: 5px solid rgb(15, 41, 77, 0.7);
+	 
 }
 /* popularLocation */
 /* areaHeader */

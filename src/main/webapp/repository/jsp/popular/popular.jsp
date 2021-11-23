@@ -62,7 +62,7 @@
 	    	</div><!-- score-review-wrap -->
 	    	
 	    	<a href="#" style="text-decoration-line: none;">
-		    	<div class="favoeriete-wrap">
+		    	<div class="favorite-wrap">
 		    		<i class="fas fa-heart" style="margin:0; padding:3px 5px; color: rgb(206, 210, 217); vertical-align: center;"></i>
 		    		
 		    		<span class="favorite-count">
@@ -99,10 +99,10 @@
 		    				<span class="title">주소 : </span>
 		    				<span class="field">서울 중구 명동</span>
 		    			</div>
-		    			<span class="more-btn">지도</span>
+		    			<span class="more-btn"><a href="https://map.kakao.com/link/map/명동,33.450701,126.570667">지도</a></span>
 		    		</div>
 		    		<div class="map-box">
-		    			<div class="detail-map" style="background-image: url(https://ak-d.tripcdn.com/images/0zv64223458xjhrup336F.jpg);
+		    			<!-- <div class="detail-map" style="background-image: url(https://ak-d.tripcdn.com/images/0zv64223458xjhrup336F.jpg);
 												    position: relative;
 												    height: 100%;
 												    overflow: hidden;
@@ -110,7 +110,8 @@
 												    background-repeat: no-repeat;
 												    background-position: center center;
 												    border-radius: 2px;">						    
-					    </div><!-- detail-map -->
+					    </div>detail-map -->
+					    <div id="map" style="width:100%;height:100%;"></div>
 		    		</div><!-- map-box -->
 		    	</div><!-- pop-address-map -->
 		    	
@@ -148,12 +149,13 @@
 			   	 
 				   	
 			   		<div class="container">
-					  	<div class="row-cols-4">
+					  	<div class="row row-cols-4">
 			    			<img class="col" src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
 						    <img class="col" src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
 						    <img class="col" src="https://youimg1.tripcdn.com/target/10050z000000nf6sl9C57_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
 						    <img class="col" src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
 				  		</div><!-- row-cols-4 -->
+				  		
 					</div><!-- container -->
 				</div><!-- carouselWrap -->
 		    </div><!-- content-wrap -->
@@ -162,6 +164,48 @@
         
         
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript">
+	var location_name = '서울';
+	var x = 37.4923661;
+	var y = 127.0292978;
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = { 
+	    center: new kakao.maps.LatLng(x, y), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption);
+	
+	//마커가 표시될 위치입니다 
+	var markerPosition  = new kakao.maps.LatLng(x, y); 
+	
+	//마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	position: markerPosition
+	});
+	
+	//마커가 지도 위에 표시되도록 설정합니다
+	marker.setMap(map);
+	var iwContent = '<div style="padding:5px;">'+location_name+' <br><a href="https://map.kakao.com/link/map/'+location_name+','+x+','+y+'" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/'+location_name+','+x+','+y+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	iwPosition = new kakao.maps.LatLng(x, y); //인포윈도우 표시 위치입니다
+    iwRemoveable = true;
 
+	
+	//인포윈도우를 생성합니다
+	var infowindow = new kakao.maps.InfoWindow({
+	position : iwPosition, 
+	content : iwContent,
+    removable : iwRemoveable
+	});
+	
+	// 마커에 클릭이벤트를 등록합니다
+	kakao.maps.event.addListener(marker, 'click', function() {
+	      // 마커 위에 인포윈도우를 표시합니다
+	      infowindow.open(map, marker);  
+	});
+</script>
 </body>
 </html>
