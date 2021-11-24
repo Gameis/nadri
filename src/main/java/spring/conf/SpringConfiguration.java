@@ -5,14 +5,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.transaction.annotation.Transactional;
 
 @Configuration
 @PropertySource("classpath:spring/db.properties")
@@ -36,6 +37,9 @@ public class SpringConfiguration {
     
     @Value("3")
     private int maxIdle;
+    
+    @Autowired
+	private ApplicationContext applicationContext;
 	
     //Connection Pool
     @Bean
@@ -52,24 +56,28 @@ public class SpringConfiguration {
     }
     
     @Bean
-    public SqlSessionFactory sqlSessionFactory() {
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
     	SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
     	sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
     	sqlSessionFactoryBean.setDataSource(dataSource());
-    	sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("area/dao/areaMapper.xml"));
+    	//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
+    	sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:*/dao/*Mapper.xml"));
+
     	
     	try {
-			return sqlSessionFactoryBean.getObject();
+			return sqlSessionFactoryBean.getObject();//SqlSessionFactory 반환
 		} catch (Exception e) {
 			return null;
 		}
     }
     
+	//SqlSessionTemplate
     @Bean
-    public SqlSession sqlSession() {
+    public SqlSession sqlSession() throws Exception {
     	return new SqlSessionTemplate(sqlSessionFactory());
     }
     
+    //DataSourceTransactionManager
     @Bean
     public DataSourceTransactionManager transactionManager() {
     	return new DataSourceTransactionManager(dataSource());
