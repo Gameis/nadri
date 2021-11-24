@@ -29,13 +29,13 @@
     min-width: 980px;
 }
 
-header {
-    display: block;
-}
-
 .detail_header_container {
     margin: 16px auto 0;
     background-color: #fff;
+}
+
+header {
+    display: block;
 }
 
 .detail_header_container .title .productName {
