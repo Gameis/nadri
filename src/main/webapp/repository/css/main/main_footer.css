@@ -41,10 +41,11 @@ ul, li {
 	width: 36px;
 	height: 24px;
 	display: inline-block;
-	background-image: url(../img/payment.png);
+	background-image: url(./repository/img/main/payment.png);
 	background-repeat: no-repeat;
 	background-size: 500%;
 	display: inline-block;
+	border: 1px red solid;
 }
 
 .foot_awards_body {
