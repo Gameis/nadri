@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.product_detail_breadcrumbs {
+.product-detail-breadcrumbs {
     width: 84.29%;
     max-width: 1180px;
     min-width: 980px;
@@ -9,7 +9,11 @@
     height: 20px;
 }
 
-.crumbs_wrap {
+div {
+    display: block;
+}
+
+.crumbs-wrap {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -19,17 +23,17 @@
     color: #333;
 }
 
-.crumbs_item, .crumbs_wrap {
+.crumbs-item, .crumbs-wrap {
     display: inline-block;
 }
 
-.productdetail_comment_inner_width, .productdetail_common_inner_width {
+.productdetail-comment-inner-width, .productdetail-common-inner-width {
     width: 84.29%;
     max-width: 1180px;
     min-width: 980px;
 }
 
-.detail_header_container {
+.detail-header-container {
     margin: 16px auto 0;
     background-color: #fff;
 }
@@ -38,7 +42,31 @@ header {
     display: block;
 }
 
-.detail_header_container .title .productName {
+.detail-header-container .title {
+    align-items: top;
+    margin-bottom: 25px;
+}
+
+.fjc-sb {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+section {
+    display: block;
+}
+
+.detail-header-container .title .productName {
     font-size: 34px;
     max-width: 82.2%;
     line-height: 42px;
@@ -52,20 +80,167 @@ header {
     margin: 0;
 }
 
-:-webkit_any(article, aside, nav, section) h1 {
+:-webkit-any(article, aside, nav, section) h1 {
     font-size: 1.5em;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
 }
 
-.detail_header_container .title {
-    align-items: top;
-    margin-bottom: 25px;
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 
-.fjc_sb {
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
+.fs2, body, html {
+    font-size: 14px;
+}
+
+.c6 {
+    color: #666;
+}
+
+.ffps h2, body, form, h1, h2, h3, h4, h5, h6, html, ol, p, ul {
+    margin: 0;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.detail-header-container .comment-height {
+    margin-bottom: 15px;
+    display: flex;
+    min-width: 660px;
+    max-width: 780px;
+    width: 66%;
     justify-content: space-between;
 }
+
+.detail-header-container .comment-height .comment-sold {
+    display: flex;
+}
+
+.detail-header-container .comment-height .comment-score {
+    font-size: 14px;
+    color: #b5c7df;
+    background: #5377a9;
+    border-radius: 4px 4px 0;
+    width: 53px;
+    height: 26px;
+    text-align: center;
+    display: inline-block;
+    letter-spacing: .5px;
+}
+
+.detail-header-container .comment-height .comment-score .good-comment {
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0;
+    padding-right: 0.5px;
+}
+
+em {
+    font-style: italic;
+}
+
+.detail-header-container .comment-height .comment-count {
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #5377a9;
+    letter-spacing: .13px;
+}
+
+.detail-header-container .comment-height .comment-sold .comment-sold-border {
+    width: 1px;
+    height: 18px;
+    background: #999;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.detail-header-container .comment-height {
+    margin-bottom: 15px;
+    display: flex;
+    min-width: 660px;
+    max-width: 780px;
+    width: 66%;
+    justify-content: space-between;
+}
+
+.detail-header-container .comment-height .comment-sold {
+    display: flex;
+}
+
+.detail-header-container .comment-height .comment-score {
+    font-size: 14px;
+    color: #b5c7df;
+    background: #5377a9;
+    border-radius: 4px 4px 0;
+    width: 53px;
+    height: 26px;
+    text-align: center;
+    display: inline-block;
+    letter-spacing: .5px;
+}
+
+.detail-header-container .comment-height .comment-score .good-comment {
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 0;
+    padding-right: 0.5px;
+}
+
+.detail-header-container .comment-height .comment-count {
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #5377a9;
+    letter-spacing: .13px;
+}
+
+.detail-header-container .comment-height .collection {
+    cursor: pointer;
+    display: flex;
+}
+
+.detail-header-container .comment-height .collection .collection-img {
+    width: 18px;
+    height: 18px;
+    margin-top: 5px;
+    margin-right: 8px;
+    background-image: url(https://pages.trip.com/hwwl/Trip_icon/details_hp/in_collection2.png);
+    background-size: 100% 100%;
+}
+
+.detail-header-container .comment-height .collection .collection-tips, .detail-header-container .comment-height .comment-sold .comment-sold-content {
+    color: #999;
+    font-size: 18px;
+    letter-spacing: .13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
