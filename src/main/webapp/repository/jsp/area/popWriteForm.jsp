@@ -14,9 +14,11 @@
         전화번호 : <input type="text" name="pop_call" id="pop_call">
         x : <input type="text" name="map_x" id="map_x">
         y : <input type="text" name="map_y" id="map_y">
-        이미지 : <input type="file" name="img[]" id="img">
+        이미지 : <input type="file" name="img[]" id="img" multiple>
         <input type="button" id="popWriteBtn" value="작성완료">
         <input type="reset" value="다시작성">
     </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/nadri/repository/js/area/area.js"></script>
 </body>
 </html>

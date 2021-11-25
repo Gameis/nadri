@@ -1,10 +1,7 @@
 package area.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
 import area.bean.TripPopDTO;
@@ -19,9 +16,9 @@ public class AreaServiceImpl implements AreaService {
 	
 	@Override
 	public void popWrite(TripPopDTO tripPopDTO, 
-						 TripPopMapDTO tripPopMapDTO, 
-						 List<MultipartFile> list) {
+						 TripPopMapDTO tripPopMapDTO) {
 		
+		areaDAO.popWrite(tripPopDTO, tripPopMapDTO);
 		
 	}
 

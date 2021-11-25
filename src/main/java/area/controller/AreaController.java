@@ -58,6 +58,6 @@ public class AreaController {
 			areaService.imgWrite(imgDTO);
 			
 		}//for
-		//areaService.popWrite(tripPopDTO, tripPopMapDTO, imgDTO);
+		areaService.popWrite(tripPopDTO, tripPopMapDTO);
 	}
 }
