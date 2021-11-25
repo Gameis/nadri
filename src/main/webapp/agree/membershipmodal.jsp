@@ -41,7 +41,7 @@
       
       <%--회원가입신청 --%>
       <div class="modal-body">
-      		<jsp:include page="member.jsp" />	
+      		<jsp:include page="membershipmodal2.jsp" />	
       </div>
       
       <div class="membership">

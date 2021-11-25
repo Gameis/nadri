@@ -57,7 +57,7 @@
 		</tr>
 		
 		<tr>
-			<td width="100" align="center">이메일11</td>
+			<td width="100" align="center">이메일</td>
 			<td>
 				<input type="text" name="email1">
 				@
@@ -72,7 +72,7 @@
 		</tr>
 		
 		<tr>
-			<td width="100" align="center">핸드폰11</td>
+			<td width="100" align="center">핸드폰</td>
 			<td>
 				<select name="tel1" style="width: 70px;">
 					<option value="010" selected>010</option>
