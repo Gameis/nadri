@@ -20,7 +20,7 @@
 
 	<!-- 몸통 -->
 	<div class="productdetail-container">
-
+		<input type="hidden" id="page_id" value="10650010429" >
 		<!-- 눈썹 -->
 		<div class="product-detail-breadcrumbs">
 			<div class="crumbs-wrap ">
@@ -59,16 +59,17 @@
 						</span> <span class="comment-count">리뷰 3개</span>
 					</section>
 				</div>
-				<div class="collectio default-collection">
+				<div class="collection default-collection">
 					<div class="collection-img"></div>
-					<div class="collection-trps">즐겨찾기</div>
+					<div class="collection-tips">즐겨찾기</div>
 				</div>
 			</div>
 
 			<section id="imageContainer" class="flex imageContainer">
 				<div class="imgBox productdetail-common-width svg-default-img">
-					<a title="서울 N서울타워 전망대 입장권" href="#"> 
-					<img alt="서울 N서울타워 전망대 입장권" class="imgClass" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1136_640_Q60.jpg?proc=source/trip;namelogo/d_40"
+					<a title="서울 N서울타워 전망대 입장권" href="https://kr.trip.com/things-to-do/detail/36756741/"> 
+					<img alt="서울 N서울타워 전망대 입장권" class="imgClass" 
+					src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1136_640_Q60.jpg?proc=source/trip;namelogo/d_40"
 					data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1136_640_Q60.jpg?proc=source/trip;namelogo/d_40">
 					</a>
 				</div>
@@ -103,6 +104,29 @@
 							</div>
 						</div>
 					</section>
+				</section>
+				
+				<section class="tagsContainer productdetail-common-width flex">
+					<div class="tagItemContainer flex">
+						<img class="img" src="https://pic.tripcdn.com/picaresenglish/activity/ottd-pic-service/icon/ic_Available_Top@2x.ca73e56f.png"
+						 width="18px" height="18px" data-src="https://pic.tripcdn.com/picaresenglish/activity/ottd-pic-service/icon/ic_Available_Top@2x.ca73e56f.png">
+						<span class="tagName ffpr fs3 c9 specialColor">오늘부터 바로사용</span>
+					</div>
+					<div class="tagItemContainer flex">
+						<img class="img" src="https://webresource.tripcdn.com/ares2/activity/ottd-pic-service/1.0.35/default/detail_icon/ic_refundable.png"
+						 width="18px" height="18px" data-src="https://webresource.tripcdn.com/ares2/activity/ottd-pic-service/1.0.35/default/detail_icon/ic_refundable.png">
+						<span class="tagName ffpr fs3 c9 ">취소 불가</span>
+					</div>
+					<div class="tagItemContainer flex">
+						<img class="img" src="https://webresource.tripcdn.com/ares2/activity/ottd-pic-service/1.0.35/default/detail_icon/ic_Show%20ID.png"
+						 width="18px" height="18px" data-src="https://webresource.tripcdn.com/ares2/activity/ottd-pic-service/1.0.35/default/detail_icon/ic_Show%20ID.png">
+						<span class="tagName ffpr fs3 c9">전자 바우처 제시</span>
+					</div>
+					<div class="tagItemContainer flex">
+						<img class="img" src="https://webresource.tripcdn.com/ares2/activity/ottd-pic-service/1.0.35/default/trip_detail/ic_calendar@2x.webp"
+						 width="18px" height="18px" data-src="https://webresource.tripcdn.com/ares2/activity/ottd-pic-service/1.0.35/default/trip_detail/ic_calendar@2x.webp">
+						<span class="tagName ffpr fs3 c9">유효기간 내 사용</span>
+					</div>
 				</section>
 			</header>
 
