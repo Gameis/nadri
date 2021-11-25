@@ -3,15 +3,33 @@
 /* header */
 .trip_main_hd_top_nav {
 	position: relative;
+	z-index: 2;
 }
 
-.main_hd_logo {
+.main_hd_line {
+	border-bottom: 1px solid #ddd;
+}
+
+.main_hd {
+	position: relative;
+	padding: 0 12px;
+	line-height: 1.5;
+}
+
+.main_hd .main_hd_inner {
+	position: relative;
+	max-width: 1160px;
+	margin: 0 auto;
+}
+
+.trip_main_hd_logo {
 	float: left;
 	padding: 16px 24px 14px 0;
 }
 
 .trip {
-	background: url(/nadri/repository/img/main/main_hd_logo.jfif) no-repeat 100% 50%;
+	background: url(/nadri/repository/img/main/main_hd_logo.jfif) no-repeat
+		100% 50%;
 	display: inline-block;
 	width: 130px;
 	height: 40px;
@@ -19,15 +37,27 @@
 	background-size: 124px 30px;
 }
 
-.trip_main_hd_login_write {
+.main_hd_account {
 	float: right;
+	padding: 15px 0 15px 10px;
+	margin-right: 16px;
+}
+
+.main_hd_dropdown {
+	position: relative;
+}
+
+.trip_main_hd_no_login {
+	padding: 15px 0;
+	margin-right: 0;
 }
 
 .login_btn {
 	display: inline-block;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	height: 37px;
-	line-height: 37px;
+	height: 30px;
+	line-height: 30px;
 	font-size: 12px;
 	border-radius: 2px;
 	padding: 0 12px;
@@ -36,4 +66,21 @@
 	cursor: pointer;
 	color: #287dfa;
 	background-color: #fff;
+}
+
+.main_hd .trip_main_hd_nav {
+	float: left;
+    max-height: 62px;
+    overflow: visible;
+    line-height: 0px
+}
+.main_hd:before, main_hd_line:before {
+	content: "";
+	display: table;
+}
+
+.main_hd:after, main_hd_line:after {
+	clear: both;
+	display: table;
+	content: "";
 }
