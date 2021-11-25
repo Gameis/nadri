@@ -49,14 +49,33 @@
 				</div>
 				<div class="con_search_contain">
 					<div class="con_search_box">
-						<div class="con_search_box_text_input">
-							<input style="text-overflow: ellipsis;"
+						<div class="con_search_box_text_input" id="search">
+							<input class="search_content" style="text-overflow: ellipsis;"
 								placeholder="여행지, 명소, 호텔 등으로 검색">
 							<!-- 한줄라인 글자수 제한 / 양식에 안내문구 추가하기 -->
+							<div class="dropdown-content">
+								<a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+										width="25" height="25" fill="currentColor"
+										class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+  <path
+											d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+</svg> 서울</a> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+										height="25" fill="currentColor" class="bi bi-geo-alt-fill"
+										viewBox="0 0 16 16">
+  <path
+											d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+</svg></i> 제주</a> <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25"
+										height="25" fill="currentColor" class="bi bi-geo-alt-fill"
+										viewBox="0 0 16 16">
+  <path
+											d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+</svg></i> 서귀포 </a>
+							</div>
 						</div>
 						<div class="con_search_button">
 							<div class="con_search_button_icon"></div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -166,19 +185,19 @@
 			</div>
 
 			<!-- tripmoment slide -->
-			<div class="tripmoment trip-con_carousel">
-				<div class="tripmoment" style="overflow: hidden;">
-					<div class="tripmoment content"
-						style="transition: margin 0.4s ease 0s; margin-left: 0%; width: 600%;">
-						<div class="carouselItemStyle">
-							<div class="CardStyle index_card_con">
-								<div class="sub_con">
-									<div>
-										<div style="padding-bottom: 106%"
-											class="ImgWrapStyle imagewrap">
-											<div class="img">
-												<img class src="./repository/img/main/seoul_3.jpg">
-											</div>
+			<div class="tripmomentSlide">
+				<div style="overflow: hidden" id="carousel_tripmoment_slide"
+					class="carousel-slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+
+							<!-- card 전체 -->
+							<div class="card-group">
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
 										</div>
 									</div>
 									<div class="bottom_con">
@@ -200,110 +219,254 @@
 										</div>
 									</div>
 								</div>
-							</div>
-
-							<div class="CardStyle index_card_con">
-								<div class="sub_con">
-									<div>
-										<div style="padding-bottom: 106%"
-											class="ImgWrapStyle imagewrap">
-											<div class="img">
-												<img class src="./repository/img/main/seoul_3.jpg">
-											</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
 										</div>
 									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<img class="user_" src=""> <span>개복치</span>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">포시즌스호텔 서울</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
 											</div>
-											<div class="bottom_user_right">
-												<i class="iconfont_class count"></i>
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">인터컨티넨탈 서울 코엑스</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
 											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">노보텔 앰배서더 서울 동대문 호텔 & 레지던스</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
+											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
-							<div class="CardStyle index_card_con">
-								<div class="sub_con">
-									<div>
-										<div style="padding-bottom: 106%"
-											class="ImgWrapStyle imagewrap">
-											<div class="img">
-												<img class src="./repository/img/main/seoul_3.jpg">
-											</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card-group">
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
 										</div>
 									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<img class="user_" src=""> <span>개복치</span>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
 											</div>
-											<div class="bottom_user_right">
-												<i class="iconfont_class count"></i>
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
 											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
+											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
+											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
 										</div>
 									</div>
 								</div>
 							</div>
-
-							<div class="CardStyle index_card_con">
-								<div class="sub_con">
-									<div>
-										<div style="padding-bottom: 106%"
-											class="ImgWrapStyle imagewrap">
-											<div class="img">
-												<img class src="./repository/img/main/seoul_3.jpg">
-											</div>
+						</div>
+						<div class="carousel-item">
+							<div class="card-group">
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
 										</div>
 									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<img class="user_" src=""> <span>개복치</span>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
 											</div>
-											<div class="bottom_user_right">
-												<i class="iconfont_class count"></i>
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
 											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
+											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
+										</div>
+									</div>
+								</div>
+								<div class="cardstyle card index_card_con">
+									<div style="padding-bottom: 106%" class="slide_img">
+										<div class="img">
+											<img src="/nadri/repository/img/main/seoul_2.jpg"
+												class="card-img-top" alt="트립1">
+										</div>
+									</div>
+									<div class="card-body">
+										<div class="pop-title">
+											<a href="#">명동</a>
+										</div>
+										<div class="pop-review">
+											<div class="pop-review-score">
+												<span class="pop-review-score-current">4.5</span> <span
+													class="pop-review-score-total">/5</span>
+											</div>
+											<div class="pop-review-text">5,808건의 리뷰</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+					<button class="carousel-control-prev" type="button"
+						data-bs-target="#areaHotel_slide" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button"
+						data-bs-target="#areaHotel_slide" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
 				</div>
-				<!-- 트립모먼트 left right 버튼 -->
-				<div class="trip-con_carousel-btn left disable-left"></div>
-				<div class="trip-con_carousel-btn right disable-right active-state"></div>
 			</div>
+			<!-- tripmoment slide -->
+
 		</div>
 	</div>
-
+	<!-- container 전체 -->
 
 	<!-- footer -->
 	<div id="wrap_foot">
@@ -314,7 +477,7 @@
 		</footer>
 	</div>
 </body>
-
+<!-- video mouseover 시 재생 -->
 <script type="text/javascript">
 	var Video_module_jeju = document
 			.getElementsByClassName('Video_module_jeju')[0]
@@ -325,5 +488,57 @@
 	Video_module_jeju.addEventListener('mouseout', function() {
 		video.pause()
 	}, false);
+	
 </script>
+<!-- Channel Plugin Scripts -->
+<script>
+  (function() {
+    var w = window;
+    if (w.ChannelIO) {
+      return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
+    }
+    var ch = function() {
+      ch.c(arguments);
+    };
+    ch.q = [];
+    ch.c = function(args) {
+      ch.q.push(args);
+    };
+    w.ChannelIO = ch;
+    function l() {
+      if (w.ChannelIOInitialized) {
+        return;
+      }
+      w.ChannelIOInitialized = true;
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+      s.charset = 'UTF-8';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    }
+    if (document.readyState === 'complete') {
+      l();
+    } else if (window.attachEvent) {
+      window.attachEvent('onload', l);
+    } else {
+      window.addEventListener('DOMContentLoaded', l, false);
+      window.addEventListener('load', l, false);
+    }
+  })();
+  ChannelIO('boot', {
+    "pluginKey": "9b766493-8768-4235-bb05-b4f65bba982b"
+  });
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$('#search').click(function(){
+		$("#search > div").show();
+	});
+});
+</script>
+
+
 </html>
