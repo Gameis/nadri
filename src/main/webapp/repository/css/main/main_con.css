@@ -105,7 +105,7 @@ a, a:hover {
 /* mainpage title */
 .index_top_title {
 	position: relative;
-	margin: 48px auto 10px;
+	margin: 48px auto 20px;
 	max-width: 1160px;
 	letter-spacing: 0;
 }
@@ -166,6 +166,21 @@ a, a:hover {
 	width: 100%;
 	height: 100%;
 	border: 0;
+}
+
+.dropdown-content {
+    width: 90%;
+	display: none !important background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
 .con_search_button {
@@ -430,45 +445,44 @@ video {
 }
 
 /* 트립모먼트 slide */
-.trip-con_carousel {
+.tripmomentSlide {
 	position: relative;
 }
 
-.trip-con_carousel .content {
-	overflow: hidden;
-	text-align: center;
+.carousel-inner {
+	text-align: left;
+	float: left;
 }
 
-/* card 전체를 감싸는  */
-.carouselItemStyle {
-	margin-top: 4rem;
-	margin-left: 19.8rem;
-	width: 11%;
-	float: left;
-	display: grid;
-	grid-template-columns: 24% 24% 24% 24%;
-	grid-column-gap: 1%;
+.active {
+	width: 16.667%;
 }
 
 .index_card_con {
 	padding: 0 8px !important;
 }
 
-.index_card_con .sub_con {
-	position: relative;
+.card {
+	width: 25%;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0px 0px;
+	cursor: pointer;
+	vertical-align: top;
 }
 
-.imagewrap {
+.slide_img {
 	background: rgb(235, 235, 242);
 	width: 100%;
 	height: 0px;
+	padding-bottom: 56%;
 	overflow: hidden;
 	margin: 0px;
 	position: relative;
 	border-radius: 2px;
 }
 
-.imagewrap .img {
+.index_card_con .img {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -483,115 +497,12 @@ video {
 	animation-timing-function: ease-out !important;
 }
 
-.imagewrap .img img {
+.index_card_con .img img {
 	transition: all 1.2s ease 0s;
 	width: 100%;
 	object-fit: cover;
 	height: 100%;
 	font-family: "object-fit: cover";
-}
-
-.index_card_con .bottom_con {
-	padding: 16px 16px 13px;
-	border: 1px solid #dadfe6;
-	border-top: none;
-}
-
-.bottom_desc {
-	height: 40px;
-	line-height: 20px;
-	margin-bottom: 12px;
-	font-size: 14px;
-	word-break: break-all;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
-	overflow: hidden;
-	margin-bottom: 8px !important;
-}
-
-.bottom_con .bottom_user_con {
-	display: flex;
-	-webkit-box-pack: justify;
-	justify-content: space-between;
-}
-
-.index_card_con .bottom_con .bottom_user_con .bottom_user_left {
-	-webkit-box-flex: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	margin-right: 8px;
-}
-
-.index_card_con .bottom_con .bottom_user_con .user_ {
-	width: 24px;
-	height: 24px;
-	border-radius: 50%;
-	vertical-align: middle;
-	margin-right: 8px;
-}
-
-.index_card_con .bottom_con .bottom_user_con .bottom_user_right {
-	flex-shrink: 0;
-}
-
-.index_card_con .bottom_con .bottom_user_con .count {
-	vertical-align: bottom;
-	margin-right: 5px;
-}
-
-.index_card_con .bottom_con .bottom_user_right i {
-	color: #455873;
-	font-size: 0.8rem;
-}
-
-.iconfont_class {
-	font-family: gs_trip_font !important;
-}
-
-.index_card_con .bottom_con .bottom_user_right span {
-	font-size: 0.8rem;
-	color: #455873;
-	line-height: 18px;
-}
-
-/* 트립모먼트 left right 버튼 */
-.trip-con_carousel .left {
-	left: -14;
-	background-color: #fff;
-	border-radius: 0%;
-	box-shadow: none;
-	border: 1px solid #dadfe6;
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.trip-con_carousel .disable-left {
-	cursor: not-allowed;
-	background-image:
-		url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAGFBMVEUAAADW1tbMzMzMzMzOzs7Nzc3Pz8/MzMyucGDcAAAAB3RSTlMAC8NufFs1GPjZKAAAADpJREFUOMtjGAVUBowuAtglhMoDsGtQL0/AoaEYlwaDQaaBwR2hAVOCNKMY1QevlgSCUYuZGEYBFQEAbiQS8X8QdCYAAAAASUVORK5CYII=);
-}
-
-.trip-con_carousel .trip-con_carousel-btn {
-	position: absolute;
-	display: inline-block;
-	width: 4.0rem;
-	height: 4.0rem;
-	top: 50%;
-	bottom: 50%;
-	margin-top: -2.3rem;
-}
-
-.trip-con_carousel .right {
-	right: -0.8rem;
-	background-color: #fff;
-	border-radius: 0%;
-	box-shadow: none;
-	border: 1px solid #dadfe6;
 }
 
 /* footer */
