@@ -82,48 +82,8 @@
    		 </form>
  	 </div>   
 
-<!-- membership modal 이어진 모달 첫번째-->
-<div class="modal fade" id="membershipmodal" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">이용약관</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      
-      <%-- 동의 약관 --%>
-      <div class="modal-body">
-      		<jsp:include page="main_top_modal/agree.jsp" />	
-      </div> 
-      
-      <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#membershipmodal2" data-bs-toggle="modal">회원가입신청으로</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<%-- 이어진 두번째모달  --%>
-<div class="modal fade" id="membershipmodal2" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">회원가입</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      
-      <%--회원가입신청 --%>
-      <div class="modal-body">
-      		<jsp:include page="main_top_modal/membershipmodal.jsp" />
-      </div>
-      
-      <div class="membership">
-        <button class="btn btn-primary" >회원가입신청</button>
-      </div>
-    </div>
-  </div>
-</div>
-<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">회원가입신청완료</a>
+<a class="btn btn-primary" data-bs-toggle="modal" href="#" role="button">로그인</a>
 
 
 <script src="/nadri/repository/js/modal/modal.js"></script>	
