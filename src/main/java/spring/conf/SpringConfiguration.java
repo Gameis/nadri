@@ -62,13 +62,8 @@ public class SpringConfiguration {
     	sqlSessionFactoryBean.setDataSource(dataSource());
     	//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
     	sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:*/dao/*Mapper.xml"));
+		return sqlSessionFactoryBean.getObject();//SqlSessionFactory 반환
 
-    	
-    	try {
-			return sqlSessionFactoryBean.getObject();//SqlSessionFactory 반환
-		} catch (Exception e) {
-			return null;
-		}
     }
     
 	//SqlSessionTemplate

@@ -1,8 +1,11 @@
 package area.bean;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
 @Data
+@Component
 public class TripPopDTO {
 	private int pop_seq;
 	private String pop_name;
