@@ -5,6 +5,6 @@
  
 <configuration>
 	<typeAliases>
-		<typeAlias type="pop.bean.pop_reviewboardDTO" alias="pop"/>
+		<typeAlias type="pop.bean.Pop_reviewboardDTO" alias="pop"/>
 	</typeAliases>
 </configuration>
