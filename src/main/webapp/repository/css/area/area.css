@@ -54,7 +54,7 @@ button, input, optgroup, select, textarea {
 .areaPathItem::after {content: '>';}
 .areaPathItem:last-child::after {content: '';}
 
-/* ¿©±â ¹Ìµð¾î °É·ÁÀÖ´Ù */
+/* ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ ï¿½É·ï¿½ï¿½Ö´ï¿½ */
 #areaSearch {
     position: relative;
     margin-left: 50px;
@@ -192,7 +192,7 @@ button, input, optgroup, select, textarea {
     background-color: white;
     color: black;
 }
-/*div ½½¶óÀÌµå*/
+/*div ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½*/
 .areaSlideTitle {
     font-size: 18px;
     line-height: 24px;
@@ -244,7 +244,7 @@ button, input, optgroup, select, textarea {
     color: rgb(255, 255, 255);
 }
 
-/* ¿©±âµµ ¹ÝÀÀÇü °É·ÁÀÖ */
+/* ï¿½ï¿½ï¿½âµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ï¿½ï¿½ */
 .pop-title {margin-bottom: 8px;}
 
 .pop-title > a {
@@ -321,7 +321,7 @@ button, input, optgroup, select, textarea {
     color: rgb(255, 102, 0);
     margin-left: 5px;
 }
-/*¿©Çà Á¤º¸*/
+/*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
 .areaInfo h2 {
     margin-top: 40px;
     padding: 24px 32px;

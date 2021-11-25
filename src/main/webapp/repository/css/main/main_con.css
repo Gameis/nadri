@@ -12,6 +12,34 @@ a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
 	vertical-align: baseline;
 }
 
+input, option, select, textarea {
+	font-family: inherit;
+}
+
+input, textarea {
+	font-size: inherit;
+	color: inherit;
+	outline: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+button, input {
+	overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+* {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 a, a:hover {
 	outline: none;
 	text-decoration: none;
@@ -22,53 +50,95 @@ a, a:hover {
 	z-index: 2;
 }
 
-.trip_main_index_top {
+/* container */
+.trip_main_con {
 	position: relative;
-	padding-top: 50rem;
-	box-sizing: border-box;
-	width: 100%;
+	z-index: 1;
 }
 
-.trip_main_con_search {
+.trip_main_index {
+	background: #fff;
 	width: 100%;
-	height: 250rem;
+	font-size: 16px;
+	margin-bottom: 40px;
+	overflow: hidden;
+}
+
+.trip_main_index_top {
+	position: relative;
+	padding-top: 48px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.trip_main_search_con_wrap {
+	width: 100%;
+	height: 280px;
 	position: absolute;
 	overflow: hidden;
 }
 
-.trip_main_con_search img {
-	width: 100%;
-	height: 250rem;
-	object-fit: cover; /* object크기에 맞게 설정. 높이와 너비랑 같이 설정해주면 됨 */
+.trip_main_search_wrap {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	border-radius: 50%;
+	overflow: hidden;
+	background: transparent;
+	width: 400vw;
+	height: 300vw;
 }
 
+.trip_main_index_search {
+	width: 100vw;
+	height: 280px;
+	object-fit: cover; /* object크기에 맞게 설정. 높이와 너비랑 같이 설정해주면 됨 */
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+/* mainpage title */
 .index_top_title {
 	position: relative;
-	max-width: calc(100% - 64px) !important;
-	position: relative;
-	margin: 0 auto 16rem;
-	max-width: 1160rem;
+	margin: 48px auto 10px;
+	max-width: 1160px;
 	letter-spacing: 0;
 }
 
-.index_top_title h1 {
+.index_top_title .homepage_Title {
+	font-size: 48px;
 	color: #fff;
-	font-size: 60px;
-	margin: .67em 0;
-	margin-left: 400px;
+	line-height: 68px;
+	font-weight: bold;
 }
 
+.index_top_title .homepage_Title .homepage_Title_dot {
+	margin-left: 0;
+	width: 12px;
+	height: 12px;
+	background: #ffb400;
+	display: inline-block;
+	border-radius: 50%;
+}
+
+/* mainpage search */
 .con_search_contain {
-	max-width: 1223px;
-	max-width: clac(100% -64px) !important;
-	padding: 0 24px;
+	max-width: 1160px;
 	height: 148px;
 	background: #fff;
 	border: 1px solid #f0f2f5;
-	box-shadow: 0 4px 16px rgb(69 88 115/ 20%);
+	-webkit-box-shadow: 0 4px 16px 0 rgb(69 88 115/ 20%);
+	box-shadow: 0 4px 16px 0 rgb(69 88 115/ 20%);
 	margin: 0 auto;
 	position: relative;
 	z-index: 9;
+	padding: 0 24px;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	border-radius: 2px;
 }
@@ -122,6 +192,7 @@ a, a:hover {
 	box-sizing: border-box;
 }
 
+/* 매력탐구 */
 .component-destinationrecommend {
 	min-width: 580px;
 	height: 72px;
@@ -166,6 +237,19 @@ a, a:hover {
 	margin-right: 20px;
 }
 
+.component-destinationrecommend .button {
+	background: #287dfa;
+	border-radius: 2px;
+	height: 38px;
+	padding: 0 10px;
+	margin-right: 16px;
+	font-size: 16px;
+	line-height: 38px;
+	text-align: center;
+	color: #fff;
+}
+
+/* 인기여행지 */
 .popular_trip_destination {
 	text-align: center;
 	font-size: 35px;
@@ -355,9 +439,11 @@ video {
 	text-align: center;
 }
 
+/* card 전체를 감싸는  */
 .carouselItemStyle {
-	width: 16.6667%;
-	text-align: left;
+	margin-top: 4rem;
+	margin-left: 19.8rem;
+	width: 11%;
 	float: left;
 	display: grid;
 	grid-template-columns: 24% 24% 24% 24%;
@@ -460,7 +546,7 @@ video {
 
 .index_card_con .bottom_con .bottom_user_right i {
 	color: #455873;
-	font-size: 14px;
+	font-size: 0.8rem;
 }
 
 .iconfont_class {
@@ -468,10 +554,46 @@ video {
 }
 
 .index_card_con .bottom_con .bottom_user_right span {
-	font-size: 13px;
+	font-size: 0.8rem;
 	color: #455873;
 	line-height: 18px;
 }
+
+/* 트립모먼트 left right 버튼 */
+.trip-con_carousel .left {
+	left: -14;
+	background-color: #fff;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.trip-con_carousel .disable-left {
+	cursor: not-allowed;
+	background-image:
+		url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAGFBMVEUAAADW1tbMzMzMzMzOzs7Nzc3Pz8/MzMyucGDcAAAAB3RSTlMAC8NufFs1GPjZKAAAADpJREFUOMtjGAVUBowuAtglhMoDsGtQL0/AoaEYlwaDQaaBwR2hAVOCNKMY1QevlgSCUYuZGEYBFQEAbiQS8X8QdCYAAAAASUVORK5CYII=);
+}
+
+.trip-con_carousel .trip-con_carousel-btn {
+	position: absolute;
+	display: inline-block;
+	width: 4.0rem;
+	height: 4.0rem;
+	top: 50%;
+	bottom: 50%;
+	margin-top: -2.3rem;
+}
+
+.trip-con_carousel .right {
+	right: -0.8rem;
+	background-color: #fff;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+}
+
 /* footer */
 #wrap_foot {
 	min-height: 100vh;
