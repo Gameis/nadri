@@ -16,7 +16,7 @@ public class AreaDAOMybatis implements AreaDAO {
 	
 	@Override
 	public void imgWrite(ImgDTO imgDTO) {
-		sqlSession.insert("areaSQL.imgWrite", imgDTO);
+		//sqlSession.insert("areaSQL.imgWrite", imgDTO);
 	}
 
 }
