@@ -128,6 +128,27 @@
 						<span class="tagName ffpr fs3 c9">유효기간 내 사용</span>
 					</div>
 				</section>
+				
+				<div class="productdetail-common-width">
+					<div calss="confirmInfoBox">
+						<img class="confirminfo-img" src="https://pic.tripcdn.com/picaresenglish/activity/ottd-pic-service/icon/ic_indent@2x.8552b9b5.png"
+						 data-src="https://pic.tripcdn.com/picaresenglish/activity/ottd-pic-service/icon/ic_indent@2x.8552b9b5.png">
+						<div class="confieminfo-naame">
+							"예약 확정"
+							<span class="confirminfo-des">평균 예약 확정 시간 1분, 100% 확정</span>
+						</div>
+						<div class="confieminfo-tips" src="https://pages.trip.com/hwwl/Trip_icon/details_hp/in_click%20collection%20.png">
+							<i class="confirminfo-tips-img"></i>
+							<div class="refund-layer center-layer">
+								<ul class="mt10">
+									<li>결제 완료 후 공급처 측에서 예약 확정 안내 드릴 예정입니다. 공급처 예약 확정 후 트립닷컴 예약 확정 이메일을 발송해드립니다.</li>
+									<li>예약 확정 시간 및 성공률은 지난 예약건에 기반한 수치 (단순 참고용)</li>
+									<li>정확한 예약 확정 시간은 예약 확정 메일 또는 예약 상세 페이지에서 확인해주세요.</li>	
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</header>
 
 
