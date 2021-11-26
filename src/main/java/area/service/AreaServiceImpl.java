@@ -1,11 +1,12 @@
 package area.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
-import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
+import area.bean.PopMainDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 import area.dao.AreaDAO;
@@ -30,4 +31,10 @@ public class AreaServiceImpl implements AreaService {
 		areaDAO.imgWrite(imgDTO);
 	}
 
+	@Override
+	public List<PopMainDTO> onArea() {
+		return areaDAO.printPopMain(3);
+	}
+
 }
+
