@@ -6,5 +6,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="pop.bean.Pop_reviewboardDTO" alias="pop"/>
+		<typeAlias type="area.bean.ImgDTO" alias="img"/>
+		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
+		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
 	</typeAliases>
 </configuration>
