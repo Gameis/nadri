@@ -17,13 +17,29 @@
 					<div class="trip_main_hd_logo">
 						<a class="trip" href="#">trip.com</a>
 					</div>
-					<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
-						<span class="login_btn">로그인 / 회원가입</span>
+
+
+						<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
+							
+						<!-- Login Button trigger modal -->
+						<span  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal">
+						  로그인
+						</span>
+						/							
+						<!-- Membership Button trigger modal -->
+						<span class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#membershipmodal">
+						  회원가입
+						</span>	
+						
+								
 					</div>
+					
 					<div class="trip_main_hd_nav"></div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
 </body>
 </html>

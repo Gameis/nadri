@@ -34,7 +34,7 @@
    				</li>
      		</ul>	
             <textarea class="license auto" style="font-size:1em;" readonly>
-               <jsp:include page="agreement/license.jsp" />	
+               <jsp:include page="license/license.jsp" />	
             </textarea>
         </li>   
                   
@@ -49,7 +49,7 @@
       		</ul>
 
        		<textarea class="license auto" style="font-size:1em;">
-   				<jsp:include page="agreement/license2.jsp" />	
+   				<jsp:include page="license/license2.jsp" />	
         	</textarea>
      	</li>
         
@@ -64,7 +64,7 @@
 	        	</li>	
        		</ul>
             <textarea class="license auto" style="font-size:1em;">
-   				<jsp:include page="agreement/license3.jsp" />
+   				<jsp:include page="license/license3.jsp" />
 			</textarea>
 		</li>
  	 </ul>

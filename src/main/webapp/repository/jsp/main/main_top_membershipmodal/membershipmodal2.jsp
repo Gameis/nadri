@@ -8,7 +8,7 @@
 	font-weight: bold;
 }
 </style>
-<%--write폼에 아이디를 줌 로그인폼에아이디를 주는게 훨씬 편함 --%>
+
 <form name="writeForm" id="writeForm">
 	<table border="1" cellspacing="0" cellpadding="5">
 		<tr>
@@ -23,10 +23,9 @@
 			<td width="100" align="center">아이디</td>
 			<td>
 				<input type="text" name="id" id="id" placeholder="아이디 입력">
-		<%-- 	<input type="button" value="중복체크" id="checkIdBtn">  --%> 
-	
-		<%--text에서 hidden으로 바꿔라 --%> 
-				<input type="text" name="check" id="check" value="">
+
+ 
+				<input type="hidden" name="check" id="check" value="">
 				<div id= "idDiv"></div>
 			</td>	
 		</tr>
@@ -57,11 +56,10 @@
 		</tr>
 		
 		<tr>
-			<td width="100" align="center">이메일11</td>
+			<td width="100" align="center">이메일</td>
 			<td>
 				<input type="text" name="email1">
 				@
-				<%--input list와 datalist id가 연결된다 --%>
 				<input type="text" name="email2" list="email2" placeholder="직접입력">
 				<datalist id="email2">
 					<option value="naver.com">naver.com
@@ -72,7 +70,7 @@
 		</tr>
 		
 		<tr>
-			<td width="100" align="center">핸드폰11</td>
+			<td width="100" align="center">핸드폰</td>
 			<td>
 				<select name="tel1" style="width: 70px;">
 					<option value="010" selected>010</option>
@@ -98,10 +96,7 @@
 		
 	</table>
 </form>
-<!-- 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../js/member.js"></script>
- -->
+
 
 
 

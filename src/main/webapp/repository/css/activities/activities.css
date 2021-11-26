@@ -1,5 +1,100 @@
 @charset "UTF-8";
 
+input[type="hidden" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+    padding: initial;
+    border: initial;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+@media screen and (max-width: 768px)
+html {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 640px)
+html {
+    font-size: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: transparent!important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.5);
+}
+
+element.style {
+    overflow-y: visible;
+    height: auto;
+}
+
+body {
+    font-family: BlinkMacSystemFont,'-apple-system',Helvetica,Arial,sans-serif!important;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    color: #333;
+}
+
+.fs2, body, html {
+    font-size: 14px;
+}
+
+.ffps h2, body, form, h1, h2, h3, h4, h5, h6, html, ol, p, ul {
+    margin: 0;
+}
+
+body, input, select, textarea {
+    font-family: "나눔바른고딕",Nanum Barun Gothic,"나눔 고딕","Nanum Gothic","맑은 고딕","Malgun Gothic", "돋움",dotum, tahoma, arial, sans-serif;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
 .product-detail-breadcrumbs {
     width: 84.29%;
     max-width: 1180px;
@@ -227,6 +322,183 @@ em {
     font-size: 18px;
     letter-spacing: .13px;
 }
+
+.detail-header-container .comment-height .collection {
+    cursor: pointer;
+    display: flex;
+}
+
+.detail-header-container .imageContainer {
+    align-items: flex-start;
+    position: relative;
+}
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.detail-header-container .imageContainer .imgClass {
+    min-height: 372px;
+    border-radius: 6px;
+    
+    width: 100%;
+}
+
+img {
+    border: 0;
+}
+
+.bookLayer-container {
+    width: 30.5%;
+    position: relative;
+    margin-left: 40px;
+    min-height: 1px;
+}
+
+.fd-c {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.bookLayer-container .bookLayer-inner {
+    position: absolute;
+    top: 0;
+    background: #FFF;
+    border-radius: 4px;
+    box-shadow: 0 0 14px 0 rgb(0 0 0 / 10%);
+    z-index: 1;
+}
+
+@media screen and (max-width: 1099px)
+.bookLayer-inner {
+    width: 280px;
+}
+
+.m-footer-layer-header {
+    height: 8px;
+    background: #ff9500;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 14px;
+}
+
+.m-footer-layer-body {
+    padding: 0 20px;
+}
+
+.m-footer-info {
+    font-size: 14px;
+    color: #333;
+    line-height: 30px;
+}
+
+.m-footer-flex {
+    align-items: baseline;
+    display: flex;
+}
+
+.bookLayer-container .bookLayer-inner .m-footer .u-price-content {
+    font-family: BlinkMacSystemFont,-apple-system,Roboto,Helvetica,Arial,sans-serif!important;
+}
+
+.m-footer-layer-body .day-content, .m-footer-layer-body .u-price-content {
+    font-family: PingFangSC-Semibold;
+    font-size: 28px;
+    line-height: 30px;
+    color: #ff6f00;
+}
+
+.u-price-content {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+    opacity: .9;
+    color: #ff6f00;
+}
+
+.m-footer-layer-body .u-price-content-lineThrough {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+    padding-bottom: 3px;
+}
+
+.m-footer-article-inner, .m-footer-bottom {
+    padding: 20px;
+}
+
+.m-fotter-bottom-btn {
+    cursor: pointer;
+    background: #ff9500;
+    border-radius: 4px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.detail-header-container .tagsContainer {
+    flex-wrap: wrap;
+    padding: 20px 0 4px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.productdetail-common-width {
+    min-width: 660px;
+    max-width: 780px;
+    width: 66.1%;
+}
+
+.detail-header-container .tagsContainer .tagItemContainer {
+    margin-right: 40px;
+    margin-bottom: 6px;
+}
+
+.detail-header-container .tagsContainer .tagItemContainer .img {
+    margin-right: 6px;
+}
+
+img[Attributes Style] {
+    width: 18px;
+    aspect-ratio: auto 18 / 18;
+    height: 18px;
+}
+
+.detail-header-container .tagsContainer .tagItemContainer .specialColor {
+    color: #06aebd;
+}
+
+.detail-header-container .tagsContainer .tagItemContainer .tagName {
+    line-height: 20px;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.fs3 {
+    font-size: 16px;
+}
+
+.c9 {
+    color: #111;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

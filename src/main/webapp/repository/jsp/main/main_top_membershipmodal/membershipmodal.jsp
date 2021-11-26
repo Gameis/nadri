@@ -19,7 +19,7 @@
       
       <%-- 동의 약관 --%>
       <div class="modal-body">
-      		<jsp:include page="agree.jsp" />	
+      		<jsp:include page="agreement.jsp" />	
       </div>
       
       <div class="modal-footer">
@@ -41,7 +41,7 @@
       
       <%--회원가입신청 --%>
       <div class="modal-body">
-      		<jsp:include page="member.jsp" />	
+      		<jsp:include page="membershipmodal2.jsp" />	
       </div>
       
       <div class="membership">
