@@ -3,7 +3,9 @@ package area.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
+import area.bean.PopMainDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 import area.service.AreaService;
@@ -46,18 +49,44 @@ public class AreaController {
 		for(MultipartFile img : list) {
 			
 			fileName = img.getOriginalFilename();
-			file = new File(filePath, fileName);
+			
+			UUID uuid = UUID.randomUUID();
+			String newFileName = uuid.toString() + "_" + fileName;
+			
+			file = new File(filePath, newFileName);
 			try {
-				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+				if(checkImageType(file)) {
+					FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+					}else {
+						System.out.println("이미지파일이 아닙니다.");
+						return;
+					}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			
-			imgDTO.setImg_name(fileName);
+			imgDTO.setImg_name(newFileName);
 			imgDTO.setImg_path("popular");
 			
 			areaService.imgWrite(imgDTO);
 			
 		}//for
+	}
+	
+	private boolean checkImageType(File file) {
+		try {
+			String contentType = Files.probeContentType(file.toPath());
+			
+			return contentType.startsWith("image");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	@RequestMapping(value="/onArea", method=RequestMethod.GET)
+	@ResponseBody
+	public List<PopMainDTO> onArea() {
+		return areaService.onArea();
 	}
 }

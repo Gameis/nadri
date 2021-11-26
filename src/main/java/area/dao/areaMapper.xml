@@ -8,7 +8,7 @@
 	</insert>
 	
 	<insert id="nadriWrite">
-		insert into nadri values(nadri_seq.nextval, 2, pop_seq.nextval)
+		insert into nadri values(nadri_seq.nextval, 3, pop_seq.nextval)
 	</insert>
 	
 	<insert id="popWrite" parameterType="tripPop">
@@ -18,4 +18,16 @@
 	<insert id="popMap" parameterType="tripPopMap">
 		insert into tripPopMap values(pop_seq.currval, #{map_x}, #{map_y})
 	</insert>
+	
+	<select id="printPopMain" parameterType="int" resultType="popMain">
+		select * from trippop
+				 join (select img_name, img_path, nadri_seq from img
+							                                join nadri using(nadri_seq)
+							                                where img_seq in (select min(img_seq) as img_seq
+							                                                  from img
+							                                                  join nadri using(nadri_seq)
+							                                                  where content_seq = #{content}
+							                                                  group by nadri_seq)) 
+							                                using (nadri_seq)
+	</select>
 </mapper>
