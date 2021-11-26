@@ -127,8 +127,7 @@
 														<img class="col"
 															src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
 													</div>
-													
-													
+																										
 												</a> <img class="col"
 													src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
 												<img class="col"
