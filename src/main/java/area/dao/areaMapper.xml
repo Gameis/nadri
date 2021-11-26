@@ -4,15 +4,15 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="areaSQL">
 	<insert id="imgWrite" parameterType="img">
-		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, nadri_seq.nextval)
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, nadri_seq.currval)
 	</insert>
 	
-	<insert id="nadriWrite" parameterType="int">
-		insert into nadri values(nadri_seq.nextval, 2, #{seq})
+	<insert id="nadriWrite">
+		insert into nadri values(nadri_seq.nextval, 2, pop_seq.nextval)
 	</insert>
 	
 	<insert id="popWrite" parameterType="tripPop">
-		insert into tripPop values(pop_seq.nextval, #{pop_name}, #{pop_businessTime}, #{pop_tourismTime}, #{pop_call}, nadri_seq.currval)
+		insert into tripPop values(pop_seq.currval, #{pop_name}, #{pop_businessTime}, #{pop_tourismTime}, #{pop_call}, nadri_seq.currval)
 	</insert>
 	
 	<insert id="popMap" parameterType="tripPopMap">

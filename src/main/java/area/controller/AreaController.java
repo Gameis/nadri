@@ -42,6 +42,7 @@ public class AreaController {
 		String fileName = null;
 		File file = null;
 		
+		areaService.popWrite(tripPopDTO, tripPopMapDTO);
 		for(MultipartFile img : list) {
 			
 			fileName = img.getOriginalFilename();
@@ -58,6 +59,5 @@ public class AreaController {
 			areaService.imgWrite(imgDTO);
 			
 		}//for
-		areaService.popWrite(tripPopDTO, tripPopMapDTO);
 	}
 }
