@@ -5,15 +5,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	
-<<<<<<< HEAD
 	<context:component-scan base-package="area.*" />
-=======
 	<context:component-scan base-package="area.controller" />
 	<context:component-scan base-package="area.service" />
 	<context:component-scan base-package="area.dao" />
 	<context:component-scan base-package="area.bean" />
->>>>>>> c3a77a40874763893a11b4a968f5783442d7b2ec
 	<context:component-scan base-package="spring.conf"></context:component-scan>
 	<context:component-scan base-package="pop.controller" />
 	<!-- 풓 여기서 해도 됨 -->
