@@ -3,7 +3,11 @@ package pop.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -18,28 +22,64 @@ import pop.bean.Pop_reviewboardDTO;
 
 @Controller
 @RequestMapping(value="/popular")
-public class PopController {
+public class PopController {	
+	
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
 	public void imageboardWrite(@ModelAttribute Pop_reviewboardDTO pop_reviewboardDTO,
-								@RequestParam("img[]") List<MultipartFile> list) {
+								@RequestParam("img[]") List<MultipartFile> list,
+								HttpServletRequest request) {
 		
-		
-		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\storage";
+		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\popular\\review";
 		String fileName;
 		File file;
 		
+		
+		
 		for(MultipartFile img : list) {
+			//파일이름 가져오기
 			fileName = img.getOriginalFilename();
-			file = new File(filePath, fileName);
+			//String extension = fileName.substring(fileName.lastIndexOf("."), fileName.length());//확장자빼오기
+			
+			//파일이름 중복방지
+			
+			UUID uuid = UUID.randomUUID();
+			String newFileName = uuid.toString() + "_" + fileName;
+			
+			//파일 업로드 경로와 이름 설정
+			
+			file = new File(filePath, newFileName);
+			
 			try {
+				if(checkImageType(file)) {
 				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+				}else {
+					System.out.println("이미지파일이 아닙니다.");
+					return;
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			
-			//pop_reviewboardDTO.setPop_review_imageName(fileName);
+			
+			pop_reviewboardDTO.setPop_review_imageName(newFileName);
+			System.out.println(pop_reviewboardDTO);
+			
+			//DB갓다오자
 
 		}//for
+		
+		
+	}
+	
+	private boolean checkImageType(File file) {
+		try {
+			String contentType = Files.probeContentType(file.toPath());
+			
+			return contentType.startsWith("image");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

@@ -159,7 +159,14 @@
 					</div><!-- container -->
 				</div><!-- carouselWrap -->
 		    </div><!-- content-wrap -->
+		    
+		<!-- 여기부터 리뷰 -->
+		<jsp:include page="./pop_review_writeForm.jsp">
+			<jsp:param value="param1" name="param1" />
+		</jsp:include>
 	</div><!-- areaWrap -->
+	
+	
 	
         
         

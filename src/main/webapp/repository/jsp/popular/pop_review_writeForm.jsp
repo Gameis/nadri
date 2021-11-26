@@ -1,24 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- <style type="text/css">
-table {
-	border-collapse: collapse;
-}
-#imageboardWriteForm div{
-	font-size: 8pt;
-	color: red;
-	font-weight: bold;
-}
-</style> -->
 
-<h3>이미지 등록</h3>
 <form id="pop_review_writeForm">
-	<table cellspacing="0" cellpadding="5" border="1"><!-- cellspacing 두줄없애기, cellpadding 안쪽여백 -->
+<span id="review_title"><h3>리뷰</h3></span>
+	<table cellspacing="0" cellpadding="10" border="0"><!-- cellspacing 두줄없애기, cellpadding 안쪽여백 -->
 		<tr>
 			<td width="100" align="center">작성자</td>
 			<td>
-				<input type="text" name="member_name" id="member_name" value="member_name" size="50" readonly>
+				<input type="text" name="member_name" id="member_name" value="${member_name }" size="50" readonly />
 			</td>
 		</tr>
 		<tr>
@@ -32,9 +23,9 @@ table {
 			</td>
 		</tr>
 		<tr>
-			<td width="100" align="center">내용</td>
+			<td width="100"align="center">내용</td>
 			<td>
-				<textarea cols="50" rows="15" name="pop_review_content" id="pop_review_content"></textarea>
+				<textarea style="width: 1000px;" rows="5" cols="30" id="pop_review_content" name="pop_review_content" placeholder="댓글을 입력하세요"></textarea>
 			</td>
 		</tr>
 		
@@ -61,6 +52,7 @@ table {
 			</td>
 		</tr>
 	</table>
+	<input type="hidden" id="pop_seq" name="pop_seq" value=1 />
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
