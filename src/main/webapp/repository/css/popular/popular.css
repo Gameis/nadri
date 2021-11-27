@@ -345,4 +345,16 @@ button, input, optgroup, select, textarea {
 	border-radius: 5px 5px;
 	color: #0f294d;
 }
+.review_td{
+	
+}
+.container{
+	display: inline-block;
+	
+}
+#review_img{
+	padding: 0;
+	float: left;
+}
+
 }

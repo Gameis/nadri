@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import pop.bean.Pop_reviewboardDTO;
+import pop.bean.TripPopReviewDTO;
 
 @Controller
 @RequestMapping(value="/popular")
@@ -26,7 +26,7 @@ public class PopController {
 	
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
-	public void imageboardWrite(@ModelAttribute Pop_reviewboardDTO pop_reviewboardDTO,
+	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
 		
@@ -62,8 +62,8 @@ public class PopController {
 			}
 			
 			
-			pop_reviewboardDTO.setPop_review_imageName(newFileName);
-			System.out.println(pop_reviewboardDTO);
+			tripPopReviewDTO.setPop_review_imageName(newFileName);
+			System.out.println(tripPopReviewDTO);
 			
 			//DB갓다오자
 
@@ -72,6 +72,7 @@ public class PopController {
 		
 	}
 	
+	//img파일인지 체크 메소드
 	private boolean checkImageType(File file) {
 		try {
 			String contentType = Files.probeContentType(file.toPath());
@@ -81,5 +82,10 @@ public class PopController {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	@RequestMapping(value="/popular", method=RequestMethod.POST)
+	public void pop_main_data() {
+		
 	}
 }

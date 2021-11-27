@@ -213,6 +213,8 @@
 	      // 마커 위에 인포윈도우를 표시합니다
 	      infowindow.open(map, marker);  
 	});
+	
+	
 </script>
 </body>
 </html>
