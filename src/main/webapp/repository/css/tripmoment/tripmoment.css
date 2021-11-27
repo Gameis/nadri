@@ -1,5 +1,33 @@
 @charset "UTF-8";
 
+a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
+	details, div, dl, dt, embed, fieldset, figcaption, figure, footer, form,
+	h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, label,
+	legend, li, mark, menu, nav, object, ol, output, p, ruby, section, span,
+	sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul,
+	video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+input, textarea {
+	font-size: inherit;
+	color: inherit;
+	outline: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+button, input, optgroup, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
 #tripmoment {
 	max-width: 1160px;
 	margin: 0 auto;
@@ -27,16 +55,20 @@
 	display: inline-block;
 }
 
-.tripmomentPathItem:last-child > a {
+.tripmomentPathItem:last-child>a {
 	color: black;
 }
 
 .tripmomentPathItem::after {
-	content: '>' ;
+	content: '>';
 }
 
 .tripmomentPathItem:last-child::after {
 	content: '';
+}
+
+.tripmomentPathItem a {
+	text-decoration: none;
 }
 
 .tripmomentSearch {
@@ -59,7 +91,7 @@
 	height: 100%;
 }
 
-.tripmomentSearch_input > input {
+.tripmomentSearch_input>input {
 	text-overflow: ellipsis;
 	width: 100%;
 	height: 100%;
@@ -77,8 +109,218 @@
 }
 
 .tripmomentSearch_icon {
-	background: url("/nadri/repository/img/area/areaSearch.png") no-repeat 50%;
+	background: url("/nadri/repository/img/area/areaSearch.png") no-repeat
+		50%;
 	background-size: 17px 17px;
 	width: 100%;
 	height: 100%;
 }
+
+/* Tripmoment Image Carousel */
+.PhotoStyle {
+	width: 100%;
+	position: relative;
+	margin-top: 8px;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 64px;
+}
+
+.imageGallery {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	height: auto;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	width: 650px;
+}
+
+.imageGallery .carouselWrap {
+	position: relative;
+}
+
+.carousel_list_imgs_list {
+	transform: scale(1, 1) translateX(0px);
+}
+
+.image-gallery-content {
+	padding: 0px;
+}
+
+.image-gallery-slide-wrapper {
+	position: relative;
+}
+
+.image-gallery-index {
+	text-align: center;
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	transform: scale(1);
+}
+
+.image-gallery-index span {
+	font-family: #fff;
+}
+
+.image-gallery-thumbnails-wrapper .image-gallery-overview {
+	width: 650px !important;
+	background: rgba(0, 0, 0, .8);
+}
+
+.carouselWrap .carousel_list_imgs_list .image-gallery-thumbnails-wrapper
+	{
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: 762px !important;
+	overflow: hidden !important;
+}
+
+.carouselWrap .carousel_list_imgs_list .image-gallery-thumbnails-wrapper
+	{
+	margin: 0 152px !important;
+	width: auto !important;
+}
+
+.image-gallery-thumbnails-wrapper {
+	position: relative;
+	margin: 0 1px;
+}
+
+.image-gallery-thumbnails {
+	overflow: hidden;
+	padding: 5px 0;
+}
+
+.image-gallery-left-nav[disabled].image-gallery-overview-left-nav {
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.image-gallery .image-gallery-left-nav.image-gallery-overview-left-nav {
+	width: 48px;
+	height: 136px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	left: 0px !important;
+	background-image: none !important;
+	background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
+	{
+	color: rgb(42, 125, 250);
+}
+
+.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left
+	{
+	color: rgb(255, 255, 255);
+	transform: rotateZ(270deg);
+}
+
+.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
+	{
+	color: rgb(42, 125, 250);
+}
+
+.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left
+	{
+	color: rgb(255, 255, 255);
+	transform: rotateZ(270deg);
+}
+
+.image-gallery .image-gallery-right-nav.image-gallery-overview-right-nav
+	{
+	width: 48px;
+	height: 136px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	left: 602px !important;
+	right: 0px !important;
+	background-image: none !important;
+	background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
+	{
+	color: rgb(255, 255, 255);
+	opacity: 0.2;
+}
+
+.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
+	{
+	color: rgb(255, 255, 255);
+	opacity: 0.2;
+}
+
+.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right
+	{
+	color: rgb(255, 255, 255);
+	transform: rotateZ(90deg);
+}
+
+.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right
+	{
+	color: rgb(255, 255, 255);
+	transform: rotateZ(90deg);
+}
+
+.image-gallery-overview .image-gallery-thumbnails-container {
+	padding: 0 52px;
+}
+
+.image-gallery-thumbnails .image-gallery-thumbnails-container {
+	text-align: center;
+	-webkit-transition: -webkit-transform .45s ease-out;
+	transition: -webkit-transform .45s ease-out;
+	transition: transform .45s ease-out;
+	transition: transform .45s ease-out, -webkit-transform .45s ease-out;
+	white-space: nowrap;
+}
+
+.imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-thumbnail.active
+	{
+	margin-left: 1px;
+}
+
+.image-gallery-thumbnail.active {
+	border: 4px solid #2979ff;
+}
+
+.image-gallery-thumbnail-photo-list.overview-list {
+	height: 120px;
+	width: 120px;
+}
+
+/* BoxRight */
+.BoxRight {
+	position: relative;
+	height: 812px;
+	flex: 1 1 0%;
+	border: 1px red solid;
+}
+
+/* .carousel-inner img {
+	height: 550px;
+}
+
+.container {
+	display: inline-block;
+	height: 150px;
+}
+
+.row-cols-4>img {
+	padding: 0;
+	text-align: center;
+	height: 120px;
+	width: 25%;
+	border: 5px solid rgb(15, 41, 77, 0.7);
+} */

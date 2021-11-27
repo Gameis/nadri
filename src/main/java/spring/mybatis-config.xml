@@ -9,5 +9,6 @@
 		<typeAlias type="area.bean.ImgDTO" alias="img"/>
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
+		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
 	</typeAliases>
 </configuration>
