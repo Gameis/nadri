@@ -12,11 +12,8 @@
 	<context:component-scan base-package="area.dao" />
 	<context:component-scan base-package="area.bean" />
 	<context:component-scan base-package="spring.conf"></context:component-scan>
-<<<<<<< HEAD
+	
 	<context:component-scan base-package="pop.*" />
 	<!-- 풓 여기서 해도 됨 -->
-=======
-	<context:component-scan base-package="pop.controller" />
-	<!-- 풀 여기서 해도 됨 -->
->>>>>>> 2504f6c86868ff1a4df0c57beb2167582e7dc8ae
+
 </beans>
