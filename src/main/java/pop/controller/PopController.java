@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,11 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.service.PopService;
 
 @Controller
 @RequestMapping(value="/popular")
-public class PopController {	
+public class PopController {
+	
+	@Autowired
+	private PopService popService;	
 	
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
@@ -84,8 +90,13 @@ public class PopController {
 		return false;
 	}
 	
-	@RequestMapping(value="/popular", method=RequestMethod.POST)
-	public void pop_main_data() {
+	@RequestMapping(value="/getLocation", method=RequestMethod.GET)
+	@ResponseBody
+	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
+		System.out.println("컨트롤왔다");
+		return popService.getLocation(pop_seq);
 		
 	}
+	
+	
 }

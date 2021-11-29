@@ -18,4 +18,10 @@
 	<insert id="popMap" parameterType="tripPopMap">
 		insert into tripPopMap values(pop_seq.currval, #{map_x}, #{map_y})
 	</insert> -->
+	
+	<select id="getLocation" parameterType="int" resultType="popLocation">
+		select * from trippop
+		join trippopmap using (pop_seq)
+		where pop_seq = #{pop_seq}
+	</select>
 </mapper>
