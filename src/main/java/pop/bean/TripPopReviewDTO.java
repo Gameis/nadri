@@ -3,8 +3,9 @@ package pop.bean;
 import lombok.Data;
 
 @Data
-public class Pop_reviewboardDTO {
-	private String pop_seq;
+public class TripPopReviewDTO {
+	private int nadri_seq;
+	private int count_reviews;
 	private String member_name;
 	private String pop_review_content;
 	private String pop_review_imageName;

@@ -168,9 +168,18 @@ a, a:hover {
 	border: 0;
 }
 
+.search_content {
+	cursor: pointer;
+	padding: 0 15px;
+}
+
+.con_search_box_text_input .dropdown-content {
+	display: none;
+}
+
 .dropdown-content {
-    width: 90%;
-	display: none !important background-color: #f1f1f1;
+	width: 90%;
+	/* display: none !important background-color: #f1f1f1; */
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
@@ -181,6 +190,10 @@ a, a:hover {
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
+}
+
+#search {
+	visibility: visible;
 }
 
 .con_search_button {
@@ -447,6 +460,8 @@ video {
 /* 트립모먼트 slide */
 .tripmomentSlide {
 	position: relative;
+	margin: 0 auto;
+    width: 1160px;
 }
 
 .carousel-inner {
@@ -503,6 +518,88 @@ video {
 	object-fit: cover;
 	height: 100%;
 	font-family: "object-fit: cover";
+}
+
+.index_card_con .bottom_con {
+	padding: 16px 16px 13px;
+	border: 1px solid #dadfe6;
+	border-top: none;
+}
+
+.index_trip_moment_con .bottom_con {
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.bottom_desc {
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.index_card_con .bottom_user_con {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.index_card_con .bottom_con .bottom_user_con .bottom_user_left {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 8px;
+}
+
+.bi-person-circle {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.bottom_user_right {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+}
+
+.support_count {
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.bottom_user_right img {
+	width: 24px;
+	height: 24px;
+	vertical-align: bottom;
+    margin-right: 5px;
+}
+
+.bottom_user_right span {
+	font-size: 16px;
+    color: #455873;
+    line-height: 18px;
 }
 
 /* footer */

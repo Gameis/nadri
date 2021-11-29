@@ -173,7 +173,23 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/nadri/repository/js/pop/popular.js"></script>
 <script type="text/javascript">
+//지도api
+$(function(){
+	
+	$.ajax({
+		url: '/nadri/popular/getLocation',
+		type: 'get',
+		data: 'pop_seq='+'3',
+		success: function(data){
+			alert('성공햇다');
+		},error: function(err){
+			alert('실패했다');
+			console.log(err);
+		}
+	});
 	var location_name = '서울';
 	var x = 37.4923661;
 	var y = 127.0292978;
@@ -213,6 +229,9 @@
 	      // 마커 위에 인포윈도우를 표시합니다
 	      infowindow.open(map, marker);  
 	});
+});
+	
+
 </script>
 </body>
 </html>

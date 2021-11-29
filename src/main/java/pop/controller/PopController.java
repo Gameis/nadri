@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,15 +19,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import pop.bean.Pop_reviewboardDTO;
+import pop.bean.TripPopLocationDTO;
+import pop.bean.TripPopReviewDTO;
+import pop.service.PopService;
 
 @Controller
 @RequestMapping(value="/popular")
-public class PopController {	
+public class PopController {
+	
+	@Autowired
+	private PopService popService;	
 	
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
-	public void imageboardWrite(@ModelAttribute Pop_reviewboardDTO pop_reviewboardDTO,
+	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
 		
@@ -62,8 +68,8 @@ public class PopController {
 			}
 			
 			
-			pop_reviewboardDTO.setPop_review_imageName(newFileName);
-			System.out.println(pop_reviewboardDTO);
+			tripPopReviewDTO.setPop_review_imageName(newFileName);
+			System.out.println(tripPopReviewDTO);
 			
 			//DB갓다오자
 
@@ -72,6 +78,7 @@ public class PopController {
 		
 	}
 	
+	//img파일인지 체크 메소드
 	private boolean checkImageType(File file) {
 		try {
 			String contentType = Files.probeContentType(file.toPath());
@@ -82,4 +89,14 @@ public class PopController {
 		}
 		return false;
 	}
+	
+	@RequestMapping(value="/getLocation", method=RequestMethod.GET)
+	@ResponseBody
+	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
+		System.out.println("컨트롤왔다");
+		return popService.getLocation(pop_seq);
+		
+	}
+	
+	
 }
