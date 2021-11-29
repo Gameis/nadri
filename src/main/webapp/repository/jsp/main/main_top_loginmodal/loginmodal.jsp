@@ -10,24 +10,17 @@
 </head>
 <body>
 
-
-			<!-- Login Button trigger modal -->
-						<span  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal">
-						  로그인
-						</span>
-						/							
-			<!-- Membership Button trigger modal -->
-			<span class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#membershipmodal">
-			  회원가입
-			</span>	
-
+<!-- Login Button trigger modal -->
+			<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal">
+				<span  >로그인</span>/<span>회원가입</span>	
+			</div>					
 
 <!-- Login Modal -->
 <div class="modal fade" id="loginmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">로그인 모달</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
@@ -66,16 +59,28 @@
 		    </div>  
 		    
 		    <div>
-			  <a class="btn-img" img src="main_top_modal/login_api/image/google.png" alt="google" href="/nadri/repository/jsp/main/main_top_modal/login_api/googlelogin.jsp" width="70" height="70"></a>
-			  <a class="btn-img" img src="main_top_modal/login_api/image/naver.png" alt="naver" href="/nadri/repository/jsp/main/main_top_modal/login_api/naverlogin.jsp" width="70" height="70"></a>
-			  <a class="btn-img" img src="main_top_modal/login_api/image/kakao.png" alt="kakao" href="/nadri/repository/jsp/main/main_top_modal/login_api/kakaologin.jsp" width="70" height="70"></a>
+			  <!-- <a class="btn-img" img src="main_top_modal/login_api/image/google.png" alt="google" href="/nadri/repository/jsp/main/main_top_modal/login_api/googlelogin.jsp" width="70" height="70"></a>
+			  <a class="btn-img" src="/nadri/repository/img/user/kakao.png" alt="naver" href="/nadri/repository/jsp/main/main_top_modal/login_api/naverlogin.jsp" width="70" height="70"></a>
+			  <a class="btn-img" src="/nadri/repository/img/user/kakao.png" alt="kakao" href="/nadri/repository/jsp/main/main_top_modal/login_api/kakaologin.jsp" width="70" height="70"></a> -->
+			  
+			  <a style="text-decoration: none" href="/nadri/repository/jsp/main/main_top_loginmodal/login_api/kakaologin.jsp">
+			  	<img src="/nadri/repository/img/user/kakao.png" alt="kakao" width="50" height="50">
+			  </a>
+			  <a style="text-decoration: none" href="/nadri/repository/jsp/main/main_top_loginmodal/login_api/naverLogin.jsp">
+			  	<img src="/nadri/repository/img/user/naver.png" alt="naver" width="50" height="50">
+			  </a>
+			  <a style="text-decoration: none" href="/nadri/repository/jsp/main/main_top_loginmodal/login_api/googlelogin.jsp">
+			  	<img src="/nadri/repository/img/user/google.png" alt="google" width="50" height="50">
+			  </a>
 			</div>
+			
+			 <div><input type="button" value="로그인"></div>
    		 </form>
  	 </div>   
 
 
-
-<a class="btn btn-primary" data-bs-toggle="modal" href="#" role="button">로그인</a>
+아직 회원가입을 하지 않으셨나요?
+<a class="btn btn-primary" data-bs-toggle="modal" href="/nadri/repository/jsp/user/writeForm" role="button">회원가입하기</a>
 
 
 <script src="/nadri/repository/js/modal/modal.js"></script>	

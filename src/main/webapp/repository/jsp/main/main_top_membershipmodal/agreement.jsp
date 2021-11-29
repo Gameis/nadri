@@ -6,31 +6,33 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link href="agree.css" rel="stylesheet">
+<link rel="stylesheet" href="/nadri/repository/css/user/agreement.css">
 </head>
 <body>
     
-<form id="form1" class="class1">
-
-   	<ul>
-   		<li>
-   			<ul>
+<form id="agreeform" class="agreeclass">
+   	<ul class="agree_box">
+   		<li class="checkBox check01">
+   			<ul class="clearfix">
    				<li>
-   					<h1>전체 이용약관</h1>
+   					<h2>이용약관, 개인정보 수집 및 이용,
+                      위치정보 이용약관(선택), 프로모션 안내
+                      메일 수신(선택)에 모두 동의합니다.</h2>
    				</li>
-	        	<li>
+   				
+	        	<li class="checkAllBtn">
 	                <input type="checkbox" id="checkAll" name="checkAll"/>일괄선택
 	            </li>
             </ul>
         </li>
            
-     	<li>
-    		<ul>
+     	<li class="checkBox check02">
+    		<ul class="clearfix">
    				<li>
    					<h4 class="h4">전자상거래표준약관(필수)</h4>
    				</li>
-   				<li>
-   					<input type="checkbox" id="check_1"  name="" /> 위의 약관에 동의 합니다.
+   				<li class="checkBtn">
+   					<input type="checkbox" id="chk1"  name="chk1" class="check" />  동의 
    				</li>
      		</ul>	
             <textarea class="license auto" style="font-size:1em;" readonly>
@@ -38,36 +40,40 @@
             </textarea>
         </li>   
                   
-   	   	<li>   
-   	   		<ul>  
+   	   	<li class="checkBox check03">   
+   	   		<ul class="clearfix">  
    	   			<li>        
-         			<h4 class="h4">개인정보보호지침</h4>
+         			<h4 class="h4">개인정보보호지침(필수)</h4>
          		</li>
-         		<li>
-        			<input type="checkbox" id="check_2"  name="" /> 위의 약관에 동의 합니다.
+         		<li class="checkBtn">
+        			<input type="checkbox" id="chk2"  name="chk2" class="check"/>  동의 
 		   	     </li>
       		</ul>
 
-       		<textarea class="license auto" style="font-size:1em;">
+       		<textarea class="license auto" style="font-size:1em;" readonly>
    				<jsp:include page="license/license2.jsp" />	
         	</textarea>
      	</li>
         
-  		<li>
-  			<ul>
+  		<li class="checkBox check04">
+  			<ul class="clearfix">
 		        <li>   
-		           <h4 class="h4">선택적 개인정보 수집동의 및 이용약관</h4>
+		           <h4 class="h4">개인정보 수집동의 및 이용약관(선택)</h4>
 		        </li>
 		         
-	         	<li>   
-	           	   <input type="checkbox" id="check_3"  name="" /> 위의 약관에 동의 합니다.<br />
+	         	<li class="checkBtn">   
+	           	   <input type="checkbox" id="chk3"  name="chk3" class="check"/>  동의 
 	        	</li>	
        		</ul>
-            <textarea class="license auto" style="font-size:1em;">
+            <textarea class="license auto" style="font-size:1em;" readonly>
    				<jsp:include page="license/license3.jsp" />
 			</textarea>
 		</li>
  	 </ul>
+ 	 <br><br>
+      <ul class="footBtwrap clearfix" >
+          <li><div align="center"><button class="agreeBtn" id="agreeBtn">위 내용에 동의 합니다</button></div></li>
+      </ul>
 </form>
 
 
@@ -76,17 +82,28 @@
     $(document).ready(function(){
 
         $("#nextBtn").click(function(){    
-            if($("#check_1").is(":checked") == false){
+            if($("#chk1").is(":checked") == false){
                 alert("전자 상거래 표준약관에 동의 하셔야 다음 단계로 진행 가능합니다");
                 return;
-            }else if($("#check_2").is(":checked") == false){
+            }else if($("#chk2").is(":checked") == false){
                 alert("개인정보 보호지침에 동의 하셔야 다음 단계로 진행 가능합니다");
                 return;
             }else{
-                $("#terms_form").submit();
+                $("#nextBtn").submit();
             }
         });    
     });
+   
+    
+    
+  //전체 선택 전체 해제
+    $('#checkAll').click(function(){
+    	if($('#checkAll').prop("checked")){
+    		$('.check').prop('checked',true);
+    	}else{
+    		$('.check').prop('checked',false);
+    	}
+    });		//click    
 </script>
 </body>
 </html>

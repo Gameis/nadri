@@ -61,7 +61,7 @@ $(function(){
 		$('#resultDiv').empty();
 		
 		$.ajax({
-			url:'   /user/getUser',
+			url:'   	/user/getUser',
 			type:'post',
 			data:{'searchId':$('#searchId').val()},
 
@@ -96,12 +96,12 @@ $(function(){
 	
 	$('#modifyBtn').click(function(){
 		$.ajax({
-			url:'   /user/modify',
+			url:'  		/user/modify',
 			type:'post',
 			data:$('#modifyForm').serialize(),
 			success:function(){
 				alert("회원 정보 수정 완료");
-				location.href="  /user/list";
+				location.href="  	/user/list";
 			},
 			error:function(err){
 				console.log(err);
