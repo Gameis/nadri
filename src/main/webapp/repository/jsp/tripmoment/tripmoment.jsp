@@ -24,8 +24,6 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-
-
 	<div class="travel_guide_root_class">
 		<div class="TravelDetailContainer">
 			<div id="tripmoment">
@@ -72,19 +70,28 @@
 													data-bs-ride="carousel">
 													<div class="carousel-inner">
 														<div class="carousel-item active">
+															<img alt="" src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
+																class="img-img">
+															<div class="img-grey"></div>
 															<img
 																src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
+															<img alt="" src="/nadri/repository/img/main/seoul_1.jpg"
+																class="img-img">
+															<div class="img-grey"></div>
 															<img
-																src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_640_470.jpg_.webp?proc=source%2ftrip"
+																src="/nadri/repository/img/main/seoul_1.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
+															<img alt="" src="/nadri/repository/img/main/seoul_1.jpg"
+																class="img-img">
+															<div class="img-grey"></div>
 															<img
-																src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_640_470.jpg_.webp?proc=source%2ftrip"
-																class="d-block w-100" alt="...">
+																src="/nadri/repository/img/main/seoul_1.jpg"
+																class="d-block w-100" alt="..." style="width: 650px;">
 														</div>
 													</div>
 													<button class="carousel-control-prev" type="button"
@@ -111,7 +118,7 @@
 											<div
 												class="image-gallery-thumbnails-wrapper container image-gallery-overview">
 												<div class="image-gallery-thumbnails">
-													<div>
+													<div style="display: flex;">
 														<button type="button"
 															class="image-gallery-left-nav image-gallery-overview-left-nav">
 															<i class="c-icon icon-back-top arrow-left"></i>
@@ -122,15 +129,9 @@
 															<i class="c-icon icon-back-top arrow-right"></i>
 														</button>
 													</div>
-													<div class="row row-cols-4"
-														style="transform: translated3d(-516px, 0px, 0px);"ThumbnailNavigation">
+													<div class="row row-cols-4">
 
 														<a role="button" aria-pressed="true"
-															aria-label="Go to Slide 3"
-															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
-														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img class="col"
@@ -227,6 +228,7 @@
 								</div>
 							</div>
 							<!-- scroll content End -->
+							<!-- 좋아요 & 댓글 달기 -->
 							<div class="like input_view">
 								<div class="like input_phaise_container">
 									<div class="like">
@@ -238,10 +240,12 @@
 									</div>
 								</div>
 								<div class="like_btn textarea_container">
-									<div class="like textarea_2" contenteditable="true" placeholder="댓글을 남겨주세요"></div>
+									<div class="like textarea_2" contenteditable="true"
+										placeholder="댓글을 남겨주세요"></div>
 								</div>
-								<div class="like submit" style="#287DFA88">확인</div>
+								<div class="like submit" style="color: #287DFA88">확인</div>
 							</div>
+							<!-- 좋아요 & 댓글 달기 End -->
 						</div>
 						<!-- BoxRight End -->
 					</div>
