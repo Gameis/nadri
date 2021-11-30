@@ -12,5 +12,5 @@ public interface AreaService {
 
 	public void imgWrite(ImgDTO imgDTO);
 
-	public List<PopMainDTO> onArea();
+	public List<PopMainDTO> onArea(int main_seq);
 }

@@ -26,14 +26,13 @@ public class AreaDAOMybatis implements AreaDAO {
 
 	@Override
 	public void popWrite(TripPopDTO tripPopDTO, TripPopMapDTO tripPopMapDTO) {
-		sqlSession.insert("areaSQL.nadriWrite");
 		sqlSession.insert("areaSQL.popWrite", tripPopDTO);
 		sqlSession.insert("areaSQL.popMap", tripPopMapDTO);
 	}
 
 	@Override
-	public List<PopMainDTO> printPopMain(int content) {
-		return sqlSession.selectList("areaSQL.printPopMain", content);
+	public List<PopMainDTO> printPopMain(int main_seq) {
+		return sqlSession.selectList("areaSQL.printPopMain", main_seq);
 	}
 
 }

@@ -8,6 +8,8 @@
 </head>
 <body>
     <form id="popWriteForm">
+    	<input type="hidden" name="content_seq" id="content_seq" value="3">
+    	<input type="hidden" name="main_seq" id="main_seq" value="99"/>
         명소이름 : <input type="text" name="pop_name" id="pop_name">
         영업시간 : <input type="text" name="pop_businessTime" id="pop_businessTime">
         관광시간 : <input type="text" name="pop_tourismTime" id="pop_tourismTime">
