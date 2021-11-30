@@ -663,7 +663,7 @@
             }).append($('<div/>', {
               class: 'pop-title'
             }).append($('<a/>', {
-              href: '#',
+              href: '/nadri/area/popular?pop_seq=' + items.pop_seq,
               text: items.pop_name
             }))).append($('<div/>', {
               class: 'pop-review'
