@@ -76,12 +76,8 @@
           <!--divSlide-->
           <div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
             <div id="areaPopularLocation_slide" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="card-group" id="test">
-                    
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
+              <div class="carousel-inner" id="pop-carousel-inner">
+                
               </div><!--carousel-inner-->
               <button class="carousel-control-prev" type="button" data-bs-target="#areaPopularLocation_slide" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -628,43 +624,61 @@
       url: '/nadri/area/onArea',
       type: 'get',
       success: function(data) {
-        alert('성공');
         alert(JSON.stringify(data));
 
+        var count = -1;
         $.each(data, function(index, items){
-          alert(index);
+          if(index % 4 == 0) {
+
+            if(index == 0) {
+              $('<div/>', {
+                class: 'carousel-item active'
+              }).append($('<div/>', {
+                class: 'card-group'
+              })).appendTo($('#pop-carousel-inner'));
+            }else {
+              $('<div/>', {
+                class: 'carousel-item'
+              }).append($('<div/>', {
+                class: 'card-group'
+              })).appendTo($('#pop-carousel-inner'));
+            }
+            
+            count++;
+          }
+
           $('<div/>', {
             class: 'card'
           }).append($('<div/>', {
-            class: 'card_rank',
-            text: 'TOP 1'
-          })).append($('<div/>', {
-            class: 'slide_img'
-          }).append($('<img/>', {
-            src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
-            class: 'card-img-top',
-            alt: 'top1'
-          }))).append($('<div/>', {
-            class: 'card-body'
-          }).append($('<div/>', {
-            class: 'pop-title'
-          }).append($('<a/>', {
-            href: '#',
-            text: items.pop_name
-          }))).append($('<div/>', {
-            class: 'pop-review'
-          }).append($('<div/>', {
-            class: 'pop-review-score'
-          }).append($('<span/>', {
-            class: 'pop-review-score-current',
-            text: '4.5'
-          })).append($('<span/>', {
-            class: 'pop-review-score-total',
-            text: '/5'
-          }))).append($('<div/>', {
-            class: 'pop-review-text',
-            text: '5,808건의 리뷰'
-          })))).appendTo($('#test'));
+              class: 'card_rank',
+              text: 'TOP 1'
+            })).append($('<div/>', {
+              class: 'slide_img'
+            }).append($('<img/>', {
+              src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
+              class: 'card-img-top',
+              alt: 'top1'
+            }))).append($('<div/>', {
+              class: 'card-body'
+            }).append($('<div/>', {
+              class: 'pop-title'
+            }).append($('<a/>', {
+              href: '/nadri/area/popular?pop_seq=' + items.pop_seq,
+              text: items.pop_name
+            }))).append($('<div/>', {
+              class: 'pop-review'
+            }).append($('<div/>', {
+              class: 'pop-review-score'
+            }).append($('<span/>', {
+              class: 'pop-review-score-current',
+              text: '4.5'
+            })).append($('<span/>', {
+              class: 'pop-review-score-total',
+              text: '/5'
+            }))).append($('<div/>', {
+              class: 'pop-review-text',
+              text: '5,808건의 리뷰'
+            })))).appendTo($('#pop-carousel-inner .card-group:eq(' + count + ')'));
         });//for each문
 
         
