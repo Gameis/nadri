@@ -32,12 +32,11 @@ public class UserController {
 	@Autowired	//정확히는 UserService는 인터페이스이고 이걸 상속받은 UserServiceImpl이 온다
 	private UserService userService;	
 	
+	
 	/*
-	@RequestMapping(value="/loginForm",method=RequestMethod.GET)
-	public String loginForm() {
-		return "/user/loginForm";
-	} 	//loginForm
-	*/
+	 * @RequestMapping(value="/loginForm",method=RequestMethod.GET) public String
+	 * loginForm() { return "/user/loginForm"; } //loginForm
+	 */
 	
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String login(@ModelAttribute UserDTO userDTO) {
@@ -46,6 +45,7 @@ public class UserController {
 	
 	//writeForm을 어떻게 처리해야하나 의문...
 	
+	/*
 	@RequestMapping(value="/writeForm",method=RequestMethod.GET)
 	public String writeForm() {
 		return "/user/writeForm";	
@@ -59,15 +59,14 @@ public class UserController {
 	}		//checkId
 	
 	
-	/* 이메일 확인 완성못함
-	@RequestMapping(value="/checkEmail",method=RequestMethod.POST)
-	@ResponseBody	//단순문자로 보낼경우에 붙임
-	public String checkEmail(@RequestParam String email) {
-		return userService.checkEmail(email);
+//	 이메일 확인 완성못함
+//	@RequestMapping(value="/checkEmail",method=RequestMethod.POST)
+//	@ResponseBody	//단순문자로 보낼경우에 붙임
+//	public String checkEmail(@RequestParam String email) {
+//		return userService.checkEmail(email);	
+//	}		//checkEmail
 	
-	}		//checkEmail
-	
-	*/
+
 	
 	@RequestMapping(value="/checkPostSearch",method=RequestMethod.POST)
 	@ResponseBody	//단순문자로 보낼경우에 붙임
@@ -122,6 +121,10 @@ public class UserController {
 	public void delete(@RequestParam String searchId) {
 		 userService.delete(searchId);
 	}
+	
+	*/
+	
+	
 	
 	/*
 	//개인 이미지 변경하기

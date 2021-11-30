@@ -119,7 +119,7 @@
 	    <version>1.4</version>
 	</dependency>
 	
-	<!-- 메일인증 -->	
+	<!-- 메일인증 추가 필요함-->	
     <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
      <dependency>
          <groupId>javax.mail</groupId>

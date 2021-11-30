@@ -3,13 +3,14 @@ $('#loginBtn').click(function(){
 	$('#idDiv').empty();
   	$('#pwdDiv').empty();
 
-	if($('input[name="id"]').val()=='')
-		$('#idDiv').html('로그인아이디 입력');
-	else if($('input[name="pwd"]').val()=='')
-		$('#pwdDiv').html('로그인비밀번호 입력');
+	if($('#floatingInput').val()==''){
+		$('#idDiv').html('아이디를 입력해주세요');
+	}	
+	else if($('#floatingPassword').val()==''){
+		$('#pwdDiv').html('비밀번호를 입력해주세요');
+	}	
 	else{
-		//$('form[name="loginForm"]').submit(); - 페이지 이동
-		//페이지 이동없이 출력하라
+
 		$.ajax({
 			url:'/nadri/user/login',
 			type: 'post',
@@ -28,13 +29,17 @@ $('#loginBtn').click(function(){
 					$('#loginResult').css('font-weight', 'bold');
 				}
 			},		//success
+			
 			error: function(err){
 				console.log(err);
 			}
+			
 		});		//ajax
 	} 		//else			
 });		//click	
 
+
+/*
 //회원가입
 $('#writeBtn').click(function(){
 	//alert("연결?");
@@ -154,6 +159,6 @@ $('#checkPostSearchBtn').click(function(){
 });		//checkPostSearchBtn click
 
 
-
+*/
 
 //이메일 인증확인

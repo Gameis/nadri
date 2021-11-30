@@ -11,14 +11,14 @@
 		<typeAlias type="area.bean.ImgDTO" alias="img"/>
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
-<<<<<<< HEAD
+
 
  		<typeAlias type="user.bean.UserDTO" alias="user"/>
 		<typeAlias type="user.bean.ZipcodeDTO" alias="zipcode"/>		
 		<typeAlias type="user.bean.UserImageDTO" alias="userImg"/>		
 		
-=======
+
 		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
->>>>>>> ee78d2aee77c2eb897d50feb20efa788ac2b0e2a
+
 	</typeAliases>
 </configuration>
