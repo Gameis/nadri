@@ -12,5 +12,7 @@ public class ImgDTO {
 	private int img_seq;
 	private String img_name;
 	private String img_path;
-	private int nadri_seq;
+	private int content_seq;
+	private int seq;
+	private int main_seq;
 }
