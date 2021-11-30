@@ -89,4 +89,9 @@ public class AreaController {
 	public List<PopMainDTO> onArea() {
 		return areaService.onArea();
 	}
+	
+	@RequestMapping(value="/popular", method=RequestMethod.GET)
+	public String popular() {
+		return "/repository/jsp/popular/popular";
+	}
 }
