@@ -39,7 +39,7 @@
         </div><!--areaHeader-->
         
 	    <div id="popularLocation" class="popularLocation">
-	        <div id="popularLocation_name"><h1>명동</h1></div>
+	        <div id="popularLocation_name"><h1>pop_name</h1></div>
 	    </div><!--popularLocation-->
 	    
 	    <div class="popularLocation-score-review-like">
@@ -79,7 +79,7 @@
 		    		<i class="bi bi-clock-fill"></i>
 		    		<div class="one-line">
 		    			<span class="open-status" style="color: #06AEBD">영업중</span>
-		    			<span class="field">연중무휴</span>
+		    			<span class="field">pop_businesstime</span>
 		    		</div><!-- businessTime -->
 		    		<i class="bi bi-chevron-right"></i>
 		    	</div><!-- pop-businesstime -->
@@ -88,7 +88,7 @@
 		    		<i class="bi bi-info-circle-fill"></i>
 		    		<div class="one-line">
 		    			<span class="pop-tourismTime">추천 관광시간 :</span>
-		    			<span class="field">3~4시간</span>
+		    			<span class="field">pop_tourismtime</span>
 		    		</div>
 		    	</div>
 		    	
@@ -99,18 +99,9 @@
 		    				<span class="title">주소 : </span>
 		    				<span class="field">서울 중구 명동</span>
 		    			</div>
-		    			<span class="more-btn"><a href="https://map.kakao.com/link/map/명동,33.450701,126.570667">지도</a></span>
+		    			<!-- <span class="more-btn"><a href="https://map.kakao.com/link/map/명동,33.450701,126.570667">지도</a></span> -->
 		    		</div>
 		    		<div class="map-box">
-		    			<!-- <div class="detail-map" style="background-image: url(https://ak-d.tripcdn.com/images/0zv64223458xjhrup336F.jpg);
-												    position: relative;
-												    height: 100%;
-												    overflow: hidden;
-												    background-size: cover;
-												    background-repeat: no-repeat;
-												    background-position: center center;
-												    border-radius: 2px;">						    
-					    </div>detail-map -->
 					    <div id="map" style="width:100%;height:100%;"></div>
 		    		</div><!-- map-box -->
 		    	</div><!-- pop-address-map -->
@@ -119,7 +110,7 @@
 		    		<i class="bi bi-telephone-fill"></i>
 		    		<div class="one-line">
 		    			<span class="title">전화번호</span>
-		    			<span class="field">+82-2-120</span>
+		    			<span class="field">pop_call</span>
 		    		</div>
 		    	</div>
 		    	
@@ -184,51 +175,61 @@ $(function(){
 		type: 'get',
 		data: 'pop_seq='+'3',
 		success: function(data){
+			alert(JSON.stringify(data));
 			alert('성공햇다');
+			
+			$('#popularLocation_name h1').text(data.pop_name);
+			$('.pop-businesstime .on-line .field').text(data.pop_businesstime);
+			$('.pop-tourismtime .on-line .field').text(data.pop_tourismtime);
+			$('.pop-call .on-line .field').text(data.pop_tourismtime);
+			
+			
+			
+			
+			//카카오맵 API
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = { 
+			    center: new kakao.maps.LatLng(data.map_x, data.map_y), // 지도의 중심좌표
+			    level: 3 // 지도의 확대 레벨
+			};
+			
+			var map = new kakao.maps.Map(mapContainer, mapOption);
+			
+			//마커가 표시될 위치입니다 
+			var markerPosition  = new kakao.maps.LatLng(data.map_x, data.map_y); 
+			
+			//마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+			position: markerPosition
+			});
+			
+			//마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+			var iwContent = '<div style="padding:5px;">'+data.pop_name+' <br><a href="https://map.kakao.com/link/map/'+data.pop_name+','+data.map_x+','+data.map_y+'" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/'+data.pop_name+','+data.map_x+','+data.map_y+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			iwPosition = new kakao.maps.LatLng(data.map_x, data.map_y); //인포윈도우 표시 위치입니다
+		    iwRemoveable = true;
+
+			
+			//인포윈도우를 생성합니다
+			var infowindow = new kakao.maps.InfoWindow({
+			position : iwPosition, 
+			content : iwContent,
+		    removable : iwRemoveable
+			});
+			
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function() {
+			      // 마커 위에 인포윈도우를 표시합니다
+			      infowindow.open(map, marker);  
+			});
 		},error: function(err){
-			alert('실패했다');
 			console.log(err);
+			alert('실패했따');
 		}
 	});
-	var location_name = '서울';
-	var x = 37.4923661;
-	var y = 127.0292978;
 	
-	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-	mapOption = { 
-	    center: new kakao.maps.LatLng(x, y), // 지도의 중심좌표
-	    level: 3 // 지도의 확대 레벨
-	};
 	
-	var map = new kakao.maps.Map(mapContainer, mapOption);
 	
-	//마커가 표시될 위치입니다 
-	var markerPosition  = new kakao.maps.LatLng(x, y); 
-	
-	//마커를 생성합니다
-	var marker = new kakao.maps.Marker({
-	position: markerPosition
-	});
-	
-	//마커가 지도 위에 표시되도록 설정합니다
-	marker.setMap(map);
-	var iwContent = '<div style="padding:5px;">'+location_name+' <br><a href="https://map.kakao.com/link/map/'+location_name+','+x+','+y+'" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/'+location_name+','+x+','+y+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-	iwPosition = new kakao.maps.LatLng(x, y); //인포윈도우 표시 위치입니다
-    iwRemoveable = true;
-
-	
-	//인포윈도우를 생성합니다
-	var infowindow = new kakao.maps.InfoWindow({
-	position : iwPosition, 
-	content : iwContent,
-    removable : iwRemoveable
-	});
-	
-	// 마커에 클릭이벤트를 등록합니다
-	kakao.maps.event.addListener(marker, 'click', function() {
-	      // 마커 위에 인포윈도우를 표시합니다
-	      infowindow.open(map, marker);  
-	});
 });
 	
 
