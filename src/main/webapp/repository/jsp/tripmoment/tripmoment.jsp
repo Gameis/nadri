@@ -70,7 +70,8 @@
 													data-bs-ride="carousel">
 													<div class="carousel-inner">
 														<div class="carousel-item active">
-															<img alt="" src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
+															<img alt=""
+																src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
 																class="img-img">
 															<div class="img-grey"></div>
 															<img
@@ -81,16 +82,14 @@
 															<img alt="" src="/nadri/repository/img/main/seoul_1.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
-															<img
-																src="/nadri/repository/img/main/seoul_1.jpg"
+															<img src="/nadri/repository/img/main/seoul_1.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt="" src="/nadri/repository/img/main/seoul_1.jpg"
+															<img alt="" src="/nadri/repository/img/main/seoul_2.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
-															<img
-																src="/nadri/repository/img/main/seoul_1.jpg"
+															<img src="/nadri/repository/img/main/seoul_2.jpg"
 																class="d-block w-100" alt="..." style="width: 650px;">
 														</div>
 													</div>
@@ -119,13 +118,11 @@
 												class="image-gallery-thumbnails-wrapper container image-gallery-overview">
 												<div class="image-gallery-thumbnails">
 													<div style="display: flex;">
-														<button type="button"
-															class="image-gallery-left-nav image-gallery-overview-left-nav">
+														<button type="button" class="image-gallery-left-nav image-gallery-overview-left-nav">
 															<i class="c-icon icon-back-top arrow-left"></i>
 														</button>
 
-														<button type="button"
-															class="image-gallery-right-nav image-gallery-overview-right-nav">
+														<button type="button" class="image-gallery-right-nav image-gallery-overview-right-nav">
 															<i class="c-icon icon-back-top arrow-right"></i>
 														</button>
 													</div>
@@ -145,12 +142,12 @@
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
+															src="/nadri/repository/img/main/seoul_2.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 4"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
+															src="/nadri/repository/img/main/seoul_2.jpg"></img>
 														</a>
 													</div>
 												</div>
@@ -163,7 +160,7 @@
 
 						<!-- BoxRight -->
 						<div class='BoxRight box-right'
-							style="height: 950px; position: relative; z-index: 0">
+							style="position: relative; z-index: 0">
 							<div class="trip_User trip_moment_user userContainer">
 								<div class="trip_container">
 									<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
@@ -254,8 +251,19 @@
 		</div>
 		<!-- TravelDetailContainer -->
 	</div>
+<script type="text/javascript"
+	src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+<!--  <script type="text/javascript">
+	$('.PhotoStyle').each(function() {
+		var boxhight = 0;
+		$('.image-gallery .BoxRight', this).each(function() {
+			if ($(this).height() > boxhight)
+				boxhight = $(this).height();
+		});
+		$('.image-gallery .BoxRight', this).height(boxhight);
+	});
+</script>
 
-	<script type="text/javascript"
-		src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+-->
 </body>
 </html>

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
     $('.article_content').each(function(){
         var content = $(this).children('.content_collapse');
         var content_txt = content.text();
