@@ -94,6 +94,9 @@ public class PopController {
 	@ResponseBody
 	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
 		System.out.println("컨트롤왔다");
+		
+		System.out.println(popService.getLocation(pop_seq));
+		
 		return popService.getLocation(pop_seq);
 		
 	}
