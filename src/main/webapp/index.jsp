@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>전 세계 인기 여행지 & 꼭 가봐야 할 명소 추천 | 트립닷컴</title>
+<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" type="text/css"
 	href="./repository/css/main/main_con.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -491,7 +492,7 @@
   <path fill-rule="evenodd"
 														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 </svg>
-												<span>개복치</span>
+												<span>망개떡</span>
 											</div>
 											<div class="bottom_user_right">
 												<img src="./repository/img/main/thumb.png">
@@ -524,7 +525,7 @@
   <path fill-rule="evenodd"
 														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 </svg>
-												<span>개복치</span>
+												<span>찹쌀떡</span>
 											</div>
 											<div class="bottom_user_right">
 												<img src="./repository/img/main/thumb.png">
@@ -557,7 +558,7 @@
   <path fill-rule="evenodd"
 														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 </svg>
-												<span>개복치</span>
+												<span>말랑한귤</span>
 											</div>
 											<div class="bottom_user_right">
 												<img src="./repository/img/main/thumb.png">
@@ -587,7 +588,7 @@
   <path fill-rule="evenodd"
 														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 </svg>
-												<span>개복치</span>
+												<span>모찌떡</span>
 											</div>
 											<div class="bottom_user_right">
 												<img src="./repository/img/main/thumb.png">

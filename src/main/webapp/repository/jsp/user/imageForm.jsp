@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	 <img src="/nadri/repository/jsp/main/main_top_modal/login_api/image/google.png" alt="google"  width="100" height="50"/>
 
 </body>
 </html>

@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
 <style type="text/css">
 #writeForm div {
 	color: pink;
@@ -8,7 +14,6 @@
 	font-weight: bold;
 }
 </style>
-
 <form name="writeForm" id="writeForm">
 	<table border="1" cellspacing="0" cellpadding="5">
 		<tr>
@@ -24,7 +29,6 @@
 			<td>
 				<input type="text" name="id" id="id" placeholder="아이디 입력">
 
- 
 				<input type="hidden" name="check" id="check" value="">
 				<div id= "idDiv"></div>
 			</td>	
@@ -49,7 +53,6 @@
 		<tr>
 			<td width="100" align="center">성별</td>
 			<td>
-			<%-- radio는 한개만 선택가능함 --%>
 				<input type="radio" name="gender" value="0" checked>남
 				<input type="radio" name="gender" value="1">여
 			</td>
@@ -94,16 +97,17 @@
 			</td>
 		</tr>
 		
+		<tr>
+			<td colspan="2" align="center">
+				<input type="button" id="writeBtn" value="회원가입">
+				<input type="reset" value="다시작성">
+			</td>
+		</tr>
 	</table>
 </form>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/nadri/repository/js/user/user.js"></script>
 
-
-
-
-
-
-
-
-
-
+</body>
+</html>

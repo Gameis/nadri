@@ -613,6 +613,26 @@
         <!--여기까지 액티비티-->
         <div class="areaInfo">
           <h2>서울 여행 정보</h2>
+          <div class="areaInfo-title">
+            <div class="areaInfo-title-icon">
+              <i class="bi bi-map"></i>
+            </div>
+            <div class="area-title-text">서울 소개</div>
+            <div class="area-content">
+              <div class="area-content-text">
+                <p>
+                  서울은 대한민국의 수도입니다. 서울 안에 자리한 사원과 궁전이 이 도시의 길고 깊은 역사를 보여줍니다. 이곳에서는 아름다운 자연과 현대적인 고층 빌딩이 만나 과거와 현재가 융합된 도시를 형성합니다. 경복궁과 창덕궁은 오래된 고궁이며, 북촌한옥마을과 남산골 한옥마을은 한국의 전통이 잘 보존된 마을입니다. 서울은 쇼핑의 천국이기도 합니다. 명동, 동대문시장, 신사동, 삼청동으로 가서 의류, 보석, 화장품을 비롯한 온갖 종류의 최신 패션 상품을 만나보세요. 밤이 되면 서울은 더 화려해집니다. N 서울 타워 정상에 올라 눈부시게 빛나는 서울의 야경을 감상하며 눈 호강을 해보세요. 한강은 수많은 한국 드라마에서 배경으로 등장하는 단골손님입니다. 서울의 맛있는 음식 또한 놓쳐선 안 되겠죠. 비빔밥, 김치, 삼계탕(인삼을 넣은 한국식 치킨 수프) 등 저마다 개성을 뽐내는 음식은 모두 맛있습니다.
+                </p>
+              </div>
+              <div class="area-content-plus">
+                <span>더 보기</span>
+                <i class="bi bi-chevron-right"></i>
+              </div>
+            </div>
+            <div class="map-box">
+              <div class="img-map"></div>
+            </div>
+          </div>
         </div>
     </div><!--areaWrap-->
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
@@ -624,9 +644,9 @@
       url: '/nadri/area/onArea',
       type: 'get',
       success: function(data) {
-        alert(JSON.stringify(data));
 
         var count = -1;
+        var popCount = 1;
         $.each(data, function(index, items){
           if(index % 4 == 0) {
 
@@ -651,7 +671,7 @@
             class: 'card'
           }).append($('<div/>', {
               class: 'card_rank',
-              text: 'TOP 1'
+              text: 'TOP ' + popCount++
             })).append($('<div/>', {
               class: 'slide_img'
             }).append($('<img/>', {
@@ -663,7 +683,7 @@
             }).append($('<div/>', {
               class: 'pop-title'
             }).append($('<a/>', {
-              href: '#',
+              href: '/nadri/area/popular?pop_seq=' + items.pop_seq,
               text: items.pop_name
             }))).append($('<div/>', {
               class: 'pop-review'

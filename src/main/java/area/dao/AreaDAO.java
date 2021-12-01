@@ -13,6 +13,6 @@ public interface AreaDAO {
 
 	public void popWrite(TripPopDTO tripPopDTO, TripPopMapDTO tripPopMapDTO);
 
-	public List<PopMainDTO> printPopMain(int content);
+	public List<PopMainDTO> printPopMain(int main_seq);
 
 }

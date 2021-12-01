@@ -1,37 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/nadri/repository/css/main/main_footer.css">
+<link rel="stylesheet" type="text/css"
+	href="/nadri/repository/css/main/main_footer.css">
 </head>
 <body>
-<hr>
-<div class="trip_main_footer">
-		<div class="trip_main_footer_line">
+	<div class="trip_main_footer">
+		<div class="main_footer trip_main_footer_line">
 			<div class="trip_main_footer_inner">
-				<div class="trip_main_foot_clearfix">
-					<div class="foot_clearfix_block">
-						<h3>고객문의</h3>
-						<ul class="foot_clearfix_list_1">
-							<li><a target="">고객센터</a></li>
-							<li><a target="">회사소개</a></li>
-							<li><a target="">기타서비스</a></li>
-						</ul>
+				<div class="main_footer_cnt trip_main_foot_clearfix">
+					<div class="main_footer_links foot_clearfix_block">
+						<div class="main_footer_block">
+							<h3 class="main_footer_block-title">고객문의</h3>
+							<ul class="foot_clearfix_list_1">
+								<li class="main_footer_list_item"><a target="">고객센터</a></li>
+								<li class="main_footer_list_item"><a target="">서비스 보장제</a></li>
+								<li class="main_footer_list_item"><a target="">웹사이트 피드백</a></li>
+							</ul>
 
-						<ul class="foot_clearfix_icon">
-							<li><a target=""><img src="./repository/img/main/facebook.png"></a></li>
-							<li><a target=""><img src="./repository/img/main/instagram.png"></a></li>
-							<li><a target=""><img src="./repository/img/main/naver.png"></a></li>
-							<li><a target=""><img src="./repository/img/main/youtube.png"></a></li>
-							<li><a target=""><img src="./repository/img/main/kakao.png"></a></li>
-						</ul>
+							<ul class="foot_clearfix_icon">
+								<li class="foot_clearfix_icon-item icon_facebook"><a
+									target="_blank" href="http://www.facebook.com/tripcom.kr">
+										<img src="./repository/img/main/facebook.png">
+								</a></li>
+								<li class="foot_clearfix_icon-item icon_instagram"><a
+									target="_blank" href="http://www.instagram.com/tripcom.kr">
+										<img src="./repository/img/main/instagram.png">
+								</a></li>
+								<li class="foot_clearfix_icon-item icon_naver"><a target="">
+										<img src="./repository/img/main/naver.png">
+								</a></li>
+								<li class="foot_clearfix_icon-item icon_youtube"><a
+									target=""> <img src="./repository/img/main/youtube.png">
+								</a></li>
+								<li class="foot_clearfix_icon-item icon_kakao"><a target="">
+										<img src="./repository/img/main/kakao.png">
+								</a></li>
+							</ul>
+						</div>
 					</div>
 
-					<div class="foot_clearfix_block">
-						<h3>회사소개</h3>
+					<div class="main_footer_block">
+						<h3 class="main_footer_block-title">회사소개</h3>
 						<ul class="foot_clearfix_list_2">
 							<li><a target="">트립닷컴 소개</a></li>
 							<li><a target="">뉴스룸</a></li>
@@ -42,9 +56,8 @@
 						</ul>
 					</div>
 
-
-					<div class="foot_clearfix_block">
-						<h3>기타서비스</h3>
+					<div class="main_footer_block">
+						<h3 class="main_footer_block-title">기타서비스</h3>
 						<ul class="foot_clearfix_list_3">
 							<li><a target="">IR</a></li>
 							<li><a target="">트립닷컴 리워드</a></li>
@@ -54,18 +67,35 @@
 							<li><a target="">액티비티 상품 제휴</a></li>
 						</ul>
 					</div>
-				</div>
 
-				<div class="trip_main_foot_clearfix_payment">
-					<div class="payment_title">결제방법</div>
-					<div class="payment_list">
-						<div class="payment_icon naver-pay" alt="naverpay"></div>
-						<div class="payment_icon shinhan" alt="shinhan"></div>
-						<div class="payment_icon kakao-pay" alt="kakaopay"></div>
-						<div class="payment_icon samsung" alt="samsung"></div>
-						<div class="payment_icon nh" alt="nh"></div>
-						<div class="payment_icon keb" alt="keb"></div>
-						<div class="payment_icon hyundai-pay" alt="hyundaipay"></div>
+					<div class="main_footer_others">
+						<div class="trip_main_foot_clearfix_payment">
+							<div class="payment_title">결제방법</div>
+							<div class="payment_list">
+								<div class="payment_icon naver-pay" alt="naverpay"></div>
+								<div class="payment_icon bc-card" alt="bc-card"></div>
+								<div class="payment_icon shinhan" alt="shinhan"></div>
+								<div class="payment_icon kakao-pay" alt="kakao-pay"></div>
+								<div class="payment_icon samsung" alt="samsung"></div>
+								<div class="payment_icon nh" alt="nh"></div>
+								<div class="payment_icon keb" alt="keb"></div>
+								<div class="payment_icon samsung-pay" alt="samsung-pay"></div>
+								<div class="payment_icon hyundai-pay" alt="hyundai-pay"></div>
+							</div>
+						</div>
+						
+						<div class="main_footer_partner">
+							<div class="main_footer_partner-title">트립닷컴 제휴사</div>
+						</div>
+						<div class="main_footer_partner-body">
+							<div class="main_footer_partner-item">
+								<img class="main_footer_partner-logo" src="/nadri/repository/img/main/GOOGLE.png">
+							</div>
+							
+							<div class="main_footer_partner-item">
+								<img class="main_footer_partner-logo" src="/nadri/repository/img/main/TRIPADVISOR.png">
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -73,9 +103,9 @@
 				<div class="trip_main_foot_awards">
 					<div class="foot_awards_body">
 						<div class="foot_awards_items">
-							<img alt="수상" src="./repository/img/main/Awards.png">
+							<img height="40" alt="수상" src="./repository/img/main/Awards.png">
 							<div class="foot_awards_text">
-								"한국소비자포럼 주관" <br> "올해의브랜드대상 2년 연속 수상"
+								한국소비자포럼 주관 <br> 올해의브랜드대상 2년 연속 수상
 							</div>
 						</div>
 					</div>

@@ -32,8 +32,8 @@ public class AreaServiceImpl implements AreaService {
 	}
 
 	@Override
-	public List<PopMainDTO> onArea() {
-		return areaDAO.printPopMain(3);
+	public List<PopMainDTO> onArea(int main_seq) {
+		return areaDAO.printPopMain(main_seq);
 	}
 
 }

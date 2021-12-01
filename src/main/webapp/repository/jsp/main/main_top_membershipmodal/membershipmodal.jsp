@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+r<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,12 +23,11 @@
       </div>
       
       <div class="modal-footer">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open second modal</button>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" disabled="disabled">약관신청</button>
       </div>
     </div>
   </div>
 </div>
-
 
 <%-- 다음모달  --%>
 <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
@@ -41,16 +40,17 @@
       
       <%--회원가입신청 --%>
       <div class="modal-body">
-      		<jsp:include page="membershipmodal2.jsp" />	
+      		<jsp:include page="writeForm.jsp" />	
       </div>
       
       <div class="membership">
-        <button class="btn btn-primary" >회원가입신청</button>
+        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">이전으로 돌아가기</button>
       </div>
     </div>
   </div>
 </div>
-<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
+
+<a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">회원가입</a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

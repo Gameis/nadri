@@ -39,8 +39,10 @@ public class AreaController {
 	public void popWrite(@ModelAttribute TripPopDTO tripPopDTO,
 						 @ModelAttribute TripPopMapDTO tripPopMapDTO,
 						 @ModelAttribute ImgDTO imgDTO,
-						 @RequestParam("img[]") List<MultipartFile> list) {
+						 @RequestParam("img[]") List<MultipartFile> list,
+						 @RequestParam("main_seq") int main_seq) {
 		
+		System.out.println("main_seq = " + tripPopDTO.getMain_seq());
 		String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\popular";
 		String fileName = null;
 		File file = null;
@@ -87,6 +89,11 @@ public class AreaController {
 	@RequestMapping(value="/onArea", method=RequestMethod.GET)
 	@ResponseBody
 	public List<PopMainDTO> onArea() {
-		return areaService.onArea();
+		return areaService.onArea(99);
+	}
+	
+	@RequestMapping(value="/popular", method=RequestMethod.GET)
+	public String popular() {
+		return "/repository/jsp/popular/popular";
 	}
 }
