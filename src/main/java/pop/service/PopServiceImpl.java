@@ -1,8 +1,11 @@
 package pop.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.dao.PopDAO;
 
@@ -15,6 +18,12 @@ public class PopServiceImpl implements PopService {
 	public TripPopLocationDTO getLocation(int pop_seq) {
 		
 		return popDAO.getLocation(pop_seq);
+	}
+
+	@Override
+	public List<TripPopImgDTO> getPopImg(int pop_seq) {
+		
+		return popDAO.getPopImg(pop_seq);
 	}
 
 }

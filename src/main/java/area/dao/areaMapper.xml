@@ -12,7 +12,7 @@
 	</insert>
 	
 	<insert id="popMap" parameterType="tripPopMap">
-		insert into tripPopMap values(pop_seq.currval, #{map_x}, #{map_y})
+		insert into tripPopMap values(pop_seq.currval, #{address_name}, #{map_x}, #{map_y})
 	</insert>
 	
 	<select id="printPopMain" resultType="popMain">

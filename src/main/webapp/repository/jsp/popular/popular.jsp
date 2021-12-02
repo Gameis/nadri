@@ -100,7 +100,7 @@
 		    			<i class="bi bi-geo-alt-fill"></i>
 		    			<div class="one-line">
 		    				<span class="title">주소 : </span>
-		    				<span class="field">서울 중구 명동</span>
+		    				<span class="field">address_name</span>
 		    			</div>
 		    			<!-- <span class="more-btn"><a href="https://map.kakao.com/link/map/명동,33.450701,126.570667">지도</a></span> -->
 		    		</div>
@@ -185,7 +185,9 @@ $(function(){
 			$('#popularLocation_name h1').text(data.pop_name);
 			$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
 			$('.pop-tourismtime .one-line .field').text(data.pop_tourismtime);
+			$('.pop-address-map .one-line .field').text(address_name);
 			$('.pop-call .one-line .field').text(data.pop_call);
+			
 			
 			//카카오맵 API
 			var location1 = data.pop_name;
@@ -232,6 +234,20 @@ $(function(){
 		},error: function(err){
 			console.log(err);
 			alert('실패했따');
+		}
+	});
+
+	$.ajax({
+		url: '/nadri/popular/getPopImg',
+		type: 'post',
+		data: 'pop_seq='+$('#pop_seq').val(),
+		success: function(data){
+			alert(JSON.stringify(data));
+			alert('이미지 성공해따')
+			
+		},error: function(err){
+			console.log(err);
+			alert('이미지 ajax 실패했다')
 		}
 	});
 			
