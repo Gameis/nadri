@@ -43,7 +43,9 @@ public class AreaController {
 						 @RequestParam("main_seq") int main_seq) {
 		
 		System.out.println("main_seq = " + tripPopDTO.getMain_seq());
-		String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\popular";
+//		String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\popular\\popmain"; //건휘
+		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\popular\\popmain"; //현석
+		
 		String fileName = null;
 		File file = null;
 		

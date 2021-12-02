@@ -24,4 +24,10 @@
 		join trippopmap using (pop_seq)
 		where pop_seq = #{pop_seq}
 	</select>
+	
+	<select id="getPopImg" parameterType="int" resultType="popImg">
+		select img_seq, img_name, img_path 
+		from img
+		where seq=#{pop_seq}
+	</select>
 </mapper>

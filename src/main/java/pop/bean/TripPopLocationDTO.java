@@ -9,6 +9,12 @@ public class TripPopLocationDTO {
 	private String pop_businesstime;//영업시간
 	private String pop_tourismtime;//추천관광시간
 	private String pop_call;//명소전화번호??
+	private String address_name;
 	private String map_x;
 	private String map_y;
+	
+//	private 조회수
+//	private 좋아요수
+//	private 리뷰평점
+	
 }

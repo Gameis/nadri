@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.service.PopService;
@@ -68,7 +69,7 @@ public class PopController {
 			}
 			
 			
-			tripPopReviewDTO.setPop_review_imageName(newFileName);
+			//tripPopImg.setPop_review_imageName(newFileName);
 			System.out.println(tripPopReviewDTO);
 			
 			//DB갓다오자
@@ -99,6 +100,15 @@ public class PopController {
 		
 		return popService.getLocation(pop_seq);
 		
+	}
+	
+	@RequestMapping(value="/getPopImg", method=RequestMethod.POST)
+	@ResponseBody
+	public List<TripPopImgDTO> getPopImg(@RequestParam int pop_seq) {
+		System.out.println("이미지 컨트롤 와따");
+		System.out.println(popService.getPopImg(pop_seq));
+		
+		return popService.getPopImg(pop_seq);
 	}
 	
 	

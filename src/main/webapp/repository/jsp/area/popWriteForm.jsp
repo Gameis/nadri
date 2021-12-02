@@ -14,9 +14,9 @@
         영업시간 : <input type="text" name="pop_businessTime" id="pop_businessTime"/><br/>
         관광시간 : <input type="text" name="pop_tourismTime" id="pop_tourismTime"/><br/>
         전화번호 : <input type="text" name="pop_call" id="pop_call"/><br/>
-        주소 : <input type="text" name="address_name" id="address_name" class="address_name"/><br/>
-        x : <input type="text" name="map_x" id="map_x" class="map_x"/><br/>
-        y : <input type="text" name="map_y" id="map_y" class="map_y"/><br/>
+        주소 : <input type="text" name="address_name" id="address_name" class="address_name" readonly/><br/>
+        x : <input type="text" name="map_x" id="map_x" class="map_x" readonly/><br/>
+        y : <input type="text" name="map_y" id="map_y" class="map_y" readonly/><br/>
         이미지 : <input type="file" name="img[]" id="img" multiple/><br/>
         <input type="button" id="popWriteBtn" value="작성완료"/>
         <input type="reset" value="다시작성"/>
@@ -38,13 +38,13 @@ $('#pop_name').focusout(function(){
             var map_x = data.documents[0].x; 
             var map_y = data.documents[0].y;
             
-            alert(address_name);
+            /* alert(address_name);
             alert(map_x);
-            alert(map_y);
+            alert(map_y); */
             
-            $('input[name=address_name]').attr('value', address_name);
-            $('input[name=map_x]').attr('value', map_x);
-            $('input[name=map_y]').attr('value', map_y);
+            $('input[name="address_name"]').attr('value', address_name);
+            $('input[name="map_x"]').attr('value', map_x);
+            $('input[name="map_y"]').attr('value', map_y);
                         
         },
         error: function(err){
