@@ -81,7 +81,7 @@
 		    	<div class="pop-businesstime">
 		    		<i class="bi bi-clock-fill"></i>
 		    		<div class="one-line">
-		    			<span class="open-status" style="color: #06AEBD">영업중</span>
+		    			<span class="open-status" style="color: #06AEBD">영업시간</span>
 		    			<span class="field">pop_businesstime</span>
 		    		</div><!-- businessTime -->
 		    		<i class="bi bi-chevron-right"></i>

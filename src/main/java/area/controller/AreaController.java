@@ -96,4 +96,5 @@ public class AreaController {
 	public String popular() {
 		return "/repository/jsp/popular/popular";
 	}
+	
 }
