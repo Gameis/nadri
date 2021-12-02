@@ -1,18 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>서울 명동 정보 및 후기 | 트립닷컴</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popular.css">
     <script src="https://kit.fontawesome.com/2536a17ab1.js" crossorigin="anonymous"></script><!-- font awesome -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+	<input type="hidden" id="pop_seq" value="${param.pop_seq }"/>
+	
     <div id="areaWrap" class="areaWrap">
         <div id="areaHeader" class="areaHeader">
             
@@ -78,7 +81,7 @@
 		    	<div class="pop-businesstime">
 		    		<i class="bi bi-clock-fill"></i>
 		    		<div class="one-line">
-		    			<span class="open-status" style="color: #06AEBD">영업중</span>
+		    			<span class="open-status" style="color: #06AEBD">영업시간</span>
 		    			<span class="field">pop_businesstime</span>
 		    		</div><!-- businessTime -->
 		    		<i class="bi bi-chevron-right"></i>
@@ -162,10 +165,11 @@
         
         
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/nadri/repository/js/pop/popular.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a"></script>
+<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
 <script type="text/javascript">
 //지도api
 $(function(){
@@ -173,65 +177,65 @@ $(function(){
 	$.ajax({
 		url: '/nadri/popular/getLocation',
 		type: 'get',
-		data: 'pop_seq='+'3',
+		data: 'pop_seq='+$('#pop_seq').val(),
 		success: function(data){
 			alert(JSON.stringify(data));
 			alert('성공햇다');
 			
 			$('#popularLocation_name h1').text(data.pop_name);
-			$('.pop-businesstime .on-line .field').text(data.pop_businesstime);
-			$('.pop-tourismtime .on-line .field').text(data.pop_tourismtime);
-			$('.pop-call .on-line .field').text(data.pop_tourismtime);
-			
-			
-			
+			$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
+			$('.pop-tourismtime .one-line .field').text(data.pop_tourismtime);
+			$('.pop-call .one-line .field').text(data.pop_call);
 			
 			//카카오맵 API
+			var location1 = data.pop_name;
+			var map_x = data.map_y;
+			var map_y = data.map_x;
+			
+
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = { 
-			    center: new kakao.maps.LatLng(data.map_x, data.map_y), // 지도의 중심좌표
+			    center: new kakao.maps.LatLng(map_x, map_y), // 지도의 중심좌표
 			    level: 3 // 지도의 확대 레벨
 			};
-			
+
 			var map = new kakao.maps.Map(mapContainer, mapOption);
-			
+
 			//마커가 표시될 위치입니다 
-			var markerPosition  = new kakao.maps.LatLng(data.map_x, data.map_y); 
-			
+			var markerPosition  = new kakao.maps.LatLng(map_x, map_y); 
+
 			//마커를 생성합니다
 			var marker = new kakao.maps.Marker({
 			position: markerPosition
 			});
-			
+
 			//마커가 지도 위에 표시되도록 설정합니다
 			marker.setMap(map);
-			var iwContent = '<div style="padding:5px;">'+data.pop_name+' <br><a href="https://map.kakao.com/link/map/'+data.pop_name+','+data.map_x+','+data.map_y+'" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/'+data.pop_name+','+data.map_x+','+data.map_y+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-			iwPosition = new kakao.maps.LatLng(data.map_x, data.map_y); //인포윈도우 표시 위치입니다
-		    iwRemoveable = true;
+			var iwContent = '<div style="padding:5px;">'+location1+' <br><a href="https://map.kakao.com/link/map/'+location1+','+map_x+','+map_y+'" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/'+location1+','+map_x+','+map_y+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			iwPosition = new kakao.maps.LatLng(map_x, map_y); //인포윈도우 표시 위치입니다
+			iwRemoveable = true;
 
-			
+
 			//인포윈도우를 생성합니다
 			var infowindow = new kakao.maps.InfoWindow({
 			position : iwPosition, 
 			content : iwContent,
-		    removable : iwRemoveable
+			removable : iwRemoveable
 			});
-			
+
 			// 마커에 클릭이벤트를 등록합니다
 			kakao.maps.event.addListener(marker, 'click', function() {
 			      // 마커 위에 인포윈도우를 표시합니다
 			      infowindow.open(map, marker);  
 			});
+			
 		},error: function(err){
 			console.log(err);
 			alert('실패했따');
 		}
 	});
-	
-	
-	
+			
 });
-	
 
 </script>
 </body>
