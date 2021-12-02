@@ -607,28 +607,28 @@ button, input, optgroup, select, textarea {
 
 .tripphoto .item {
 	width: 25%;
-    padding: 0px 10px 20px;
-    box-sizing: border-box;
-    display: inline-block;
+	padding: 0px 10px 20px;
+	box-sizing: border-box;
+	display: inline-block;
 }
 
 .tripphoto .content {
 	cursor: pointer;
-    padding: 0px 0px 12px;
-    border: 1px solid rgb(228, 228, 228);
-    box-shadow: rgb(255 255 255) 0px 4px 12px 0px;
+	padding: 0px 0px 12px;
+	border: 1px solid rgb(228, 228, 228);
+	box-shadow: rgb(255, 255, 255) 0px 4px 12px 0px;
 }
 
 .tripphoto .img-tripmoment {
 	position: relative;
-    min-height: 60px;
-    max-height: 348px;
-    overflow: hidden;
+	min-height: 60px;
+	max-height: 348px;
+	overflow: hidden;
 }
 
 a, a:hover {
-    outline: none;
-    text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
 
 .tripphoto .img {
@@ -642,15 +642,52 @@ a, a:hover {
 
 .tripphoto .text a {
 	line-height: 24px;
-    max-height: 96px;
-    overflow: hidden;
+	max-height: 96px;
+	overflow: hidden;
+	text-decoration: none;
 }
 
 .tripphoto .item-title {
 	font-size: 16px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+a {
+	-webkit-transition: background-color .5s ease 0s, color .5s ease 0s,
+		width .5s ease 0s, border-width .5s ease 0s, border-color .5s ease 0s;
+}
+
+.tripphoto .user {
+	line-height: 30px;
+	height: 30px;
+	margin-top: 3px;
+	position: relative;
+}
+
+.ellipsis {
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+	word-wrap: break-word; /* 다음 줄로 넘어감 */
+	word-break: break-all; /* 단어의 중간에도 줄 바꿈 O */
+	white-space: nowrap; /* 줄바꿈 X */
+}
+
+.ellipsis::-webkit-scrollbar {
+	display: none;
+}
+
+.text svg {
+	position: absolute;
+	left: 2px;
+	top: 3px;
+	background: rgb(235, 235, 242);
+}
+
+.tripphoto .nickname {
+	margin-left: 32px;
+	overflow: hidden;
 }
 
 /* .carousel-inner img {
