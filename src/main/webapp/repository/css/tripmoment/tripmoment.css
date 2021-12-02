@@ -595,6 +595,64 @@ button, input, optgroup, select, textarea {
 	font-size: 16px;
 }
 
+.travel-photo-title {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.tripphoto {
+	min-height: 700px;
+}
+
+.tripphoto .item {
+	width: 25%;
+    padding: 0px 10px 20px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.tripphoto .content {
+	cursor: pointer;
+    padding: 0px 0px 12px;
+    border: 1px solid rgb(228, 228, 228);
+    box-shadow: rgb(255 255 255) 0px 4px 12px 0px;
+}
+
+.tripphoto .img-tripmoment {
+	position: relative;
+    min-height: 60px;
+    max-height: 348px;
+    overflow: hidden;
+}
+
+a, a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+.tripphoto .img {
+	width: 100%;
+	display: block;
+}
+
+.tripphoto .text {
+	padding: 12px 12px 0px;
+}
+
+.tripphoto .text a {
+	line-height: 24px;
+    max-height: 96px;
+    overflow: hidden;
+}
+
+.tripphoto .item-title {
+	font-size: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 /* .carousel-inner img {
 	height: 550px;
 }

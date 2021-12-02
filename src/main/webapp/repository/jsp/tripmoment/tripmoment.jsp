@@ -118,11 +118,13 @@
 												class="image-gallery-thumbnails-wrapper container image-gallery-overview">
 												<div class="image-gallery-thumbnails">
 													<div style="display: flex;">
-														<button type="button" class="image-gallery-left-nav image-gallery-overview-left-nav">
+														<button type="button"
+															class="image-gallery-left-nav image-gallery-overview-left-nav">
 															<i class="c-icon icon-back-top arrow-left"></i>
 														</button>
 
-														<button type="button" class="image-gallery-right-nav image-gallery-overview-right-nav">
+														<button type="button"
+															class="image-gallery-right-nav image-gallery-overview-right-nav">
 															<i class="c-icon icon-back-top arrow-right"></i>
 														</button>
 													</div>
@@ -247,13 +249,32 @@
 						<!-- BoxRight End -->
 					</div>
 				</div>
+				<!-- 관련 트립 모먼트 -->
+				<div class="travel-photo-title">관련 트립모먼트</div>
+				<div class="PhotoListStyle tripphoto">
+					<div style="position: relative; height: 1250px;">
+						<div class="item item-odd" style="position: absolute; left: 0px; top: 0px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트">
+										<img class="img" alt="서울, 추천 트립 모먼트" src="./repository/img/main/jeonju.jpg">
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="text">
+							<a data-line-clamp="2" class="item-title" title="서울, 추천 트립 모먼트">
+								추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- TravelDetailContainer -->
 	</div>
-<script type="text/javascript"
-	src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
-<!--  <script type="text/javascript">
+<script type="text/javascript" src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+	<!--  <script type="text/javascript">
 	$('.PhotoStyle').each(function() {
 		var boxhight = 0;
 		$('.image-gallery .BoxRight', this).each(function() {
