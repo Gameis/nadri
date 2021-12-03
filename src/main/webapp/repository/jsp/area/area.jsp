@@ -675,7 +675,7 @@
             })).append($('<div/>', {
               class: 'slide_img'
             }).append($('<img/>', {
-              src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
+              src: '/nadri/repository/img/' + items.img_path + '/popmain/' + items.img_name,
               class: 'card-img-top',
               alt: 'top1'
             }))).append($('<div/>', {
