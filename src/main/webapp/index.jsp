@@ -129,9 +129,8 @@
 							<div class="index_popular-dest_jeju">
 								<div class="DestinationStyle">
 									<i class="img-wrap"></i>
-									<div class="Video_module_jeju"
-										style="width: 100%; height: 350px;">
-										<video id="video" class="Video_module" style="width: 100%; height: 100%;">
+									<div class="Video_module_jeju" style="width: 100%; height: 350px;">
+										<video id="video" class="Video_module" style="width: 100%; height: 100%;" muted="muted" autoplay="true" loop="loop">
 											<source src="/nadri/repository/img/main/Jeju_intro.mp4" type="video/mp4">
 										</video>
 										<img class="Video_module"
