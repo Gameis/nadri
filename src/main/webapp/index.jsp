@@ -111,15 +111,13 @@
 							<div class="index_popular-dest_seoul">
 								<div class="DestinationStyle">
 									<i class="img-wrap"></i>
-									<div class="Video_module_seoul"
-										style="width: 100%; height: 350px;">
-										<video id="video" class="Video_module"
-											style="width: 100%; height: 100%;">
-											<source src="./repository/img/main/Seoul_intro.mp4" type="video/mp4">
+									<div class="Video_module_seoul" style="width: 100%; height: 350px;">
+										<video id="video" class="Video_module" style="width: 100%; height: 100%;" muted="muted" autoplay="true" loop="loop">
+											<source src="/nadri/repository/img/main/Seoul_intro.mp4" type="video/mp4">
 										</video>
-										<img alt="서울" class="Video_module"
-											src="./repository/img/main/seoul_3.jpg"
-											style="width: 100%; height: 100%;">
+										<img class="Video_module" 
+											src="/nadri/repository/img/main/seoul_3.jpg" alt="서울"
+											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
 											<a class="title" title="서울" href="">서울</a>
 										</p>
@@ -749,6 +747,17 @@ List = [
 
 
 <!-- video mouseover 시 재생 -->
+<script type="text/javascript">
+	var Video_module_seoul = document.getElementsByClassName('Video_module_seoul')[0]
+	var video = document.getElementById('video')
+	Video_module_seoul.addEventListener('mouseover', function() {
+		video.play()
+	}, false);
+	Video_module_seoul.addEventListener('mouseout', function() {
+		video.pause()
+	}, false);
+</script>
+
 <script type="text/javascript">
 	var Video_module_jeju = document.getElementsByClassName('Video_module_jeju')[0]
 	var video = document.getElementById('video')
