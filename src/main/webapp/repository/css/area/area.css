@@ -357,6 +357,14 @@ button, input, optgroup, select, textarea {
     font-weight: bold;
 }
 
+.area-info-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.area-content {
+    width: 650px;
+}
 .area-content-text p {
     text-overflow: ellipsis;
     height: 88px;
@@ -391,3 +399,59 @@ button, input, optgroup, select, textarea {
     position: absolute;
     right: 0px;
 }
+
+.map-box {
+    height: 114px;
+    width: 247px;
+}
+
+.map-box img {
+    height: 100%;
+    width: 100%;
+}
+ 
+.area-weather h2 {
+    margin-top: 40px;
+    padding: 24px 32px;
+    font-size: 28px;
+    color: rgb(25, 41, 77);
+    line-height: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.area-weather-Info {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    border: 1px solid rgb(218, 223, 230);
+}
+
+.area-weather-Info > div {
+    border: 1px solid rgb(218, 223, 230);
+}
+
+.weather, .weather-text-weather{display: flex;}
+
+.weather { 
+    padding: 0 100px;
+    justify-content: space-between;
+    vertical-align: middle;
+    height: 64px;
+}
+
+.weather * { margin: auto 0;}
+
+.weather-today {
+    grid-row: 1 / span 5;
+    padding: 44px 0 42px;
+}
+.weather-today > div {
+    text-align: center;
+}
+
+.today-num-con {
+    display: flex;
+    justify-content: center;
+}
+
