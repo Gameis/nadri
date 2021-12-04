@@ -49,10 +49,10 @@
 				
 				<div class="container">
 				  <div class="row row-cols-4">
-				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="/nadri/repository/img/popular/review/1a2d6dd5-5a95-4c80-a15c-6f1bf3c6a8d7_choco.jpg"></img></div>
-				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="/nadri/repository/img/popular/review/1a2d6dd5-5a95-4c80-a15c-6f1bf3c6a8d7_choco.jpg"></img></div>
-				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="/nadri/repository/img/popular/review/1a2d6dd5-5a95-4c80-a15c-6f1bf3c6a8d7_choco.jpg"></img></div>
-				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="/nadri/repository/img/popular/review/1a2d6dd5-5a95-4c80-a15c-6f1bf3c6a8d7_choco.jpg"></img></div>
+				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="#"></img></div>
+				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="#"></img></div>
+				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="#"></img></div>
+				    <div class="col" id="review_img"><img style="width: 200px; height: 100%;"src="#"></img></div>
 				  </div>
 				</div>
 				

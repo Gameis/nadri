@@ -7,13 +7,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서울 명동 정보 및 후기 | 트립닷컴</title>
+    <title>트립닷컴</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popular.css">
-    <script src="https://kit.fontawesome.com/2536a17ab1.js" crossorigin="anonymous"></script><!-- font awesome -->
+    <link rel="stylesheet" href="/nadri/repository/css/popular/popreview.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+	<!-- Header -->
+	<div class="trip_common_head_con">
+		<jsp:include page="../main/main_top.jsp">
+			<jsp:param value="param1" name="param1" />
+		</jsp:include>
+	</div>
+	
 	<input type="hidden" id="pop_seq" value="${param.pop_seq }"/>
 	
     <div id="areaWrap" class="areaWrap">
@@ -120,15 +127,18 @@
 		    </div><!-- pop-content-nav -->
 			    <div class="carouselWrap">
 				    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-					  <div class="carousel-inner">
+					  <div id="carousel-inner" class="carousel-inner">
 					    <div class="carousel-item active">
-					      <img src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
+					      <img id="carousel-item0"  src="#" class="d-block w-100" alt="...">
 					    </div>
 					    <div class="carousel-item">
-					      <img src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
+					      <img id="carousel-item1" src="#" class="d-block w-100" alt="...">
 					    </div>
 					    <div class="carousel-item">
-					      <img src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_640_470.jpg_.webp?proc=source%2ftrip" class="d-block w-100" alt="...">
+					      <img id="carousel-item2" src="#" class="d-block w-100" alt="...">
+					    </div>
+					    <div class="carousel-item">
+					      <img id="carousel-item3" src="#" class="d-block w-100" alt="...">
 					    </div>
 					  </div>
 					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -144,10 +154,10 @@
 				   	
 			   		<div class="container">
 					  	<div class="row row-cols-4">
-			    			<img class="col" src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
-						    <img class="col" src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
-						    <img class="col" src="https://youimg1.tripcdn.com/target/10050z000000nf6sl9C57_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
-						    <img class="col" src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_196_150.jpg_.webp?proc=source%2ftrip"></img>
+			    			<img id="col-img0" class="col" src="#"></img>
+						    <img id="col-img1" class="col" src="#"></img>
+						    <img id="col-img2" class="col" src="#"></img>
+						    <img id="col-img3" class="col" src="#"></img>
 				  		</div><!-- row-cols-4 -->
 				  		
 					</div><!-- container -->
@@ -160,19 +170,69 @@
 		</jsp:include>
 	</div><!-- areaWrap -->
 	
+	<!-- footer -->
+	<div id="wrap_foot">
+		<footer>
+			<jsp:include page="../main/main_footer.jsp">
+				<jsp:param value="param1" name="param1" />
+			</jsp:include>
+		</footer>
+	</div>
 	
 	
-        
-        
+
+<script src="https://kit.fontawesome.com/2536a17ab1.js" crossorigin="anonymous"></script><!-- font awesome -->       
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/nadri/repository/js/pop/popular.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a"></script>
 <!-- services와 clusterer, drawing 라이브러리 불러오기 -->
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a&libraries=services,clusterer,drawing"></script>
 <script type="text/javascript">
 //지도api
 $(function(){
+
+	$.ajax({
+		url: '/nadri/popular/getPopImg',
+		type: 'post',
+		data: 'pop_seq='+$('#pop_seq').val(),
+		success: function(data){
+			alert(JSON.stringify(data));
+			alert('이미지 성공해따')
+			alert(data[0].img_name);
+			
+			//이미지 데이터 넣기
+			$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+			$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+			$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+			$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+			
+			$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+			$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+			$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+			$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+			
+			//이미지 클릭시 보여주기
+			$('.row-cols-4').find('#col-img0').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+			});
+			$('.row-cols-4').find('#col-img1').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+			});
+			$('.row-cols-4').find('#col-img2').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+			});
+			$('.row-cols-4').find('#col-img3').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+			});
+
+
+		},
+		error: function(err){
+			console.log(err);
+			alert('이미지 ajax 실패했다')
+		}
+	});
 	
 	$.ajax({
 		url: '/nadri/popular/getLocation',
@@ -185,8 +245,9 @@ $(function(){
 			$('#popularLocation_name h1').text(data.pop_name);
 			$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
 			$('.pop-tourismtime .one-line .field').text(data.pop_tourismtime);
-			$('.pop-address-map .one-line .field').text(address_name);
+			$('.pop-address-map .one-line .field').text(data.address_name);
 			$('.pop-call .one-line .field').text(data.pop_call);
+			$('title').text(data.pop_name+'정보 및 후기 | 트립닷컴')
 			
 			
 			//카카오맵 API
@@ -234,20 +295,6 @@ $(function(){
 		},error: function(err){
 			console.log(err);
 			alert('실패했따');
-		}
-	});
-
-	$.ajax({
-		url: '/nadri/popular/getPopImg',
-		type: 'post',
-		data: 'pop_seq='+$('#pop_seq').val(),
-		success: function(data){
-			alert(JSON.stringify(data));
-			alert('이미지 성공해따')
-			
-		},error: function(err){
-			console.log(err);
-			alert('이미지 ajax 실패했다')
 		}
 	});
 			
