@@ -7,12 +7,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서울 명동 정보 및 후기 | 트립닷컴</title>
+    <title>트립닷컴</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popular.css">
+    <link rel="stylesheet" href="/nadri/repository/css/popular/popreview.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+	<!-- Header -->
+	<div class="trip_common_head_con">
+		<jsp:include page="../main/main_top.jsp">
+			<jsp:param value="param1" name="param1" />
+		</jsp:include>
+	</div>
+	
 	<input type="hidden" id="pop_seq" value="${param.pop_seq }"/>
 	
     <div id="areaWrap" class="areaWrap">
@@ -162,6 +170,14 @@
 		</jsp:include>
 	</div><!-- areaWrap -->
 	
+	<!-- footer -->
+	<div id="wrap_foot">
+		<footer>
+			<jsp:include page="../main/main_footer.jsp">
+				<jsp:param value="param1" name="param1" />
+			</jsp:include>
+		</footer>
+	</div>
 	
 	
 
@@ -185,6 +201,7 @@ $(function(){
 			alert('이미지 성공해따')
 			alert(data[0].img_name);
 			
+			//이미지 데이터 넣기
 			$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
 			$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
 			$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
@@ -195,23 +212,18 @@ $(function(){
 			$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
 			$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
 			
-			
-			
+			//이미지 클릭시 보여주기
 			$('.row-cols-4').find('#col-img0').click(function() {
-				
-				$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name); 
+				$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
 			});
 			$('.row-cols-4').find('#col-img1').click(function() {
-				
-				$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name); 
+				$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
 			});
 			$('.row-cols-4').find('#col-img2').click(function() {
-				
-				$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name); 
+				$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
 			});
 			$('.row-cols-4').find('#col-img3').click(function() {
-				
-				$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name); 
+				$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
 			});
 
 
@@ -235,6 +247,7 @@ $(function(){
 			$('.pop-tourismtime .one-line .field').text(data.pop_tourismtime);
 			$('.pop-address-map .one-line .field').text(data.address_name);
 			$('.pop-call .one-line .field').text(data.pop_call);
+			$('title').text(data.pop_name+'정보 및 후기 | 트립닷컴')
 			
 			
 			//카카오맵 API
