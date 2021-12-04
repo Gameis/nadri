@@ -373,7 +373,7 @@ a, a:hover {
 }
 
 video {
-	position: absolute;
+	position: absolute; 
 	top: 0px;
 	opacity: 0;
 }
