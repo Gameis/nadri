@@ -152,8 +152,8 @@
 					</div>
 			   	 
 				   	
-			   		<div class="container">
-					  	<div class="row row-cols-4">
+			   		<div id="container-pop" class="container">
+					  	<div id="row-cols-4-pop" class="row row-cols-4">
 			    			<img id="col-img0" class="col" src="#"></img>
 						    <img id="col-img1" class="col" src="#"></img>
 						    <img id="col-img2" class="col" src="#"></img>
