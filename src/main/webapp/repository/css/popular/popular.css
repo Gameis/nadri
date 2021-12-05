@@ -301,19 +301,29 @@ button, input, optgroup, select, textarea {
 .carousel-inner img{
 	height: 550px;
 }
-.container{
-	display: inline-block;
+#container-pop{
   	height: 150px;
+  	width: 100%;
+  	margin: 0 auto;
+  	display:flex;
+}
+.row-cols-4{
+	overflow:hidden;
+	height:100%;
+	
 }
 .row-cols-4 > img{
+	justify-content: space-between;
 	padding: 0;
-	margin: 0;
+	margin: 0 auto;
 	text-align: center;
- 	height: 125px;
+ 	height: 100%;
  	width: 25%;
-	border: 10px solid rgb(15, 41, 77, 0.7);
 	object-fit:cover;
-	 
+	border: 7px solid rgb(15, 41, 77, 0.7);
+}
+#row-cols-4-pop > .col:hover{
+	border: 5px solid rgb(153, 185, 255);
 }
 
 /* popularLocation */
