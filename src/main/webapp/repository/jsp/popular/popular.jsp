@@ -150,7 +150,6 @@
 					    <span class="visually-hidden">Next</span>
 					  </button>
 					</div>
-			   	 
 				   	
 			   		<div id="container-pop" class="container">
 					  	<div id="row-cols-4-pop" class="row row-cols-4">
