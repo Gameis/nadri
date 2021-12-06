@@ -133,22 +133,22 @@
 														<a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
+															<img id="col-img1" class="col"
 															src="/nadri/repository/img/main/seoul_1.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
+															<img id="col-img2" class="col"
 															src="/nadri/repository/img/main/seoul_1.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
+															<img id="col-img3" class="col"
 															src="/nadri/repository/img/main/seoul_2.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 4"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
+															<img id="col-img4" class="col"
 															src="/nadri/repository/img/main/seoul_2.jpg"></img>
 														</a>
 													</div>
@@ -257,8 +257,8 @@
 							style="position: absolute; left: 0px; top: 0px;">
 							<div class="content">
 								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
+									<a href="" title="서울, 추천 트립 모먼트"> 
+										<img class="img" alt="서울, 추천 트립 모먼트"
 										src="/nadri/repository/img/main/jeonju_1.jpg">
 									</a>
 								</div>

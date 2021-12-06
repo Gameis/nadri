@@ -25,20 +25,20 @@
 							<ul class="foot_clearfix_icon">
 								<li class="foot_clearfix_icon-item icon_facebook"><a
 									target="_blank" href="http://www.facebook.com/tripcom.kr">
-										<img src="./repository/img/main/facebook.png">
+										<img src="/nadri/repository/img/main/facebook.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_instagram"><a
 									target="_blank" href="http://www.instagram.com/tripcom.kr">
-										<img src="./repository/img/main/instagram.png">
+										<img src="/nadri/repository/img/main/instagram.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_naver"><a target="">
-										<img src="./repository/img/main/naver.png">
+										<img src="/nadri/repository/img/main/naver.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_youtube"><a
-									target=""> <img src="./repository/img/main/youtube.png">
+									target=""> <img src="/nadri/repository/img/main/youtube.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_kakao"><a target="">
-										<img src="./repository/img/main/kakao.png">
+										<img src="/nadri/repository/img/main/kakao.png">
 								</a></li>
 							</ul>
 						</div>

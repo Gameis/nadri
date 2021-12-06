@@ -615,10 +615,12 @@ video {
 
 .carousel-control-prev {
     left: -83px !important;
+    top: 166px !important; 
 }
 
 .carousel-control-next {
 	right: -83px !important;
+	top: 166px !important; 
 }
 
 .carousel-control-prev-icon{
