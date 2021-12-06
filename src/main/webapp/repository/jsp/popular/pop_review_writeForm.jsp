@@ -9,18 +9,99 @@
 	<div class="reviewHeaderContainer">
 		<div class="review-box">
 			<div>
-				<div class="review-title">리뷰</div>
+				<div class="review-title">리뷰 작성하기</div>
 				<div class="reivew-tip">
 					<span class="tip-text">
-						<i class="bi bi-info-circle"></i>
-						"리뷰 일부분은 구글 번역기로 번역되어 보일 수 있습니다"
+						
 					</span>
 				</div>
 			</div>
 		</div><!-- review-box -->
 	</div><!-- reviewHeaderContainer -->
 	
+	<div class="review-writeContainer">
+		<ul class="review-write-list">
+			<div class="review-write-form">
+				<li class="review-write-detail">
+				
+					<div class="review-write-user">
+						<a style="color: rgb(15, 41, 77); text-decoration: none;">
+							<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg">
+						</a>
+						<div class="review-write-userInfo">
+							<div class="reivew-write-userName">
+								user_name
+							</div><!-- reivew-write-userName -->
+						</div><!-- review-write-userInfo -->
+					</div><!-- review-write-user -->
+					
+					<div class="review-write-content">
+						<form id="pop_review_writeForm">
+							<input type="hidden" id="pop_seq" name="pop_seq" value="${param.pop_seq }" />
+							
+							<!-- 평점 -->
+							<div class="review-write-wrap">
+							    <div class="review-write-selectScore">
+							    	<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+										<input type="radio" class="btn-check" name="btnradio" id="btnRadio5" autocomplete="off" checked>
+										<label class="score btn btn-outline-primary" for="btnRadio5">5점</label>
+										
+										<input type="radio" class="btn-check" name="btnradio" id="btnRadio4" autocomplete="off">
+										<label class="score btn btn-outline-primary" for="btnRadio4">4점</label>
+											
+										<input type="radio" class="btn-check" name="btnradio" id="btnRadio3" autocomplete="off">
+										<label class="score btn btn-outline-primary" for="btnRadio3">3점</label>
+										  
+										<input type="radio" class="btn-check" name="btnradio" id="btnRadio2" autocomplete="off">
+										<label class="score btn btn-outline-primary" for="btnRadio2">2점</label>
+										  
+										<input type="radio" class="btn-check" name="btnradio" id="btnRadio1" autocomplete="off">
+										<label class="score btn btn-outline-primary" for="btnRadio1">1점</label>
+									</div>
+								</div><!-- review-write-selectScore -->
+							</div>
+							
+							<!-- 내용 -->
+							<div class="review-write-wrap">
+								<div class="input-group">
+								  <span class="input-group-text">내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</span>
+								  <textarea class="form-control" aria-label="With textarea" style="resize: none;"></textarea>
+								</div>
+							</div>
+							
+							<!-- 파일업로드 -->
+							<div class="input-group mb-3">
+							  <input type="file" class="form-control" id="inputGroupFile02" name="img[]" multiple>
+							  <label class="input-group-text" for="inputGroupFile02">Upload</label>
+							</div>
+							
+							<button id="pop_review_writeBtn" type="button" class="btn btn-primary">등록</button>
+							<button type="reset" class="btn btn-primary">다시작성</button>
+							
+						</form>
+					</div><!-- review-write-content -->
+					
+				</li><!-- review-write-detail -->
+			</div><!-- review-write-form -->
+		</ul><!-- review-write-list -->
+	</div><!-- review-writeContainer -->
+	
+	
 	<div class="contentContainer">
+		<div class="reviewHeaderContainer">
+			<div class="review-box">
+				<div>
+					<div class="review-title">리뷰</div>
+				<div class="reivew-tip">
+					<span class="tip-text">
+						<i class="bi bi-info-circle"></i>
+						"리뷰 일부분은 구글 번역기로 번역되어 보일 수 있습니다"
+					</span>
+				</div>
+				</div>
+			</div><!-- review-box -->
+		</div><!-- reviewHeaderContainer -->
+		
 		<div class="switch-container">
 			<div class="switch-sort">
 				<span class="sort-get-score">4.5</span>
@@ -48,46 +129,6 @@
 				</div>
 			</div><!-- switch-list-container -->
 		</div><!-- switch-container -->
-		
-		<form id="pop_review_writeForm">
-			<div class="table-responsive">
-			  <table class="table align-middle">
-			    <thead>
-			      <tr>
-			        <td></td>
-			      </tr>
-			      	<td></td>
-			    </thead>
-			    
-			    <tbody>
-			      <tr colspan="3" class="align-middle">
-			        <td>작성자</td>
-			        <td>내용</td>
-			      </tr>
-			      <tr>
-			        <td>
-			        	<input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
-						<label class="btn btn-secondary" for="option5">5점</label>
-						
-						<input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-						<label class="btn btn-secondary" for="option4">4점</label>
-						
-						<input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-						<label class="btn btn-secondary" for="option3">3점</label>
-						
-						<input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-						<label class="btn btn-secondary" for="option2">2점</label>
-						
-						<input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
-						<label class="btn btn-secondary" for="option1">1점</label>
-			        </td>
-			      </tr>
-			      <hr>
-			    </tbody>
-			  </table>
-			</div>
-			<input type="hidden" id="pop_review_seq" name="pop_review_seq" value=1 />
-		</form>
 		
 		<div class="reviewItemContainer" style="display: block">
 			<ul class="review-comment-list">
@@ -190,5 +231,23 @@
 				</div><!-- review-comment-detail -->
 			</ul><!-- review-comment-list -->
 		</div><!-- reviewItemContainer -->
+		<!-- 페이징처리 -->
+		<div class="pagination">
+			<nav aria-label="...">
+			  <ul class="pagination">
+			    <li class="page-item disabled">
+			      <span class="page-link">Previous</span>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">1</a></li>
+			    <li class="page-item active" aria-current="page">
+			      <span class="page-link">2</span>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="#">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="#">Next</a>
+			    </li>
+			  </ul>
+			</nav>
+		</div>
 	</div><!-- contentContainer -->
 </div><!-- reviewContainer -->
