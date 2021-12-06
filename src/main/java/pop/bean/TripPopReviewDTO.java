@@ -11,5 +11,4 @@ public class TripPopReviewDTO {
 	private String pop_review_imageName;
 	private int pop_reivew_score;
 	private String pop_review_logtime;
-	
 }
