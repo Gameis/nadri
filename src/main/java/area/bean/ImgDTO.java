@@ -15,4 +15,5 @@ public class ImgDTO {
 	private int content_seq;
 	private int seq;
 	private int main_seq;
+	private String mainImg;
 }
