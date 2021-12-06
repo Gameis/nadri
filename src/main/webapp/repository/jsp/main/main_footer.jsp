@@ -103,7 +103,7 @@
 				<div class="trip_main_foot_awards">
 					<div class="foot_awards_body">
 						<div class="foot_awards_items">
-							<img height="40" alt="수상" src="./repository/img/main/Awards.png">
+							<img height="40" alt="수상" src="/nadri/repository/img/main/Awards.png">
 							<div class="foot_awards_text">
 								한국소비자포럼 주관 <br> 올해의브랜드대상 2년 연속 수상
 							</div>
