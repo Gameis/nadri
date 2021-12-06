@@ -44,19 +44,6 @@ a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
 	margin-top: 24px;
 }
 
-/* 사진 유효성 검사 */
-.PublishImageContainer .image-warn-h5 {
-	margin: -16px 0px 16px -16px;
-	background: rgb(254, 238, 236);
-	height: 34px;
-	font-size: 13px;
-	color: rgb(238, 59, 40);
-	line-height: 34px;
-	width: 100%;
-	padding: 0px 16px;
-	display: none;
-}
-
 .PublishCenterContainer .publish-title {
 	font-size: 18px;
 	line-height: 22px;
@@ -127,10 +114,6 @@ a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
 	line-height: 16px;
 }
 
-.image-upload {
-	display: none;
-}
-
 input, textarea {
 	font-size: inherit;
 	color: inherit;
@@ -155,18 +138,58 @@ button, input {
 	margin-top: 24px;
 }
 
-/* 이미지 유효성 검사 2 */
-.PublishImageContainer .image-warn-online {
-	display: block;
+/* 사진 유효성 검사 */
+.PublishImageContainer .image-warn-h5 {
+	margin: -16px 0px 16px -16px;
+	background: rgb(254, 238, 236);
+	height: 34px;
+	font-size: 13px;
+	color: rgb(238, 59, 40);
+	line-height: 34px;
+	width: 100%;
+	padding: 0px 16px;
+	display: none;
 }
 
+/* 이미지 유효성 검사 2 */
 .PublishImageContainer .image-warn {
 	font-size: 14px;
 	color: rgb(238, 59, 40);
 	line-height: 18px;
 	margin-top: 8px;
 	margin-left: 10px;
+	display: none;
 }
+
+.PublishTitleContainer .title-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+.PublishContentContainer .content-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+.PublishLocationContainer .location-warn {
+	font-size: 14px;
+	color: rgb(238, 59, 40);
+	line-height: 18px;
+	margin-top: 8px;
+	margin-left: 10px;
+	display: none;
+}
+
+/* 유효성검사 끝 */
+
 
 .PublishCenterContainer .supplement {
 	display: inline-block;

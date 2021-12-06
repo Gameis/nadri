@@ -1,4 +1,4 @@
--<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -309,295 +309,8 @@
           <!--divSlide-->
           <div class="areaSlide">
             <div id="areaActivity_slide" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="card-group">
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity1.jpg" class="card-img-top" alt="activity1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">서울 N서울타워 전망대 입장권</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">3.3</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">3건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity2.jpg" class="card-img-top" alt="activity2.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">서울 플라워바이네이키드 입장권</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">5.0</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">1건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity3.jpg" class="card-img-top" alt="activity3.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">용인 한국민속촌 자유이용권</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.9</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">24건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity4.jpg" class="card-img-top" alt="activity4.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">단독 특가, 전용게이트 입장</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.8</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">35건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
-                <div class="carousel-item">
-                  <div class="card-group">
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity1.jpg" class="card-img-top" alt="activity1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity2.jpg" class="card-img-top" alt="activity2.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity3.jpg" class="card-img-top" alt="activity3.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity4.jpg" class="card-img-top" alt="activity4.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
-                <div class="carousel-item">
-                  <div class="card-group">
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity1.jpg" class="card-img-top" alt="activity1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity1.jpg" class="card-img-top" alt="activity1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity1.jpg" class="card-img-top" alt="activity1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="card_saleRate">20% 할인</div>
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/activity1.jpg" class="card-img-top" alt="activity1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                        <div class="areaActivity_use">
-                          <span>오늘부터 바로사용</span>
-                        </div>
-                        <div class="price">
-                          <span class="price-text">최저가</span>
-                          <span class="price-num">8,800원</span>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
+              <div class="carousel-inner" id="activity-carousel-inner">
+                
               </div><!--carousel-inner-->
               <button class="carousel-control-prev" type="button" data-bs-target="#areaActivity_slide" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -654,7 +367,7 @@
             </div>
             <div class="weather" style="background: #f0f2f5;">
               <div class="weather-text-day">2021년 12월 4일</div>
-              <div class="weather-text-weather"><i class="bi bi-brightness-high"></i><span>맑음</span></span></div>
+              <div class="weather-text-weather"><i class="bi bi-brightness-high"></i><span>맑음</span></div>
               <div class="weather-text-tem">-7ºC/7ºC</div>
             </div>
             <div class="weather">
@@ -679,7 +392,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div><!--areaWrap-->
     <div id="wrap_foot">
 		<footer>
@@ -694,10 +406,10 @@
 <script type="text/javascript">
   $(function() {
     $.ajax({
-      url: '/nadri/area/onArea',
+      url: '/nadri/area/onAreaPop',
       type: 'get',
       success: function(data) {
-
+		alert('명소성공');
         var count = -1;
         var popCount = 1;
         $.each(data, function(index, items){
@@ -753,16 +465,131 @@
               text: '5,808건의 리뷰'
             })))).appendTo($('#pop-carousel-inner .card-group:eq(' + count + ')'));
         });//for each문
-
-        
-        
       },
       error: function(err) {
         console.log(err);
         alert('실패');
       }
     });
-  });
+    
+     $.ajax({
+    	url: '/nadri/area/onAreaActivity',
+    	type: 'get',
+    	success: function(data) {
+    		var count = -1;
+            var activityCount = 1;
+            $.each(data, function(index, items){
+              if(index % 4 == 0) {
+
+                if(index == 0) {
+                  $('<div/>', {
+                    class: 'carousel-item active'
+                  }).append($('<div/>', {
+                    class: 'card-group'
+                  })).appendTo($('#activity-carousel-inner'));
+                }else {
+                  $('<div/>', {
+                    class: 'carousel-item'
+                  }).append($('<div/>', {
+                    class: 'card-group'
+                  })).appendTo($('#activity-carousel-inner'));
+                }
+                
+                count++;
+              }
+              
+              $('<div/>', {
+            	  class: 'card-group'
+              }).append($('<div/>', {
+            	  class: 'card'
+              }).append($('<div/>', {
+            	  class: 'card_saleRate',
+            	  text: items.activity_saleRate + '% 할인'
+              })).append($('<div/>', {
+            	  class: 'slide_img'
+              }).append($('<img/>', {
+            	  src: '/nadri/repository/img/activies/' + items.img_name
+              }))).append($('<div/>', {
+            	  class: 'card-body'
+              }).append($('<div/>', {
+            	  class: 'pop-title'
+              }).append($('<a/>', {
+            	  href: '#',
+            	  text: items.activity_name
+              }))).append($('<div/>', {
+            	  class: 'pop-review'
+              }).append($('<div/>', {
+            	  class: 'pop-review-score'
+              }).append($('<span/>', {
+            	  class: 'pop-review-score-current',
+            	  text: '3.3'
+              })).append($('<span/>', {
+            	  class: 'pop-review-score-toral',
+            	  text: '/5'
+              }))).append($('<div/>', {
+            	  class: 'pop-review-text',
+            	  text: '3건의 리뷰'
+              }))).append($('<div/>', {
+            	  class: 'areaActivity_use'
+              }).append($('<span/>', {
+            	  text: '오늘부터 바로 사용'
+              }))).append($('<div/>', {
+            	 class: 'price' 
+              }).append($('<span/>', {
+            	  class: 'price-text',
+            	  text: '최저가'
+              })).append($('<span/>', {
+            	  class: 'price-num',
+            	  text: items.price
+              }))))).appendTo($('#activity-carousel-inner .card-group:eq(' + count + ')'));
+              
+            });//each
+    	},
+    	error: function(err) {
+    		console.log(err);
+    		alert('실패');
+    	}
+    }); 
+    
+/*     function numberPad(n, width) {
+        n = n + '';
+        return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+    }
+
+    var today = new Date();
+    today = "" + today.getFullYear() + (today.getMonth() + 1) + numberPad(today.getDate(), 2);
+    alert(today);
+
+    var serviceKey = 'es31tYgHZ%2BTkuWpOLXBsbxse3oMSoHkjqzhMd0SpKZ4EHParX3%2B0uQq2qhvJMizTi84Ifj1PWHXfIOSLtRhzaA%3D%3D';
+    var dataType = 'JSON';
+    var numOfRows = '10';
+    var pageNo = '1';
+    var base_date = today;
+    var base_time = '0800';
+    var nx = '60';
+    var ny = '127';
+
+    $.ajax({
+        url: 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'
+                + '?serviceKey=' + serviceKey
+                + '&dataType=' + dataType
+                + '&numOfRows=' + numOfRows
+                + '&pageNo=' + pageNo
+                + '&base_date=' + base_date
+                + '&base_time=' + base_time
+                + '&nx=' + nx
+                + '&ny=' + ny,
+        type: 'GET',
+        async: 'false',
+        success: function(data) {
+            alert('성공');
+        },
+        error: function(err) {
+            alert('실패');
+            console.log(err);
+        }
+    });*/
+  }); 
 </script>
 </body>
 </html>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import area.bean.ImgDTO;
 import area.bean.PopMainDTO;
+import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 import area.dao.AreaDAO;
@@ -24,17 +25,34 @@ public class AreaServiceImpl implements AreaService {
 		areaDAO.popWrite(tripPopDTO, tripPopMapDTO);
 		
 	}
-
+	
 	@Override
-	public void imgWrite(ImgDTO imgDTO) {
+	public void activityWrite(TripActivityDTO tripActivityDTO) {
+		areaDAO.activityWrite(tripActivityDTO);
 		
-		areaDAO.imgWrite(imgDTO);
 	}
 
 	@Override
-	public List<PopMainDTO> onArea(int main_seq) {
+	public void imgPopWrite(ImgDTO imgDTO) {
+		areaDAO.imgPopWrite(imgDTO);
+	}
+	
+	@Override
+	public void imgActivityWrite(ImgDTO imgDTO) {
+		areaDAO.imgActivityWrite(imgDTO);
+	}
+
+	@Override
+	public List<PopMainDTO> onAreaPop(int main_seq) {
 		return areaDAO.printPopMain(main_seq);
 	}
+
+	@Override
+	public List<PopMainDTO> onAreaActivity(int main_seq) {
+		return areaDAO.printActivityMain(main_seq);
+	}
+
+
 
 }
 
