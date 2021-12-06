@@ -184,10 +184,11 @@ button, input, optgroup, select, textarea {
 	display:flex;
 	justify-content: space-between;
 	margin: 0;
+	padding: 0 0 64px 0;
 }
 .pop-content-nav{
 	width: 400px;
-	height: 570px;
+	height: 700px;
 	display: flex;
 	flex-direction: column;
 	border: 1px solid rgb(218, 223, 230);
