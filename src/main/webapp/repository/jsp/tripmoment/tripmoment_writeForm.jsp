@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
@@ -23,37 +25,36 @@
 </head>
 <body>
 	<div>
-
 		<div class="travel_guide_root_class">
 			<div class="PublishMainContainer">
 				<div class="PublishCenterContainer ">
 					<h1 class="title">트립 모먼트 작성하기</h1>
 					<div class="PublishImageContainer publish tripmt">
-						<p class="image-warn image-warn-h5" style="display: block;">하나
-							이상의 사진을 추가해주세요.</p>
+						<p class="image-warn image-warn-h5">하나 이상의 사진을 추가해주세요.</p>
 						<div class="publish-title">사진 업로드</div>
 						<p class="sub-title">여행 특징이 담긴 사진을 업로드해주세요.</p>
-						<form action="" id="uploadImageForm" method="post" class="photos"
-							enctype="application/x-www-form-urlencoded">
+						<form id="uploadImageForm" class="photos">
 							<div class="add li h5">
 								<div class="cell">
 									<div class="icon-upload">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
 											class="bi bi-camera-fill" viewBox="0 0 16 16">
-  <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-  <path
-												d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
-</svg>
+										<path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+										<path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+										</svg>
+
 									</div>
 									<p class="current-total">
-										0
+										<input type="file" id="chooseFile" style="overflow: hidden;"
+											multiple name="img[]" class="">
+
 										<!--  -->
 										/
 										<!--  -->
 										20
 									</p>
-									<input type="file" multiple name="image" accept="image/*"
-										class="image-upload">
+									<!--  <input type="file" multiple name="chooseFile"
+										class="image-upload" accept="img/*" onchange="loadFile(this)" /> -->
 								</div>
 							</div>
 						</form>
@@ -61,26 +62,27 @@
 					</div>
 					<!-- 제목 추가 -->
 					<div class="PublishTitleContainer">
-						<div class="publish-title">
-							제목 추가 <span class="supplement">(선택)</span>
+						<div class="publish-title">제목 추가 <span class="supplement">(필수)</span>
 						</div>
-						<input type="text" placeholder="제목이 포함된 게시글은 인기글로 선정될 확률이 높아요.">
+						<input type="text" placeholder="제목이 포함된 게시글은 인기글로 선정될 확률이 높아요." name="moment_title" id="moment_title">
+						<p class="title-warn title-warn-online">제목을 입력해주세요.</p>
 					</div>
 
 					<div class="PublishContentContainer">
-						<div class="nadritripmoment publish-title">
-							여행 스토리를 공유해주세요! <span class="supplement">(선택)</span>
+						<div class="nadritripmoment publish-title"> 여행 스토리를 공유해주세요! <span class="supplement">(필수)</span>
 						</div>
 						<div class="nadritripmoment input">
-							<div id="textarea"
+							<div id="moment_content"
 								placeholder="나만의 여행 스토리를 다른 여행자와 함께 공유해보세요! 특별한 사진을 추가하면 더 많은 여행자들이 볼 수 있어요. (예시 : 여행 팁, 맛집, 카페 등 추천)"
-								class="nadritripmoment" contenteditable="true" data-tribute="true"></div>
+								class="nadritripmoment" contenteditable="true"
+								data-tribute="true" name="moment_content"></div>
 							<div class="nadritripmoment tipsView">
 								<span class="nadritripmoment tipsContent">50자 이상 작성 시, </span> <span
-									class="nadritripmoment tipsReword"> &nbsp; '최고에요' 태그 게시물
-								</span> <span class="nadritripmoment tipsContent"> 선정 기회 </span>
+									class="nadritripmoment tipsReword"> &nbsp; '최고에요' 태그 게시물</span>
+								<span class="nadritripmoment tipsContent"> 선정 기회 </span>
 							</div>
 						</div>
+						<p class="content-warn content-warn-online">내용을 입력해주세요.</p>
 					</div>
 					<!-- 위치 추가 -->
 					<div class="PublishLocationContainer tripmt location-view">
@@ -92,6 +94,7 @@
 									placeholder="위치를 추가해주세요.">
 							</div>
 						</div>
+						<p class="location-warn location-warn-online" name="pop_name" id="pop_name">위치를 입력해주세요.</p>
 					</div>
 					<div class="PublicPrivacyContainer tripmt-pv">
 						<div class="agreement">
@@ -122,11 +125,91 @@
 			</footer>
 		</div>
 	</div>
-	
-<script type="text/javascript">
-	$(function(){
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+
+			$(".submit").click(function() {
+
+				<%--var img[] = $('.image-upload').val(); --%>
+				var moment_title = $('.moment_title').val();
+				var moment_content = $('.moment_content').val();
+				var pop_name = $('.pop_name').val();
+
+				$('.image-warn').css('display', 'none');
+				$('.title-warn').css('display', 'none');
+				$('.content-warn').css('display', 'none');
+				$('.location-warn').css('display', 'none');
+
+				if (!$('#chooseFile').val()) {
+					$('.image-warn').css('display', 'block');
+				}
+
+				else if (moment_title == "") {
+					$('.title-warn').css('display', 'block');
+				}
+
+				else if (moment_content == "") {
+					$('.content-warn').css('display', 'block');
+				}
+
+				else if (pop_name == "") {
+					$('.location-warn').css('display', 'block');
+				} else {
+
+					var formData = new FormData($('#uploadImageForm')[0]); //form안에 있는 모든 것
+					$.ajax({
+						url : '/nadri/main/tripmoment_writeForm',
+						type : 'POST',
+						enctype : 'multipart/form-data',
+						processData : false,
+						contentType : false,
+						data : formData,
+						success : function() {
+							alert('이미지 등록 완료');
+						},
+						error : function(err) {
+							console.log(err)
+						}
+					});
+				}
+			});
+
+	<%--
+var submit = document.getElementById('submitButton');
+submit.onclick = showImage;     //Submit 버튼 클릭시 이미지 보여주기
+
+function showImage() {
+    var newImage = document.getElementById('image-show').lastElementChild;
+    newImage.style.visibility = "visible";
+    
+    document.getElementById('image-upload').style.visibility = 'hidden';
+
+    document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
+}
+
+
+function loadFile(input) {
+    var file = input.files[0];
+
+    var name = document.getElementById('fileName');
+    name.textContent = file.name;
+
+    var newImage = document.createElement("img");
+    newImage.setAttribute("class", 'img');
+
+    newImage.src = URL.createObjectURL(file);   
+
+    newImage.style.width = "70%";
+    newImage.style.height = "70%";
+    newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
+    newImage.style.objectFit = "contain";
+
+    var container = document.getElementById('image-show');
+    container.appendChild(newImage);
+};
+--%>
 		
-	});
-</script>	
+	</script>
 </body>
 </html>
