@@ -98,6 +98,7 @@ button, input, optgroup, select, textarea {
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
+	background-color: #fff;
 }
 
 .tripmomentSearch_input>input {
@@ -130,9 +131,9 @@ button, input, optgroup, select, textarea {
 	width: 100%;
 	position: relative;
 	margin-top: 8px;
-	display: flex;
 	flex-direction: row;
 	margin-bottom: 64px;
+	display: flex;
 }
 
 .imageGallery {
@@ -141,10 +142,11 @@ button, input, optgroup, select, textarea {
 	left: 0px;
 	margin-left: 0px;
 	margin-top: 0px;
-	height: auto;
+	height: 100%;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 	width: 650px;
+	order: 1;
 }
 
 .imageGallery .carouselWrap {
@@ -161,6 +163,37 @@ button, input, optgroup, select, textarea {
 
 .image-gallery-slide-wrapper {
 	position: relative;
+}
+
+.carousel-item {
+	bottom: 0px !important;
+}
+
+.carousel-item .img-img {
+	overflow: hidden;
+	position: relative;
+	margin-left: 0px;
+	width: 100% !important;
+	height: 100% !important;
+	transform: scaleX(1) !important;
+}
+
+.carousel-item img {
+	position: absolute;
+	right: 0px;
+}
+
+.img-grey {
+	background: rgba(78, 78, 78, 0.75);
+}
+
+.carousel-item img {
+	top: 0px;
+	left: 0px;
+	width: 100% !important;
+	object-fit: contain !important;
+	width: 625px !important;
+	display: block;
 }
 
 .carousel-control-prev-icon {
@@ -223,13 +256,7 @@ button, input, optgroup, select, textarea {
 	{
 	margin-left: auto !important;
 	margin-right: auto !important;
-	width: 762px !important;
 	overflow: hidden !important;
-}
-
-.carouselWrap .carousel_list_imgs_list .image-gallery-thumbnails-wrapper
-	{
-	width: auto !important;
 }
 
 .image-gallery-thumbnails-wrapper {
@@ -240,6 +267,7 @@ button, input, optgroup, select, textarea {
 .image-gallery-thumbnails {
 	overflow: hidden;
 	padding: 5px 0;
+	position: relative;
 }
 
 .image-gallery-left-nav[disabled].image-gallery-overview-left-nav {
@@ -259,24 +287,22 @@ button, input, optgroup, select, textarea {
 	background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
-.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
+.image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
 	{
 	color: rgb(42, 125, 250);
 }
 
-.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left
-	{
+.image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left {
 	color: rgb(255, 255, 255);
 	transform: rotateZ(270deg);
 }
 
-.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
+.image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
 	{
 	color: rgb(42, 125, 250);
 }
 
-.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left
-	{
+.image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left {
 	color: rgb(255, 255, 255);
 	transform: rotateZ(270deg);
 }
@@ -290,32 +316,31 @@ button, input, optgroup, select, textarea {
 	justify-content: center;
 	-webkit-box-align: center;
 	align-items: center;
-	left: 602px !important;
+	left: 578px !important;
 	right: 0px !important;
 	background-image: none !important;
 	background-color: rgba(0, 0, 0, 0.7) !important;
+	position: absolute;
 }
 
-.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
+.image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
 	{
 	color: rgb(255, 255, 255);
 	opacity: 0.2;
 }
 
-.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
+.image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
 	{
 	color: rgb(255, 255, 255);
 	opacity: 0.2;
 }
 
-.PhotoStyle .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right
-	{
+.image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right {
 	color: rgb(255, 255, 255);
 	transform: rotateZ(90deg);
 }
 
-.photo_style .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery .image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right
-	{
+.image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right {
 	color: rgb(255, 255, 255);
 	transform: rotateZ(90deg);
 }
@@ -332,6 +357,10 @@ button, input, optgroup, select, textarea {
 	transition: transform .45s ease-out;
 	transition: transform .45s ease-out, -webkit-transform .45s ease-out;
 	white-space: nowrap;
+	position: absolute;
+	z-index: 100;
+	bottom: 14.7px;
+	left: 60px;
 }
 
 .imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-thumbnail.active
@@ -354,12 +383,22 @@ button, input, optgroup, select, textarea {
 	height: 100%;
 }
 
+/*.PhotoStyle .img-grey {
+	background: rgba(78, 78, 78, 0.75);
+	z-index: -1;
+    margin-left: 0px;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: fill !important;
+}
+*/
+
 /* BoxRight */
 .BoxRight {
 	position: relative;
-	height: 812px;
 	flex: 1 1 0%;
-	border: 1px red solid;
+	order: 2;
+	z-index: 0;
 }
 
 .trip_User {
@@ -391,6 +430,10 @@ button, input, optgroup, select, textarea {
 	max-height: 731px;
 }
 
+.scroll_content::-webkit-scrollbar {
+	display: none;
+}
+
 .article_title {
 	font-size: 18px;
 	color: rgb(15, 41, 77);
@@ -403,6 +446,10 @@ button, input, optgroup, select, textarea {
 
 .article_content {
 	margin: 10px 32px 14px;
+}
+
+.article_content::-webkit-scrollbar {
+	display: none;
 }
 
 .BoxRight .content_collapse {
@@ -457,84 +504,88 @@ button, input, optgroup, select, textarea {
 
 .input_view {
 	position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: white;
-    padding: 12px 32px 12px 16px;
-    box-shadow: 0 0 8px 0 rgb(53 58 64 / 19%);
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	background-color: white;
+	padding: 12px 32px 12px 16px;
+	box-shadow: 0 0 8px 0 rgb(53 58 64/ 19%);
 }
 
 .input_phaise_container.like {
 	display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-right: 16px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin-right: 16px;
 }
 
-.textarea_container.like {
+.textarea_container {
 	-webkit-flex: 10;
-    -ms-flex: 10;
-    flex: 10;
-    color: #0f294d;
-    padding: 0px 16px;
-    border: 1px solid #dadfe6;
-    border-radius: 4px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+	-ms-flex: 10;
+	flex: 10;
+	color: #0f294d;
+	padding: 0px 16px;
+	border: 1px solid #dadfe6;
+	border-radius: 4px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .textarea_2.like {
 	margin: 16px 0px;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    max-width: 305px;
-    min-height: 22px;
-    max-height: 92px;
-    line-height: 22px;
-    overflow: scroll;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	max-width: 305px;
+	min-height: 22px;
+	max-height: 92px;
+	line-height: 22px;
+	overflow: scroll;
+}
+
+.textarea_2::-webkit-scrollbar {
+	display: none;
 }
 
 .textarea_2[placeholder].like:empty.like::before {
@@ -546,6 +597,101 @@ button, input, optgroup, select, textarea {
 	margin-left: 16px;
 	font-weight: bold;
 	font-size: 16px;
+}
+
+.travel-photo-title {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.tripphoto {
+	min-height: 700px;
+}
+
+.tripphoto .item {
+	width: 25%;
+	padding: 0px 10px 20px;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.tripphoto .content {
+	cursor: pointer;
+	padding: 0px 0px 12px;
+	border: 1px solid rgb(228, 228, 228);
+	box-shadow: rgb(255, 255, 255) 0px 4px 12px 0px;
+}
+
+.tripphoto .img-tripmoment {
+	position: relative;
+	min-height: 60px;
+	max-height: 348px;
+	overflow: hidden;
+}
+
+a, a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+.tripphoto .img {
+	width: 100%;
+	display: block;
+}
+
+.tripphoto .text {
+	padding: 12px 12px 0px;
+}
+
+.tripphoto .text a {
+	line-height: 24px;
+	max-height: 96px;
+	overflow: hidden;
+	text-decoration: none;
+}
+
+.tripphoto .item-title {
+	font-size: 16px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+a {
+	-webkit-transition: background-color .5s ease 0s, color .5s ease 0s,
+		width .5s ease 0s, border-width .5s ease 0s, border-color .5s ease 0s;
+}
+
+.tripphoto .user {
+	line-height: 30px;
+	height: 30px;
+	margin-top: 3px;
+	position: relative;
+}
+
+.ellipsis {
+	text-overflow: ellipsis;
+	overflow-x: hidden;
+	word-wrap: break-word; /* 다음 줄로 넘어감 */
+	word-break: break-all; /* 단어의 중간에도 줄 바꿈 O */
+	white-space: nowrap; /* 줄바꿈 X */
+}
+
+.ellipsis::-webkit-scrollbar {
+	display: none;
+}
+
+.text svg {
+	position: absolute;
+	left: 2px;
+	top: 3px;
+	background: rgb(235, 235, 242);
+}
+
+.tripphoto .nickname {
+	margin-left: 32px;
+	overflow: hidden;
 }
 
 /* .carousel-inner img {

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import area.bean.ImgDTO;
 import area.bean.PopMainDTO;
+import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 
@@ -20,20 +21,33 @@ public class AreaDAOMybatis implements AreaDAO {
 	private SqlSession sqlSession;
 	
 	@Override
-	public void imgWrite(ImgDTO imgDTO) {
-		sqlSession.insert("areaSQL.imgWrite", imgDTO);
+	public void imgPopWrite(ImgDTO imgDTO) {
+		sqlSession.insert("areaSQL.imgPopWrite", imgDTO);
 	}
 
 	@Override
+	public void imgActivityWrite(ImgDTO imgDTO) {
+		sqlSession.insert("areaSQL.imgActivityWrite", imgDTO);
+	}
+	
+	@Override
 	public void popWrite(TripPopDTO tripPopDTO, TripPopMapDTO tripPopMapDTO) {
-		sqlSession.insert("areaSQL.nadriWrite");
 		sqlSession.insert("areaSQL.popWrite", tripPopDTO);
 		sqlSession.insert("areaSQL.popMap", tripPopMapDTO);
 	}
-
+	
 	@Override
-	public List<PopMainDTO> printPopMain(int content) {
-		return sqlSession.selectList("areaSQL.printPopMain", content);
+	public void activityWrite(TripActivityDTO tripActivityDTO) {
+		sqlSession.insert("areaSQL.activityWrite", tripActivityDTO);
 	}
 
+	@Override
+	public List<PopMainDTO> printPopMain(int main_seq) {
+		return sqlSession.selectList("areaSQL.printPopMain", main_seq);
+	}
+
+	@Override
+	public List<PopMainDTO> printActivityMain(int main_seq) {
+		return sqlSession.selectList("areaSQL.printActivityMain", main_seq);
+	}
 }

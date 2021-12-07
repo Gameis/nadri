@@ -7,11 +7,12 @@
 	<typeAliases>
 		<typeAlias type="pop.bean.TripPopReviewDTO" alias="popReview"/>
 		<typeAlias type="pop.bean.TripPopLocationDTO" alias="popLocation"/>
+		<typeAlias type="pop.bean.TripPopImgDTO" alias="popImg"/>
 		
 		<typeAlias type="area.bean.ImgDTO" alias="img"/>
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
-
+		<typeAlias type="area.bean.TripActivityDTO" alias="tripActivity"/>
 
  		<typeAlias type="member.bean.MemberDTO" alias="member"/>
 		<typeAlias type="member.bean.ZipcodeDTO" alias="zipcode"/>		
@@ -19,6 +20,7 @@
 		
 
 		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
+		<typeAlias type="area.bean.ActivityMainDTO" alias="activityMain"/>
 
 	</typeAliases>
 </configuration>

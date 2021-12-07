@@ -24,8 +24,6 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-
-
 	<div class="travel_guide_root_class">
 		<div class="TravelDetailContainer">
 			<div id="tripmoment">
@@ -72,19 +70,27 @@
 													data-bs-ride="carousel">
 													<div class="carousel-inner">
 														<div class="carousel-item active">
+															<img alt=""
+																src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
+																class="img-img">
+															<div class="img-grey"></div>
 															<img
 																src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img
-																src="https://youimg1.tripcdn.com/target/fd/tg/g3/M01/83/94/CggYGVXNv0KAUby6AAi8ubLd568706_C_640_470.jpg_.webp?proc=source%2ftrip"
+															<img alt="" src="/nadri/repository/img/main/seoul_1.jpg"
+																class="img-img">
+															<div class="img-grey"></div>
+															<img src="/nadri/repository/img/main/seoul_1.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img
-																src="https://youimg1.tripcdn.com/target/fd/tg/g4/M0B/85/21/CggYHlXNv0uAe0xFAAr3ntqKZYk621_C_640_470.jpg_.webp?proc=source%2ftrip"
-																class="d-block w-100" alt="...">
+															<img alt="" src="/nadri/repository/img/main/seoul_2.jpg"
+																class="img-img">
+															<div class="img-grey"></div>
+															<img src="/nadri/repository/img/main/seoul_2.jpg"
+																class="d-block w-100" alt="..." style="width: 650px;">
 														</div>
 													</div>
 													<button class="carousel-control-prev" type="button"
@@ -111,7 +117,7 @@
 											<div
 												class="image-gallery-thumbnails-wrapper container image-gallery-overview">
 												<div class="image-gallery-thumbnails">
-													<div>
+													<div style="display: flex;">
 														<button type="button"
 															class="image-gallery-left-nav image-gallery-overview-left-nav">
 															<i class="c-icon icon-back-top arrow-left"></i>
@@ -122,34 +128,28 @@
 															<i class="c-icon icon-back-top arrow-right"></i>
 														</button>
 													</div>
-													<div class="row row-cols-4"
-														style="transform: translated3d(-516px, 0px, 0px);"ThumbnailNavigation">
+													<div class="row row-cols-4">
 
 														<a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
+															<img id="col-img1" class="col"
 															src="/nadri/repository/img/main/seoul_1.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
+															<img id="col-img2" class="col"
 															src="/nadri/repository/img/main/seoul_1.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
-														</a> <a role="button" aria-pressed="true"
-															aria-label="Go to Slide 3"
-															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
+															<img id="col-img3" class="col"
+															src="/nadri/repository/img/main/seoul_2.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 4"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
+															<img id="col-img4" class="col"
+															src="/nadri/repository/img/main/seoul_2.jpg"></img>
 														</a>
 													</div>
 												</div>
@@ -162,16 +162,15 @@
 
 						<!-- BoxRight -->
 						<div class='BoxRight box-right'
-							style="height: 950px; position: relative; z-index: 0">
+							style="position: relative; z-index: 0">
 							<div class="trip_User trip_moment_user userContainer">
 								<div class="trip_container">
 									<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
 										fill="currentColor" class="bi bi-person-circle"
 										viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-											d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
+									<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+									<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+									</svg>
 								</div>
 								<span class="nickname">귤좋아하는배찌</span>
 							</div>
@@ -190,13 +189,12 @@
 										점심이나 저녁드리시고 걷는거 좋아하시는 분들은 추천드려요 ❤️ #광교여행 #단풍 #카페거리 #광교 #겨울을부탁해</div>
 
 									<div
-										style="background-color: rgb(255, 255, 255); width: 30px; height: 22px; position: absolute; bottom: 0px; right: 0px;">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+										style="background-color: rgb(245, 247, 250); width: 30px; height: 30px; position: absolute; bottom: 0px; right: 0px;">
+										<!--  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentColor" class="bi bi-arrow-down"
 											viewBox="0 0 16 16">
-  <path fill-rule="evenodd"
-												d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
-</svg>
+									  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+									</svg>-->
 									</div>
 								</div>
 								<div class="time">작성일 : 2020년 11월 29일</div>
@@ -227,6 +225,7 @@
 								</div>
 							</div>
 							<!-- scroll content End -->
+							<!-- 좋아요 & 댓글 달기 -->
 							<div class="like input_view">
 								<div class="like input_phaise_container">
 									<div class="like">
@@ -238,20 +237,344 @@
 									</div>
 								</div>
 								<div class="like_btn textarea_container">
-									<div class="like textarea_2" contenteditable="true" placeholder="댓글을 남겨주세요"></div>
+									<div class="like textarea_2" contenteditable="true"
+										placeholder="댓글을 남겨주세요"></div>
 								</div>
-								<div class="like submit" style="#287DFA88">확인</div>
+								<div class="like submit" style="color: #287DFA88">확인</div>
 							</div>
+							<!-- 좋아요 & 댓글 달기 End -->
 						</div>
 						<!-- BoxRight End -->
+					</div>
+				</div>
+				<!-- 관련 트립 모먼트 -->
+				<div class="travel-photo-title">관련 트립모먼트</div>
+				<div class="PhotoListStyle tripphoto">
+					<div style="position: relative; height: 1250px;">
+						<div class="item item-odd"
+							style="position: absolute; left: 0px; top: 0px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> 
+										<img class="img" alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-even"
+							style="position: absolute; left: 290px; top: 0px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> 
+										<img class="img" alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											 fill="currentColor" class="bi bi-person-circle"
+											 viewBox="0 0 16 16">
+										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+										</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-odd"
+							style="position: absolute; left: 580px; top: 0px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-even"
+							style="position: absolute; left: 870px; top: 0px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											 fill="currentColor" class="bi bi-person-circle"
+											 viewBox="0 0 16 16">
+  										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+										</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-odd"
+							style="position: absolute; left: 0px; top: 430px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											 fill="currentColor" class="bi bi-person-circle"
+											 viewBox="0 0 16 16">
+  										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+										</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-even"
+							style="position: absolute; left: 290px; top: 430px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											 fill="currentColor" class="bi bi-person-circle"
+											 viewBox="0 0 16 16">
+  										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+										</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-odd"
+							style="position: absolute; left: 580px; top: 430px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-even"
+							style="position: absolute; left: 870px; top: 430px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> 
+										<img class="img" alt="서울, 추천 트립 모먼트" src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-odd"
+							style="position: absolute; left: 580px; top: 860px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-even"
+							style="position: absolute; left: 0px; top: 860px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> 
+										<img class="img" alt="서울, 추천 트립 모먼트" src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-odd"
+							style="position: absolute; left: 290px; top: 860px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item item-even"
+							style="position: absolute; left: 870px; top: 860px;">
+							<div class="content">
+								<div class="img-tripmoment">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip">
+									</a>
+								</div>
+
+
+								<div class="text">
+									<a style="color: black;" data-line-clamp="2" class="item-title"
+										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
+									<div class="user ellipsis">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+										<span class="nickname">골골골</span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- TravelDetailContainer -->
 	</div>
-
-	<script type="text/javascript"
-		src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
 </body>
 </html>

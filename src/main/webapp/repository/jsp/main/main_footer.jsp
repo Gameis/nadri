@@ -25,20 +25,20 @@
 							<ul class="foot_clearfix_icon">
 								<li class="foot_clearfix_icon-item icon_facebook"><a
 									target="_blank" href="http://www.facebook.com/tripcom.kr">
-										<img src="./repository/img/main/facebook.png">
+										<img src="/nadri/repository/img/main/facebook.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_instagram"><a
 									target="_blank" href="http://www.instagram.com/tripcom.kr">
-										<img src="./repository/img/main/instagram.png">
+										<img src="/nadri/repository/img/main/instagram.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_naver"><a target="">
-										<img src="./repository/img/main/naver.png">
+										<img src="/nadri/repository/img/main/naver.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_youtube"><a
-									target=""> <img src="./repository/img/main/youtube.png">
+									target=""> <img src="/nadri/repository/img/main/youtube.png">
 								</a></li>
 								<li class="foot_clearfix_icon-item icon_kakao"><a target="">
-										<img src="./repository/img/main/kakao.png">
+										<img src="/nadri/repository/img/main/kakao.png">
 								</a></li>
 							</ul>
 						</div>
@@ -103,7 +103,7 @@
 				<div class="trip_main_foot_awards">
 					<div class="foot_awards_body">
 						<div class="foot_awards_items">
-							<img height="40" alt="수상" src="./repository/img/main/Awards.png">
+							<img height="40" alt="수상" src="/nadri/repository/img/main/Awards.png">
 							<div class="foot_awards_text">
 								한국소비자포럼 주관 <br> 올해의브랜드대상 2년 연속 수상
 							</div>

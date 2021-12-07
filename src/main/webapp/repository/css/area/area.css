@@ -209,7 +209,11 @@ button, input, optgroup, select, textarea {
     margin-left: 8px;
 }
 
-.card {max-height: 300px;}
+.card {
+	max-height: 300px;
+	max-width: 23%;
+}
+
 .card-img-top {max-height: 200px;}
 .carousel-control-next, .carousel-control-prev {width: auto;}
 .slide_img {overflow: hidden;}
@@ -331,3 +335,113 @@ button, input, optgroup, select, textarea {
     text-align: center;
     font-weight: bold;
 }
+
+.areaInfo .areaInfo-title {
+    position: relative;
+    border: 1px solid rgb(218, 223, 230);
+    padding: 16px 16px 16px 56px;
+    border-radius: 2px;
+}
+
+.areaInfo .areaInfo-title .areaInfo-title-icon {
+    display: inline-block;
+    position: absolute;
+    color: rgb(15, 41, 77);
+    font-size: 24px;
+    top: 16px;
+    left: 16px;
+}
+
+.area-title-text {
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: rgb(15, 41, 77);
+    line-height: 26px;
+    height: 26px;
+    font-weight: bold;
+}
+
+.area-info-body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.area-content {
+    width: 650px;
+}
+.area-content-text p {
+    text-overflow: ellipsis;
+    height: 88px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.area-content-plus {
+    padding-top: 8px;
+    padding-bottom: 16px;
+    margin: 0 16px;
+    border-top: 0px;
+    max-width: 767px;
+    position: relative;
+    height: 20px;
+}
+
+.area-content-plus .modal-header {border-bottom: 0px !important;}
+.area-content-plus .modal-dialog {max-width: 1000px;}
+
+.area-content-plus span {
+    margin: 1px auto 0px;
+    font-size: 14px;
+    color:rgb(40, 129, 250);
+    line-height: 18px;
+    text-align: right;
+    cursor: pointer;
+    position: absolute;
+    font-weight: bold;
+    right: 22px;
+}
+
+.area-content-plus i {
+    font-size: 16px;
+    color: #287DFA;
+    position: absolute;
+    right: 0px;
+}
+
+.map-box {
+    height: 114px;
+    width: 247px;
+}
+
+.map-box img {
+    height: 100%;
+    width: 100%;
+}
+ 
+.area-weather h2 {
+    margin-top: 40px;
+    padding: 24px 32px;
+    font-size: 28px;
+    color: rgb(25, 41, 77);
+    line-height: 34px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.area-weather-Info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid rgb(218, 223, 230);
+}
+
+.area-weather-Info > div {
+    border: 1px solid rgb(218, 223, 230);
+}
+
+.weather {padding: 44px 0 42px;}
+
+.weather-num-con {
+    display: flex;
+    justify-content: center;
+}
+

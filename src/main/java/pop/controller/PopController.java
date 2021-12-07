@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.service.PopService;
@@ -33,6 +34,7 @@ public class PopController {
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
 	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
+								@RequestParam int pop_seq,
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
 		
@@ -70,6 +72,7 @@ public class PopController {
 			
 			tripPopReviewDTO.setPop_review_imageName(newFileName);
 			System.out.println(tripPopReviewDTO);
+			System.out.println(pop_seq);
 			
 			//DB갓다오자
 
@@ -94,8 +97,20 @@ public class PopController {
 	@ResponseBody
 	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
 		System.out.println("컨트롤왔다");
+		
+		System.out.println(popService.getLocation(pop_seq));
+		
 		return popService.getLocation(pop_seq);
 		
+	}
+	
+	@RequestMapping(value="/getPopImg", method=RequestMethod.POST)
+	@ResponseBody
+	public List<TripPopImgDTO> getPopImg(@RequestParam int pop_seq) {
+		System.out.println("이미지 컨트롤 와따");
+		System.out.println(popService.getPopImg(pop_seq));
+		
+		return popService.getPopImg(pop_seq);
 	}
 	
 	
