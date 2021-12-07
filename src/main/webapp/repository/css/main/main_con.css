@@ -302,12 +302,22 @@ a, a:hover {
 
 .index_popular-dest {
 	width: 100%;
-	flex-wrap: wrap;
-	display: grid;
-	grid-template-columns: 24% 24% 24% 24%;
-	grid-column-gap: 1%;
-	flex-wrap: wrap;
-	height: 350px;
+    position: absolute;
+    z-index: -1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.index_popular {
+	margin-left: 16px;
+	flex: 0 0 calc(25% - 17px);
+	margin-top: 5px;
+	width: 80px;
+	height: 300px;
+	
 }
 
 .DestinationStyle {

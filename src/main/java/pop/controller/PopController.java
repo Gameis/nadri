@@ -34,6 +34,7 @@ public class PopController {
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
 	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
+								@RequestParam int pop_seq,
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
 		
@@ -69,8 +70,9 @@ public class PopController {
 			}
 			
 			
-			//tripPopImg.setPop_review_imageName(newFileName);
+			tripPopReviewDTO.setPop_review_imageName(newFileName);
 			System.out.println(tripPopReviewDTO);
+			System.out.println(pop_seq);
 			
 			//DB갓다오자
 

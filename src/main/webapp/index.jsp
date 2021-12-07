@@ -111,10 +111,9 @@
 			<div class="popular_trip_destination_index_content">
 				<div class="popularcitylist">
 					<div class="index_content_popular">
-						<div class="index_popular-dest"
-							style="z-index: 1; position: relative">
+						<div class="index_popular-dest" style="z-index: 1; position: relative">
 
-							<div class="index_popular-dest_seoul">
+							<div class="index_popular">
 								<div class="DestinationStyle">
 									<i class="img-wrap"></i>
 									<div class="Video_module_seoul"
@@ -134,7 +133,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="index_popular-dest_jeju">
+							<div class="index_popular">
 								<div class="DestinationStyle">
 									<i class="img-wrap"></i>
 									<div class="Video_module_jeju"
@@ -155,7 +154,7 @@
 								</div>
 							</div>
 
-							<div class="index_popular-dest_gangneung">
+							<div class="index_popular">
 								<div class="DestinationStyle">
 									<i class="img-wrap"></i>
 									<div class="Video_module_suwon"
@@ -170,7 +169,59 @@
 								</div>
 							</div>
 
-							<div class="index_popular-dest_jeju">
+							<div class="index_popular">
+								<div class="DestinationStyle">
+									<div class="img-wrap">
+										<a title="" href=""> <img alt=""
+											src="./repository/img/main/jeonju_1.jpg">
+										</a>
+										<p class="img-wrap_title">
+											<a class="title" title="" href=""></a>
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="index_popular">
+								<div class="DestinationStyle">
+									<div class="img-wrap">
+										<a title="" href=""> <img alt=""
+											src="./repository/img/main/jeonju_1.jpg">
+										</a>
+										<p class="img-wrap_title">
+											<a class="title" title="" href=""></a>
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="index_popular">
+								<div class="DestinationStyle">
+									<div class="img-wrap">
+										<a title="" href=""> <img alt=""
+											src="./repository/img/main/jeonju_1.jpg">
+										</a>
+										<p class="img-wrap_title">
+											<a class="title" title="" href=""></a>
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="index_popular">
+								<div class="DestinationStyle">
+									<div class="img-wrap">
+										<a title="" href=""> <img alt=""
+											src="./repository/img/main/jeonju_1.jpg">
+										</a>
+										<p class="img-wrap_title">
+											<a class="title" title="" href=""></a>
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							<div class="index_popular">
 								<div class="DestinationStyle">
 									<div class="img-wrap">
 										<a title="" href=""> <img alt=""
@@ -183,6 +234,8 @@
 								</div>
 							</div>
 						</div>
+						
+						
 						<div class="MoreBtnStyle">
 							<a style="margin-top: unset" title="인기 여행지 더 보기" href=""
 								class="moreBtn">인기 여행지 더 보기</a>
@@ -642,7 +695,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-	List = [ "종로2가사거리", "창경궁.서울대학교병원", "명륜3가.성대입구", "종로2가.삼일교",
+	List = [ "명동", "종로2가사거리", "창경궁.서울대학교병원", "명륜3가.성대입구", "종로2가.삼일교",
 			"혜화동로터리.여운형활동터", "서대문역사거리", "서울역사박물관.경희궁앞", "서울역사박물관.경희궁앞", "광화문",
 			"광화문", "종로1가", "종로1가", "종로2가", "종로2가", "종로3가.탑골공원", "종로3가.탑골공원",
 			"종로4가.종묘", "종로4가.종묘", "종로5가.광장시장", "종로5가.광장시장", "종로6가.동대문종합시장",

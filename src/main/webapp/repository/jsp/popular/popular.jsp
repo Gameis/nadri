@@ -27,12 +27,19 @@
         <div id="areaHeader" class="areaHeader">
             
             <div id="areaPath" class="areaPath">
-                <div class="areaPathItem"><a href="#">홈</a></div>
+	            <nav aria-label="breadcrumb">
+				  <ol class="breadcrumb">
+				    <li class="breadcrumb-item"><a href="#">홈</a></li>
+				    <li class="breadcrumb-item"><a href="#">서울</a></li>
+				    <li class="breadcrumb-item active" aria-current="page">명동</li>
+				  </ol>
+				</nav>
+                <!-- <div class="areaPathItem"><a href="#">홈</a></div>
                 <div class="areaPathItem"><a href="#">트립 가이드</a></div>
                 <div class="areaPathItem"><a href="#">아시아</a></div>
                 <div class="areaPathItem"><a href="#">대한민국</a></div>
                 <div class="areaPathItem"><a href="#">서울</a></div>
-                <div class="areaPathItem"><a href="#">명동</a></div>
+                <div class="areaPathItem"><a href="#">명동</a></div> -->
             </div><!--areaPath-->
             
             <div id="areaSearch" class="areaSearch">
