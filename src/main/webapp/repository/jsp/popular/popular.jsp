@@ -62,7 +62,7 @@
 	    <div class="popularLocation-score-review-like">
 	    	<div class="score-review-wrap">
 	    		<span class="pop-score">
-	    			<span>4.5</span>
+	    			<span class="pop-score-avg">avg_score</span>
 	    			<span style="font-size:14px; padding:3px 0; color: #8592A6">/5</span>
 	    		</span><!-- pop-score -->
 	    		
@@ -198,15 +198,13 @@
 <script type="text/javascript">
 //지도api
 $(function(){
-
+	//이미지
 	$.ajax({
 		url: '/nadri/popular/getPopImg',
 		type: 'post',
 		data: 'pop_seq='+$('#pop_seq').val(),
 		success: function(data){
 			alert(JSON.stringify(data));
-			alert('이미지 성공해따')
-			alert(data[0].img_name);
 			
 			//이미지 데이터 넣기
 			$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
@@ -240,14 +238,14 @@ $(function(){
 			alert('이미지 ajax 실패했다')
 		}
 	});
-	
+
+	//지도API
 	$.ajax({
 		url: '/nadri/popular/getLocation',
 		type: 'get',
 		data: 'pop_seq='+$('#pop_seq').val(),
 		success: function(data){
 			alert(JSON.stringify(data));
-			alert('성공햇다');
 			
 			$('#popularLocation_name h1').text(data.pop_name);
 			$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
@@ -302,6 +300,45 @@ $(function(){
 		},error: function(err){
 			console.log(err);
 			alert('실패했따');
+		}
+	});
+
+	//리뷰관련
+	$.ajax({
+		url: '/nadri/popular/getCountView',
+		success: function(data){
+			alert(JSON.stringify(data));
+
+			var avg_score_content = null;
+			const avg_score = parseFloat($.trim(data.avg_score));
+			const total_negativeReview = parseFloat($.trim(data.total_negativeReview));
+
+
+			alert(total_negativeReview);
+
+			if(avg_score<1){
+				avg_score_content = '최악이에요';
+			}else if(avg_score<2){
+				avg_score_content = '보통이에요';
+			}else if(avg_score<3){
+				avg_score_content = '좋아요!';
+			}else if(avg_score<4){
+				avg_score_content = '최고에요!';
+			}else if(avg_score<=5){
+				avg_score_content = '완벽해요!';
+			}
+
+			$('.pop-score .pop-score-avg').text(data.avg_score);
+			$('.pop-review-reviewIcon div').text(data.total_review+'건의 리뷰');
+			$('.switch-container .switch-sort .sort-get-score').text(data.avg_score);
+			$('.switch-container .switch-sort .sort-get-catergory').text(avg_score_content);
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(0)').text('모두보기 ('+data.total_review+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(1)').text('긍정적 ('+data.total_positiveReview+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(2)').text('부정적 ('+total_negativeReview+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(3)').text('사진 ('+data.total_photo+')');
+
+		},error: function(err){
+			console.log(err);
 		}
 	});
 			

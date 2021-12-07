@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewDTO;
@@ -34,52 +35,57 @@ public class PopController {
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
 	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
-								@RequestParam int pop_seq,
+								@ModelAttribute TripPopImgDTO tripPopImgDTO,
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
+		//받아오기전까지만 쓰기
+		int member_seq = 1;
+		tripPopReviewDTO.setMember_seq(member_seq);
 		
-		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\popular\\review";
-		String fileName;
-		File file;
+		System.out.println(tripPopReviewDTO);
 		
+		popService.popReviewWrite(tripPopReviewDTO);
+		
+		//세션받기
+//		ModelAndView mv = new ModelAndView();
+//		HttpSession session = request.getSession();
+//		int member_seq = (int)session.getAttribute("member_seq");
+//		session.setAttribute("member_seq", member_seq);
+//		mv.setViewName("/repository/jsp/popular/popular");
 		
 		
 		for(MultipartFile img : list) {
-			//파일이름 가져오기
-			fileName = img.getOriginalFilename();
-			//String extension = fileName.substring(fileName.lastIndexOf("."), fileName.length());//확장자빼오기
-			
-			//파일이름 중복방지
-			
-			UUID uuid = UUID.randomUUID();
-			String newFileName = uuid.toString() + "_" + fileName;
-			
-			//파일 업로드 경로와 이름 설정
-			
-			file = new File(filePath, newFileName);
-			
-			try {
-				if(checkImageType(file)) {
-				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
-				}else {
-					System.out.println("이미지파일이 아닙니다.");
-					return;
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			
-			tripPopReviewDTO.setPop_review_imageName(newFileName);
-			System.out.println(tripPopReviewDTO);
-			System.out.println(pop_seq);
-			
-			//DB갓다오자
-
+			imgReNameCopy(tripPopImgDTO, img, "F", "review", "\\popular\\review");
+			popService.popReviewImgWrite(tripPopImgDTO);
 		}//for
 		
+	}
+			
+	@RequestMapping(value="getCountView")
+	@ResponseBody
+	public TripPopCountDTO getCountView() {
+		return popService.getCountView();
+	}
+	
+	
+	@RequestMapping(value="/getLocation", method=RequestMethod.GET)
+	@ResponseBody
+	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
+		
+		return popService.getLocation(pop_seq);
 		
 	}
+	
+	@RequestMapping(value="/getPopImg", method=RequestMethod.POST)
+	@ResponseBody
+	public List<TripPopImgDTO> getPopImg(@RequestParam int pop_seq) {
+		
+		return popService.getPopImg(pop_seq);
+	}
+	
+	
+	
+	
 	
 	//img파일인지 체크 메소드
 	private boolean checkImageType(File file) {
@@ -93,25 +99,39 @@ public class PopController {
 		return false;
 	}
 	
-	@RequestMapping(value="/getLocation", method=RequestMethod.GET)
-	@ResponseBody
-	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
-		System.out.println("컨트롤왔다");
+	//함수
+		public void imgReNameCopy(TripPopImgDTO tripPopImgDTO, MultipartFile img, String isMain, String img_path, String path) {
+//		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
+		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
 		
-		System.out.println(popService.getLocation(pop_seq));
+		String fileName = null;
+		File file = null;
 		
-		return popService.getLocation(pop_seq);
+		fileName = img.getOriginalFilename();
 		
+		UUID uuid = UUID.randomUUID();
+		String newFileName = uuid.toString() + "_" + fileName;
+		
+		file = new File(filePath, newFileName);
+		
+		uuid = UUID.randomUUID();
+		newFileName = uuid.toString() + "_" + fileName;
+		
+		file = new File(filePath, newFileName);
+		try {
+			if(checkImageType(file)) {
+				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+				}else {
+					System.out.println("이미지파일이 아닙니다.");
+					return;
+				}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		tripPopImgDTO.setMainImg(isMain);
+		tripPopImgDTO.setImg_name(newFileName);
+		tripPopImgDTO.setImg_path(img_path);
 	}
-	
-	@RequestMapping(value="/getPopImg", method=RequestMethod.POST)
-	@ResponseBody
-	public List<TripPopImgDTO> getPopImg(@RequestParam int pop_seq) {
-		System.out.println("이미지 컨트롤 와따");
-		System.out.println(popService.getPopImg(pop_seq));
-		
-		return popService.getPopImg(pop_seq);
-	}
-	
 	
 }
