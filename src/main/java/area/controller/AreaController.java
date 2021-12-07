@@ -30,6 +30,12 @@ public class AreaController {
 	@Autowired
 	private AreaService areaService;
 
+	@RequestMapping(value = "/area", method = RequestMethod.GET)
+	public String area() {
+		
+		return "/repository/jsp/area/area";
+	}
+	
 	@RequestMapping(value = "/popWriteForm", method = RequestMethod.GET)
 	public String popWriteForm() {
 		return "/repository/jsp/area/popWriteForm";
@@ -42,8 +48,6 @@ public class AreaController {
 						 @ModelAttribute ImgDTO imgDTO,
 						 @RequestParam("main_img") MultipartFile main_img,
 						 @RequestParam("img[]") List<MultipartFile> list) {
-		
-
 		
 		areaService.popWrite(tripPopDTO, tripPopMapDTO);
 		
