@@ -628,6 +628,9 @@
 			</jsp:include>
 		</footer>
 	</div>
+	
+	
+	
 </body>
 <!-- video mouseover 시 재생 -->
 <script type="text/javascript">

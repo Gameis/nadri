@@ -60,7 +60,7 @@ public class SpringConfiguration {
     	SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
     	sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
     	sqlSessionFactoryBean.setDataSource(dataSource());
-    	//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
+    	//sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("member/dao/memberMapper.xml"));
     	sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:*/dao/*Mapper.xml"));
 		return sqlSessionFactoryBean.getObject();//SqlSessionFactory 반환
 
@@ -79,5 +79,5 @@ public class SpringConfiguration {
     }
     //-----------
     
-    
+   
 }
