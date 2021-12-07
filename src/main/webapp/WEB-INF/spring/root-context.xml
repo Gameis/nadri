@@ -22,4 +22,5 @@
 	<context:component-scan base-package="tripmoment.bean" />
 
 
+
 </beans>
