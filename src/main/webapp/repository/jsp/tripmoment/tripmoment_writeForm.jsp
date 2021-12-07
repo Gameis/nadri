@@ -33,14 +33,15 @@
 						<p class="image-warn image-warn-h5">하나 이상의 사진을 추가해주세요.</p>
 						<div class="publish-title">사진 업로드</div>
 						<p class="sub-title">여행 특징이 담긴 사진을 업로드해주세요.</p>
-						<form id="uploadImageForm" class="photos">
+						<form id="uploadImageForm" class="photos" id="photos">
 							<div class="add li h5">
 								<div class="cell">
 									<div class="icon-upload">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
 											class="bi bi-camera-fill" viewBox="0 0 16 16">
 										<path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-										<path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+										<path
+												d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
 										</svg>
 
 									</div>
@@ -62,14 +63,17 @@
 					</div>
 					<!-- 제목 추가 -->
 					<div class="PublishTitleContainer">
-						<div class="publish-title">제목 추가 <span class="supplement">(필수)</span>
+						<div class="publish-title">
+							제목 추가 <span class="supplement">(필수)</span>
 						</div>
-						<input type="text" placeholder="제목이 포함된 게시글은 인기글로 선정될 확률이 높아요." name="moment_title" id="moment_title">
+						<input type="text" placeholder="제목이 포함된 게시글은 인기글로 선정될 확률이 높아요."
+							name="moment_title" id="moment_title">
 						<p class="title-warn title-warn-online">제목을 입력해주세요.</p>
 					</div>
 
 					<div class="PublishContentContainer">
-						<div class="nadritripmoment publish-title"> 여행 스토리를 공유해주세요! <span class="supplement">(필수)</span>
+						<div class="nadritripmoment publish-title">
+							여행 스토리를 공유해주세요! <span class="supplement">(필수)</span>
 						</div>
 						<div class="nadritripmoment input">
 							<div id="moment_content"
@@ -94,7 +98,8 @@
 									placeholder="위치를 추가해주세요.">
 							</div>
 						</div>
-						<p class="location-warn location-warn-online" name="pop_name" id="pop_name">위치를 입력해주세요.</p>
+						<p class="location-warn location-warn-online" name="pop_name"
+							id="pop_name">위치를 입력해주세요.</p>
 					</div>
 					<div class="PublicPrivacyContainer tripmt-pv">
 						<div class="agreement">
@@ -128,53 +133,151 @@
 	<script type="text/javascript"
 		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
+		$(".submit").click(function() {
+	<%--var img[] = $('.image-upload').val(); --%>
+		var moment_title = $('.moment_title').val();
+							var moment_content = $('.moment_content').val();
+							var pop_name = $('.pop_name').val();
 
-			$(".submit").click(function() {
+							$('.image-warn').css('display', 'none');
+							$('.title-warn').css('display', 'none');
+							$('.content-warn').css('display', 'none');
+							$('.location-warn').css('display', 'none');
 
-				<%--var img[] = $('.image-upload').val(); --%>
-				var moment_title = $('.moment_title').val();
-				var moment_content = $('.moment_content').val();
-				var pop_name = $('.pop_name').val();
+							if (!$('#chooseFile').val()) {
+								$('.image-warn').css('display', 'block');
+							}
 
-				$('.image-warn').css('display', 'none');
-				$('.title-warn').css('display', 'none');
-				$('.content-warn').css('display', 'none');
-				$('.location-warn').css('display', 'none');
+							else if (moment_title == "") {
+								$('.title-warn').css('display', 'block');
+							}
 
-				if (!$('#chooseFile').val()) {
-					$('.image-warn').css('display', 'block');
-				}
+							else if (moment_content == "") {
+								$('.content-warn').css('display', 'block');
+							}
 
-				else if (moment_title == "") {
-					$('.title-warn').css('display', 'block');
-				}
+							else if (pop_name == "") {
+								$('.location-warn').css('display', 'block');
 
-				else if (moment_content == "") {
-					$('.content-warn').css('display', 'block');
-				}
+							} else {
 
-				else if (pop_name == "") {
-					$('.location-warn').css('display', 'block');
-				} else {
+								var formData = new FormData(
+										$('#uploadImageForm')[0]); //form안에 있는 모든 것
+								$.ajax({
+									url : '/nadri/main/tripmoment_writeForm',
+									type : 'POST',
+									enctype : 'multipart/form-data',
+									processData : false,
+									contentType : false,
+									data : formData,
+									success : function() {
+										alert('이미지 등록 완료');
+									},
+									error : function(err) {
+										console.log(err)
+									}
+								});
+							}
+		});
+	</script>
+	<script>
+							(
+							imageView = function imageView(photos, btn) {
+								var attZone = document.getElementById(photos);
+								var chooseFile = document.getElementById(btn)
+								var list_files = [];
 
-					var formData = new FormData($('#uploadImageForm')[0]); //form안에 있는 모든 것
-					$.ajax({
-						url : '/nadri/main/tripmoment_writeForm',
-						type : 'POST',
-						enctype : 'multipart/form-data',
-						processData : false,
-						contentType : false,
-						data : formData,
-						success : function() {
-							alert('이미지 등록 완료');
-						},
-						error : function(err) {
-							console.log(err)
-						}
-					});
-				}
-			});
-
+								// 이미지와 체크 박스를 감싸고 있는 form 속성
+								var div_style = 'display:inline-block;position:relative;'
+										+ 'width:150px;height:120px;margin:5px;border:1px solid #00f;z-index:1';
+								// 미리보기 이미지 속성
+								var img_style = 'width:100%;height:100%;z-index:none';
+								// 이미지안에 표시되는 체크박스의 속성
+								var chk_style = 'width:30px;height:30px;position:absolute;font-size:24px;'
+										+ 'right:0px;bottom:0px;z-index:999;background-color:rgba(255,255,255,0.1);color:#f00';
+							
+							
+								chooseFile.onchange = function(e){
+							    var files = e.target.files;
+							    var fileArr = Array.prototype.slice.call(files)
+							    for(f of fileArr){
+							      imageLoader(f);
+							    }
+							  }
+							
+							// 탐색기에서 드래그앤 드롭 사용
+						    attZone.addEventListener('dragenter', function(e){
+						      e.preventDefault();
+						      e.stopPropagation();
+						    }, false)
+						    
+						    attZone.addEventListener('dragover', function(e){
+						      e.preventDefault();
+						      e.stopPropagation();
+						      
+						    }, false)
+						  
+						    attZone.addEventListener('drop', function(e){
+						      var files = {};
+						      e.preventDefault();
+						      e.stopPropagation();
+						      var dt = e.dataTransfer;
+						      files = dt.files;
+						      for(f of files){
+						        imageLoader(f);
+						      }
+						      
+						    }, false)	
+						    
+						    /*첨부된 이미리즐을 배열에 넣고 미리보기 */
+						    imageLoader = function(file){
+						        lust_files.push(file);
+						        var reader = new FileReader();
+						        reader.onload = function(ee){
+						          let img = document.createElement('img')
+						          img.setAttribute('style', img_style)
+						          img.src = ee.target.result;
+						          attZone.appendChild(makeInput(img, file));
+						        }
+						        
+						        reader.readAsDataURL(file);
+						      }
+							
+						    /*첨부된 파일이 있는 경우 checkbox와 함께 attZone에 추가할 div를 만들어 반환 */
+						    makeDiv = function(img, file){
+						        var div = document.createElement('div')
+						        div.setAttribute('style', input_style)
+						        
+						        var btn = document.createElement('div')
+						        btn.setAttribute('type', 'button')
+						        btn.setAttribute('value', 'x')
+						        btn.setAttribute('delFile', file.name);
+						        btn.setAttribute('style', chk_style);
+						        btn.onclick = function(ev){
+						          var ele = ev.srcElement;
+						          var delFile = ele.getAttribute('delFile');
+						          for(var i=0 ; i<list_files.length; i++){
+						            if(delFile == list_files[i].name){
+						              lisst_files.splice(i, 1);      
+						            }
+						          }
+						          
+						          dt = new DataTransfer();
+						          for(f in list_files) {
+						            var file = list_files[f];
+						            dt.items.add(file);
+						          }
+						          chooseFile.files = dt.files;
+						          var p = ele.parentNode;
+						          attZone.removeChild(p)
+						        }
+						        div.appendChild(img)
+						        div.appendChild(btn)
+						        return div
+						      }
+							}
+							)('photos', 'chooseFile')
+					
 	<%--
 var submit = document.getElementById('submitButton');
 submit.onclick = showImage;     //Submit 버튼 클릭시 이미지 보여주기

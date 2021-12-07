@@ -448,6 +448,10 @@ button, input, optgroup, select, textarea {
 	margin: 10px 32px 14px;
 }
 
+.article_content::-webkit-scrollbar {
+	display: none;
+}
+
 .BoxRight .content_collapse {
 	font-size: 16px;
 	line-height: 24px;

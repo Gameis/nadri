@@ -3,7 +3,7 @@ $(function(){
         var content = $(this).children('.content_collapse');
         var content_txt = content.text();
         var content_txt_short = content_txt.substring(0,100)+"...";
-        var btn_more = $('<a href="" class="bi-arrow-down"></a>');
+        var btn_more = $('<a href="javascript:void(0)" class="bi-arrow-down"></a>');
         
         $(this).append(btn_more);
         
@@ -23,7 +23,6 @@ $(function(){
             }else{
                 content.html(content_txt);
                 $(this).addClass('short');
-
             }
         }
     });
