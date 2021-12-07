@@ -4,13 +4,20 @@ import java.util.List;
 
 import area.bean.ImgDTO;
 import area.bean.PopMainDTO;
+import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 
 public interface AreaService {
 	public void popWrite(TripPopDTO tripPopDTO, TripPopMapDTO tripPopMapDTO);
 
-	public void imgWrite(ImgDTO imgDTO);
+	public void imgPopWrite(ImgDTO imgDTO);
 
-	public List<PopMainDTO> onArea(int main_seq);
+	public List<PopMainDTO> onAreaPop(int main_seq);
+
+	public void activityWrite(TripActivityDTO tripActivityDTO);
+
+	public void imgActivityWrite(ImgDTO imgDTO);
+
+	public List<PopMainDTO> onAreaActivity(int main_seq);
 }

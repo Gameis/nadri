@@ -12,7 +12,7 @@
 		<typeAlias type="area.bean.ImgDTO" alias="img"/>
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
-
+		<typeAlias type="area.bean.TripActivityDTO" alias="tripActivity"/>
 
  		<typeAlias type="user.bean.UserDTO" alias="user"/>
 		<typeAlias type="user.bean.ZipcodeDTO" alias="zipcode"/>		
@@ -20,6 +20,7 @@
 		
 
 		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
+		<typeAlias type="area.bean.ActivityMainDTO" alias="activityMain"/>
 
 	</typeAliases>
 </configuration>

@@ -17,6 +17,7 @@
         주소 : <input type="text" name="address_name" id="address_name" class="address_name" readonly/><br/>
         x : <input type="text" name="map_x" id="map_x" class="map_x" readonly/><br/>
         y : <input type="text" name="map_y" id="map_y" class="map_y" readonly/><br/>
+        메인이미지 : <input type="file" name="main_img" id="main_Img"/><br/>
         이미지 : <input type="file" name="img[]" id="img" multiple/><br/>
         <input type="button" id="popWriteBtn" value="작성완료"/>
         <input type="reset" value="다시작성"/>

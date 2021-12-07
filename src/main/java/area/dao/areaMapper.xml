@@ -3,8 +3,12 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="areaSQL">
-	<insert id="imgWrite" parameterType="img">
-		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, pop_seq.currval, #{main_seq})
+	<insert id="imgPopWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, pop_seq.currval, #{main_seq}, #{mainImg})
+	</insert>
+	
+	<insert id="imgActivityWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, activity_seq.currval, #{main_seq}, #{mainImg})
 	</insert>
 	
 	<insert id="popWrite" parameterType="tripPop">
@@ -19,9 +23,31 @@
 		select pop_seq, pop_name, pop_businesstime, pop_tourismtime, pop_call, main_seq, img_name, img_path
 		from trippop
 		join (select img_name, img_path, seq
-      	from img 
-      	where content_seq = 3 and main_seq = #{main_seq} and img_seq in (select min(img_seq) 
-                                                          				 from img
-                                                          				 group by content_seq, seq, main_seq))i on(trippop.pop_seq = i.seq)
+      		  from img 
+      		  where content_seq = 3 and main_seq = #{main_seq} and mainImg = 'T') on(pop_seq = seq)
+	</select>
+	
+	<insert id="activityWrite" parameterType="tripActivity">
+		insert into tripActivity values(activity_seq.nextval, 
+										#{activity_name}, 
+										#{activity_point}, 
+										#{activity_price}, 
+										#{activity_option},
+										#{activity_validDate},
+										#{activity_inclusion},
+										#{activity_refund},
+										#{activity_used},
+										#{activity_information},
+										#{activity_warning},
+										#{activity_saleRate}, 
+										#{main_seq})
+	</insert>
+	
+	<select id="printActivityMain" resultType="activityMain">
+		select activity_seq, activity_name, activity_salerate, activity_price * ((100 - activity_salerate)/100) as price, img_name, img_path
+		from tripactivity
+		join (select img_name, img_path, seq
+      		  from img
+      		  where content_seq = 5 and main_seq = #{main_seq} and mainImg = 'T') on(activity_seq = seq)
 	</select>
 </mapper>
