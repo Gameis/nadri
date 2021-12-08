@@ -3,98 +3,123 @@ package tripmoment.controller;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
+import java.util.UUID;
 
-import javax.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import tripmoment.bean.TripmomentImgDTO;
+import area.bean.ImgDTO;
+import tripmoment.bean.MainTripmomentDTO;
+import tripmoment.bean.TripmomentDTO;
+import tripmoment.service.TripmomentService;
 
 @Controller
-@RequestMapping(value = "/main")
+@RequestMapping(value = "/tripmoment")
 public class TripmomentController {
+	
+	@Autowired
+	private TripmomentService tripmomentService;
 	
 	@RequestMapping(value = "/tripmoment_writeForm", method=RequestMethod.POST)
 	@ResponseBody
-	public String tripmoment_writeForm(@ModelAttribute TripmomentImgDTO tripmomentImgDTO,
-								  @RequestParam("img[]") List<MultipartFile> list) {
+	public String tripmoment_writeForm(
+									   @ModelAttribute TripmomentDTO tripmomentDTO,
+									   @ModelAttribute ImgDTO imgDTO,
+									   @RequestParam("img[]") List<MultipartFile> list) {
 		
-		String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\tripmoment_ImgStorage";
-		String fileName;
-		File file;
 		
+		tripmomentService.tripmoment_write(tripmomentDTO);
+		
+		int count = 0;
 		for(MultipartFile img : list) {
-			fileName = img.getOriginalFilename();
-			file = new File(filePath, fileName);
+			if(count == 0) imgReNameCopy(imgDTO, img, "T", "tripmoment", "\\tripmoment");
+			else imgReNameCopy(imgDTO, img, "F", "tripmoment", "\\tripmoment");
+			tripmomentService.tripmoment_writeForm(imgDTO, tripmomentDTO.getPop_name());
+			count++;
+		} //for
+
 		
+		return "/main/tripmoment_writeForm";
+	}
+	
+	private boolean checkImageType(File file) {
+		try {
+			String contentType = Files.probeContentType(file.toPath());
+			
+			return contentType.startsWith("image");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+	@RequestMapping(value= "/onTripmoment", method=RequestMethod.GET)
+	@ResponseBody
+	public List<MainTripmomentDTO> onTripmoment() {
+		return tripmomentService.onTripmoment();
+	}
+	
+	
+	//함수
+		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
+			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
+			//String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
+//			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+			
+			String fileName = null;
+			File file = null;
+			
+			fileName = img.getOriginalFilename();
+			
+			UUID uuid = UUID.randomUUID();
+			String newFileName = uuid.toString() + "_" + fileName;
+			
+			file = new File(filePath, newFileName);
+			
+			uuid = UUID.randomUUID();
+			newFileName = uuid.toString() + "_" + fileName;
+			
+			file = new File(filePath, newFileName);
 			try {
-				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+				if(checkImageType(file)) {
+					FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
+					}else {
+						System.out.println("이미지파일이 아닙니다.");
+						return;
+					}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			
-			tripmomentImgDTO.setImage1(fileName);
-			tripmomentImgDTO.setImage2("");
-			
-			
-		} //for
-		System.out.println("야 여기가 컨트롤러다");
-		return "/main/tripmoment_write";
-	}
+			imgDTO.setMainImg(isMain);
+			imgDTO.setImg_name(newFileName);
+			imgDTO.setImg_path(img_path);
+		}
 	
-	@RequestMapping("/tripmoment")
-    public String createMember(@Valid @RequestBody TripmomentImgDTO tripmomentImgDTO) {
-        System.out.println("tripmomentImgDTO.getImage1() = " + tripmomentImgDTO.getImage1());
-        System.out.println("tripmomentImgDTO.getImage2() = " + tripmomentImgDTO.getImage2());
-        System.out.println("tripmomentImgDTO.getMoment_title() = " + tripmomentImgDTO.getMoment_title());
-        System.out.println("tripmomentImgDTO.getMoment_content() = " + tripmomentImgDTO.getMoment_content());
-        System.out.println("tripmomentImgDTO.getPop_name() = " + tripmomentImgDTO.getPop_name());
-
-        // 비지니스 로직이 들어가는 자리.
-        return "성공!";
-    }
-
 	/*
-	private static final Logger logger = LoggerFactory.getLogger(TripmomentController.class);
-
-	@Resource(name = "uploadPath")
-	private String uploadPath;
-
-	@RequestMapping(value = "/uploadForm", method = RequestMethod.GET)
-	public void uploadForm() throws Exception {
-	}
-
-	@RequestMapping(value = "/uploadForm", method = RequestMethod.POST)
-	public String uploadForm(MultipartFile file, Model model) throws Exception {
-
-		logger.info("originalName: " + file.getOriginalFilename());
-		logger.info("size: " + file.getSize());
-		logger.info("contentType: " + file.getContentType());
-
-		String savedName = uploadFile(file.getOriginalFilename(), file.getBytes());
-
-		model.addAttribute("savedName", savedName);
-
-		return "/main/tripmoment_writeForm";
-	}
-
-	private String uploadFile(String originalName, byte[] fileData) throws Exception {
-
-		UUID uid = UUID.randomUUID();
-		String savedName = uid.toString() + "_" + originalName;
-		File target = new File(uploadPath, savedName);
-		FileCopyUtils.copy(fileData, target);
-		return savedName;
-	}
+	 * @RequestMapping("/tripmoment") public String
+	 * tripmoment_write(@Valid @RequestBody TripmomentImgDTO tripmomentImgDTO) {
+	 * System.out.println("tripmomentImgDTO.getImage1() = " +
+	 * tripmomentImgDTO.getImage1());
+	 * System.out.println("tripmomentImgDTO.getImage2() = " +
+	 * tripmomentImgDTO.getImage2());
+	 * System.out.println("tripmomentImgDTO.getMoment_title() = " +
+	 * tripmomentImgDTO.getMoment_title());
+	 * System.out.println("tripmomentImgDTO.getMoment_content() = " +
+	 * tripmomentImgDTO.getMoment_content());
+	 * System.out.println("tripmomentImgDTO.getPop_name() = " +
+	 * tripmomentImgDTO.getPop_name());
+	 * 
+	 * // 비지니스 로직이 들어가는 자리. return "성공!"; }
 	 */
+
 }

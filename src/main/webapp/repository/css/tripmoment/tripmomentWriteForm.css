@@ -62,9 +62,20 @@ a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
 	margin-bottom: 16px;
 }
 
-.PublishImageContainer .photos {
+.PublishImageContainer #att_zone {
 	display: flex;
 	flex-wrap: wrap;
+}
+
+#att_zone{
+	width: 660px;
+	min-height:150px;
+	padding:10px;
+}
+#att_zone:empty:before{
+	content : attr(data-placeholder);
+	color : #999;
+	font-size:.9em;
 }
 
 .PublishImageContainer .li {
@@ -93,6 +104,7 @@ a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
 .PublishImageContainer .cell {
 	display: table-cell;
 	vertical-align: middle;
+	width: 158px;
 }
 
 .icon-upload {

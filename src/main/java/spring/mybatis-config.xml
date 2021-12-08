@@ -18,9 +18,11 @@
 		<typeAlias type="user.bean.ZipcodeDTO" alias="zipcode"/>		
 		<typeAlias type="user.bean.UserImageDTO" alias="userImg"/>		
 		
-
 		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
 		<typeAlias type="area.bean.ActivityMainDTO" alias="activityMain"/>
+		
+		<typeAlias type="tripmoment.bean.TripmomentDTO" alias="tripmoment"/>
+		<typeAlias type="tripmoment.bean.MainTripmomentDTO" alias="mainTripmoment"/>
 
 	</typeAliases>
 </configuration>
