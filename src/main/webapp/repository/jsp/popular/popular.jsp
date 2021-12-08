@@ -116,7 +116,7 @@
 		    				<span class="title">주소 : </span>
 		    				<span class="field">address_name</span>
 		    			</div>
-		    			<!-- <span class="more-btn"><a href="https://map.kakao.com/link/map/명동,33.450701,126.570667">지도</a></span> -->
+		    			<span class="more-btn"><a href="#">지도</a></span>
 		    		</div>
 		    		<div class="map-box">
 					    <div id="map" style="width:100%;height:100%;"></div>
@@ -196,8 +196,203 @@
 <!-- services와 clusterer, drawing 라이브러리 불러오기 -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a&libraries=services,clusterer,drawing"></script>
 <script type="text/javascript">
-//지도api
+//어펜드용
+function getReviewList(){
+	removeReviewList();
+	
+	$.ajax({
+		url: '/nadri/popular/getReviewContent',
+		type: 'post',
+		success: function(data){
+			alert(JSON.stringify(data));
+			
+			for(var i = 0; i < data.length; i++){
+				var private_score_content = null;
+				const private_score = parseFloat($.trim(data[i].review_score));
+
+				//content내용 뽑기
+				if(private_score<=1){
+					private_score_content = '최악이에요';
+				}else if(private_score<=2){
+					private_score_content = '보통이에요';
+				}else if(private_score<=3){
+					private_score_content = '좋아요!';
+				}else if(private_score<=4){
+					private_score_content = '최고에요!';
+				}else if(private_score<=5){
+					private_score_content = '완벽해요!';
+				}
+				
+				//img_name 빈값 정리
+
+					if(data[i].imgList.length == 0){
+						var image_name1 = "noImg.png";
+						var image_name2 = "noImg.png";
+						var image_name3 = "noImg.png";
+						var image_name4 = "noImg.png";
+						var image_name5 = "noImg.png";
+						var image_name6 = "noImg.png";
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 1){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = "noImg.png";
+						var image_name3 = "noImg.png";
+						var image_name4 = "noImg.png";
+						var image_name5 = "noImg.png";
+						var image_name6 = "noImg.png";
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 2){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = data[i].imgList[1].img_name;
+						var image_name3 = "noImg.png";
+						var image_name4 = "noImg.png";
+						var image_name5 = "noImg.png";
+						var image_name6 = "noImg.png";
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 3){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = data[i].imgList[1].img_name;
+						var image_name3 = data[i].imgList[2].img_name;
+						var image_name4 = "noImg.png";
+						var image_name5 = "noImg.png";
+						var image_name6 = "noImg.png";
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 4){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = data[i].imgList[1].img_name;
+						var image_name3 = data[i].imgList[2].img_name;
+						var image_name4 = data[i].imgList[3].img_name;
+						var image_name5 = "noImg.png";
+						var image_name6 = "noImg.png";
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 5){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = data[i].imgList[1].img_name;
+						var image_name3 = data[i].imgList[2].img_name;
+						var image_name4 = data[i].imgList[3].img_name;
+						var image_name5 = data[i].imgList[4].img_name;
+						var image_name6 = "noImg.png";
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 6){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = data[i].imgList[1].img_name;
+						var image_name3 = data[i].imgList[2].img_name;
+						var image_name4 = data[i].imgList[3].img_name;
+						var image_name5 = data[i].imgList[4].img_name;
+						var image_name6 = data[i].imgList[5].img_name;
+						var image_name7 = "noImg.png";
+					}
+					
+					if(data[i].imgList.length == 7){
+						var image_name1 = data[i].imgList[0].img_name;
+						var image_name2 = data[i].imgList[1].img_name;
+						var image_name3 = data[i].imgList[2].img_name;
+						var image_name4 = data[i].imgList[3].img_name;
+						var image_name5 = data[i].imgList[4].img_name;
+						var image_name6 = data[i].imgList[5].img_name;
+						var image_name7 = data[i].imgList[6].img_name;
+					}
+				
+				
+				($('<li/>', {
+					class: "reviewCommentDetail",
+					style: "border-top: 1px solid rgb(218, 223, 230)"
+				}).append($('<div/>', {
+					class: "review-user-view"
+				}).append($('<a/>',{
+					style:"color: rgb(15, 41, 77"
+				}).append($('<img/>',{
+					class: "review-user-img",
+					alt: "user_icon",
+					width: "50",
+					heigth: "50",
+					src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
+				}))).append($('<div/>',{
+					class:"review-user-info"
+				}).append($('<div/>',{
+					class:"review-user-name",
+					text:data[i].user_name
+				})))).append($('<div/>',{
+					class: "review-content-detail"
+				}).append($('<div/>',{
+					class:"review-switch-sort"
+				}).append($('<span/>',{
+					class:"review-score",
+					text:data[i].review_score
+				})).append($('<span/>',{
+					class:"review-all-score"
+				})).append($('<span/>',{
+					class:"review-score-name",
+					text:private_score_content
+				}))).append($('<div/>',{
+					class:"review-content-view"
+				}).append($('<p/>', {
+					class:"review-content-text",
+					text:data[i].review_content
+				}))).append($('<div/>',{
+					class:"review-content-photolist"
+				}).append($('<div/>',{
+					class:"review-content-photowall"
+				}).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name1
+				})).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name2
+				})).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name3
+				})).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name4
+				})).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name5
+				})).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name6
+				})).append($('<img/>',{
+					alt:".review-content-photowall",
+					src:"/nadri/repository/img/popular"+data[i].img_path+"/"+image_name7
+				})))).append($('<div/>',{
+					class:"review-content-date"
+				}).append($('<span/>',{
+					class:"review-content-time"
+				}).append($('<span/>',{
+					text:"작성일 : "+data[i].review_logtime
+				})))))).appendTo($('#review-comment-detail'));
+			}
+
+		}, error: function(err){
+			console.log(err);
+		}
+	});
+}
+
+function removeReviewList() {
+
+    var list = document.getElementById("review-comment-detail");
+
+    list.removeChild(list.childNodes[0]);
+
+}
+
 $(function(){
+	//리뷰리스트 호출
+	getReviewList();	
+	
 	//이미지
 	$.ajax({
 		url: '/nadri/popular/getPopImg',
@@ -257,9 +452,10 @@ $(function(){
 			
 			//카카오맵 API
 			var location1 = data.pop_name;
-			var map_x = data.map_y;
-			var map_y = data.map_x;
+			const map_x = parseFloat($.trim(data.map_y));
+			const map_y = parseFloat($.trim(data.map_x));
 			
+			$('.more-btn a').prop('src', 'https://map.kakao.com/link/map/'+location1+','+map_x+','+map_y+'');
 
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = { 
@@ -312,17 +508,17 @@ $(function(){
 			var avg_score_content = null;
 			const avg_score = parseFloat($.trim(data.avg_score));
 			const total_negativeReview = parseFloat($.trim(data.total_negativeReview));
+			const total_review = parseFloat($.trim(data.total_review));
+			const total_positiveReview = parseFloat($.trim(data.total_positiveReview));
+			const total_photo = parseFloat($.trim(data.total_photo));
 
-
-			alert(total_negativeReview);
-
-			if(avg_score<1){
+			if(avg_score<=1){
 				avg_score_content = '최악이에요';
-			}else if(avg_score<2){
+			}else if(avg_score<=2){
 				avg_score_content = '보통이에요';
-			}else if(avg_score<3){
+			}else if(avg_score<=3){
 				avg_score_content = '좋아요!';
-			}else if(avg_score<4){
+			}else if(avg_score<=4){
 				avg_score_content = '최고에요!';
 			}else if(avg_score<=5){
 				avg_score_content = '완벽해요!';
@@ -332,10 +528,10 @@ $(function(){
 			$('.pop-review-reviewIcon div').text(data.total_review+'건의 리뷰');
 			$('.switch-container .switch-sort .sort-get-score').text(data.avg_score);
 			$('.switch-container .switch-sort .sort-get-catergory').text(avg_score_content);
-			$('.switch-list-container .btn-group .btn-outline-primary:eq(0)').text('모두보기 ('+data.total_review+')');
-			$('.switch-list-container .btn-group .btn-outline-primary:eq(1)').text('긍정적 ('+data.total_positiveReview+')');
-			$('.switch-list-container .btn-group .btn-outline-primary:eq(2)').text('부정적 ('+total_negativeReview+')');
-			$('.switch-list-container .btn-group .btn-outline-primary:eq(3)').text('사진 ('+data.total_photo+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(0)').text('모두보기 ('+(total_review || 0)+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(1)').text('긍정적 ('+(total_positiveReview || 0)+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(2)').text('부정적 ('+(total_negativeReview || 0)+')');
+			$('.switch-list-container .btn-group .btn-outline-primary:eq(3)').text('사진 ('+(total_photo || 0)+')');
 
 		},error: function(err){
 			console.log(err);

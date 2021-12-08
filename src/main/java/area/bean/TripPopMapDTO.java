@@ -10,6 +10,6 @@ public class TripPopMapDTO {
 
 	private int pop_seq;
 	private String address_name;
-	private String map_x;
-	private String map_y;
+	private double map_x;
+	private double map_y;
 }

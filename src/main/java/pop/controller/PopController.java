@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
+import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.service.PopService;
 
@@ -83,7 +84,13 @@ public class PopController {
 		return popService.getPopImg(pop_seq);
 	}
 	
-	
+	@RequestMapping(value="/getReviewContent", method=RequestMethod.POST)
+	@ResponseBody
+	public List<TripPopReviewContentDTO> getReviewContent(){
+		System.out.println("컨트롤러 왔다");
+		
+		return popService.getReviewContent();
+	}
 	
 	
 	

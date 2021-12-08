@@ -119,24 +119,22 @@
 	    <version>1.4</version>
 	</dependency>
 	
-		<!-- bcrypt 방식으로 비밀번호 암호화-복호화 -->	
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-web</artifactId>
-		    <version>4.2.1.RELEASE</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-core</artifactId>
-		    <version>4.2.1.RELEASE</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-config</artifactId>
-		    <version>4.2.1.RELEASE</version>
-		</dependency>
-	
-	
+	<!-- bcrypt 방식으로 비밀번호 암호화-복호화 -->	
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-web</artifactId>
+	    <version>4.2.1.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-core</artifactId>
+	    <version>4.2.1.RELEASE</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>4.2.1.RELEASE</version>
+	</dependency>
 	
 	<!-- 메일인증 미완성 이라서 추가 필요함-->	
     <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
@@ -147,11 +145,11 @@
      </dependency>        
  	
  	<!-- 유효성 검사 -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>6.1.5.Final</version>
-		</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>6.1.5.Final</version>
+	</dependency>
 
   </dependencies>
 </project>

@@ -26,8 +26,7 @@
 	</select>
 	
 	<select id="getPopImg" parameterType="int" resultType="popImg">
-		select img_seq, img_name, img_path 
-		from img
+		select * from img 
 		where seq=#{pop_seq}
 	</select>
 	
@@ -63,6 +62,35 @@
 		<![CDATA[
 		where pop_review_score <=2)
 		]]>
+	</select>
+	
+	<resultMap id="tripPopReviewContentMap" type="popContent">
+		<result property="pop_review_seq" column="pop_review_seq"/>
+		<result property="user_name" column="user_name"/>
+		<result property="review_score" column="review_score"/>
+		<result property="review_content" column="review_content"/>
+		<result property="review_logtime" column="review_logtime"/>
+		<collection property="imgList" resultMap="tripPopReviewImgMap"/>
+	</resultMap>
+	
+	<resultMap id="tripPopReviewImgMap" type="popContentImg">
+		<result property="img_path" column="img_path"/>
+		<result property="img_name" column="img_name"/>
+	</resultMap>
+	
+	<select id="getReviewContent" resultMap="tripPopReviewContentMap">
+		select trippop_review.pop_review_seq as pop_review_seq,
+       tripmember.name as user_name,
+       trippop_review.pop_review_score as review_score,
+       trippop_review.pop_review_content as review_content,
+       img.img_path as img_path,
+       img.img_name as img_name,
+       trippop_review.pop_review_logtime as review_logtime
+		from img, trippop_review, tripmember
+		where img.seq= trippop_review.pop_review_seq
+        and img.content_seq = '3' 
+        and trippop_review.member_seq = tripmember.member_seq
+		order by pop_review_seq asc
 	</select>
 	
 </mapper>

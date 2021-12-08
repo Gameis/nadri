@@ -12,6 +12,7 @@
 			data: formData,
 			success: function(){
 				alert('이미지 등록 완료');
+				getReviewList();
 			},
 			error: function(err){
 				console.log(err);
