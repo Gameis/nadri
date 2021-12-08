@@ -209,7 +209,11 @@ button, input, optgroup, select, textarea {
     margin-left: 8px;
 }
 
-.card {max-height: 300px;}
+.card {
+	max-height: 300px;
+	max-width: 23%;
+}
+
 .card-img-top {max-height: 200px;}
 .carousel-control-next, .carousel-control-prev {width: auto;}
 .slide_img {overflow: hidden;}
@@ -369,6 +373,7 @@ button, input, optgroup, select, textarea {
     text-overflow: ellipsis;
     height: 88px;
     overflow: hidden;
+    font-size: 14px;
 }
 
 .area-content-plus {
@@ -380,6 +385,9 @@ button, input, optgroup, select, textarea {
     position: relative;
     height: 20px;
 }
+
+.area-content-plus .modal-header {border-bottom: 0px !important;}
+.area-content-plus .modal-dialog {max-width: 1000px;}
 
 .area-content-plus span {
     margin: 1px auto 0px;
@@ -422,8 +430,7 @@ button, input, optgroup, select, textarea {
 
 .area-weather-Info {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     border: 1px solid rgb(218, 223, 230);
 }
 
@@ -431,26 +438,9 @@ button, input, optgroup, select, textarea {
     border: 1px solid rgb(218, 223, 230);
 }
 
-.weather, .weather-text-weather{display: flex;}
+.weather {padding: 44px 0 42px;}
 
-.weather { 
-    padding: 0 100px;
-    justify-content: space-between;
-    vertical-align: middle;
-    height: 64px;
-}
-
-.weather * { margin: auto 0;}
-
-.weather-today {
-    grid-row: 1 / span 5;
-    padding: 44px 0 42px;
-}
-.weather-today > div {
-    text-align: center;
-}
-
-.today-num-con {
+.weather-num-con {
     display: flex;
     justify-content: center;
 }

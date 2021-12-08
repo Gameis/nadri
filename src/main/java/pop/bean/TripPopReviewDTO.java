@@ -4,13 +4,11 @@ import lombok.Data;
 
 @Data
 public class TripPopReviewDTO {
-	int pop_seq;
+	private int member_seq;
 	private String pop_review_content;
-	private int pop_reivew_score;
+	private int pop_review_seq;
+	private int pop_review_score;
 	private String pop_review_logtime;
-	private String pop_review_imageName;
-	private int pop_count_totalReview;
-	private int pop_count_positReview;
-	private int pop_count_negetReview;
-	private int pop_count_photoReview;
+	private int pop_seq;
+	private int main_seq;
 }

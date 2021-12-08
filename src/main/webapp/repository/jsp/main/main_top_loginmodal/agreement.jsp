@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="/nadri/repository/css/user/agreement.css">
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/member/agreement.css">
+
 </head>
-<body>
+<body class="agreement">
     
 <form id="agreeform" class="agreeclass">
    	<ul class="agree_box">
@@ -72,7 +73,8 @@
  	 </ul>
  	 <br><br>
       <ul class="footBtwrap clearfix" >
-          <li><div align="center"><button class="agreeBtn" id="agreeBtn">위 내용에 동의 합니다</button></div></li>
+    
+        <li><div align="center"><button class="nextBtn" id="nextBtn">위 내용에 동의 합니다</button></div></li>
       </ul>
 </form>
 
@@ -94,8 +96,7 @@
         });    
     });
    
-    
-    
+        
   //전체 선택 전체 해제
     $('#checkAll').click(function(){
     	if($('#checkAll').prop("checked")){
@@ -103,7 +104,20 @@
     	}else{
     		$('.check').prop('checked',false);
     	}
-    });		//click    
+    });		//click   
+  
+  //선택시에 버튼 변화  
+    $('#agreeform').change(function() {
+    	if($("#chk1").is(":checked") && $("#chk2").is(":checked")) {
+    		$('#nextBtn').removeClass('nextBtn');
+    		$('#nextBtn').addClass('nextBtn2');
+    	}else {
+    		$('#nextBtn').removeClass('nextBtn2');
+    		$('#nextBtn').addClass('nextBtn');
+    	}
+    });
+    
+    
 </script>
 </body>
 </html>

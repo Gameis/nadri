@@ -606,6 +606,9 @@
 			</jsp:include>
 		</footer>
 	</div>
+	
+	
+	
 </body>
 <!-- 검색창 자동 완성 기능 -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

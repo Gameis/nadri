@@ -37,25 +37,26 @@
 					
 					<div class="review-write-content">
 						<form id="pop_review_writeForm">
-							<input type="hidden" id="pop_seq" name="pop_seq" value="${param.pop_seq }" />
-							
+							<input type="hidden" id="main_seq" name="main_seq" value="99">
+							<input type="hidden" id="content_seq" name="content_seq" value="3"/>
+							<input type="hidden" id="pop_seq" name="pop_seq" value="${param.pop_seq }"/>
 							<!-- 평점 -->
 							<div class="review-write-wrap">
 							    <div class="review-write-selectScore">
 							    	<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-										<input type="radio" class="btn-check" name="btnradio" id="btnRadio5" autocomplete="off" checked>
+										<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio5" value=5 checked>
 										<label class="score btn btn-outline-primary" for="btnRadio5">5점</label>
 										
-										<input type="radio" class="btn-check" name="btnradio" id="btnRadio4" autocomplete="off">
+										<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio4" value=4 >
 										<label class="score btn btn-outline-primary" for="btnRadio4">4점</label>
 											
-										<input type="radio" class="btn-check" name="btnradio" id="btnRadio3" autocomplete="off">
+										<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio3" value=3 >
 										<label class="score btn btn-outline-primary" for="btnRadio3">3점</label>
 										  
-										<input type="radio" class="btn-check" name="btnradio" id="btnRadio2" autocomplete="off">
+										<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio2" value=2 >
 										<label class="score btn btn-outline-primary" for="btnRadio2">2점</label>
 										  
-										<input type="radio" class="btn-check" name="btnradio" id="btnRadio1" autocomplete="off">
+										<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio1" value=1 >
 										<label class="score btn btn-outline-primary" for="btnRadio1">1점</label>
 									</div>
 								</div><!-- review-write-selectScore -->
@@ -65,7 +66,7 @@
 							<div class="review-write-wrap">
 								<div class="input-group">
 								  <span class="input-group-text">내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</span>
-								  <textarea class="form-control" aria-label="With textarea" style="resize: none;"></textarea>
+								  <textarea class="form-control" name="pop_review_content" aria-label="With textarea" style="resize: none;"></textarea>
 								</div>
 							</div>
 							
@@ -104,28 +105,25 @@
 		
 		<div class="switch-container">
 			<div class="switch-sort">
-				<span class="sort-get-score">4.5</span>
+				<span class="sort-get-score">avg_score</span>
 				<span class="sort-all-score">/5</span>
-				<span class="sort-get-catergory">완벽해요!</span>
+				<span class="sort-get-catergory">avg_score_content</span>
 			</div><!-- switch-sort -->
 		
 		
 			<div class="switch-list-container">
 				<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-				  <label class="btn btn-outline-primary" for="btnradio1">모두 보기 (5,812)</label>
-				
-				  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio2">최신순</label>
+				  <label class="btn btn-outline-primary" for="btnradio1">모두 보기 (total_review)</label>
 					
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio3">긍정적 (5,271)</label>
+				  <label class="btn btn-outline-primary" for="btnradio3">긍정적 (total_positiveReview)</label>
 				  
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio4">부정적 (49)</label>
+				  <label class="btn btn-outline-primary" for="btnradio4">부정적 (total_negativeReview)</label>
 				  
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio5">사진 (6,569)</label>
+				  <label class="btn btn-outline-primary" for="btnradio5">사진 (total_photo)</label>
 				</div>
 			</div><!-- switch-list-container -->
 		</div><!-- switch-container -->

@@ -30,4 +30,39 @@
 		from img
 		where seq=#{pop_seq}
 	</select>
+	
+	<insert id="popReviewImgWrite" parameterType="popImg">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, pop_review_seq.currval, #{main_seq}, #{mainImg})
+	</insert>
+	
+	<insert id="popReviewWrite" parameterType="popReview">
+		insert into trippop_review values(#{member_seq}, #{pop_review_content}, pop_review_seq.nextval, #{pop_review_score}, sysdate, #{pop_seq}, #{main_seq})
+	</insert>
+	
+	<select id="getCountView" resultType="popCount">
+		<!-- total_review, total_photo, avg_score -->
+		select * from
+		(select * from
+		(select nvl(count(pop_review_seq),0) as total_review, nvl(sum(count_photo),0) as total_photo, nvl(avg(pop_review_score),0) as avg_score  
+		from (select count(img_name) as count_photo, seq as pop_review_seq 
+		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		using(pop_review_seq)) cross join 
+		<!-- 4점이상 review, total_positiveReivew -->
+		(select nvl(count(*),0) as total_positiveReview
+		from (select count(img_name) as count_photo, seq as pop_review_seq 
+		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		using(pop_review_seq)
+		<![CDATA[
+		where pop_review_score >=3)) cross join 
+		]]>
+		<!-- 2점이하 total_negativeReview -->
+		(select nvl(count(*),0) as total_negativeReview
+		from (select count(img_name) as count_photo, seq as pop_review_seq 
+		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		using(pop_review_seq)
+		<![CDATA[
+		where pop_review_score <=2)
+		]]>
+	</select>
+	
 </mapper>
