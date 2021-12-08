@@ -20,6 +20,8 @@
 	<!-- <context:component-scan base-package="user.controller"/> -->
 	
 	<context:component-scan base-package="tripmoment.bean" />
+	<context:component-scan base-package="tripmoment.service" />
+	<context:component-scan base-package="tripmoment.dao" />
 
 
 

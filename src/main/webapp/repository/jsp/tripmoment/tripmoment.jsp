@@ -71,25 +71,25 @@
 													<div class="carousel-inner">
 														<div class="carousel-item active">
 															<img alt=""
-																src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
+																src="/nadri/repository/img/main/gangneung_4.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
 															<img
-																src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip"
+																src="/nadri/repository/img/main/gangneung_4.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt="" src="/nadri/repository/img/main/seoul_1.jpg"
+															<img alt="" src="/nadri/repository/img/main/gangneung_2.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
-															<img src="/nadri/repository/img/main/seoul_1.jpg"
+															<img src="/nadri/repository/img/main/gangneung_2.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt="" src="/nadri/repository/img/main/seoul_2.jpg"
+															<img alt="" src="/nadri/repository/img/main/gangneung_3.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
-															<img src="/nadri/repository/img/main/seoul_2.jpg"
+															<img src="/nadri/repository/img/main/gangneung_3.jpg"
 																class="d-block w-100" alt="..." style="width: 650px;">
 														</div>
 													</div>
@@ -134,22 +134,22 @@
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img id="col-img1" class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
+															src="/nadri/repository/img/main/gangneung_5.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img id="col-img2" class="col"
-															src="/nadri/repository/img/main/seoul_1.jpg"></img>
+															src="/nadri/repository/img/main/gangneung_6.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 3"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img id="col-img3" class="col"
-															src="/nadri/repository/img/main/seoul_2.jpg"></img>
+															src="/nadri/repository/img/main/gangneung_7.jpg"></img>
 														</a> <a role="button" aria-pressed="true"
 															aria-label="Go to Slide 4"
 															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
 															<img id="col-img4" class="col"
-															src="/nadri/repository/img/main/seoul_2.jpg"></img>
+															src="/nadri/repository/img/main/gangneung_8.jpg"></img>
 														</a>
 													</div>
 												</div>
@@ -573,6 +573,14 @@
 			</div>
 		</div>
 		<!-- TravelDetailContainer -->
+	</div>
+	
+	<div id="wrap_foot">
+		<footer>
+			<jsp:include page="../main/main_footer.jsp">
+				<jsp:param value="param1" name="param1" />
+			</jsp:include>
+		</footer>
 	</div>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="/nadri/repository/js/tripmoment/tripmoment.js"></script>

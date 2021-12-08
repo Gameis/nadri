@@ -128,7 +128,7 @@ button, input, optgroup, select, textarea {
 
 /* Tripmoment Image Carousel */
 .PhotoStyle {
-	width: 100%;
+	width: 1144px;
 	position: relative;
 	margin-top: 8px;
 	flex-direction: row;
@@ -606,7 +606,7 @@ button, input, optgroup, select, textarea {
 }
 
 .tripphoto {
-	min-height: 700px;
+	height: 1360px;
 }
 
 .tripphoto .item {
