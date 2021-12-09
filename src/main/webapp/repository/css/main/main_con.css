@@ -414,6 +414,19 @@ video {
 	opacity: 1;
 }
 
+.Video_module_gangneung {
+	width: 300px;
+	height: 300px;
+}
+
+.Video_module_gangneung:hover img {
+	opacity: 0;
+}
+
+.Video_module_gangneung:hover video {
+	opacity: 1;
+}
+
 .img-wrap .Video_module {
 	visibility: hidden;
 	opacity: 0;
@@ -505,6 +518,7 @@ video {
 	padding: 0px 0px;
 	cursor: pointer;
 	vertical-align: top;
+	height: 420px;
 }
 
 .slide_img {

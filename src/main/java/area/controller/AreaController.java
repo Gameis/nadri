@@ -62,16 +62,7 @@ public class AreaController {
 		}//for
 	}
 	
-	private boolean checkImageType(File file) {
-		try {
-			String contentType = Files.probeContentType(file.toPath());
-			
-			return contentType.startsWith("image");
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
+
 	
 	@RequestMapping(value="/onAreaPop", method=RequestMethod.GET)
 	@ResponseBody
@@ -114,8 +105,16 @@ public class AreaController {
 		
 	}
 	
-	
-	
+	private boolean checkImageType(File file) {
+		try {
+			String contentType = Files.probeContentType(file.toPath());
+			
+			return contentType.startsWith("image");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	
 	//함수
 	public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {

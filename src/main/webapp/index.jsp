@@ -115,7 +115,10 @@
 			</div>
 
 			<!-- 인기여행지 -->
-			<span class="popular_trip_destination">인기여행지</span>
+			<span class="popular_trip_destination">인기여행지
+			<input type="button" id="addAreaBtn" class="addButton" value="+"></h2>
+			</span> 
+			
 
 			<div class="popular_trip_destination_index_content">
 				<div class="popularcitylist">
@@ -138,7 +141,7 @@
 											src="/nadri/repository/img/main/seoul_3.jpg" alt="서울"
 											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
-											<a class="title" title="서울" href="">서울</a>
+											<a class="title" title="서울" href="/nadri/main/area?main_seq=99">서울</a>
 										</p>
 									</div>
 								</div>
@@ -167,13 +170,19 @@
 							<div class="index_popular">
 								<div class="DestinationStyle">
 									<i class="img-wrap"></i>
-									<div class="Video_module_suwon"
+									<div class="Video_module_gangneung"
 										style="width: 100%; height: 350px;">
+										<video id="video" class="Video_module"
+											style="width: 100%; height: 100%;" muted="muted"
+											autoplay="true" loop="loop">
+											<source src="/nadri/repository/img/main/Gangneung_intro.mp4"
+												type="video/mp4">
+										</video>
 										<img class="Video_module"
-											src="./repository/img/main/seoul_4.jpg" alt="제주"
+											src="/nadri/repository/img/main/gangneung_3.jpg" alt="강릉"
 											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
-											<a class="title" title="수원" href="">수원</a>
+											<a class="title" title="강릉" href="">강릉</a>
 										</p>
 									</div>
 								</div>
@@ -267,319 +276,9 @@
 			<div class="tripmomentSlide">
 				<div id="carousel_tripmoment_slide" class="carousel slide"
 					data-bs-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
+					<div class="carousel-inner" id="moment_carousel_inner">
+	
 
-							<!-- card 전체 -->
-							<div class="card-group" id="test">
-
-
-
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-												  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-												  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-												</svg>
-												<span>개복치</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="card-group">
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>개복치</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>개복치</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>개복치</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>개복치</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="card-group">
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>망개떡</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>찹쌀떡</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											여행하는 뚜벅이 대구대구 이월드 대구 이월드에서 따뜻한 겨울 보내기 대구에 놀이기구를 타러 이월드에 다녀왔어요
-											예전 우방랜드때부터 즐겨가곤 했는데 그 이후에는 대구 갈 일도 크게 없어서 방문을 못하고 있다가 며칠 전에
-											친구들과 이월드에 가게 되었어요! 역시나 놀이기구도 재미있고 단풍시즌이라서 그런지 풍경도 굉장히
-											멋졌습니다.~!</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>말랑한귤</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="cardstyle card index_card_con">
-									<div style="padding-bottom: 106%" class="slide_img">
-										<div class="img">
-											<img src="/nadri/repository/img/main/seoul_2.jpg"
-												class="card-img-top" alt="트립1">
-										</div>
-									</div>
-									<div class="bottom_con">
-										<div style="-webkit-box-orient: vertical" class="bottom_desc">
-											바뀌는 거 맞는지 아닌지 확인 좀 해보자 내 버튼은 어디갔냐</div>
-										<div class="bottom_user_con">
-											<div class="bottom_user_left">
-												<svg xmlns="http://www.w3.org/2000/svg" width="16"
-													height="16" fill="currentColor" class="bi bi-person-circle"
-													viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-														d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-												<span>모찌떡</span>
-											</div>
-											<div class="bottom_user_right">
-												<img src="./repository/img/main/thumb.png">
-												<!-- 좋아요 아이콘 -->
-												<span>34</span>
-												<!-- 좋아요 수 -->
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 					<button class="carousel-control-prev" type="button"
 						data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
@@ -674,6 +373,18 @@
 	}, false);
 </script>
 
+<script type="text/javascript">
+	var Video_module_jeju = document
+			.getElementsByClassName('Video_module_gangneung')[0]
+	var video = document.getElementById('video')
+	Video_module_gangneung.addEventListener('mouseover', function() {
+		video.play()
+	}, false);
+	Video_module_gangneung.addEventListener('mouseout', function() {
+		video.pause()
+	}, false);
+</script>
+
 
 <!-- Channel Plugin Scripts -->
 <script>
@@ -726,8 +437,28 @@
 			success : function(data) {
 				alert('성공');
 				alert(JSON.stringify(data));
+					var count = -1;
+			        var momentCount = 1;	
 				
 				$.each(data, function(index, items){
+					if(index % 4 == 0) {
+
+			            if(index == 0) {
+			              $('<div/>', {
+			                class: 'carousel-item active'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }else {
+			              $('<div/>', {
+			                class: 'carousel-item'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }            
+			            count++;
+			          }
+					
 					$('<div>', {
 						class: 'cardstyle card index_card_con'
 					}).append($('<div>', {
@@ -736,7 +467,7 @@
 					}).append($('<div>', {
 						class: 'img'
 					}).append($('<img>', {
-						src: '/nadri/repository/img/' + items.img_path + '/popmain/' + items.img_name,
+						src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
 						class: 'card-img-top',
 						alt: '트립1'
 					})))).append($('<div>', {
@@ -757,7 +488,7 @@
 						src: "/nadri/repository/img/main/thumb.png"
 					})).append($('<span>', {
 						text : '34'
-					})))).appendTo($('#test'));
+					})))).appendTo($('#moment_carousel_inner .card-group:eq(' + count + ')'));
 				})//each
 				
 			},
