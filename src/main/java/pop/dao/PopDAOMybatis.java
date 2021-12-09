@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
+import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
 
 @Repository
@@ -45,6 +46,12 @@ public class PopDAOMybatis implements PopDAO {
 	public TripPopCountDTO getCountView() {
 		
 		return sqlSession.selectOne("popSQL.getCountView");
+	}
+	
+	@Override
+	public List<TripPopReviewContentDTO> getReviewContent() {
+		
+		return sqlSession.selectList("popSQL.getReviewContent");
 	}
 	
 	

@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.Data;
 
 @Data
-@Component
-@Scope("prototype")
 public class TripPopImgDTO {
 	private int img_seq;
 	private String img_name;

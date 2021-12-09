@@ -30,7 +30,7 @@ $('#pop_name').focusout(function(){
 
     $.ajax({
         type: 'get',
-        url: 'https://dapi.kakao.com/v2/local/search/address.json',
+        url: 'https://dapi.kakao.com/v2/local/search/keyword.json',
         headers: { 'Authorization': 'KakaoAK 32efaa6ae080dc2a02583db85d1065eb' },
         data: { 'query': location_name},
         success: function(data){

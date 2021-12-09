@@ -12,6 +12,8 @@
 		<typeAlias type="pop.bean.TripPopLocationDTO" alias="popLocation"/>
 		<typeAlias type="pop.bean.TripPopImgDTO" alias="popImg"/>
 		<typeAlias type="pop.bean.TripPopCountDTO" alias="popCount"/>
+		<typeAlias type="pop.bean.TripPopReviewContentDTO" alias="popContent"/>
+		<typeAlias type="pop.bean.TripPopReviewImgDTO" alias="popContentImg"/>
 		
 		<typeAlias type="area.bean.ImgDTO" alias="img"/>
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>

@@ -130,54 +130,7 @@
 		
 		<div class="reviewItemContainer" style="display: block">
 			<ul class="review-comment-list">
-				<div class="review-comment-detail">
-					
-					<!-- 어펜드시점 -->
-					<li class="reviewCommentDetail" style="border-top: 1px solid rgb(218, 223, 230)">
-						<div class="review-user-view">
-							<a style="color: rgb(15, 41, 77);">
-								<img class="review-user-img" alt="user_icon" width="50" height="50" src="https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg">
-							</a>
-							<div class="review-user-info">
-								<div class="reivew-user-name">
-									user_name
-								</div><!-- reivew-user-name -->
-							</div><!-- review-user-info -->
-						</div><!-- review-user-view -->
-						
-						<div class="review-content-detail">
-							<div class="review-switch-sort">
-								<span class="review-score">5</span>
-								<span class="review-all-score">/5</span>
-								<span class="review-score-name">완벽해요!</span>
-							</div><!-- review-switch-sort -->
-							
-							<div class="review-content-view">
-								<p class="review-content-text">
-									명동 대림동 차이나타운 둘 다 유명한 명소..환전하러 명동 나갔다가 장마라서 비가 엄청 내렸지만 비오는 명동도 엄청 운치 있었어요~^^ 이젠 비도 그치고 서울 근교나 휴가 때 갈 명소를 트립 어플 찾는 중이네요ㅎ
-								</p><!-- review-content-text -->
-							</div><!-- review-content-view -->
-							
-							<div class="review-content-photolist">
-								<div class="review-content-photowall">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100rhk133vw1j9gvl22D6_C_240_240.jpg_.webp?proc=source%2ftrip">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100rhk133vw1j9gvl22D6_C_240_240.jpg_.webp?proc=source%2ftrip">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100fhk124fsod6xfk7FC5_C_240_240.jpg_.webp?proc=source%2ftrip">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100ghk133vw1j9olc81B4_C_240_240.jpg_.webp?proc=source%2ftrip">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100jhk114zpb7469sA015_C_240_240.jpg_.webp?proc=source%2ftrip">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100hhk114zpb7469t5DFE_C_240_240.jpg_.webp?proc=source%2ftrip">
-									<img alt="명동 여행 사진" src="https://ak-d.tripcdn.com/images/100khk124fsod6xfl4722_C_240_240.jpg_.webp?proc=source%2ftrip">
-								</div><!-- review-photo-wall -->
-							</div><!-- review-photo-list -->
-							
-							<div class="review-content-date">
-								<span class="review-content-time">
-									<span>작성일 : 2021년 12월 4일</span>
-								</span>
-							</div>
-						</div><!-- review-content-detail -->
-					</li><!-- reviewCommentDetail -->
-					<!-- 어펜드종점 -->
+				<div id="review-comment-detail" class="review-comment-detail">
 					
 					<!-- 어펜드시점 -->
 					<li class="reviewCommentDetail" style="border-top: 1px solid rgb(218, 223, 230)">

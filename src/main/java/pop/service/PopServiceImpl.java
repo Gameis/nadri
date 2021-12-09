@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
+import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.dao.PopDAO;
 
@@ -42,6 +43,12 @@ public class PopServiceImpl implements PopService {
 	@Override
 	public TripPopCountDTO getCountView() {
 		return popDAO.getCountView();
+	}
+
+	@Override
+	public List<TripPopReviewContentDTO> getReviewContent() {
+		
+		return popDAO.getReviewContent();
 	}
 
 }
