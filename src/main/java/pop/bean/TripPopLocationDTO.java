@@ -12,4 +12,5 @@ public class TripPopLocationDTO {
 	private String address_name;
 	private String map_x;
 	private String map_y;
+	private String detailInfo;
 }

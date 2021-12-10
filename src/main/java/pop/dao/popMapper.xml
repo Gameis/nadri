@@ -88,19 +88,107 @@
 		<result property="img_name" column="img_name"/>
 	</resultMap>
 	
-	<select id="getReviewContent" resultMap="tripPopReviewContentMap">
-		select trippop_review.pop_review_seq as pop_review_seq,
-       tripmember.name as user_name,
-       trippop_review.pop_review_score as review_score,
-       trippop_review.pop_review_content as review_content,
-       img.img_path as img_path,
-       img.img_name as img_name,
-       to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
+	<select id="getReviewContentCnt" parameterType="popSearch" resultType="int">
+		select count(*) as cnt
+      from (
+               select trippop_review.pop_review_seq                                   as pop_review_seq,
+                      tripmember.name                                                 as user_name,
+                      trippop_review.pop_review_score                                 as review_score,
+                      trippop_review.pop_review_content                               as review_content,
+                      to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
+               from trippop_review,
+                    tripmember
+      <where>
+        and trippop_review.member_seq = tripmember.member_seq
+        <if test="searchType != null and searchType != ''">
+            <choose>
+                <when test="searchType == 'POSITIVE'">
+                    <![CDATA[
+                    and trippop_review.pop_review_score >= 4
+                    ]]>
+                </when>
+                <when test="searchType == 'NEGATIVE'">
+                    <![CDATA[
+                    and trippop_review.pop_review_score <= 2
+                    ]]>
+                </when>
+            </choose>
+        </if> 
+      </where>
+   	) a
+	</select>
+	
+	<select id="getReviewContent" parameterType="popSearch" resultMap="tripPopReviewContentMap">
+		select
+       a.pop_review_seq,
+       a.user_name,
+       a.review_score,
+       a.review_content,
+       a.review_logtime,
+      i.img_path as img_path,
+      i.img_name as img_name
+      from (
+               select trippop_review.pop_review_seq                                   as pop_review_seq,
+                      tripmember.name                                                 as user_name,
+                      trippop_review.pop_review_score                                 as review_score,
+                      trippop_review.pop_review_content                               as review_content,
+                      to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
+               from trippop_review,
+                    tripmember
+      <where>
+        and trippop_review.member_seq = tripmember.member_seq
+        <if test="searchType != null and searchType != ''">
+            <choose>
+                <when test="searchType == 'POSITIVE'">
+                    <![CDATA[
+                    and trippop_review.pop_review_score >= 4
+                    ]]>
+                </when>
+                <when test="searchType == 'NEGATIVE'">
+                    <![CDATA[
+                    and trippop_review.pop_review_score <= 2
+                    ]]>
+                </when>
+            </choose>
+        </if> 
+      </where>
+      order by pop_review_seq
+          <if test="isDesc != null and isDesc != ''">
+            desc
+          </if>
+    offset (#{pageNum}-1) * 5 row
+    fetch next 5 row only) a
+    left outer join img i
+        on i.seq= a.pop_review_seq and i.content_seq = '3'
+	</select>
+	
+	<select id="getReviewContentPhotoCnt" parameterType="popSearch" resultType="int">
+		select count(*) as cnt
 		from img, trippop_review, tripmember
 		where img.seq= trippop_review.pop_review_seq
-        and img.content_seq = '3' 
-        and trippop_review.member_seq = tripmember.member_seq
+		      and img.content_seq = '3' 
+		      and trippop_review.member_seq = tripmember.member_seq
+		      and not img.img_name = 'noImg.jpg'
 		order by pop_review_seq asc
+	</select>
+	
+	
+	<select id="getReviewContentPhoto" resultMap="tripPopReviewContentMap">
+		select trippop_review.pop_review_seq as pop_review_seq,
+		       tripmember.name as user_name,
+		       trippop_review.pop_review_score as review_score,
+		       trippop_review.pop_review_content as review_content,
+		       img.img_path as img_path,
+		       img.img_name as img_name,
+		       to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
+		from img, trippop_review, tripmember
+		where img.seq= trippop_review.pop_review_seq
+		      and img.content_seq = '3' 
+		      and trippop_review.member_seq = tripmember.member_seq
+		      and not img.img_name = 'noImg.jpg'
+		order by pop_review_seq asc
+		offset (#{pageNum}-1) * 5 row
+    	fetch next 5 row only
 	</select>
 	
 </mapper>
