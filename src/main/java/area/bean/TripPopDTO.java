@@ -12,5 +12,6 @@ public class TripPopDTO {
 	private String pop_businessTime;
 	private String pop_tourismTime;
 	private String pop_call;
+	private String detailInfo;
 	private String main_seq;
 }

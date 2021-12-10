@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import area.bean.ImgDTO;
+import area.bean.OnAreaDTO;
 import area.bean.PopMainDTO;
 import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
@@ -50,6 +51,12 @@ public class AreaServiceImpl implements AreaService {
 	@Override
 	public List<PopMainDTO> onAreaActivity(int main_seq) {
 		return areaDAO.printActivityMain(main_seq);
+	}
+
+	@Override
+	public List<OnAreaDTO> onArea(String main_seq) {
+		return areaDAO.onArea(main_seq);
+		
 	}
 
 

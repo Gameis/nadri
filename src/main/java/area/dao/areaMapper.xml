@@ -12,7 +12,7 @@
 	</insert>
 	
 	<insert id="popWrite" parameterType="tripPop">
-		insert into tripPop values(pop_seq.nextval, #{pop_name}, #{pop_businessTime}, #{pop_tourismTime}, #{pop_call}, #{main_seq})
+		insert into tripPop values(pop_seq.nextval, #{pop_name}, #{pop_businessTime}, #{pop_tourismTime}, #{pop_call}, #{main_seq}, #{detailInfo})
 	</insert>
 	
 	<insert id="popMap" parameterType="tripPopMap">
@@ -49,5 +49,12 @@
 		join (select img_name, img_path, seq
       		  from img
       		  where content_seq = 5 and main_seq = #{main_seq} and mainImg = 'T') on(activity_seq = seq)
+	</select>
+	
+	<select id="onArea" parameterType="String" resultType="onArea">
+		select tripmain.main_seq as "main_seq", main_name, main_info, img_name, img_path, mainimg
+		from tripmain
+		join img on(tripmain.main_seq = seq)
+		where content_seq = 2 and tripmain.main_seq = #{main_seq}
 	</select>
 </mapper>

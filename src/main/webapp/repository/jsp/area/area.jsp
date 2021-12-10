@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/nadri/repository/css/area/area.css">
 </head>
 <body>
+	<input type="hidden" id="main_seq" value="${param.main_seq}">
     <div id="areaWrap">
         <div id="areaHeader">
             <div id="areaPath">
@@ -31,7 +32,7 @@
             </div><!--areaSearch-->
         </div><!--areaHeader-->
         <div id="areaDestination">
-            <div id="areaDestination_name">서울</div>
+            <div id="areaDestination_name"></div>
             <div id="areaSuperDestination">
                 <div class="areaSuperDestination_icon"><i class="bi bi-geo-alt-fill"></i></div>
                 <div id="areaSuperDestination_name">대한민국</div>
@@ -420,6 +421,24 @@
 <script type="text/javascript" src="/nadri/repository/js/area/area.js"></script>
 <script type="text/javascript">
   $(function() {
+	$.ajax({
+		url: '/nadri/area/onArea',
+		type: 'get',
+		data: 'main_seq=' + $('#main_seq').val(),
+		success: function(data) {
+			alert('성공');
+			alert(JSON.stringify(data));
+			/* $.each(data, function(index, items){
+				$('#areaDestination_name').text(items.main_name);
+				//$('#')
+			} */
+		},
+		error: function(err) {
+			alert('실패');
+			console.log(err);
+		}
+	});
+	
     $.ajax({
       url: '/nadri/area/onAreaPop',
       type: 'get',
@@ -520,7 +539,7 @@
               })).append($('<div/>', {
             	  class: 'slide_img'
               }).append($('<img/>', {
-            	  src: '/nadri/repository/img/activies/' + items.img_name
+            	  src: '/nadri/repository/img/activities/' + items.img_name
               }))).append($('<div/>', {
             	  class: 'card-body'
               }).append($('<div/>', {
