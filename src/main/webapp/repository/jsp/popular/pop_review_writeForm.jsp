@@ -5,13 +5,13 @@
 
 
 
-<div class="reviewContainer">
+<div name="reviewContainer" id="reviewContainer" class="reviewContainer">
 	<div class="reviewHeaderContainer">
 		<div class="review-box">
 			<div>
 				<div class="review-title">리뷰 작성하기</div>
 				<div class="reivew-tip">
-					<span class="tip-text">
+					<span name="tip-text" class="tip-text">
 						
 					</span>
 				</div>
@@ -133,7 +133,7 @@
 				<div id="review-comment-detail" class="review-comment-detail">
 					
 					<!-- 어펜드시점 -->
-					<li class="reviewCommentDetail" style="border-top: 1px solid rgb(218, 223, 230)">
+					<li id="reviewCommentDetail" class="reviewCommentDetail" style="border-top: 1px solid rgb(218, 223, 230)">
 						<div class="review-user-view">
 							<a style="color: rgb(15, 41, 77);">
 								<img class="review-user-img" alt="user_icon" width="50" height="50" src="https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg">

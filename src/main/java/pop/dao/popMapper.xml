@@ -39,29 +39,39 @@
 	</insert>
 	
 	<select id="getCountView" resultType="popCount">
-		<!-- total_review, total_photo, avg_score -->
+		<!-- total_review, avg_score -->
 		select * from
 		(select * from
-		(select nvl(count(pop_review_seq),0) as total_review, nvl(sum(count_photo),0) as total_photo, nvl(avg(pop_review_score),0) as avg_score  
-		from (select count(img_name) as count_photo, seq as pop_review_seq 
-		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
-		using(pop_review_seq)) cross join 
-		<!-- 4점이상 review, total_positiveReivew -->
-		(select nvl(count(*),0) as total_positiveReview
-		from (select count(img_name) as count_photo, seq as pop_review_seq 
-		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
-		using(pop_review_seq)
-		<![CDATA[
-		where pop_review_score >=3)) cross join 
-		]]>
+		    (select * from
+		    (select nvl(count(pop_review_seq),0) as total_review
+		            , round(nvl(avg(pop_review_score),0),1) as avg_score 
+		            from (select count(img_name) as count_photo, seq as pop_review_seq 
+		                    from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		                    using(pop_review_seq))
+		    cross join 
+		    <!-- 4점이상 review, total_positiveReivew -->
+		    (select nvl(count(*),0) as total_positiveReview
+		    from (select count(img_name) as count_photo, seq as pop_review_seq 
+		    from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		    using(pop_review_seq)
+		    <![CDATA[
+		    where pop_review_score >=3))
+		    ]]>
+		cross join
 		<!-- 2점이하 total_negativeReview -->
 		(select nvl(count(*),0) as total_negativeReview
 		from (select count(img_name) as count_photo, seq as pop_review_seq 
 		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
 		using(pop_review_seq)
 		<![CDATA[
-		where pop_review_score <=2)
+		where pop_review_score <=2))
 		]]>
+		cross join
+		<!-- total_photo 개수 -->
+		(select nvl(sum(count_photo),0) as total_photo
+		        from (select count(img_name) as count_photo, seq as pop_review_seq 
+		              from img where content_seq=3 and not img_name = 'noImg.jpg' and img_path='review' group by seq) join trippop_review
+		              using(pop_review_seq))
 	</select>
 	
 	<resultMap id="tripPopReviewContentMap" type="popContent">
@@ -85,7 +95,7 @@
        trippop_review.pop_review_content as review_content,
        img.img_path as img_path,
        img.img_name as img_name,
-       trippop_review.pop_review_logtime as review_logtime
+       to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
 		from img, trippop_review, tripmember
 		where img.seq= trippop_review.pop_review_seq
         and img.content_seq = '3' 

@@ -331,7 +331,52 @@ button, input, optgroup, select, textarea {
 /* areaHeader */
 /* popularWrap */
 
-
-
-
+/* 추가정보 */
+.fsRVix{
+	padding-bottom: 64px;
+	display: block;
+}
+.cGJQsx{
+	display: block;
+	margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+	margin-bottom: 24px;
+    line-height: 30px;
+    font-size: 24px;
+    color: rgb(15, 41, 77);
+    font-weight: bold;
+}
+.gVmnfv{
+	flex-direction: column;
+}
+.two-box{
+	display: flex;
+    flex: 2 1 0%;
+}
+.bwjypL{
+	position: relative;
+    flex-direction: column;
+    display: flex;
+    flex: 1 1 0%;
+    margin: 0px 8px;
+    padding: 16px;
+    background: rgb(255, 255, 255);
+    white-space: normal;
+    border: 1px solid rgb(218, 223, 230);
+}
+.burited_point{
+	display: block;
+}
+.detailInfo-content{
+	font-size: 14px;
+    color: rgb(15, 41, 77);
+    line-height: 22px;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: inherit;
+    text-overflow: ellipsis;
 }

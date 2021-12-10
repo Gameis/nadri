@@ -170,6 +170,7 @@ overflow: hidden;
 	font-size: 16px;
     line-height: 24px;
 	margin-top: 10px;
+	width: 713.95px;
 }
 .review-content-photolist{
 	height: 110px;
@@ -189,7 +190,6 @@ overflow: hidden;
     height: 98px;
     margin-right: 4px;
     margin-top: 12px;
-    cursor: pointer;
     background: rgb(235, 235, 242);
     border-radius: 2px;
 }
@@ -197,6 +197,7 @@ overflow: hidden;
 	margin-top: 16px;
 	overflow: hidden;
 	display: block;
+    width: 713.95px;
 }
 .review-content-time{
 	color: rgb(172, 180, 191);
@@ -215,7 +216,6 @@ overflow: hidden;
     list-style: none;
 }
 .review-write-detail{
-    border-top: 1px solid rgb(218, 223, 230);
     padding: 24px 0px;
     overflow: hidden;
     border-bottom: 1px solid rgb(218, 223, 230);

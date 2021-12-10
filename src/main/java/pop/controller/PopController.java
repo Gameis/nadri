@@ -39,6 +39,12 @@ public class PopController {
 								@ModelAttribute TripPopImgDTO tripPopImgDTO,
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
+		
+		//String root_path = request.getSession().getServletContext().getRealPath("/");
+        String attach_path = "\\popular\\review";
+        
+        //String path = root_path + attach_path;
+        
 		//받아오기전까지만 쓰기
 		int member_seq = 1;
 		tripPopReviewDTO.setMember_seq(member_seq);
@@ -56,7 +62,7 @@ public class PopController {
 		
 		
 		for(MultipartFile img : list) {
-			imgReNameCopy(tripPopImgDTO, img, "F", "review", "\\popular\\review");
+			imgReNameCopy(tripPopImgDTO, img, "F", "review", attach_path);
 			popService.popReviewImgWrite(tripPopImgDTO);
 		}//for
 		
@@ -87,7 +93,6 @@ public class PopController {
 	@RequestMapping(value="/getReviewContent", method=RequestMethod.POST)
 	@ResponseBody
 	public List<TripPopReviewContentDTO> getReviewContent(){
-		System.out.println("컨트롤러 왔다");
 		
 		return popService.getReviewContent();
 	}
@@ -107,24 +112,32 @@ public class PopController {
 	}
 	
 	//함수
-		public void imgReNameCopy(TripPopImgDTO tripPopImgDTO, MultipartFile img, String isMain, String img_path, String path) {
+		public void imgReNameCopy(TripPopImgDTO tripPopImgDTO, MultipartFile img, String isMain, String img_path, String attach_path) {
 //		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
-		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + attach_path; //현석
+//		String filePath = path; //현석
 		
 		String fileName = null;
 		File file = null;
 		
 		fileName = img.getOriginalFilename();
 		
-		UUID uuid = UUID.randomUUID();
-		String newFileName = uuid.toString() + "_" + fileName;
+		if(fileName!="") {
+			UUID uuid = UUID.randomUUID();
+			uuid = UUID.randomUUID();
+			fileName = uuid.toString() + "_" + fileName;
+			
+			file = new File(filePath, fileName);
+		}
+
+		if(fileName==""){
+			System.out.println("땡땡찍혔따");
+			fileName = "noImg.jpg";
+			
+			file = new File(filePath, fileName);
 		
-		file = new File(filePath, newFileName);
+		}
 		
-		uuid = UUID.randomUUID();
-		newFileName = uuid.toString() + "_" + fileName;
-		
-		file = new File(filePath, newFileName);
 		try {
 			if(checkImageType(file)) {
 				FileCopyUtils.copy(img.getInputStream(), new FileOutputStream(file));
@@ -137,7 +150,7 @@ public class PopController {
 		}
 		
 		tripPopImgDTO.setMainImg(isMain);
-		tripPopImgDTO.setImg_name(newFileName);
+		tripPopImgDTO.setImg_name(fileName);
 		tripPopImgDTO.setImg_path(img_path);
 	}
 	
