@@ -552,7 +552,7 @@
               }).append($('<div/>', {
             	  class: 'pop-title'
               }).append($('<a/>', {
-            	  href: '#',
+            	  href: '/nadri/area/activity?activity_seq=' + items.activity_seq,
             	  text: items.activity_name
               }))).append($('<div/>', {
             	  class: 'pop-review'
