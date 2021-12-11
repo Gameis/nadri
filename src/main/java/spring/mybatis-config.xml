@@ -33,6 +33,8 @@
 		<typeAlias type="tripmoment.bean.MainTripmomentDTO" alias="mainTripmoment"/>
 		<typeAlias type="tripmoment.bean.TripImgDTO" alias="tripImg"/>
 		<typeAlias type="tripmoment.bean.TripViewDTO" alias="tripView"/>
+		
+		<typeAlias type="activities.bean.OnActivitiesDTO" alias="onActivities"/>
 
 	</typeAliases>
 	

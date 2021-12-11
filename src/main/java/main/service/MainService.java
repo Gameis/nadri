@@ -10,7 +10,7 @@ public interface MainService {
 	public void mainWrite(TripMainDTO tripMainDTO);
 
 	public void mainImgWrite(ImgDTO imgDTO);
-	
-	public List<TripMainDTO> mainImgPrint(int main_seq);
+
+	public List<TripMainDTO> mainImgPrint(String activity_seq);
 
 }

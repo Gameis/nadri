@@ -1,22 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-class Activitiy {
-	private String title;
-	private int price;
-
-}
-// db에서 값 가져오기
-Activitiy item = new Activitiy();
-
-item.title = "서울 N서울타워 전망대 입장권";
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title><%=item.title%></title>
+<title>dd</title>
 <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities.css">
 </head>
@@ -29,6 +18,7 @@ item.title = "서울 N서울타워 전망대 입장권";
 
 	</div> --%>
 	<!-- 몸통 -->
+	<input type="hidden" id="activities_seq" value="21"/>
 	<div class="productdetail-container">
 		<input type="hidden" id="page_id" value="10650010429">
 		<!-- 눈썹 -->
@@ -44,7 +34,7 @@ item.title = "서울 N서울타워 전망대 입장권";
 					<a href="#">검색 결과</a> <span class="crumbs-separator">&gt;</span>
 				</div>
 				<div class="crumbs-item">
-					<span><%=item.title%></span>
+					<span>title</span>
 				</div>
 			</div>
 		</div>
@@ -54,7 +44,7 @@ item.title = "서울 N서울타워 전망대 입장권";
 		<!-- 얼굴 -->
 		<header class="detail-header-container productdetail-common-inner-width">
 			<section class="flex title fjc-sb">
-				<h1 class="productName ffps"><%=item.title%></h1>
+				<h1 class="productName ffps">title</h1>
 				<p class="ffpr c6 fs2">상품번호: 36756741</p>
 			</section>
 
@@ -456,7 +446,22 @@ item.title = "서울 N서울타워 전망대 입장권";
 	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330153/ko-KR.js?etagc=f5158fe4177dccce3ca0172317439256"></script>
 	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6a40afadabb933fac51a38441f7edf8e"></script>
 	<script type="text/javascript" src="https://ak-s.tripcdn.com/modules/basebiz/i18naccountcomponentssdk/i18naccountcomponentssdk.6e306b320450e87c28afdecb4d66d8cf.js"></script>
-
-	</div>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url: /nadri/activities/onActivities,
+				type: 'get',
+				data: 'activity_seq='+ $('#activity_seq').val(),
+				success: function(data) {
+					alert('확인');
+					alert(JSON.stringify(data));
+					
+				};
+				
+			});
+		});
+			
+		
+	</script>
 </body>
 </html>
