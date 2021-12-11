@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko-KR">
     <head>
-    <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        
         <title>서울 N서울타워 전망대 입장권 | Trip.com</title>
         <meta name="author" content="Trip.com"/>
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
@@ -18,8 +16,7 @@
         <link rel="alternate" href="https://www.trip.com/things-to-do/detail/36756741/" hrefLang="x-default"/>
         <link rel="canonical" href="https://kr.trip.com/things-to-do/detail/36756741/"/>
         <link rel="stylesheet" type="text/css" href="//webresource.tripcdn.com/resaresenglish/ibu/fe-common/css/lang-kr.e690c0e5.css"/>
-        <link rel="stylesheet" href="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/static/detail/index.css"/>
-    	<link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities.css">
+        <link rel="stylesheet" href="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.4/default/_next/static/detail/index.css"/>
     </head>
     <body class="ko-KR">
         <div id="__next">
@@ -110,122 +107,7 @@
                     </div>
                 </div>
             </div>
-            <script>
-                if (typeof Object.assign !== 'function') {
-                    window._assignObject = function(t, s) {
-                        for (var k in s) {
-                            t[k] = s[k]
-                        }
-                        ;return t
-                    }
-                    ;
-                } else {
-                    window._assignObject = Object.assign
-                }
-                window.__CARGO_DATA__ = _assignObject(window.__CARGO_DATA__ || {}, {
-                    "localelanguageckokre0": "kr",
-                    "localeiconotripckokre0": "flag-kr",
-                    "loginmenue0": "{\"menu\":[{\"show\":true,\"displayName\":\"My Bookings\",\"displayNameSharkKey\":\"V3_Profile_MyOrders\",\"include\":\"all\",\"link\":\"/order/all\",\"id\":\"booking\"},{\"show\":true,\"displayName\":\"Trip Coins\",\"displayNameSharkKey\":\"V3_Profile_Points\",\"include\":\"all\",\"link\":\"/customer/points/\",\"id\":\"points\"},{\"show\":true,\"displayName\":\"Promo Codes\",\"displayNameSharkKey\":\"V3_Promo_Code\",\"include\":\"all\",\"link\":\"/customer/promo/\",\"id\":\"codes\"},{\"show\":true,\"displayName\":\"Profile\",\"displayNameSharkKey\":\"V3_Text_MembInfo\",\"include\":\"all\",\"link\":\"/membersinfo/profile/\",\"id\":\"profile\"},{\"show\":false,\"displayName\":\"Friend Referrals\",\"displayNameSharkKey\":\"V3_Text_Friend\",\"include\":\"all\",\"link\":\"/sale/w/1899/friends-referral-main.html?locale=en_xx\",\"id\":\"Friend\"},{\"show\":true,\"displayName\":\"Favorites\",\"displayNameSharkKey\":\"ButtonText_Hotel_Collection\",\"include\":\"all\",\"link\":\"/favorite/\",\"id\":\"favorites\"},{\"show\":true,\"displayName\":\"Flight Price Alerts\",\"displayNameSharkKey\":\"Key_Flight_Price_Alerts\",\"include\":\"all\",\"link\":\"/flights/price-alert/\",\"id\":\"flghtAlert\"},{\"show\":true,\"displayName\":\"Rewards\",\"displayNameSharkKey\":\"Key_Entrance_Title\",\"include\":\"all\",\"link\":\"/customer/tierpoints/\",\"id\":\"rewards\"}]}",
-                    "channelmetauoe1": [{
-                        "channel": "home",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Home\",\"displayNameSharkKey\":\"ButtonText_Home\",\"path\":\"\"}"
-                    }, {
-                        "channel": "hotels",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Hotels\",\"displayNameSharkKey\":\"ButtonText_Hotel\",\"path\":\"/hotels/\"}"
-                    }, {
-                        "channel": "flights",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Flights\",\"displayNameSharkKey\":\"ButtonText_Flights\",\"path\":\"/flights/\"}"
-                    }, {
-                        "channel": "trains",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Trains\",\"displayNameSharkKey\":\"ButtonText_Trains\",\"path\":\"/trains/\"}"
-                    }, {
-                        "channel": "ttd",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"TNT\",\"displayNameSharkKey\":\"ButtonText_TTD\",\"path\":\"/things-to-do/\"}"
-                    }, {
-                        "channel": "travelguide",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Attractions\",\"displayNameSharkKey\":\"ButtonText_TravelGuide\",\"path\":\"/travel-guide/\"}"
-                    }, {
-                        "channel": "carhire",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Car Rentals\",\"displayNameSharkKey\":\"ButtonText_Carhire\",\"path\":\"/cars/\",\"parent\":\"cars\"}"
-                    }, {
-                        "channel": "airporttransfers",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Airport Transfers\",\"displayNameSharkKey\":\"ButtonText_AirportTransfers\",\"path\":\"/airport-transfers/\",\"parent\":\"cars\"}"
-                    }, {
-                        "channel": "cars",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Cars\",\"displayNameSharkKey\":\"ButtonText_Cars\",\"path\":\"\"}"
-                    }, {
-                        "channel": "sales",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Deals\",\"displayNameSharkKey\":\"ButtonText_Deals\",\"path\":\"/sale/deals/\"}"
-                    }, {
-                        "channel": "tripcoins",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Trip Rewards\",\"displayNameSharkKey\":\"ButtonText_TripRewards\",\"path\":\"/sale/TripRewards/\"}"
-                    }, {
-                        "channel": "giftcard",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"GiftCard\",\"displayNameSharkKey\":\"ButtonText_GiftCard\",\"path\":\"/giftcard\"}"
-                    }, {
-                        "channel": "cruises",
-                        "source": "flights",
-                        "value": "{\"displayName\":\"Cruises\",\"displayNameSharkKey\":\"ButtonText_Cruises\",\"path\":\"/cruises\"}"
-                    }, {
-                        "channel": "others",
-                        "source": "flights",
-                        "value": "{\"path\":\"/sale/w/1744/singaporediscovers.html?locale=en_sg\",\"displayName\":\"SingapoRediscovers Vouchers\",\"displayNameSharkKey\":\"key_channel_sg_vouchers\"}"
-                    }],
-                    "onlinechannelsckokre1": [{
-                        "locale": "ko-KR",
-                        "channel": "hotels",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "flights",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "trains",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "cars",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "carhire",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "airporttransfers",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "ttd",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "travelguide",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "tripcoins",
-                        "value": "1"
-                    }, {
-                        "locale": "ko-KR",
-                        "channel": "sales",
-                        "value": "1"
-                    }]
-                })
-            </script>
+          
             <div class="productdetail-container">
                 <input type="hidden" id="page_id" value="10650010429"/>
                 <div class="product-detail-breadcrumbs">
@@ -260,7 +142,7 @@
                     <div class="comment-height">
                         <div class="comment-sold">
                             <div class="comment-sold">
-                                <div class="comment-sold-content">167 예약</div>
+                                <div class="comment-sold-content">178 예약</div>
                             </div>
                         </div>
                     </div>
@@ -422,16 +304,16 @@
                         </div>
                         <div class="imageInner">
                             <div class="imgContainer">
-                                <img class="imgSelf lazy-load-images-34131" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
+                                <img class="imgSelf lazy-load-images-10636" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
                             </div>
                             <div class="imgContainer dn">
-                                <img class="imgSelf lazy-load-images-34131" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
+                                <img class="imgSelf lazy-load-images-10636" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
                             </div>
                             <div class="imgContainer dn">
-                                <img class="imgSelf lazy-load-images-34131" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
+                                <img class="imgSelf lazy-load-images-10636" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
                             </div>
                             <div class="imgContainer dn">
-                                <img class="imgSelf lazy-load-images-34131" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
+                                <img class="imgSelf lazy-load-images-10636" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1000_560_Q80.jpg?proc=source/trip;namelogo/d_40" width="100%"/>
                             </div>
                         </div>
                         <div class="arrow turnRight flex fa-c fjc-c">
@@ -561,27 +443,7 @@
                     </div>
                 </div>
             </div>
-            <script>
-                if (typeof Object.assign !== 'function') {
-                    window._assignObject = function(t, s) {
-                        for (var k in s) {
-                            t[k] = s[k]
-                        }
-                        ;return t
-                    }
-                    ;
-                } else {
-                    window._assignObject = Object.assign
-                }
-                window.__CARGO_DATA__ = _assignObject(window.__CARGO_DATA__ || {}, {
-                    "onlinefooterlinke0": "{\"about\":[{\"show\":\"1\",\"displayName\":\"About Trip.com\",\"displayNameSharkKey\":\"ButtonText_AboutUs\",\"include\":\"all\",\"link\":\"/pages/about-us/\"},{\"show\":\"1\",\"displayName\":\"NewsRoom\",\"displayNameSharkKey\":\"ButtonText_NewsRoom\",\"include\":\"en_us,zh_hk,en_hk,zh_tw,ja_jp,ko_kr,it_it,vi_vn,ru_ru,id_id,de_de,fr_fr,es_es,th_th,en_au,ms_my,en_gb\",\"link\":\"/newsroom/\"},{\"show\":\"1\",\"displayName\":\"Newsroom\",\"displayNameSharkKey\":\"ButtonText_NewsRoom\",\"exclude\":\"en_us,zh_hk,en_hk,zh_tw,ja_jp,ko_kr,it_it,vi_vn,ru_ru,id_id,de_de,fr_fr,es_es,th_th,en_au,ms_my,en_gb,pt_pt,es_mx,uk_ua,sv_se,da_dk,fi_fi,es_us\",\"link\":\"https://www.trip.com/newsroom/?locale=en-xx\"},{\"show\":\"1\",\"displayName\":\"Careers\",\"displayNameSharkKey\":\"ButtonText_Career\",\"include\":\"all\",\"link\":\"https://careers.trip.com/\"},{\"show\":\"1\",\"displayName\":\"Terms of Use\",\"displayNameSharkKey\":\"LinkButtonText_TermsAndCondition\",\"include\":\"all\",\"link\":\"https://pages.trip.com/service-guideline/terms-${locale}.html\"},{\"show\":\"1\",\"displayName\":\"Privacy Statement\",\"displayNameSharkKey\":\"ButtonText_PrivacyPolicy\",\"exclude\":\"es_us,es_mx,pt_pt\",\"link\":\"https://pages.trip.com/service-guideline/privacy-policy-${locale}.html\"},{\"show\":\"1\",\"displayName\":\"Impressum\",\"displayNameSharkKey\":\"ButtonText_Impressum\",\"include\":\"de_de\",\"link\":\"https://pages.trip.com/others/impressum-de-de.html\"},{\"show\":\"1\",\"displayName\":\"Do not sale my personal information\",\"displayNameSharkKey\":\"ButtonText_Personalinformation\",\"include\":\"en_us\",\"link\":\"https://us.trip.com/pages/treatyforcookie/\"},{\"show\":\"1\",\"displayName\":\"Trip.com Group\",\"displayNameSharkKey\":\"ButtonText_TripGroup\",\"include\":\"zh_hk,zh_tw\",\"link\":\"https://group.trip.com/?locale=zh-HK\"},{\"show\":\"1\",\"displayName\":\"Trip.com Group\",\"displayNameSharkKey\":\"ButtonText_TripGroup\",\"exclude\":\"zh_hk,zh_tw\",\"link\":\"https://group.trip.com/?locale=en-US\"}],\"otherServices\":[{\"show\":\"1\",\"displayName\":\"Investor Relations\",\"displayNameSharkKey\":\"ButtonText_InvestorRelations\",\"include\":\"all\",\"link\":\"https://investors.trip.com\"},{\"show\":\"1\",\"displayName\":\"TripPLUS\",\"displayNameSharkKey\":\"ButtonText_TripPlus\",\"exclude\":\"pt_pt,es_mx,uk_ua,sv_se,da_dk,fi_fi,es_us\",\"link\":\"/sale/TripRewards?locale=${locale}\"},{\"show\":\"0\",\"displayName\":\"Partners\",\"displayNameSharkKey\":\"ButtonText_Affiliate_trip\",\"exclude\":\"zh_tw\",\"link\":\"/pages/partners\"},{\"show\":\"1\",\"displayName\":\"Partners\",\"displayNameSharkKey\":\"ButtonText_Affiliate_trip\",\"include\":\"en_xx,zh_hk,ko_kr,ja_jp,ru_ru,th_th\",\"link\":\"/partners/index\"},{\"show\":\"1\",\"displayName\":\"Partners\",\"displayNameSharkKey\":\"ButtonText_Affiliate_trip\",\"exclude\":\"en_xx,zh_hk,ko_kr,ja_jp,ru_ru,th_th\",\"link\":\"https://www.trip.com/partners/index\"},{\"show\":\"1\",\"displayName\":\"List My Hotel\",\"displayNameSharkKey\":\"LinkButtonText_Listyourhotel\",\"include\":\"zh_hk,en_be,fr_ch,en_ch,fr_be,nl_be,de_ch,de_at,en_ie,ar_sa,ar_ae,ar_xx,en_xx,en_nz,en_il,en_sa,en_ae,en_us,nl_nl,el_gr,pt_br,tr_tr,pl_pl,en_th,en_my,en_id,en_kr,en_jp,zh_sg,en_gb,it_it,zh_tw,tl_ph,vi_vn,en_au,th_th,id_id,ms_my,en_sg,en_hk,ru_ru,es_es,de_de,fr_fr\",\"link\":\"https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=1&lang=1\",\"linkLocale\":\"en_us\"},{\"show\":\"1\",\"displayName\":\"List My Hotel\",\"displayNameSharkKey\":\"LinkButtonText_Listyourhotel\",\"include\":\"ja_jp\",\"link\":\"https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=1&lang=2\"},{\"show\":\"1\",\"displayName\":\"List My Hotel\",\"displayNameSharkKey\":\"LinkButtonText_Listyourhotel\",\"include\":\"ko_kr\",\"link\":\"https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=1&lang=3\"},{\"show\":\"1\",\"displayName\":\"Hotel Cities\",\"displayNameSharkKey\":\"LinkButtonText_ListHotelCities\",\"include\":\"en_us,zh_hk,en_hk,ja_jp,ko_kr,en_sg,en_au,en_xx\",\"link\":\"/hotels/all-cities/?locale=${locale}\"},{\"show\":\"1\",\"displayName\":\"VBooking\",\"displayNameSharkKey\":\"LinkButtonText_VBooking\",\"include\":\"en_gb,th_th,en_sg,en_my,ko_kr,ja_jp,en_hk,en_xx,en_us,en_au,en_nz\",\"link\":\"/m/vbooking/home\"}],\"contactUs\":[{\"show\":\"1\",\"displayName\":\"Customer Support\",\"displayNameSharkKey\":\"ButtonText_CustomerServiceHelp\",\"include\":\"all\",\"link\":\"/pages/support/\"},{\"show\":\"1\",\"displayName\":\"Customer Service\",\"displayNameSharkKey\":\"ButtonText_CustomerService\",\"include\":\"all\",\"link\":\"/pages/customer-service/\"},{\"show\":\"1\",\"displayName\":\"Travel Safety Guide\",\"displayNameSharkKey\":\"LinkButtonText_SafetyGuide\",\"include\":\"ja_jp\",\"link\":\"https://www.anzen.mofa.go.jp/\"},{\"show\":\"1\",\"displayName\":\"Website Feedback\",\"displayNameSharkKey\":\"LinkButtonText_FeedBack\",\"include\":\"all\",\"link\":\"/feedback/\"}]}",
-                    "socialmediackokre0": "[{\"name\":\"facebook\",\"link\":\"https://www.facebook.com/tripcom.kr\"},{\"name\":\"instagram\",\"link\":\"https://www.instagram.com/tripcom.kr\"},{\"name\":\"naver\",\"link\":\"http://blog.naver.com/trip_com\"},{\"name\":\"youtube\",\"link\":\"http://www.youtube.com/c/tripcomkr\"},{\"name\":\"kakao\",\"link\":\"http://pf.kakao.com/_mMxbcxl\"}]",
-                    "paymentmethodckokre0": "[{\"name\":\"naver-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/naver-pay.png\"},{\"name\":\"bc-card\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/bc-card.png\"},{\"name\":\"shinhan\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/shinhan.png\"},{\"name\":\"kakao-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/kakao-pay.png\"},{\"name\":\"samsung\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/samsung.png\"},{\"name\":\"nh\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/nh.png\"},{\"name\":\"keb\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/keb.png\"},{\"name\":\"samsung-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/samsung-pay.png\"},{\"name\":\"hyundai-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/hyundai-pay.png\"}]",
-                    "businesspartnerckokre0": "[{\"logo\":\"https://pages.trip.com/images/business-partner/GOOGLE.png\"},{\"logo\":\"https://pages.trip.com/images/business-partner/TRIPADVISOR.png\"}]",
-                    "sisterbrandckokre0": "",
-                    "awardsckokre0": "[{\"awardLogo\":\"https://pages.trip.com/images/rewards/KR2020BrandAwards.png\",\"awardTxt\":\"한국소비자포럼 주관 <br />올해의브랜드대상 2년 연속 수상\"}]"
-                })
-            </script>
+           
             <div class="cookie-banner"></div>
         </div>
         <div id="__next-error"></div>
@@ -595,8 +457,8 @@
         <script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/100009239/ko-KR.js?etagc=a798631ea01dacff708e040f1165822f"></script>
         <script crossorigin="anonymous" src="https://webresource.tripcdn.com/ares2/ibu/onlinecommon/*/default/assets/ibu_l10n_online_bundle.js"></script>
         <script crossorigin="anonymous" type="text/javascript" id="i18nguestverifypcsdk" secretkey="67986D7FCD5D2C5C" src="https://webresource.tripcdn.com/ares2/basebiz/i18naccountpcsdk/*/default/assets/guestVerify.js"></script>
-        <script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330153/ko-KR.js?etagc=eb290a57da372dd02f22abff7fc0d782"></script>
-        <script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6058a3d9785d176f570e3926598b1c9c"></script>
+        <script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330153/ko-KR.js?etagc=f5158fe4177dccce3ca0172317439256"></script>
+        <script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6a40afadabb933fac51a38441f7edf8e"></script>
         <script type="text/javascript" src="https://ak-s.tripcdn.com/modules/basebiz/i18naccountcomponentssdk/i18naccountcomponentssdk.6e306b320450e87c28afdecb4d66d8cf.js"></script>
         <script crossorigin="anonymous">
             (function(w, d, s, l, i) {
@@ -981,7 +843,7 @@
                         },
                         "marketingAggregationRecommendDetail": {
                             "ResponseStatus": {
-                                "Timestamp": "/Date(1638773594392+0800)/",
+                                "Timestamp": "/Date(1639118805282+0800)/",
                                 "Ack": "Success",
                                 "Errors": null,
                                 "Build": null,
@@ -1045,7 +907,7 @@
                         },
                         "productDetail": {
                             "ResponseStatus": {
-                                "Timestamp": "/Date(1638773594386+0800)/",
+                                "Timestamp": "/Date(1639118805274+0800)/",
                                 "Ack": "Success",
                                 "Errors": null,
                                 "Build": null,
@@ -1074,7 +936,7 @@
                                     "Id": "serviceTime",
                                     "Version": "",
                                     "ContentType": "",
-                                    "Value": "150~200ms"
+                                    "Value": "100~150ms"
                                 }]
                             },
                             "product": {
@@ -1159,8 +1021,8 @@
                                     "desc": "평균 예약 확정 시간 1분, 100% 확정",
                                     "tips": ["결제 완료 후 공급처 측에서 예약 확정 안내 드릴 예정입니다.\n공급처 예약 확정 후 트립닷컴 예약 확정 이메일을 발송해드립니다.", "예약 확정 시간 및 성공률은 지난 예약건에 기반한 수치 (단순 참고용)", "정확한 예약 확정 시간은 예약 확정 메일 또는 예약 상세 페이지에서 확인해주세요."]
                                 },
-                                "volume": 167,
-                                "volumeStr": "167 예약",
+                                "volume": 178,
+                                "volumeStr": "178 예약",
                                 "commentCount": 3,
                                 "commentScore": 3.3,
                                 "cityId": 274,
@@ -1186,7 +1048,7 @@
                         "seoLinkUrl": "https://kr.trip.com/things-to-do/detail/36756741/",
                         "extInfoData": {
                             "ResponseStatus": {
-                                "Timestamp": "/Date(1638773594453+0800)/",
+                                "Timestamp": "/Date(1639118805352+0800)/",
                                 "Ack": "Success",
                                 "Errors": [],
                                 "Extension": []
@@ -1301,11 +1163,11 @@
                             "isAlamoFire": false,
                             "silkAccelerated": false,
                             "browser": "Chrome",
-                            "version": "96.0.4664.45",
+                            "version": "96.0.4664.93",
                             "os": "Windows 10.0",
                             "platform": "Microsoft Windows",
                             "geoIp": {},
-                            "source": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+                            "source": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36"
                         },
                         "serverLocation": {
                             "host": "kr.trip.com",
@@ -1362,11 +1224,11 @@
                                 "isAlamoFire": false,
                                 "silkAccelerated": false,
                                 "browser": "Chrome",
-                                "version": "96.0.4664.45",
+                                "version": "96.0.4664.93",
                                 "os": "Windows 10.0",
                                 "platform": "Microsoft Windows",
                                 "geoIp": {},
-                                "source": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+                                "source": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36"
                             }
                         }
                     },
@@ -1379,8 +1241,8 @@
                 "query": {
                     "productid": "36756741"
                 },
-                "buildId": "ottd-online-international-website-application-2.12.3",
-                "assetPrefix": "https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default",
+                "buildId": "ottd-online-international-website-application-2.12.4",
+                "assetPrefix": "https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.4/default",
                 "nextExport": false,
                 "err": null,
                 "chunks": []
@@ -1405,10 +1267,10 @@
 
             false
         </script>
-        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/detail" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/ottd-online-international-website-application-2.12.3/page/detail.js"></script>
-        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/_app" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/ottd-online-international-website-application-2.12.3/page/_app.js"></script>
-        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/_error" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/ottd-online-international-website-application-2.12.3/page/_error.js"></script>
-        <script src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/static/commons/main-2.12.3.js" crossorigin="anonymous" async=""></script>
+        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/detail" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.4/default/_next/ottd-online-international-website-application-2.12.4/page/detail.js"></script>
+        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/_app" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.4/default/_next/ottd-online-international-website-application-2.12.4/page/_app.js"></script>
+        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/_error" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.4/default/_next/ottd-online-international-website-application-2.12.4/page/_error.js"></script>
+        <script src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.4/default/_next/static/commons/main-2.12.4.js" crossorigin="anonymous" async=""></script>
         <div>
             <script type="text/javascript" crossOrigin="anonymous">
                 if (typeof head_foot_init === 'function') {
