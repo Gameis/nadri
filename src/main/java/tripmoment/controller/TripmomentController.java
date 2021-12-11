@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import area.bean.ImgDTO;
 import tripmoment.bean.MainTripmomentDTO;
 import tripmoment.bean.TripImgDTO;
+import tripmoment.bean.TripViewDTO;
 import tripmoment.bean.TripmomentDTO;
 import tripmoment.service.TripmomentService;
 
@@ -79,6 +80,12 @@ public class TripmomentController {
 	@RequestMapping(value= "/tripmomentView", method=RequestMethod.GET)
 	public String tripmomentView(@RequestParam("moment_seq") String moment_seq) {
 		return "/repository/jsp/tripmoment/tripmoment";
+	}
+	
+	@RequestMapping(value="/getTripView", method=RequestMethod.GET)
+	@ResponseBody
+	public TripViewDTO getTripView(@RequestParam("moment_seq") String moment_seq) {
+		return tripmomentService.getTripView(moment_seq);
 	}
 	
 		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {

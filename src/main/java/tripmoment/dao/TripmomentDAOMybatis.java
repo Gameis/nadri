@@ -45,7 +45,7 @@ public class TripmomentDAOMybatis implements TripmomentDAO {
 	}
 
 	@Override
-	public TripViewDTO getTripView() {
-		return sqlSession.selectOne("tripmomentSQL.getTripView");		
+	public TripViewDTO getTripView(String moment_seq) {
+		return sqlSession.selectOne("tripmomentSQL.getTripView", moment_seq);		
 	}
 }

@@ -657,6 +657,19 @@ $(function(){
 			
 			}
 		});
+		$.ajax({
+			url : '/nadri/tripmoment/getTripView',
+			type : 'get',
+			data : 'moment_seq=' + $('#moment_seq').val(),
+			success : function(data){
+				alert(JSON.stringify(data));
+				alert('어예 성공');
+			},
+			
+			error : function(err) {
+				alert('ㅠㅠ')
+			}
+		});
 	});
 </script>
 </body>

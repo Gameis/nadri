@@ -31,7 +31,6 @@ public class TripmomentServiceImpl implements TripmomentService {
 	@Override
 	public List<MainTripmomentDTO> onTripmoment() {
 		return tripmomentDAO.onTripmoment();
-		
 	}
 
 	@Override
@@ -40,7 +39,7 @@ public class TripmomentServiceImpl implements TripmomentService {
 	}
 
 	@Override
-	public TripViewDTO getTripView() {
-		return null;
+	public TripViewDTO getTripView(String moment_seq) {
+		return tripmomentDAO.getTripView(moment_seq);
 	}
 }

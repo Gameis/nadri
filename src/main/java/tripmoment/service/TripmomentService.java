@@ -18,5 +18,5 @@ public interface TripmomentService {
 	
 	public List<TripImgDTO> getTripImg(String moment_seq);
 	
-	public TripViewDTO getTripView();
+	public TripViewDTO getTripView(String moment_seq);
 }
