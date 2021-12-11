@@ -1,12 +1,12 @@
 package tripmoment.controller;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.tomcat.jni.File;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -90,8 +90,10 @@ public class TripmomentController {
 	
 		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
 //			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
-			//String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
-			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+//			String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
+//			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+			String filePath = "D:\\git\\nadri\\src\\main\\webapp\\repository\\img" + path; //병림
+			
 			
 			String fileName = null;
 			File file = null;

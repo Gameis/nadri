@@ -2,12 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<link rel="stylesheet" type="text/css"
-	href="/nadri/repository/css/main/main_top.css">
-	
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
-	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
+	</head>
+<body>
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
 			<div class="main_hd_inner main_hd_newline">
@@ -91,27 +93,13 @@
 		      <div id="modalpwdDiv"></div>
 		    </div>  
 		    
-		    
-		    <div>
-		  	<!-- 구글  -->
-			  <a style="text-decoration: none" id="GgCustomLogin" href="javascript:void(0)" >
-			  	<img src="/nadri/repository/img/tripmember/google.png" alt="google">
-			  </a>
-			  
-			<!-- 네이버 --> 	 			
-			 <%--  <a style="text-decoration: none" href="/nadri/repository/jsp/main/main_top_loginmodal/login_api/naverLogin.jsp"> --%>
-			
-			  <a style="text-decoration: none" id="naverIdLogin_loginButton" href="javascript:void(0)">
-			  	<img src="/nadri/repository/img/tripmember/naver.png" alt="naver">
-			  </a>
-			  
 			<!-- 카카오 -->
+			  <div>
 			  <a style="text-decoration: none"  href="javascript:void(0)">
 			  	<img src="/nadri/repository/img/tripmember/kakao.png" alt="kakao" onclick="kakaoLogin();">
-			  </a>
-			  
+			  </a>			  
 			</div>
-			
+			 
 			 <div><input type="button" id="loginBtn" value="로그인"></div>
 			 <div id="loginResult"></div>
    		 </form>
@@ -174,7 +162,47 @@
 </div>
 	
 	
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/nadri/repository/js/tripmember/tripmember.js"></script>
-<script src="/nadri/repository/js/modal/modal.js"></script>	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- 카카오 스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('3e185ce5fc211a923e30507eac3d2f59'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script>	
+	
+</body>
+</html>
+

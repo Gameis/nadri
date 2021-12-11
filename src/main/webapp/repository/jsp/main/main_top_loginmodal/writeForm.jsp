@@ -106,9 +106,11 @@
 	
 		<tr>
 			<td width="100" align="center">이미지</td>
-			<td>
-				<input type="radio" name="gender" value="0" checked>남
-				<input type="radio" name="gender" value="1">여
+		<td>
+				<input type="text" name="img" id="img" placeholder="닉네임 입력">
+
+				<input type="hidden" name="img2" id="img2" value="">
+				<div id= "nickDiv"></div>
 			</td>
 		</tr>
 
