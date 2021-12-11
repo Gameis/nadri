@@ -82,6 +82,11 @@ public class AreaController {
 		return "/repository/jsp/popular/popular";
 	}
 	
+	@RequestMapping(value="/activity", method=RequestMethod.GET)
+	public String activity() {
+		return "/repository/jsp/activities/activities";
+	}
+	
 	@RequestMapping(value = "/activityWriteForm", method = RequestMethod.GET)
 	public String activityWriteForm() {
 		return "/repository/jsp/area/activityWriteForm";

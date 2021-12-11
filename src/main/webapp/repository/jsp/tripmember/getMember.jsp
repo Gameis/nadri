@@ -12,8 +12,7 @@ style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/member/ima
 <h3 style="display:inline;color:green;">등록된 이미지</h3>
 
 	<table id="memberTable" border="0" cellspacing="0" cellpadding="5" width="1000">
-			
-			
+					
 		<tr>
 			<td>이름</td>
 			<td>
@@ -84,69 +83,25 @@ style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/member/ima
 	
 	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-	
 <script type="text/javascript">
 
 $(function(){
 	$.ajax({
+		
 		url: '/nadri/member/getMemberInfo',
 		type: 'post',
 		dataType: 'json',
 		success:function(data){
-			console.log(JSON.stringify(data));		//json을 안썼지만 json형식으로 뜸 오류가 안뜸
-
-			
+			console.log(JSON.stringify(data));	
+		
 			$('#name').val(data.name);
 			$('#id').val(data.id);
 
 			$('#email').val(data.email1+"@"+data.email2);
 			$('#tel').val(data.tel1+"-"+data.tel2+"-"+data.tel3);
 			$('#add').val(data.zipcode+" "+data.addr1+" "+data.addr2);
+			$('#date').val(data.logtime);
 
-	//		$('#id').val(data.id);
-
-	// list를 붙이지말고 data만 작성할것		
-	//	$.each(data.list,function(index,items){ 
-
-		/*	$.each(data,function(index,items){
-			
-				$('<tr/>').append($('<td/>',{
-					width:100,
-					align:'center',
-					text:items.name		//이름
-					
-				})).append($('<td/>',{
-					width:100,
-					align:'center',
-					text:items.id		//아이디
-					
-				})).append($('<td/>',{
-					width:100,
-					align:'center',
-					text:items.email1+"@"+items.email2		//이메일1+이메일2
-
-						
-				})).append($('<td/>',{
-					width:100,
-					align:'center',
-					text:items.tel1+"-"+items.tel2+"-"+items.tel3		// 핸드폰1+핸드폰2+핸드폰3		
-										
-					
-				})).append($('<td/>',{
-					width:100,
-					align:'center',
-					text:items.zipcode+" "+items.add1+" "+items.add2			//zipcode+주소1+주소2
-			
-	
-				})).append($('<td/>',{
-					width:100,
-					align:'center',
-					text:items.logtime		//가입일
-								
-				})).appendTo('#table');
-			
-		//	});	//each
-		*/
 		},	//success
 		error:function(err){
 			console.log(err);

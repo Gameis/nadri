@@ -1,4 +1,4 @@
-package member.bean;
+package tripmember.bean;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,4 @@
-//$('#loginmodal').appendTo("body");
-//$('#agreementmodal').appendTo("body");
-//$('#membershipmodal').appendTo("body");
+
 
 //로그인
 $('#loginBtn').click(function(){
@@ -134,10 +132,12 @@ $('#id').focusout(function(){
 
 
 
+
 //우편번호 체크
 $('#zipcodeBtn').click(function(){
 	window.open("/nadri/repository/jsp/member/checkPost.jsp", "checkPost", "width=500 height=500 top=200 left=700");
 });
+
 
 //현재 새로운창이 떠있는상태
 $('#checkPostSearchBtn').click(function(){
@@ -194,4 +194,54 @@ $('#checkPostSearchBtn').click(function(){
 });		//checkPostSearchBtn click
 
 
-//이메일 인증확인
+//이메일 인증번호전송
+var mailcode = "";
+$("#mailcheckBtn").click(function(){
+	$('#email1').empty();
+  	$('#email2').empty();
+
+	if($('#email1').val()==''){
+		$('#mailcheckDiv').html('메일주소를 입력해주세요');
+	}	
+	else if($('#email2').val()==''){
+		$('#mailcheckDiv').html('메일주소를 입력해주세요');
+	}	
+
+	else{
+	  	var email = $("#email1").val()+"@"+$("#email2").val(); //입력한 이메일
+		console.log(email);
+	   	$.ajax({
+	        type:"GET",
+	        url:"/nadri/member/mailCheck?email=" + email,
+
+	        
+	           success:function(data){
+	   	            alert("인증메일을 전송하였습니다");       
+	          	 	console.log("data : " + data);
+	             $("#mailcheck").attr("disabled",false);
+	             $(".mail_check_input_box").attr("id", "mailcheck_true"); 
+	              	mailcode = data;
+	        	},	//success
+	        	
+	            error:function(err){
+					console.log(err);
+				}	   
+  	  });	//ajax
+    }	//else
+});	//click
+ 
+ /* 인증번호 비교 */
+$("#mailcheck").blur(function(){		//포커스가 나갔을때
+
+    var inputCode = $("#mailcheck").val();        // 사용자가 메일로 받은 입력코드    
+    
+    if(inputCode == mailcode){                            // 일치할 경우
+       	$("#mailcheckDiv").html("메일인증되었습니다.");
+   	} else {                                            // 일치하지 않을 경우
+        $("#mailcheckDiv").html("인증번호를 다시 확인해주세요.");
+	}
+
+
+});		//blur
+
+

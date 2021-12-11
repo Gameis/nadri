@@ -22,9 +22,9 @@
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
 		<typeAlias type="area.bean.TripActivityDTO" alias="tripActivity"/>
 
- 		<typeAlias type="member.bean.MemberDTO" alias="member"/>
-		<typeAlias type="member.bean.ZipcodeDTO" alias="zipcode"/>		
-		<typeAlias type="member.bean.MemberImageDTO" alias="memberImg"/>		
+ 		<typeAlias type="tripmember.bean.TripmemberDTO" alias="tripmember"/>
+		<typeAlias type="tripmember.bean.ZipcodeDTO" alias="zipcode"/>		
+		<typeAlias type="tripmember.bean.TripmemberImageDTO" alias="tripmemberImg"/>		
 		
 		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
 		<typeAlias type="area.bean.ActivityMainDTO" alias="activityMain"/>
@@ -33,6 +33,8 @@
 		<typeAlias type="tripmoment.bean.MainTripmomentDTO" alias="mainTripmoment"/>
 		<typeAlias type="tripmoment.bean.TripImgDTO" alias="tripImg"/>
 		<typeAlias type="tripmoment.bean.TripViewDTO" alias="tripView"/>
+		
+		<typeAlias type="activities.bean.OnActivitiesDTO" alias="onActivities"/>
 
 	</typeAliases>
 	

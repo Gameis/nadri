@@ -1,18 +1,17 @@
-package member.service;
+package tripmember.service;
 
 import java.util.List;
-import java.util.Map;
 
-import member.bean.MemberDTO;
-import member.bean.ZipcodeDTO;
+import tripmember.bean.TripmemberDTO;
+import tripmember.bean.ZipcodeDTO;
 
-public interface MemberService {
+public interface TripmemberService {
 	
 //	public MemberDTO login(Map<String, String> map);
 	
-	public MemberDTO login(MemberDTO memberDTO);
+	public TripmemberDTO login(TripmemberDTO tripmemberDTO);
 	
-	public void write(MemberDTO userDTO);
+	public void write(TripmemberDTO tripmemberDTO);
 
 	public String checkId(String id);
 
@@ -30,9 +29,9 @@ public interface MemberService {
 //	public MemberDTO getUser(String searchId);
 
 	
-	public MemberDTO getMemberInfo(String id);
+	public TripmemberDTO getTripmemberInfo(String id);
 
-	public void modify(MemberDTO userDTO);
+	public void modify(TripmemberDTO tripmemberDTO);
 
 	public void delete(String id);
 
