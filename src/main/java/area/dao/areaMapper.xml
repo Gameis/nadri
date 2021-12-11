@@ -20,11 +20,17 @@
 	</insert>
 	
 	<select id="printPopMain" resultType="popMain">
-		select pop_seq, pop_name, pop_businesstime, pop_tourismtime, pop_call, main_seq, img_name, img_path
+		select pop_seq, pop_name, pop_businesstime, pop_tourismtime, pop_call, "pop_review_score", "pop_review_count", main_seq, img_name, img_path
 		from trippop
 		join (select img_name, img_path, seq
-      		  from img 
-      		  where content_seq = 3 and main_seq = #{main_seq} and mainImg = 'T') on(pop_seq = seq)
+		      from img 
+		      where content_seq = 3 and main_seq = 99 and mainImg = 'T') on(pop_seq = seq)
+		join (select pop_seq, trunc(avg(pop_review_score), 1) as "pop_review_score"
+		      from trippop_review
+		      group by pop_seq) using(pop_seq)
+		join (select pop_seq, count(*) as "pop_review_count"
+		      from trippop_review
+		      group by pop_seq) using(pop_seq)
 	</select>
 	
 	<insert id="activityWrite" parameterType="tripActivity">

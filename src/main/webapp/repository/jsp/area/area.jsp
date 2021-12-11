@@ -66,14 +66,14 @@
             </a>
         </div><!--areaNav-->
         <div id="areaMainImg">
-            <img id="areaMainBig" alt="1.jpg" src="/nadri/repository/img/area/1.jpg"/>
+            <img id="areaMainBig" alt="1.jpg" src=""/>
             <div id="areaMainSmall">
-                <img alt="2.jpg" src="/nadri/repository/img/area/2.jpg"/>
-                <img alt="3.jpg" src="/nadri/repository/img/area/3.jpg"/>
+                <img alt="2.jpg" src=""/>
+                <img alt="3.jpg" src=""/>
             </div>
         </div><!--areaMainImg-->
         <div class="areaSlideTitle">
-          <h2 style="font-weight: bold;">서울 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+"></h2>
+          <h2 style="font-weight: bold;">지역이름 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+"></h2>
           <!--divSlide-->
           <div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
             <div id="areaPopularLocation_slide" class="carousel slide" data-bs-ride="carousel">
@@ -326,18 +326,16 @@
         </div><!--areaPopularLocation-->
         <!--여기까지 액티비티-->
         <div class="areaInfo">
-          <h2>서울 여행 정보</h2>
+          <h2>지역이름 여행 정보</h2>
           <div class="areaInfo-title">
             <div class="areaInfo-title-icon">
               <i class="bi bi-map"></i>
             </div>
-            <div class="area-title-text">서울 소개</div>
+            <div class="area-title-text">지역이름 소개</div>
             <div class="area-info-body">
               <div class="area-content">
                 <div class="area-content-text">
-                  <p>
-                    서울은 대한민국의 수도입니다. 서울 안에 자리한 사원과 궁전이 이 도시의 길고 깊은 역사를 보여줍니다. 이곳에서는 아름다운 자연과 현대적인 고층 빌딩이 만나 과거와 현재가 융합된 도시를 형성합니다. 경복궁과 창덕궁은 오래된 고궁이며, 북촌한옥마을과 남산골 한옥마을은 한국의 전통이 잘 보존된 마을입니다. 서울은 쇼핑의 천국이기도 합니다. 명동, 동대문시장, 신사동, 삼청동으로 가서 의류, 보석, 화장품을 비롯한 온갖 종류의 최신 패션 상품을 만나보세요. 밤이 되면 서울은 더 화려해집니다. N 서울 타워 정상에 올라 눈부시게 빛나는 서울의 야경을 감상하며 눈 호강을 해보세요. 한강은 수많은 한국 드라마에서 배경으로 등장하는 단골손님입니다. 서울의 맛있는 음식 또한 놓쳐선 안 되겠죠. 비빔밥, 김치, 삼계탕(인삼을 넣은 한국식 치킨 수프) 등 저마다 개성을 뽐내는 음식은 모두 맛있습니다.
-                  </p>
+                  <p></p>
                 </div>
                 <div class="area-content-plus">
                   <span data-bs-toggle="modal" data-bs-target="#staticBackdrop">더 보기</span>
@@ -350,16 +348,14 @@
 					        <h5 class="modal-title" id="staticBackdropLabel">서울 소개</h5>
 					        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      	</div>
-					      <div class="modal-body">
-                    		서울은 대한민국의 수도입니다. 서울 안에 자리한 사원과 궁전이 이 도시의 길고 깊은 역사를 보여줍니다. 이곳에서는 아름다운 자연과 현대적인 고층 빌딩이 만나 과거와 현재가 융합된 도시를 형성합니다. 경복궁과 창덕궁은 오래된 고궁이며, 북촌한옥마을과 남산골 한옥마을은 한국의 전통이 잘 보존된 마을입니다. 서울은 쇼핑의 천국이기도 합니다. 명동, 동대문시장, 신사동, 삼청동으로 가서 의류, 보석, 화장품을 비롯한 온갖 종류의 최신 패션 상품을 만나보세요. 밤이 되면 서울은 더 화려해집니다. N 서울 타워 정상에 올라 눈부시게 빛나는 서울의 야경을 감상하며 눈 호강을 해보세요. 한강은 수많은 한국 드라마에서 배경으로 등장하는 단골손님입니다. 서울의 맛있는 음식 또한 놓쳐선 안 되겠죠. 비빔밥, 김치, 삼계탕(인삼을 넣은 한국식 치킨 수프) 등 저마다 개성을 뽐내는 음식은 모두 맛있습니다.
-					      </div>
+					      <div class="modal-body"></div>
 					    </div>
 					  </div>
 					</div>
                 </div>
               </div>
               <div class="map-box">
-                <img src="/nadri/repository/img/area/seoul.jpg" alt="seoul">
+                <img src="" alt="map">
               </div>
             </div>
           </div>
@@ -420,24 +416,35 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/nadri/repository/js/area/area.js"></script>
 <script type="text/javascript">
-  $(function() {
-	$.ajax({
-		url: '/nadri/area/onArea',
-		type: 'get',
-		data: 'main_seq=' + $('#main_seq').val(),
-		success: function(data) {
-			alert('성공');
-			alert(JSON.stringify(data));
-			/* $.each(data, function(index, items){
-				$('#areaDestination_name').text(items.main_name);
-				//$('#')
-			} */
-		},
-		error: function(err) {
-			alert('실패');
-			console.log(err);
-		}
-	});
+	$(function() {
+		$.ajax({
+			url: '/nadri/area/onArea',
+			type: 'get',
+			data: 'main_seq=' + $('#main_seq').val(),
+			success: function(data) {
+				alert(JSON.stringify(data));
+				num = 0;
+				$.each(data, function(index, items){
+					$('#areaDestination_name').text(items.main_name);
+					$('.areaSlideTitle:eq(0) h2').html(items.main_name + ' 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+">');
+					$('.areaInfo h2').text(items.main_name + ' 여행' + ' 정보');
+					$('.area-title-text').text(items.main_name + ' 소개');
+					$('.area-weather h2').text(items.main_name + ' 날씨');
+					if(items.mainImg == 'T')
+					$('#areaMainBig').prop("src", "/nadri/repository/img" + "/" + items.img_path + "/" + items.img_name);
+					else if(items.mainImg == 'F')
+					$('#areaMainSmall img:eq('+ (num++) +')').prop("src", "/nadri/repository/img"+ "/" + items.img_path + "/" + items.img_name);
+					else if(items.mainImg == 'M')
+					$('.map-box img').prop("src", "/nadri/repository/img" + "/" + items.img_path + "/" + items.img_name);
+					$(".area-content-text p").text(items.main_info);
+					$(".modal-body").text(items.main_info);
+				 }); 
+			},
+			error: function(err) {
+				alert('실패');
+				console.log(err);
+			}
+		});
 	
     $.ajax({
       url: '/nadri/area/onAreaPop',
@@ -489,13 +496,13 @@
               class: 'pop-review-score'
             }).append($('<span/>', {
               class: 'pop-review-score-current',
-              text: '4.5'
+              text: items.pop_review_score
             })).append($('<span/>', {
               class: 'pop-review-score-total',
               text: '/5'
             }))).append($('<div/>', {
               class: 'pop-review-text',
-              text: '5,808건의 리뷰'
+              text: items.pop_review_count + '건의 리뷰'
             })))).appendTo($('#pop-carousel-inner .card-group:eq(' + count + ')'));
         });//for each문
       },
