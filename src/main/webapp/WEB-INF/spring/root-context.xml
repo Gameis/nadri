@@ -27,6 +27,11 @@
 	<context:component-scan base-package="tripmoment.bean" />
 	<context:component-scan base-package="tripmoment.service" />
 	<context:component-scan base-package="tripmoment.dao" />
+	
+	<context:component-scan base-package="activities.bean" />
+	<context:component-scan base-package="activities.service" />
+	<context:component-scan base-package="activities.dao" />
+	
 
     <!-- 메일 보내기 (SEND) -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">     

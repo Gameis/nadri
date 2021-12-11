@@ -1,33 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-class Activitiy {
-	private String title;
-	private int price;
-
-}
-// db에서 값 가져오기
-Activitiy item = new Activitiy();
-
-item.title = "서울 N서울타워 전망대 입장권";
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<title>dd</title>
 <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities.css">
 </head>
 <body>
+
 	<%-- <div class="trip_common_head_con">
 		<jsp:include page="/repository/jsp/main/main_top.jsp">
 			<jsp:param value="param1" name="param1" />
-		</jsp:include>
+		</jsp:include> 
+
 	</div> --%>
-
-
 	<!-- 몸통 -->
+	<input type="hidden" id="activity_seq" value="${param.activity_seq}"/>
 	<div class="productdetail-container">
 		<input type="hidden" id="page_id" value="10650010429">
 		<!-- 눈썹 -->
@@ -43,7 +34,7 @@ item.title = "서울 N서울타워 전망대 입장권";
 					<a href="#">검색 결과</a> <span class="crumbs-separator">&gt;</span>
 				</div>
 				<div class="crumbs-item">
-					<span><%=item.title%></span>
+					<span>title</span>
 				</div>
 			</div>
 		</div>
@@ -53,7 +44,7 @@ item.title = "서울 N서울타워 전망대 입장권";
 		<!-- 얼굴 -->
 		<header class="detail-header-container productdetail-common-inner-width">
 			<section class="flex title fjc-sb">
-				<h1 class="productName ffps"><%=item.title%></h1>
+				<h1 class="productName ffps">title</h1>
 				<p class="ffpr c6 fs2">상품번호: 36756741</p>
 			</section>
 
@@ -77,7 +68,7 @@ item.title = "서울 N서울타워 전망대 입장권";
 				</div>
 
 				<section class="bookLayer-container flex fd-c">
-					<div class="bookLayer-inner">
+					<div class="bookLayer-inner bookLayer-inner-fixed fixedT100 transition-show" style>
 						<div class="m_footer">
 							<div class="m_footer_box">
 								<div class="m_footer_layer_header"></div>
@@ -299,48 +290,145 @@ item.title = "서울 N서울타워 전망대 입장권";
 
 
 		<div class="toastcomponent"></div>
+	
+	<div name="review-header" id="review-header" class="review-header">	
+	<div name="reviewContainer" id="reviewContainer" class="reviewContainer">
+		<div class="reviewHeaderContainer">
+			<div class="review-box">
+				<div>
+					<div class="review-title">리뷰 작성하기</div>
+					<div class="reivew-tip">
+						<span name="tip-text" class="tip-text">
+							
+						</span>
+					</div>
+				</div>
+			</div><!-- review-box -->
+		</div><!-- reviewHeaderContainer -->
+		
+		<div class="review-writeContainer">
+			<ul class="review-write-list">
+				<div class="review-write-form">
+					<li class="review-write-detail">
+					
+						<div class="review-write-user">
+							<a style="color: rgb(15, 41, 77); text-decoration: none;">
+								<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg">
+							</a>
+							<div class="review-write-userInfo">
+								<div class="reivew-write-userName">
+									user_name
+								</div><!-- reivew-write-userName -->
+							</div><!-- review-write-userInfo -->
+						</div><!-- review-write-user -->
+						
+						<div class="review-write-content">
+							<form id="pop_review_writeForm">
+								<input type="hidden" id="main_seq" name="main_seq" value="99">
+								<input type="hidden" id="content_seq" name="content_seq" value="3"/>
+								<input type="hidden" id="pop_seq" name="pop_seq" value="${param.pop_seq }"/>
+								<!-- 평점 -->
+								<div class="review-write-wrap">
+								    <div class="review-write-selectScore">
+								    	<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio5" value=5 checked>
+											<label class="score btn btn-outline-primary" for="btnRadio5">5점</label>
+											
+											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio4" value=4 >
+											<label class="score btn btn-outline-primary" for="btnRadio4">4점</label>
+												
+											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio3" value=3 >
+											<label class="score btn btn-outline-primary" for="btnRadio3">3점</label>
+											  
+											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio2" value=2 >
+											<label class="score btn btn-outline-primary" for="btnRadio2">2점</label>
+											  
+											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio1" value=1 >
+											<label class="score btn btn-outline-primary" for="btnRadio1">1점</label>
+										</div>
+									</div><!-- review-write-selectScore -->
+								</div>
+								
+								<!-- 내용 -->
+								<div class="review-write-wrap">
+									<div class="input-group">
+									  <span class="input-group-text">내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</span>
+									  <textarea class="form-control" name="pop_review_content" aria-label="With textarea" style="resize: none;"></textarea>
+									</div>
+								</div>
+								
+								<!-- 파일업로드 -->
+								
+								<button id="pop_review_writeBtn" type="button" class="btn btn-primary">등록</button>
+								<button type="reset" class="btn btn-primary">다시작성</button>
+								
+							</form>
+						</div><!-- review-write-content -->
+						
+					</li><!-- review-write-detail -->
+				</div><!-- review-write-form -->
+			</ul><!-- review-write-list -->
+		</div><!-- review-writeContainer -->
+	</div><!-- reviewContainer -->
+	</div><!-- review -->
 
-		<div class=""></div>
+		<div id="detailComment" class="productdetail-comment-inner-width">
+			<div class="commentContainer border-container">
+				<div id="test" class="commentlist-contaier">
+					<section class="productdetail-commentlist-container"><h2 class="title">리뷰<em class="commentCount">(1)</em></h2>
+						<div><span class="list-score"><em class="list-good-comment">3.3</em>/5</span> <span class="list-label"></span></div>
+						<p><span id="ibu_dtlopg_comment_filter_all_1" class="filter-all">전체</span></p>
+						<div class="comment-list-box">
+							<div class="title-ffsd">리뷰</div>
+							<div class="comment-list">
+								<div class="comment-list-item">
+									<div>
+										<div class="user-image-position"><img src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg" data-src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg"></div>
+										<div class="user-commentinfo-position"><div><p class="user-comment-name">_NV4*****0697</p></div><div><span class="commentScore"><em class="good-comment">5.0</em>/5</span> <span class="commentDate">2021년 10월 4일</span></div></div>
+									</div>
+									<div class="userinfo-position-left comment-container">
+										<div class="text-img"><div class="commentListText">편리하고 빠른 예약으로 즐길수 있어서 최고입니다</div><div class="show-hide-comment dn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="></div></div>
+									</div>
+								</div>
+								<div class="detail-imageShow-container dn">
+									<button class="quitImageShow">
+										<img width="24px" height="24px"
+											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAA0ZJREFUeAHtnE1u20AMhe0uu+gVdJIWzj4HyJ1yCJ0i62Ydr3WD3iBpt+57sgawAkmZH5LDEUyAkT3SkHwfqJ8Y9hwOk10ulw7ewwf4O/wMf4b/CMfsbUttk0ZqpWZq7+HdTCsGnuAf8CX7g8Ffswk7eENNcGpbMrJ4GmXiRQdfg4Ndo/3F39MOuATNJ+ihpi0jk+6AP/3WUTf7GPChdUjUAP8KTpDdE9AQ3kVsGbjZTmLt8Fg4xDEQEC9OKcYEzXUSa4anwCGTdwLiFTzVmuokiEvtnMDj/A3XlNeM68p3zHlBFPedNNX4gnpZc6q9soP4LLB2u8OuTXPdSag8t3Momkyuz4B4wWeC1PMTU0ZzCQmVlcChpp+zdhMIeJoFrPhGTYtaYENY6hrUEyjCMqvdLJEgLPOaBRKaPQKg1pyHQEwbLf8mg+mldwJ1SKixDpzQ/Z4hVYfjGZIbOB4huYPjCZJbOB4guYdTE1IzcG4gld5eox8BBOBE5wr6RLYWhVvkEIGxFkRTgGbsNT0q4xpCNGKqiI8NKilIMlZs/SbHSQiTiGEiNjeJgMCSj37r3K1SYRVCwvRkI9Q24ASYLBie2w0phNqDYwipXTgGkNqHowhpP3AUIO0PjiAkczj88sLdPBAQvO2bd5E6P0E44floP5AU4OwHkiKc9iEZwGkXkiGc9iAVwuHFl55j/i/cUFXyH/woUCKG+m05J4GkMMlYOVrE52gI0ogpLjwmoKYQzdgx2oqPsRBgkaMYxFIAy8Itcy1pTR6rUXCNnMlgOKFmoTVzR8HyUKCHGhZheSrMUy0jLHcFVT7VZx3kEU4osHpt1QsIJDa21WqslngDxtou81rNE64pTxg3q9ksUYL42EPVa1dPEKu04Dg1DWqBC8TmThXXgoClP+p19+UlAUjXBV0QqPRn4e7ghM4rhHT9WTiCcI2gHPP/ITlIQVjJ5+TPDJC7NIXbzgkdFLYFkM4EdF/cBBBWbFzcZFjZuTTcxGkVOufzFoJST7eB3w96+xxo5f0/jD8ej8ffK/vdD0+1P6JQaomxN55iHTxmia5mrjlfKY/spOsSXQyGCfdF3gDhxgjnushboI2BDt7DeU26LxM4gfkPrLKZl+UkenkAAAAASUVORK5CYII=" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAA0ZJREFUeAHtnE1u20AMhe0uu+gVdJIWzj4HyJ1yCJ0i62Ydr3WD3iBpt+57sgawAkmZH5LDEUyAkT3SkHwfqJ8Y9hwOk10ulw7ewwf4O/wMf4b/CMfsbUttk0ZqpWZq7+HdTCsGnuAf8CX7g8Ffswk7eENNcGpbMrJ4GmXiRQdfg4Ndo/3F39MOuATNJ+ihpi0jk+6AP/3WUTf7GPChdUjUAP8KTpDdE9AQ3kVsGbjZTmLt8Fg4xDEQEC9OKcYEzXUSa4anwCGTdwLiFTzVmuokiEvtnMDj/A3XlNeM68p3zHlBFPedNNX4gnpZc6q9soP4LLB2u8OuTXPdSag8t3Momkyuz4B4wWeC1PMTU0ZzCQmVlcChpp+zdhMIeJoFrPhGTYtaYENY6hrUEyjCMqvdLJEgLPOaBRKaPQKg1pyHQEwbLf8mg+mldwJ1SKixDpzQ/Z4hVYfjGZIbOB4huYPjCZJbOB4guYdTE1IzcG4gld5eox8BBOBE5wr6RLYWhVvkEIGxFkRTgGbsNT0q4xpCNGKqiI8NKilIMlZs/SbHSQiTiGEiNjeJgMCSj37r3K1SYRVCwvRkI9Q24ASYLBie2w0phNqDYwipXTgGkNqHowhpP3AUIO0PjiAkczj88sLdPBAQvO2bd5E6P0E44floP5AU4OwHkiKc9iEZwGkXkiGc9iAVwuHFl55j/i/cUFXyH/woUCKG+m05J4GkMMlYOVrE52gI0ogpLjwmoKYQzdgx2oqPsRBgkaMYxFIAy8Itcy1pTR6rUXCNnMlgOKFmoTVzR8HyUKCHGhZheSrMUy0jLHcFVT7VZx3kEU4osHpt1QsIJDa21WqslngDxtou81rNE64pTxg3q9ksUYL42EPVa1dPEKu04Dg1DWqBC8TmThXXgoClP+p19+UlAUjXBV0QqPRn4e7ghM4rhHT9WTiCcI2gHPP/ITlIQVjJ5+TPDJC7NIXbzgkdFLYFkM4EdF/cBBBWbFzcZFjZuTTcxGkVOufzFoJST7eB3w96+xxo5f0/jD8ej8ffK/vdD0+1P6JQaomxN55iHTxmia5mrjlfKY/spOsSXQyGCfdF3gDhxgjnushboI2BDt7DeU26LxM4gfkPrLKZl+UkenkAAAAASUVORK5CYII=">
+									</button>
+									<div style="height: 15.5%;"></div>
+									<div class="imageListContainer">
+										<div class="imageInner"></div>
+									</div>
+									<div style="height: 4.1%;"></div>
+									<div class="imageIndexContainer">
+										<p class="ffpm tc c7">1/0</p>
+										<div style="height: 1.6%;"></div>
+										<div class="indexImageContainer tc"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
 
 
 	</div>
-	<%-- <div>
-		<jsp:include page="/repository/jsp/popular/pop_review_writeForm.jsp">
-			<jsp:param value="param1" name="param1" />
-		</jsp:include>
-	</div> --%>
 
-	<%-- <div id="wrap_foot">
+	
+
+	<div id="wrap_foot">
 		<footer>
 			<jsp:include page="/repository/jsp/main/main_footer.jsp">
 				<jsp:param value="param1" name="param1" />
 			</jsp:include>
 		</footer>
-	</div> --%>
-	
-	<script>
-                if (typeof Object.assign !== 'function') {
-                    window._assignObject = function(t, s) {
-                        for (var k in s) {
-                            t[k] = s[k]
-                        }
-                        ;return t
-                    }
-                    ;
-                } else {
-                    window._assignObject = Object.assign
-                }
-                window.__CARGO_DATA__ = _assignObject(window.__CARGO_DATA__ || {}, {
-                    "onlinefooterlinke0": "{\"about\":[{\"show\":\"1\",\"displayName\":\"About Trip.com\",\"displayNameSharkKey\":\"ButtonText_AboutUs\",\"include\":\"all\",\"link\":\"/pages/about-us/\"},{\"show\":\"1\",\"displayName\":\"NewsRoom\",\"displayNameSharkKey\":\"ButtonText_NewsRoom\",\"include\":\"en_us,zh_hk,en_hk,zh_tw,ja_jp,ko_kr,it_it,vi_vn,ru_ru,id_id,de_de,fr_fr,es_es,th_th,en_au,ms_my,en_gb\",\"link\":\"/newsroom/\"},{\"show\":\"1\",\"displayName\":\"Newsroom\",\"displayNameSharkKey\":\"ButtonText_NewsRoom\",\"exclude\":\"en_us,zh_hk,en_hk,zh_tw,ja_jp,ko_kr,it_it,vi_vn,ru_ru,id_id,de_de,fr_fr,es_es,th_th,en_au,ms_my,en_gb,pt_pt,es_mx,uk_ua,sv_se,da_dk,fi_fi,es_us\",\"link\":\"https://www.trip.com/newsroom/?locale=en-xx\"},{\"show\":\"1\",\"displayName\":\"Careers\",\"displayNameSharkKey\":\"ButtonText_Career\",\"include\":\"all\",\"link\":\"https://careers.trip.com/\"},{\"show\":\"1\",\"displayName\":\"Terms of Use\",\"displayNameSharkKey\":\"LinkButtonText_TermsAndCondition\",\"include\":\"all\",\"link\":\"https://pages.trip.com/service-guideline/terms-${locale}.html\"},{\"show\":\"1\",\"displayName\":\"Privacy Statement\",\"displayNameSharkKey\":\"ButtonText_PrivacyPolicy\",\"exclude\":\"es_us,es_mx,pt_pt\",\"link\":\"https://pages.trip.com/service-guideline/privacy-policy-${locale}.html\"},{\"show\":\"1\",\"displayName\":\"Impressum\",\"displayNameSharkKey\":\"ButtonText_Impressum\",\"include\":\"de_de\",\"link\":\"https://pages.trip.com/others/impressum-de-de.html\"},{\"show\":\"1\",\"displayName\":\"Do not sale my personal information\",\"displayNameSharkKey\":\"ButtonText_Personalinformation\",\"include\":\"en_us\",\"link\":\"https://us.trip.com/pages/treatyforcookie/\"},{\"show\":\"1\",\"displayName\":\"Trip.com Group\",\"displayNameSharkKey\":\"ButtonText_TripGroup\",\"include\":\"zh_hk,zh_tw\",\"link\":\"https://group.trip.com/?locale=zh-HK\"},{\"show\":\"1\",\"displayName\":\"Trip.com Group\",\"displayNameSharkKey\":\"ButtonText_TripGroup\",\"exclude\":\"zh_hk,zh_tw\",\"link\":\"https://group.trip.com/?locale=en-US\"}],\"otherServices\":[{\"show\":\"1\",\"displayName\":\"Investor Relations\",\"displayNameSharkKey\":\"ButtonText_InvestorRelations\",\"include\":\"all\",\"link\":\"https://investors.trip.com\"},{\"show\":\"1\",\"displayName\":\"TripPLUS\",\"displayNameSharkKey\":\"ButtonText_TripPlus\",\"exclude\":\"pt_pt,es_mx,uk_ua,sv_se,da_dk,fi_fi,es_us\",\"link\":\"/sale/TripRewards?locale=${locale}\"},{\"show\":\"0\",\"displayName\":\"Partners\",\"displayNameSharkKey\":\"ButtonText_Affiliate_trip\",\"exclude\":\"zh_tw\",\"link\":\"/pages/partners\"},{\"show\":\"1\",\"displayName\":\"Partners\",\"displayNameSharkKey\":\"ButtonText_Affiliate_trip\",\"include\":\"en_xx,zh_hk,ko_kr,ja_jp,ru_ru,th_th\",\"link\":\"/partners/index\"},{\"show\":\"1\",\"displayName\":\"Partners\",\"displayNameSharkKey\":\"ButtonText_Affiliate_trip\",\"exclude\":\"en_xx,zh_hk,ko_kr,ja_jp,ru_ru,th_th\",\"link\":\"https://www.trip.com/partners/index\"},{\"show\":\"1\",\"displayName\":\"List My Hotel\",\"displayNameSharkKey\":\"LinkButtonText_Listyourhotel\",\"include\":\"zh_hk,en_be,fr_ch,en_ch,fr_be,nl_be,de_ch,de_at,en_ie,ar_sa,ar_ae,ar_xx,en_xx,en_nz,en_il,en_sa,en_ae,en_us,nl_nl,el_gr,pt_br,tr_tr,pl_pl,en_th,en_my,en_id,en_kr,en_jp,zh_sg,en_gb,it_it,zh_tw,tl_ph,vi_vn,en_au,th_th,id_id,ms_my,en_sg,en_hk,ru_ru,es_es,de_de,fr_fr\",\"link\":\"https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=1&lang=1\",\"linkLocale\":\"en_us\"},{\"show\":\"1\",\"displayName\":\"List My Hotel\",\"displayNameSharkKey\":\"LinkButtonText_Listyourhotel\",\"include\":\"ja_jp\",\"link\":\"https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=1&lang=2\"},{\"show\":\"1\",\"displayName\":\"List My Hotel\",\"displayNameSharkKey\":\"LinkButtonText_Listyourhotel\",\"include\":\"ko_kr\",\"link\":\"https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=1&lang=3\"},{\"show\":\"1\",\"displayName\":\"Hotel Cities\",\"displayNameSharkKey\":\"LinkButtonText_ListHotelCities\",\"include\":\"en_us,zh_hk,en_hk,ja_jp,ko_kr,en_sg,en_au,en_xx\",\"link\":\"/hotels/all-cities/?locale=${locale}\"},{\"show\":\"1\",\"displayName\":\"VBooking\",\"displayNameSharkKey\":\"LinkButtonText_VBooking\",\"include\":\"en_gb,th_th,en_sg,en_my,ko_kr,ja_jp,en_hk,en_xx,en_us,en_au,en_nz\",\"link\":\"/m/vbooking/home\"}],\"contactUs\":[{\"show\":\"1\",\"displayName\":\"Customer Support\",\"displayNameSharkKey\":\"ButtonText_CustomerServiceHelp\",\"include\":\"all\",\"link\":\"/pages/support/\"},{\"show\":\"1\",\"displayName\":\"Customer Service\",\"displayNameSharkKey\":\"ButtonText_CustomerService\",\"include\":\"all\",\"link\":\"/pages/customer-service/\"},{\"show\":\"1\",\"displayName\":\"Travel Safety Guide\",\"displayNameSharkKey\":\"LinkButtonText_SafetyGuide\",\"include\":\"ja_jp\",\"link\":\"https://www.anzen.mofa.go.jp/\"},{\"show\":\"1\",\"displayName\":\"Website Feedback\",\"displayNameSharkKey\":\"LinkButtonText_FeedBack\",\"include\":\"all\",\"link\":\"/feedback/\"}]}",
-                    "socialmediackokre0": "[{\"name\":\"facebook\",\"link\":\"https://www.facebook.com/tripcom.kr\"},{\"name\":\"instagram\",\"link\":\"https://www.instagram.com/tripcom.kr\"},{\"name\":\"naver\",\"link\":\"http://blog.naver.com/trip_com\"},{\"name\":\"youtube\",\"link\":\"http://www.youtube.com/c/tripcomkr\"},{\"name\":\"kakao\",\"link\":\"http://pf.kakao.com/_mMxbcxl\"}]",
-                    "paymentmethodckokre0": "[{\"name\":\"naver-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/naver-pay.png\"},{\"name\":\"bc-card\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/bc-card.png\"},{\"name\":\"shinhan\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/shinhan.png\"},{\"name\":\"kakao-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/kakao-pay.png\"},{\"name\":\"samsung\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/samsung.png\"},{\"name\":\"nh\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/nh.png\"},{\"name\":\"keb\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/keb.png\"},{\"name\":\"samsung-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/samsung-pay.png\"},{\"name\":\"hyundai-pay\",\"iconUrl\":\"https://pages.trip.com/images/payment-method/hyundai-pay.png\"}]",
-                    "businesspartnerckokre0": "[{\"logo\":\"https://pages.trip.com/images/business-partner/GOOGLE.png\"},{\"logo\":\"https://pages.trip.com/images/business-partner/TRIPADVISOR.png\"}]",
-                    "sisterbrandckokre0": "",
-                    "awardsckokre0": "[{\"awardLogo\":\"https://pages.trip.com/images/rewards/KR2020BrandAwards.png\",\"awardTxt\":\"한국소비자포럼 주관 <br />올해의브랜드대상 2년 연속 수상\"}]"
-                })
-            </script>
+	</div>
 
-	<div id="__next-error"></div>
+
+
+	<!-- <div id="__next-error"></div>
 	<script type="text/javascript" crossorigin="anonymous" src="//webresource.tripcdn.com/res/concat?f=/resaresenglish/ibu/onlinecommon/lib/cquery_110421.352b5c2d.js,cquery_pro.6d0231d2.js"></script>
 	<script src="//webresource.tripcdn.com/ares2/ibu/onlinecommon/*/default/assets/ibu_gagtag2_online_bundle.js" crossorigin="anonymous" async=""></script>
 	<script crossorigin="anonymous" src="//webresource.tripcdn.com/ares/infosec/captcha/~2.5.0/default/js/captcha.min.js?expires=1d"></script>
@@ -351,58 +439,31 @@ item.title = "서울 N서울타워 전망대 입장권";
 	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/100009239/ko-KR.js?etagc=a798631ea01dacff708e040f1165822f"></script>
 	<script crossorigin="anonymous" src="https://webresource.tripcdn.com/ares2/ibu/onlinecommon/*/default/assets/ibu_l10n_online_bundle.js"></script>
 	<script crossorigin="anonymous" type="text/javascript" id="i18nguestverifypcsdk" secretkey="67986D7FCD5D2C5C" src="https://webresource.tripcdn.com/ares2/basebiz/i18naccountpcsdk/*/default/assets/guestVerify.js"></script>
-	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330153/ko-KR.js?etagc=eb290a57da372dd02f22abff7fc0d782"></script>
-	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6058a3d9785d176f570e3926598b1c9c"></script>
+	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330153/ko-KR.js?etagc=f5158fe4177dccce3ca0172317439256"></script>
+	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6a40afadabb933fac51a38441f7edf8e"></script>
 	<script type="text/javascript" src="https://ak-s.tripcdn.com/modules/basebiz/i18naccountcomponentssdk/i18naccountcomponentssdk.6e306b320450e87c28afdecb4d66d8cf.js"></script>
-	<script crossorigin="anonymous">
-		(function(w, d, s, l, i) {
-			w[l] = w[l] || [];
-			w[l].push({
-				'gtm.start' : new Date().getTime(),
-				event : 'gtm.js'
+	 -->
+	 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	 <script type="text/javascript">
+		$(function(){
+			alert('start');
+			$.ajax({
+				url: '/nadri/activities/onActivities',
+				type: 'get',
+				data: 'activity_seq='+ $('#activity_seq').val(),
+				success: function(data) {
+					alert('확인');
+					alert(JSON.stringify(data));	
+				},
+				error: function(err) {
+					alert('실패');
+					console.log(err);
+				}
+				
 			});
-			var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l='
-					+ l
-					: '';
-			j.async = true;
-			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-			f.parentNode.insertBefore(j, f);
-		})(window, document, 'script', 'dataLayer', 'GTM-MV95N9D');
+		});
+			
+		
 	</script>
-	<script async="" crossorigin="anonymous" id="__NEXT_PAGE__/detail" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/ottd-online-international-website-application-2.12.3/page/detail.js"></script>
-        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/_app" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/ottd-online-international-website-application-2.12.3/page/_app.js"></script>
-        <script async="" crossorigin="anonymous" id="__NEXT_PAGE__/_error" src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/ottd-online-international-website-application-2.12.3/page/_error.js"></script>
-        <script src="https://webresource.tripcdn.com/ares2/activity/ottd-online-international-website-application/2.12.3/default/_next/static/commons/main-2.12.3.js" crossorigin="anonymous" async=""></script>
-        <div>
-            <script type="text/javascript" crossOrigin="anonymous">
-                if (typeof head_foot_init === 'function') {
-                    head_foot_init();
-                }
-                ;$('.li-country-click-able').click(function(event) {
-                    if ($(this).data('locale-code') != 'en_us' && $(this).data('locale-code') != 'en_hk' && $(this).data('locale-code') != 'zh_hk' && $(this).data('locale-code') != 'en_gb' && $(this).data('locale-code') != 'en_my' && $(this).data('locale-code') != 'en_sg' && $(this).data('locale-code') != 'en_au' && $(this).data('locale-code') != 'ko_kr' && $(this).data('locale-code') != 'ja_jp' && $(this).data('locale-code') != 'en_xx' && $(this).data('locale-code') != 'zh_tw' && $(this).data('locale-code') != 'en_nz' && $(this).data('locale-code') != 'en_il' && $(this).data('locale-code') != 'en_sa' && $(this).data('locale-code') != 'en_ae' && $(this).data('locale-code') != 'en_ie' && $(this).data('locale-code') != 'en_ch' && $(this).data('locale-code') != 'en_be') {
-                        location.href = 'https://' + $(this).data('domain') + '?locale=' + $(this).data('locale-code')
-                    }
-                })
-                window.onload = function() {
-                    try {
-                        var minHeight = window.innerHeight - document.querySelector('.ottd-header').clientHeight - document.querySelector('.ottd-footer').clientHeight;
-                        $('#__next').css({
-                            'min-height': minHeight + 'px',
-                            'box-sizing': 'border-box'
-                        });
-                    } catch (e) {}
-                }
-
-                window.onresize = function() {
-                    try {
-                        var newHeight = window.innerHeight - document.querySelector('.ottd-header').clientHeight - document.querySelector('.ottd-footer').clientHeight;
-                        $('#__next').css({
-                            'min-height': newHeight + 'px'
-                        });
-                    } catch (e) {}
-                }
-            </script>
-        </div>
-        <script crossorigin="anonymous" src="https://webresource.tripcdn.com/ares2/fx/nfesHybrid/0.0.11/default/webvitals.es5.js"></script>
 </body>
 </html>
