@@ -12,6 +12,7 @@ import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
 
 @Repository
@@ -67,6 +68,11 @@ public class PopDAOMybatis implements PopDAO {
 	@Override
 	public Object getReviewContentPhoto(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
 		return sqlSession.selectList("popSQL.getReviewContentPhoto", tripPopReviewSearchDTO);
+	}
+
+	@Override
+	public List<TripPopReviewImgDTO> getReviewContentPhotoList(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
+		return sqlSession.selectList("popSQL.getReviewContentPhotoList", tripPopReviewSearchDTO);
 	}
 	
 	

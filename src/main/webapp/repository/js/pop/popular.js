@@ -203,201 +203,389 @@ function getLocation(){
             success: function(data){
                 alert(JSON.stringify(data));
                 const list = data.list;
+                const contentList = data.contentList;
+				const photoList = data.photoList;
                 
-                for(var i = 0; i < data.list.length; i++){
-                    var private_score_content = null;
-                    const private_score = parseFloat($.trim(list[i].review_score));
-                    var img_path = ($.trim(list[i].imgList[0].img_path));
-                    var image_name1='';
-                    var image_name2='';
-                    var image_name3='';
-                    var image_name4='';
-                    var image_name5='';
-                    var image_name6='';
-                    var image_name7='';
-                    var noImge = "noImg.jpg";
-                    
-                    //content내용 뽑기
-                    if(private_score<=1){
-                        private_score_content = '최악이에요';
-                    }else if(private_score<=2){
-                        private_score_content = '보통이에요';
-                    }else if(private_score<=3){
-                        private_score_content = '좋아요!';
-                    }else if(private_score<=4){
-                        private_score_content = '최고에요!';
-                    }else if(private_score<=5){
-                        private_score_content = '완벽해요!';
-                    }
-                    
-                    //img_name 빈값 정리
-
-                        if(list[i].imgList.length == 0){
-                            image_name1 = noImge;
-                            image_name2 = noImge;
-                            image_name3 = noImge;
-                            image_name4 = noImge;
-                            image_name5 = noImge;
-                            image_name6 = noImge;
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 1){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = noImge;
-                            image_name3 = noImge;
-                            image_name4 = noImge;
-                            image_name5 = noImge;
-                            image_name6 = noImge;
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 2){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = $.trim(list[i].imgList[1].img_name);
-                            image_name3 = noImge;
-                            image_name4 = noImge;
-                            image_name5 = noImge;
-                            image_name6 = noImge;
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 3){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = $.trim(list[i].imgList[1].img_name);
-                            image_name3 = $.trim(list[i].imgList[2].img_name);
-                            image_name4 = noImge;
-                            image_name5 = noImge;
-                            image_name6 = noImge;
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 4){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = $.trim(list[i].imgList[1].img_name);
-                            image_name3 = $.trim(list[i].imgList[2].img_name);
-                            image_name4 = $.trim(list[i].imgList[3].img_name);
-                            image_name5 = noImge;
-                            image_name6 = noImge;
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 5){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = $.trim(list[i].imgList[1].img_name);
-                            image_name3 = $.trim(list[i].imgList[2].img_name);
-                            image_name4 = $.trim(list[i].imgList[3].img_name);
-                            image_name5 = $.trim(list[i].imgList[4].img_name);
-                            image_name6 = noImge;
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 6){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = $.trim(list[i].imgList[1].img_name);
-                            image_name3 = $.trim(list[i].imgList[2].img_name);
-                            image_name4 = $.trim(list[i].imgList[3].img_name);
-                            image_name5 = $.trim(list[i].imgList[4].img_name);
-                            image_name6 = $.trim(list[i].imgList[5].img_name);
-                            image_name7 = noImge;
-                        }
-                        
-                        if(list[i].imgList.length == 7){
-                            image_name1 = $.trim(list[i].imgList[0].img_name);
-                            image_name2 = $.trim(list[i].imgList[1].img_name);
-                            image_name3 = $.trim(list[i].imgList[2].img_name);
-                            image_name4 = $.trim(list[i].imgList[3].img_name);
-                            image_name5 = $.trim(list[i].imgList[4].img_name);
-                            image_name6 = $.trim(list[i].imgList[5].img_name);
-                            image_name7 = $.trim(list[i].imgList[6].img_name);
-                        }
-                    
-                    
-                    ($('<li/>', {
-                        class: "reviewCommentDetail",
-                        id: "reviewCommentDetail",
-                        style: "border-top: 1px solid rgb(218, 223, 230)"
-                    }).append($('<div/>', {
-                        class: "review-user-view"
-                    }).append($('<a/>',{
-                        style:"color: rgb(15, 41, 77"
-                    }).append($('<img/>',{
-                        class: "review-user-img",
-                        alt: "user_icon",
-                        width: "50",
-                        heigth: "50",
-                        src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
-                    }))).append($('<div/>',{
-                        class:"review-user-info"
-                    }).append($('<div/>',{
-                        class:"review-user-name",
-                        text:list[i].user_name
-                    })))).append($('<div/>',{
-                        class: "review-content-detail"
-                    }).append($('<div/>',{
-                        class:"review-switch-sort"
-                    }).append($('<span/>',{
-                        class:"review-score",
-                        text:list[i].review_score
-                    })).append($('<span/>',{
-                        class:"review-all-score"
-                    })).append($('<span/>',{
-                        class:"review-score-name",
-                        text:private_score_content
-                    }))).append($('<div/>',{
-                        class:"review-content-view"
-                    }).append($('<p/>', {
-                        class:"review-content-text",
-                        text:list[i].review_content
-                    }))).append($('<div/>',{
-                        class:"review-content-photolist"
-                    }).append($('<div/>',{
-                        class:"review-content-photowall"
-                    }).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name1",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name1
-                    })).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name2",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name2
-                    })).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name3",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name3
-                    })).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name4",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name4
-                    })).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name5",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name5
-                    })).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name6",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name6
-                    })).append($('<img/>',{
-                        alt:"review-content-photowall",
-                        id:"image_name7",
-                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name7
-                    })))).append($('<div/>',{
-                        class:"review-content-date"
-                    }).append($('<span/>',{
-                        class:"review-content-time"
-                    }).append($('<span/>',{
-                        text:"작성일 : "+list[i].review_logtime
-                    })))))).appendTo($('#review-comment-detail'));
-                    
-                }
+                if(searchType=='IMAGE'){//사진버튼 클릭시출력부
+	                for(var i = 0; i < contentList.length; i++){
+	                    var private_score_content = null;
+	                    const private_score = parseFloat($.trim(contentList[i].review_score));
+	                    var img_path = ($.trim(photoList[i].imgList[0].img_path));
+	                    var image_name1='';
+	                    var image_name2='';
+	                    var image_name3='';
+	                    var image_name4='';
+	                    var image_name5='';
+	                    var image_name6='';
+	                    var image_name7='';
+	                    var noImge = "noImg.jpg";
+	                    
+	                    //content내용 뽑기
+	                    if(private_score<=1){
+	                        private_score_content = '최악이에요';
+	                    }else if(private_score<=2){
+	                        private_score_content = '보통이에요';
+	                    }else if(private_score<=3){
+	                        private_score_content = '좋아요!';
+	                    }else if(private_score<=4){
+	                        private_score_content = '최고에요!';
+	                    }else if(private_score<=5){
+	                        private_score_content = '완벽해요!';
+	                    }
+	                    
+	                    //img_name 빈값 정리
+	
+	                        if(photoList[i].imgList.length == 0){
+	                            image_name1 = noImge;
+	                            image_name2 = noImge;
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 1){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = noImge;
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 2){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 3){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 4){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 5){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = $.trim(photoList[i].imgList[4].img_name);
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 6){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = $.trim(photoList[i].imgList[4].img_name);
+	                            image_name6 = $.trim(photoList[i].imgList[5].img_name);
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(photoList[i].imgList.length == 7){
+	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = $.trim(photoList[i].imgList[4].img_name);
+	                            image_name6 = $.trim(photoList[i].imgList[5].img_name);
+	                            image_name7 = $.trim(photoList[i].imgList[6].img_name);
+	                        }
+	                    
+	                    
+	                    ($('<li/>', {
+	                        class: "reviewCommentDetail",
+	                        id: "reviewCommentDetail",
+	                        style: "border-top: 1px solid rgb(218, 223, 230)"
+	                    }).append($('<div/>', {
+	                        class: "review-user-view"
+	                    }).append($('<a/>',{
+	                        style:"color: rgb(15, 41, 77"
+	                    }).append($('<img/>',{
+	                        class: "review-user-img",
+	                        alt: "user_icon",
+	                        width: "50",
+	                        heigth: "50",
+	                        src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
+	                    }))).append($('<div/>',{
+	                        class:"review-user-info"
+	                    }).append($('<div/>',{
+	                        class:"review-user-name",
+	                        text:contentList[i].nickname
+	                    })))).append($('<div/>',{
+	                        class: "review-content-detail"
+	                    }).append($('<div/>',{
+	                        class:"review-switch-sort"
+	                    }).append($('<span/>',{
+	                        class:"review-score",
+	                        text:contentList[i].review_score
+	                    })).append($('<span/>',{
+	                        class:"review-all-score"
+	                    })).append($('<span/>',{
+	                        class:"review-score-name",
+	                        text:private_score_content
+	                    }))).append($('<div/>',{
+	                        class:"review-content-view"
+	                    }).append($('<p/>', {
+	                        class:"review-content-text",
+	                        text:contentList[i].review_content
+	                    }))).append($('<div/>',{
+	                        class:"review-content-photolist"
+	                    }).append($('<div/>',{
+	                        class:"review-content-photowall"
+	                    }).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name1",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name1
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name2",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name2
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name3",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name3
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name4",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name4
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name5",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name5
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name6",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name6
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name7",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name7
+	                    })))).append($('<div/>',{
+	                        class:"review-content-date"
+	                    }).append($('<span/>',{
+	                        class:"review-content-time"
+	                    }).append($('<span/>',{
+	                        text:"작성일 : "+contentList[i].review_logtime
+	                    })))))).appendTo($('#review-comment-detail'));
+	                    
+	                }//for
+                }else{//모두보기, 최신순, 긍정, 부정 클릭시출력부
+ 	 				for(var i = 0; i < data.list.length; i++){
+	                    var private_score_content = null;
+	                    const private_score = parseFloat($.trim(list[i].review_score));
+	                    var img_path = ($.trim(list[i].imgList[0].img_path));
+	                    var image_name1='';
+	                    var image_name2='';
+	                    var image_name3='';
+	                    var image_name4='';
+	                    var image_name5='';
+	                    var image_name6='';
+	                    var image_name7='';
+	                    var noImge = "noImg.jpg";
+	                    
+	                    //content내용 뽑기
+	                    if(private_score<=1){
+	                        private_score_content = '최악이에요';
+	                    }else if(private_score<=2){
+	                        private_score_content = '보통이에요';
+	                    }else if(private_score<=3){
+	                        private_score_content = '좋아요!';
+	                    }else if(private_score<=4){
+	                        private_score_content = '최고에요!';
+	                    }else if(private_score<=5){
+	                        private_score_content = '완벽해요!';
+	                    }
+	                    
+	                    //img_name 빈값 정리
+	
+	                        if(list[i].imgList.length == 0){
+	                            image_name1 = noImge;
+	                            image_name2 = noImge;
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 1){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = noImge;
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 2){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 3){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                            image_name3 = $.trim(list[i].imgList[2].img_name);
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 4){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                            image_name3 = $.trim(list[i].imgList[2].img_name);
+	                            image_name4 = $.trim(list[i].imgList[3].img_name);
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 5){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                            image_name3 = $.trim(list[i].imgList[2].img_name);
+	                            image_name4 = $.trim(list[i].imgList[3].img_name);
+	                            image_name5 = $.trim(list[i].imgList[4].img_name);
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 6){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                            image_name3 = $.trim(list[i].imgList[2].img_name);
+	                            image_name4 = $.trim(list[i].imgList[3].img_name);
+	                            image_name5 = $.trim(list[i].imgList[4].img_name);
+	                            image_name6 = $.trim(list[i].imgList[5].img_name);
+	                            image_name7 = noImge;
+	                        }
+	                        
+	                        if(list[i].imgList.length == 7){
+	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                            image_name3 = $.trim(list[i].imgList[2].img_name);
+	                            image_name4 = $.trim(list[i].imgList[3].img_name);
+	                            image_name5 = $.trim(list[i].imgList[4].img_name);
+	                            image_name6 = $.trim(list[i].imgList[5].img_name);
+	                            image_name7 = $.trim(list[i].imgList[6].img_name);
+	                        }
+	                    
+	                    
+	                    ($('<li/>', {
+	                        class: "reviewCommentDetail",
+	                        id: "reviewCommentDetail",
+	                        style: "border-top: 1px solid rgb(218, 223, 230)"
+	                    }).append($('<div/>', {
+	                        class: "review-user-view"
+	                    }).append($('<a/>',{
+	                        style:"color: rgb(15, 41, 77"
+	                    }).append($('<img/>',{
+	                        class: "review-user-img",
+	                        alt: "user_icon",
+	                        width: "50",
+	                        heigth: "50",
+	                        src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
+	                    }))).append($('<div/>',{
+	                        class:"review-user-info"
+	                    }).append($('<div/>',{
+	                        class:"review-user-name",
+	                        text:list[i].nickname
+	                    })))).append($('<div/>',{
+	                        class: "review-content-detail"
+	                    }).append($('<div/>',{
+	                        class:"review-switch-sort"
+	                    }).append($('<span/>',{
+	                        class:"review-score",
+	                        text:list[i].review_score
+	                    })).append($('<span/>',{
+	                        class:"review-all-score"
+	                    })).append($('<span/>',{
+	                        class:"review-score-name",
+	                        text:private_score_content
+	                    }))).append($('<div/>',{
+	                        class:"review-content-view"
+	                    }).append($('<p/>', {
+	                        class:"review-content-text",
+	                        text:list[i].review_content
+	                    }))).append($('<div/>',{
+	                        class:"review-content-photolist"
+	                    }).append($('<div/>',{
+	                        class:"review-content-photowall"
+	                    }).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name1",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name1
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name2",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name2
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name3",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name3
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name4",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name4
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name5",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name5
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name6",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name6
+	                    })).append($('<img/>',{
+	                        alt:"review-content-photowall",
+	                        id:"image_name7",
+	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name7
+	                    })))).append($('<div/>',{
+	                        class:"review-content-date"
+	                    }).append($('<span/>',{
+	                        class:"review-content-time"
+	                    }).append($('<span/>',{
+	                        text:"작성일 : "+list[i].review_logtime
+	                    })))))).appendTo($('#review-comment-detail'));
+	            	}//for       
+                }//if
                 
                 $('#page-selection').bootpag({
                 	total: data.total,
                 	page: pageNum,
                 	maxVisible: Math.ceil(data.total / 5)
                 });
-				
-				resetValue();
 				
             }, error: function(err){
                 console.log(err);

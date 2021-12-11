@@ -36,6 +36,7 @@ function pagination(){
 
 $('#btnradio1').click(function(){
 	alert('모두보기눌렀다');
+	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('');
 	$("#isDesc").val('');
@@ -44,6 +45,7 @@ $('#btnradio1').click(function(){
 
 $('#btnradio2').click(function(){
 	alert('최신순눌렀다');
+	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('');
 	$("#isDesc").val('DESC');
@@ -52,6 +54,7 @@ $('#btnradio2').click(function(){
 
 $('#btnradio3').click(function(){
 	alert('긍정');
+	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('POSITIVE');
 	$("#isDesc").val('');
@@ -60,6 +63,7 @@ $('#btnradio3').click(function(){
 
 $('#btnradio4').click(function(){
 	alert('부정');
+	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('NEGATIVE');
 	$("#isDesc").val('');

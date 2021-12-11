@@ -24,8 +24,8 @@ import org.springframework.web.multipart.MultipartFile;
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
-import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
 import pop.service.PopService;
 
@@ -95,12 +95,14 @@ public class PopController {
 	
 	@RequestMapping(value="/getReviewContent", method=RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> getReviewContent(TripPopReviewSearchDTO tripPopReviewSearchDTO){		
+	public Map<String, Object> getReviewContent(TripPopReviewSearchDTO tripPopReviewSearchDTO,
+												TripPopReviewImgDTO tripPopReviewImgDTO){		
 		Map<String, Object> resultMap = new HashMap<>();
 			
 		if(tripPopReviewSearchDTO.getSearchType().equals("IMAGE")) {
 			resultMap.put("total", popService.getReviewContentPhotoCnt(tripPopReviewSearchDTO));
-			resultMap.put("list", popService.getReviewContentPhoto(tripPopReviewSearchDTO));
+			resultMap.put("contentList", popService.getReviewContentPhoto(tripPopReviewSearchDTO));
+			resultMap.put("photoList", popService.getReviewContentPhotoList(tripPopReviewSearchDTO));
 		} else {
 			resultMap.put("total", popService.getReviewContentCnt(tripPopReviewSearchDTO));
 			resultMap.put("list", popService.getReviewContent(tripPopReviewSearchDTO));

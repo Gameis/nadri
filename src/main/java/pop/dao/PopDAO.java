@@ -7,6 +7,7 @@ import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
 
 public interface PopDAO {
@@ -29,5 +30,6 @@ public interface PopDAO {
 
 	public Object getReviewContentPhoto(TripPopReviewSearchDTO tripPopReviewSearchDTO);
 
+	public Object getReviewContentPhotoList(TripPopReviewSearchDTO tripPopReviewSearchDTO);
 
 }
