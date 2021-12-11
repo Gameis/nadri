@@ -6,7 +6,7 @@
 	href="/nadri/repository/css/main/main_top.css">
 	
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="/nadri/repository/css/member/loginmodal.css">
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
 	
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
@@ -29,7 +29,7 @@
 					
 					<c:if test="${memId != null }">
 						<div>
-							<p><a href="/nadri/member/myPage">${sessionScope.memName}님 환영 합니다.</a></p>
+							<p><a href="/nadri/tripmember/myPage">${sessionScope.memName}님 환영 합니다.</a></p>
 							<button id="logoutBtn" type="button">로그아웃</button>
 						</div>
 					</c:if>
@@ -49,7 +49,7 @@
     <div class="modal-content">
     
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">trip.com</h5>
+        <h5 class="modal-title" id="staticBackdropLabel" style="color:#8EC0E4;">trip.com</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
@@ -95,19 +95,19 @@
 		    <div>
 		  	<!-- 구글  -->
 			  <a style="text-decoration: none" id="GgCustomLogin" href="javascript:void(0)" >
-			  	<img src="/nadri/repository/img/member/google.png" alt="google">
+			  	<img src="/nadri/repository/img/tripmember/google.png" alt="google">
 			  </a>
 			  
 			<!-- 네이버 --> 	 			
 			 <%--  <a style="text-decoration: none" href="/nadri/repository/jsp/main/main_top_loginmodal/login_api/naverLogin.jsp"> --%>
 			
 			  <a style="text-decoration: none" id="naverIdLogin_loginButton" href="javascript:void(0)">
-			  	<img src="/nadri/repository/img/member/naver.png" alt="naver">
+			  	<img src="/nadri/repository/img/tripmember/naver.png" alt="naver">
 			  </a>
 			  
 			<!-- 카카오 -->
 			  <a style="text-decoration: none"  href="javascript:void(0)">
-			  	<img src="/nadri/repository/img/member/kakao.png" alt="kakao" onclick="kakaoLogin();">
+			  	<img src="/nadri/repository/img/tripmember/kakao.png" alt="kakao" onclick="kakaoLogin();">
 			  </a>
 			  
 			</div>
@@ -132,7 +132,7 @@
   <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">약관신청</h5>
+        <h5 class="modal-title" id="exampleModalToggleLabel2" style="color:#8EC0E4;">약관신청</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
@@ -144,7 +144,7 @@
       
       <div class="modal-footer">
         <div class="login"><button class="btn btn-primary" data-bs-target="#loginmodal" data-bs-toggle="modal">로그인화면으로</button></div>
-        <div class="membership"><button class="btn btn-primary" data-bs-target="#membershipmodal" data-bs-toggle="modal">회원가입으로</button></div> 
+        <div class="membership"><button class="btn btn-primary" data-bs-target="#membershipmodal" data-bs-toggle="modal" onclick='return false;' disabled='disabled'>회원가입으로</button></div> 
       </div>
       
       
@@ -157,7 +157,7 @@
   <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel3">회원가입</h5>
+        <h5 class="modal-title" id="exampleModalToggleLabel3" style="color:#8EC0E4;">회원가입</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
@@ -175,6 +175,6 @@
 	
 	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/nadri/repository/js/member/member.js"></script>
+<script src="/nadri/repository/js/tripmember/tripmember.js"></script>
 <script src="/nadri/repository/js/modal/modal.js"></script>	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

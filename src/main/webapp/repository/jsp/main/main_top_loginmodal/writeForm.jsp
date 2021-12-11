@@ -29,11 +29,23 @@
 			<td>
 				<input type="text" name="id" id="id" placeholder="아이디 입력">
 
-				<input type="hidden" name="check" id="check" value="">
+				<input type="hidden" name="checkId" id="checkId" value="">
 				<div id= "idDiv"></div>
 			</td>	
-		</tr>
+		</tr>	
 		
+			
+		<tr>
+			<td width="100" align="center">닉네임</td>
+			<td>
+				<input type="text" name="nickName" id="nickName" placeholder="닉네임 입력">
+
+				<input type="hidden" name="checkNick" id="checkNick" value="">
+				<div id= "nickDiv"></div>
+			</td>
+		</tr>	
+		
+				
 		<tr>
 			<td width="100" align="center">비밀번호</td>
 			<td>
@@ -51,27 +63,22 @@
 		</tr>
 		
 		<tr>
-			<td width="100" align="center">성별</td>
+			<td class="line" width="100" align="center">이메일</td>
 			<td>
-				<input type="radio" name="gender" value="0" checked>남
-				<input type="radio" name="gender" value="1">여
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100" align="center">이메일</td>
-			<td>
-				<input type="text" name="email1">
+				<input type="text" name="email1" id="email1">
 				@
-				<input type="text" name="email2" list="email2" placeholder="직접입력">
+				<input type="text" name="email2" id="email2" list="email2" placeholder="직접입력">
 				<datalist id="email2">
 					<option value="naver.com">naver.com
 					<option value="daum.net">daum.net
 					<option value="gmail.com">gmail.com
 				</datalist>
+				<input type="button" name="mailcheckBtn" id="mailcheckBtn" size="30" value="인증메일전송"><br>
+				<input type="text" class="mailcheckinput" name="mailcheck" id="mailcheck" size="30" disabled="disabled" placeholder="메일인증번호">
+				<div id="mailcheckDiv"></div>				
 			</td>
 		</tr>
-		
+			
 		<tr>
 			<td width="100" align="center">핸드폰</td>
 			<td>
@@ -96,6 +103,15 @@
 				<input type="text" name="addr2" id="addr2" size="60" placeholder="상세주소">
 			</td>
 		</tr>
+	
+		<tr>
+			<td width="100" align="center">이미지</td>
+			<td>
+				<input type="radio" name="gender" value="0" checked>남
+				<input type="radio" name="gender" value="1">여
+			</td>
+		</tr>
+
 		
 		<tr>
 			<td colspan="2" align="center">

@@ -1,6 +1,5 @@
 package pop.controller;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,6 +10,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.tomcat.jni.File;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -24,7 +24,6 @@ import org.springframework.web.multipart.MultipartFile;
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
-import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.bean.TripPopReviewSearchDTO;
 import pop.service.PopService;
