@@ -1,5 +1,7 @@
 package main.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +25,11 @@ public class MainServiceImpl implements MainService {
 	public void mainImgWrite(ImgDTO imgDTO) {
 		mainDAO.mainImgWrite(imgDTO);
 		
+	}
+
+	@Override
+	public List<TripMainDTO> mainImgPrint(int main_seq) {
+		return mainDAO.mainImgPrint(main_seq);
 	}
 
 }

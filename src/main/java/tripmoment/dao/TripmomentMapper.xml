@@ -8,34 +8,45 @@
 		select * from trippop where pop_name = #{pop_name}
 	</select>
 
-	<insert id="tripmomment_write" parameterType="tripmoment">
+	<insert id="tripmoment_write" parameterType="tripmoment">
 		insert into
 		tripmoment values(moment_seq.nextval,
-		#{moment_title},
-		#{moment_content},
-		sysdate,
-		#{member_seq},
-		#{pop_name}
+						#{moment_title},
+						#{moment_content},
+						  sysdate,
+						#{member_seq},
+						#{pop_name}
 		)
 	</insert>
 
 	<insert id="getTripmomentImg" parameterType="img">
-		insert into Img
-		values(img_seq.nextval,
-		#{img_name},
-		#{img_path},
-		'8',
-		moment_seq.currval,
-		#{main_seq},
-		#{mainImg})
-
+		insert into Img values(img_seq.nextval,
+							 #{img_name},
+							 #{img_path},
+							 '8',
+							 moment_seq.currval, 
+							 #{main_seq}, 
+							 #{mainImg}
+							 )
 	</insert>
 
 	<select id="onTripmoment" resultType="mainTripmoment">
 		select moment_seq, moment_content, img_path, img_name
 		from tripmoment
-		join img on(seq = moment_seq)
-		where mainimg = 'T'and content_seq = 8
+		join img 
+		on(seq = moment_seq)
+		where mainimg = 'T' and content_seq = 8
+	</select>
+	
+	
+	<select id="getTripImg" resultType="tripImg" parameterType="String">
+		select * from img
+		where seq = #{seq} and content_seq = 8
+	</select>
+
+	<select id="getTripView" resultType="tripView" parameterType="String">
+		select * from tripmoment
+		join tripmember using (member_seq) where moment_seq = #{moment_seq}
 	</select>
 
 </mapper>

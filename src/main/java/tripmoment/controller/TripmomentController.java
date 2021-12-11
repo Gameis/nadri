@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
 import tripmoment.bean.MainTripmomentDTO;
+import tripmoment.bean.TripImgDTO;
 import tripmoment.bean.TripmomentDTO;
 import tripmoment.service.TripmomentService;
 
@@ -56,6 +57,7 @@ public class TripmomentController {
 			String contentType = Files.probeContentType(file.toPath());
 			
 			return contentType.startsWith("image");
+			
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
@@ -68,8 +70,17 @@ public class TripmomentController {
 		return tripmomentService.onTripmoment();
 	}
 	
+	@RequestMapping(value= "/getTripImg", method=RequestMethod.GET)
+	@ResponseBody
+	public List<TripImgDTO> getTripImg(@RequestParam("moment_seq") String moment_seq) {
+		return tripmomentService.getTripImg(moment_seq);
+	}
 	
-	//함수
+	@RequestMapping(value= "/tripmomentView", method=RequestMethod.GET)
+	public String tripmomentView(@RequestParam("moment_seq") String moment_seq) {
+		return "/repository/jsp/tripmoment/tripmoment";
+	}
+	
 		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
 			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
 			//String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘

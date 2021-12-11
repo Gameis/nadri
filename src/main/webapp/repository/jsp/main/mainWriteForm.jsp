@@ -12,12 +12,12 @@
 		지역이름 : <input type="text" name="main_name" id="main_name"><br />
 		지역정보 : <input type="text" name="main_info" id="main_info"><br />
 
-		메인이미지 : <input type="file" name="main_img" id="main_img" /><br /> 지역
+		메인이미지 : <input type="file" name="main_img" id="main_img" /><br />
 		지역이미지 : <input type="file" name="areaMain_img" id="areaMain_img" /><br />
 		이미지 : <input type="file" name="img[]" id="img" multiple /><br />
-		지도이미지 : <input type="file" name="map" id="map" multiple /><br /> <input
-			type="button" id="mainWriteBtn" value="작성완료" /> <input type="reset"
-			value="다시작성" />
+		지도이미지 : <input type="file" name="map" id="map" multiple /><br /> 
+			  <input type="button" id="mainWriteBtn" value="작성완료" /> 
+			  <input type="reset" value="다시작성" />
 	</form>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -32,10 +32,10 @@ $(function() {
 			contentType : false,
 			data : formData,
 			success : function() {
-				alert('성공');
+				alert('데이터 들어왔나융? 들어왔군용');
 			},
 			error : function() {
-				alert('실패');
+				alert('데이터 어디갔나융? 당장 찾아오세용');
 			}
 		});
 	});

@@ -29,6 +29,8 @@
 		
 		<typeAlias type="tripmoment.bean.TripmomentDTO" alias="tripmoment"/>
 		<typeAlias type="tripmoment.bean.MainTripmomentDTO" alias="mainTripmoment"/>
+		<typeAlias type="tripmoment.bean.TripImgDTO" alias="tripImg"/>
+		<typeAlias type="tripmoment.bean.TripViewDTO" alias="tripView"/>
 
 	</typeAliases>
 </configuration>

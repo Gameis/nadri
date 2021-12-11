@@ -4,6 +4,8 @@ import java.util.List;
 
 import area.bean.ImgDTO;
 import tripmoment.bean.MainTripmomentDTO;
+import tripmoment.bean.TripImgDTO;
+import tripmoment.bean.TripViewDTO;
 import tripmoment.bean.TripmomentDTO;
 
 public interface TripmomentService {
@@ -13,4 +15,8 @@ public interface TripmomentService {
 	public void tripmoment_write(TripmomentDTO tripmomentDTO);
 
 	public List<MainTripmomentDTO> onTripmoment();
+	
+	public List<TripImgDTO> getTripImg(String moment_seq);
+	
+	public TripViewDTO getTripView();
 }
