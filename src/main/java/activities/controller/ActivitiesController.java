@@ -1,6 +1,4 @@
-package activities.bean;
-
-import java.util.List;
+package activities.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import activities.bean.OnActivitiesDTO;
 import activities.service.ActivitiesService;
 
 @Controller
@@ -19,7 +18,9 @@ public class ActivitiesController {
 
 	@RequestMapping(value = "/onActivities", method = RequestMethod.GET)
 	@ResponseBody
-	public List<OnActivitiesDTO> onActivities(@RequestParam("activity_seq") String activity_seq) {
+	public OnActivitiesDTO onActivities(@RequestParam("activity_seq") String activity_seq) {
+		System.out.println("컨트롤러 실행");
+		System.out.println("activity_seq = " + activity_seq);
 		return activitiesService.onActivities(activity_seq);
 	}
 }

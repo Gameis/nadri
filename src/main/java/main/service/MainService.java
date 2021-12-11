@@ -11,6 +11,6 @@ public interface MainService {
 
 	public void mainImgWrite(ImgDTO imgDTO);
 
-	public List<TripMainDTO> mainImgPrint(String activity_seq);
+	public List<TripMainDTO> mainImgPrint(int main_seq);
 
 }

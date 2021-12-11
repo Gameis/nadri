@@ -18,7 +18,7 @@
 
 	</div> --%>
 	<!-- 몸통 -->
-	<input type="hidden" id="activities_seq" value="21"/>
+	<input type="hidden" id="activity_seq" value="${param.activity_seq}"/>
 	<div class="productdetail-container">
 		<input type="hidden" id="page_id" value="10650010429">
 		<!-- 눈썹 -->
@@ -416,11 +416,7 @@
 
 	</div>
 
-	<%-- <div>
-		<jsp:include page="/repository/jsp/popular/pop_review_writeForm.jsp">
-			<jsp:param value="param1" name="param1" />
-		</jsp:include>
-	</div> --%>
+	
 
 	<div id="wrap_foot">
 		<footer>
@@ -432,7 +428,7 @@
 
 
 
-	<div id="__next-error"></div>
+	<!-- <div id="__next-error"></div>
 	<script type="text/javascript" crossorigin="anonymous" src="//webresource.tripcdn.com/res/concat?f=/resaresenglish/ibu/onlinecommon/lib/cquery_110421.352b5c2d.js,cquery_pro.6d0231d2.js"></script>
 	<script src="//webresource.tripcdn.com/ares2/ibu/onlinecommon/*/default/assets/ibu_gagtag2_online_bundle.js" crossorigin="anonymous" async=""></script>
 	<script crossorigin="anonymous" src="//webresource.tripcdn.com/ares/infosec/captcha/~2.5.0/default/js/captcha.min.js?expires=1d"></script>
@@ -446,17 +442,23 @@
 	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330153/ko-KR.js?etagc=f5158fe4177dccce3ca0172317439256"></script>
 	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6a40afadabb933fac51a38441f7edf8e"></script>
 	<script type="text/javascript" src="https://ak-s.tripcdn.com/modules/basebiz/i18naccountcomponentssdk/i18naccountcomponentssdk.6e306b320450e87c28afdecb4d66d8cf.js"></script>
-	<script type="text/javascript">
+	 -->
+	 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	 <script type="text/javascript">
 		$(function(){
+			alert('start');
 			$.ajax({
-				url: /nadri/activities/onActivities,
+				url: '/nadri/activities/onActivities',
 				type: 'get',
 				data: 'activity_seq='+ $('#activity_seq').val(),
 				success: function(data) {
 					alert('확인');
-					alert(JSON.stringify(data));
-					
-				};
+					alert(JSON.stringify(data));	
+				},
+				error: function(err) {
+					alert('실패');
+					console.log(err);
+				}
 				
 			});
 		});

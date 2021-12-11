@@ -1,7 +1,5 @@
 package activities.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,7 +15,8 @@ public class ActivitiesDAOMybatis implements ActivitiesDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<OnActivitiesDTO> onActivities(String activity_seq) {
+	public OnActivitiesDTO onActivities(String activity_seq) {
+		System.out.println("activity_seq = " + activity_seq);
 		return sqlSession.selectOne("activitiesSQL.onActivities", activity_seq);
 	}
 
