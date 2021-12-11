@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +26,7 @@ import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.bean.TripPopReviewSearchDTO;
 import pop.service.PopService;
 
 @Controller
@@ -90,14 +93,20 @@ public class PopController {
 		return popService.getPopImg(pop_seq);
 	}
 	
-	@RequestMapping(value="/getReviewContent", method=RequestMethod.POST)
+	@RequestMapping(value="/getReviewContent", method=RequestMethod.GET)
 	@ResponseBody
-	public List<TripPopReviewContentDTO> getReviewContent(){
-		
-		return popService.getReviewContent();
+	public Map<String, Object> getReviewContent(TripPopReviewSearchDTO tripPopReviewSearchDTO){		
+		Map<String, Object> resultMap = new HashMap<>();
+			
+		if(tripPopReviewSearchDTO.getSearchType().equals("IMAGE")) {
+			resultMap.put("total", popService.getReviewContentPhotoCnt(tripPopReviewSearchDTO));
+			resultMap.put("list", popService.getReviewContentPhoto(tripPopReviewSearchDTO));
+		} else {
+			resultMap.put("total", popService.getReviewContentCnt(tripPopReviewSearchDTO));
+			resultMap.put("list", popService.getReviewContent(tripPopReviewSearchDTO));
+		}
+		return resultMap;
 	}
-	
-	
 	
 	//img파일인지 체크 메소드
 	private boolean checkImageType(File file) {

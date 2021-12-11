@@ -114,16 +114,19 @@
 			<div class="switch-list-container">
 				<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-				  <label class="btn btn-outline-primary" for="btnradio1">모두 보기 (total_review)</label>
+				  <label id="btnradio1" class="btn btn-outline-primary" for="btnradio1">모두 보기 (total_review)</label>
+				  
+				  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+				  <label id="btnradio2" class="btn btn-outline-primary" for="btnradio2">최신순</label>
 					
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio3">긍정적 (total_positiveReview)</label>
+				  <label id="btnradio3" class="btn btn-outline-primary" for="btnradio3">긍정적 (total_positiveReview)</label>
 				  
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio4">부정적 (total_negativeReview)</label>
+				  <label id="btnradio4" class="btn btn-outline-primary" for="btnradio4">부정적 (total_negativeReview)</label>
 				  
 				  <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-				  <label class="btn btn-outline-primary" for="btnradio5">사진 (total_photo)</label>
+				  <label id="btnradio5" class="btn btn-outline-primary" for="btnradio5">사진 (total_photo)</label>
 				</div>
 			</div><!-- switch-list-container -->
 		</div><!-- switch-container -->
@@ -183,22 +186,7 @@
 			</ul><!-- review-comment-list -->
 		</div><!-- reviewItemContainer -->
 		<!-- 페이징처리 -->
-		<div class="pagination">
-			<nav aria-label="...">
-			  <ul class="pagination">
-			    <li class="page-item disabled">
-			      <span class="page-link">Previous</span>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item active" aria-current="page">
-			      <span class="page-link">2</span>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#">Next</a>
-			    </li>
-			  </ul>
-			</nav>
-		</div>
+	    <div id="page-selection"></div>
+	       
 	</div><!-- contentContainer -->
 </div><!-- reviewContainer -->

@@ -115,10 +115,11 @@
 			</div>
 
 			<!-- 인기여행지 -->
-			<span class="popular_trip_destination">인기여행지
-			<input type="button" id="addAreaBtn" class="addButton" value="+"></h2>
-			</span> 
-			
+			<span class="popular_trip_destination">인기여행지 <input
+				type="button" id="addAreaBtn" class="addButton" value="+">
+				</h2>
+			</span>
+
 
 			<div class="popular_trip_destination_index_content">
 				<div class="popularcitylist">
@@ -141,7 +142,8 @@
 											src="/nadri/repository/img/main/seoul_3.jpg" alt="서울"
 											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
-											<a class="title" title="서울" href="/nadri/main/area?main_seq=99">서울</a>
+											<a class="title" title="서울"
+												href="/nadri/main/area?main_seq=99">서울</a>
 										</p>
 									</div>
 								</div>
@@ -190,12 +192,20 @@
 
 							<div class="index_popular">
 								<div class="DestinationStyle">
-									<div class="img-wrap">
-										<a title="" href=""> <img alt=""
-											src="./repository/img/main/jeonju_1.jpg">
-										</a>
+									<i class="img-wrap"></i>
+									<div class="Video_module_jeonju"
+										style="width: 100%; height: 350px;">
+										<video id="video" class="Video_module"
+											style="width: 100%; height: 100%;" muted="muted"
+											autoplay="true" loop="loop">
+											<source src="/nadri/repository/img/main/Jeonju_intro.mp4"
+												type="video/mp4">
+										</video>
+										<img class="Video_module"
+											src="/nadri/repository/img/main/jeonju_7.jpg"
+											style="width: 100%; height: 100%;"> </a>
 										<p class="img-wrap_title">
-											<a class="title" title="" href=""></a>
+											<a class="title" title="전주" href="">전주</a>
 										</p>
 									</div>
 								</div>
@@ -276,10 +286,7 @@
 			<div class="tripmomentSlide">
 				<div id="carousel_tripmoment_slide" class="carousel slide"
 					data-bs-ride="carousel">
-					<div class="carousel-inner" id="moment_carousel_inner">
-	
-
-					</div>
+					<div class="carousel-inner" id="moment_carousel_inner"></div>
 					<button class="carousel-control-prev" type="button"
 						data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -305,9 +312,9 @@
 			</jsp:include>
 		</footer>
 	</div>
-	
-	
-	
+
+
+
 </body>
 <!-- 검색창 자동 완성 기능 -->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -374,7 +381,7 @@
 </script>
 
 <script type="text/javascript">
-	var Video_module_jeju = document
+	var Video_module_gangneung = document
 			.getElementsByClassName('Video_module_gangneung')[0]
 	var video = document.getElementById('video')
 	Video_module_gangneung.addEventListener('mouseover', function() {
@@ -385,6 +392,17 @@
 	}, false);
 </script>
 
+<script type="text/javascript">
+	var Video_module_jeonju = document
+			.getElementsByClassName('Video_module_jeonju')[0]
+	var video = document.getElementById('video')
+	Video_module_jeonju.addEventListener('mouseover', function() {
+		video.play()
+	}, false);
+	Video_module_jeonju.addEventListener('mouseout', function() {
+		video.pause()
+	}, false);
+</script>
 
 <!-- Channel Plugin Scripts -->
 <script>
@@ -430,6 +448,10 @@
 </script>
 
 <script type="text/javascript">
+function locationhref(moment_seq) {
+	location.href="/nadri/tripmoment/tripmomentView?moment_seq=" + moment_seq 
+	}
+	
 	$(function() {
 		$.ajax({
 			url : '/nadri/tripmoment/onTripmoment',
@@ -439,7 +461,7 @@
 				alert(JSON.stringify(data));
 					var count = -1;
 			        var momentCount = 1;	
-				
+
 				$.each(data, function(index, items){
 					if(index % 4 == 0) {
 
@@ -460,7 +482,8 @@
 			          }
 					
 					$('<div>', {
-						class: 'cardstyle card index_card_con'
+						class: 'cardstyle card index_card_con',
+						onclick : 'locationhref('+ items.moment_seq + ')'
 					}).append($('<div>', {
 						style: 'padding-bottom: 106%', 
 						class: 'slide_img'

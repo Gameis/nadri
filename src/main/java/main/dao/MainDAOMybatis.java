@@ -1,5 +1,7 @@
 package main.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,6 +25,11 @@ public class MainDAOMybatis implements MainDAO {
 	@Override
 	public void mainImgWrite(ImgDTO imgDTO) {
 		sqlSession.insert("mainSQL.mainImgWrite", imgDTO);
+	}
+
+	@Override
+	public List<TripMainDTO> mainImgPrint(int main_seq) {
+		return sqlSession.selectList("mainSQL.mainImgPrint", main_seq);
 	}
 
 }

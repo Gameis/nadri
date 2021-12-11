@@ -29,10 +29,10 @@ public class MainController {
 	private MainService mainService;
 	
 	@RequestMapping(value = "/area", method = RequestMethod.GET)
-	public String area() {
-		
+	public String area() {	
 		return "/repository/jsp/area/area";
 	}
+	
 	@RequestMapping(value = "/mainWrite", method = RequestMethod.POST)
 	@ResponseBody
 	public void mainWrite(@ModelAttribute TripMainDTO tripMainDTO,
@@ -60,7 +60,10 @@ public class MainController {
 		}//for
 	}
 	
-	//함수
+	@RequestMapping(value = "/mainImgPrint", method=RequestMethod.POST)
+	public  List<TripMainDTO> mainImgPrint() {
+		return mainService.mainImgPrint(3);
+	}
 	
 	private boolean checkImageType(File file) {
 		try {

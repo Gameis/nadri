@@ -130,8 +130,7 @@
 		<footer> </footer>
 	</div>
 	</div>
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
     window.onload = function(){
        ( /* att_zone : 이미지들이 들어갈 위치 id, btn : file tag id */
@@ -282,8 +281,6 @@
      });
 </script>
 
-	<script type="text/javascript">
-
-</script>
+	
 </body>
 </html>

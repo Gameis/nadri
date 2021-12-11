@@ -172,19 +172,38 @@ button, input, optgroup, select, textarea {
 	margin: 0px 8px;
 }
 .favorite-wrap{
-	display:flex;
-	padding : 5px 8px;
-	box-shadow: 1px 1px 1px 1px gray;
-	border: 1px solid gray;
-	border-radius: 5px 5px;
-	color: #0f294d;
-	
+	padding: 5px 8px;
+    background: white;
+    box-shadow: rgb(69 88 115 / 20%) 0px 1px 7px 0px;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 2px;
+}
+.fa-heart{
+	font-size: 19px;
+    color: rgb(206, 210, 217);
+    display: inline-block;
+	font-style: normal;
+}
+.fa-heart.checked{
+	font-size: 19px;
+    color: pink;
+    display: inline-block;
+	font-style: normal;
+}
+.favorite-count{
+	font-size: 14px;
+    color: rgb(15, 41, 77);
+    letter-spacing: 0px;
+    margin-left: 5px;
 }
 .content-wrap{
 	display:flex;
 	justify-content: space-between;
 	margin: 0;
-	padding: 0 0 64px 0;
+	padding: 36px 0 64px 0;
 }
 .pop-content-nav{
 	width: 400px;

@@ -24,6 +24,8 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
+<input type="hidden" id="moment_seq" value="${param.moment_seq}"/>
+
 	<div class="travel_guide_root_class">
 		<div class="TravelDetailContainer">
 			<div id="tripmoment">
@@ -74,19 +76,20 @@
 																src="/nadri/repository/img/main/gangneung_4.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
-															<img
-																src="/nadri/repository/img/main/gangneung_4.jpg"
+															<img src="/nadri/repository/img/main/gangneung_4.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt="" src="/nadri/repository/img/main/gangneung_2.jpg"
+															<img alt=""
+																src="/nadri/repository/img/main/gangneung_2.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
 															<img src="/nadri/repository/img/main/gangneung_2.jpg"
 																class="d-block w-100" alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt="" src="/nadri/repository/img/main/gangneung_3.jpg"
+															<img alt=""
+																src="/nadri/repository/img/main/gangneung_3.jpg"
 																class="img-img">
 															<div class="img-grey"></div>
 															<img src="/nadri/repository/img/main/gangneung_3.jpg"
@@ -169,7 +172,8 @@
 										fill="currentColor" class="bi bi-person-circle"
 										viewBox="0 0 16 16">
 									<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-									<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+									<path fill-rule="evenodd"
+											d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 									</svg>
 								</div>
 								<span class="nickname">귤좋아하는배찌</span>
@@ -255,8 +259,8 @@
 							style="position: absolute; left: 0px; top: 0px;">
 							<div class="content">
 								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> 
-										<img class="img" alt="서울, 추천 트립 모먼트"
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
 										src="/nadri/repository/img/main/jeonju_1.jpg">
 									</a>
 								</div>
@@ -282,8 +286,8 @@
 							style="position: absolute; left: 290px; top: 0px;">
 							<div class="content">
 								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> 
-										<img class="img" alt="서울, 추천 트립 모먼트"
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
 										src="/nadri/repository/img/main/jeonju_1.jpg">
 									</a>
 								</div>
@@ -293,10 +297,11 @@
 										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
 									<div class="user ellipsis">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											 fill="currentColor" class="bi bi-person-circle"
-											 viewBox="0 0 16 16">
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
 										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+										<path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 										</svg>
 										<span class="nickname">골골골</span>
 									</div>
@@ -346,10 +351,11 @@
 										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
 									<div class="user ellipsis">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											 fill="currentColor" class="bi bi-person-circle"
-											 viewBox="0 0 16 16">
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
   										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+  										<path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 										</svg>
 										<span class="nickname">골골골</span>
 									</div>
@@ -372,10 +378,11 @@
 										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
 									<div class="user ellipsis">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											 fill="currentColor" class="bi bi-person-circle"
-											 viewBox="0 0 16 16">
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
   										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+  										<path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 										</svg>
 										<span class="nickname">골골골</span>
 									</div>
@@ -398,10 +405,11 @@
 										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
 									<div class="user ellipsis">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											 fill="currentColor" class="bi bi-person-circle"
-											 viewBox="0 0 16 16">
+											fill="currentColor" class="bi bi-person-circle"
+											viewBox="0 0 16 16">
   										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  										<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+  										<path fill-rule="evenodd"
+												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
 										</svg>
 										<span class="nickname">골골골</span>
 									</div>
@@ -439,8 +447,9 @@
 							style="position: absolute; left: 870px; top: 430px;">
 							<div class="content">
 								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> 
-										<img class="img" alt="서울, 추천 트립 모먼트" src="/nadri/repository/img/main/jeonju_1.jpg">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
 									</a>
 								</div>
 
@@ -492,8 +501,9 @@
 							style="position: absolute; left: 0px; top: 860px;">
 							<div class="content">
 								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> 
-										<img class="img" alt="서울, 추천 트립 모먼트" src="/nadri/repository/img/main/jeonju_1.jpg">
+									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
+										alt="서울, 추천 트립 모먼트"
+										src="/nadri/repository/img/main/jeonju_1.jpg">
 									</a>
 								</div>
 
@@ -574,7 +584,7 @@
 		</div>
 		<!-- TravelDetailContainer -->
 	</div>
-	
+
 	<div id="wrap_foot">
 		<footer>
 			<jsp:include page="../main/main_footer.jsp">
@@ -582,7 +592,72 @@
 			</jsp:include>
 		</footer>
 	</div>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript" src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript"
+		src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+	<!-- <script type="text/javascript">
+$(function(){
+	
+	//이미지
+	$.ajax({
+		url: '/nadri/popular/getPopImg',
+		type: 'post',
+		data: 'pop_seq='+$('#pop_seq').val(),
+		success: function(data){
+			alert(JSON.stringify(data));
+			
+			//이미지 데이터 넣기
+			$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
+			$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
+			$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
+			$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
+			
+			$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
+			$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
+			$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
+			$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
+			
+			//이미지 클릭시 보여주기
+			$('.row-cols-4').find('#col-img0').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+			});
+			$('.row-cols-4').find('#col-img1').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+			});
+			$('.row-cols-4').find('#col-img2').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+			});
+			$('.row-cols-4').find('#col-img3').click(function() {
+				$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+			});
+
+
+		},
+		error: function(err){
+			console.log(err);
+			alert('이미지 ajax 실패했다')
+		}
+	});
+</script> -->
+
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+			url : '/nadri/tripmoment/getTripImg',
+			type : 'get',
+			data : 'moment_seq=' + $('#moment_seq').val(),
+			success : function(data) {
+				alert(JSON.stringify(data));
+				alert('성공');
+			},
+			
+			error : function(err) {
+				alert('어디갔어 찾아와')
+			
+			}
+		});
+	});
+</script>
 </body>
 </html>

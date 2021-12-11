@@ -15,6 +15,5 @@ public class TripmomentDTO {
 	private Date moment_logdate;
 	private String pop_name;
 	private int member_seq;
-	
-	// private 좋아요
+
 }
