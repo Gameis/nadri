@@ -1,7 +1,7 @@
 $(function() {
     $('#addPopBtn').click(function() {
         alert('addPopBtn');
-        window.open("/nadri/area/popWriteForm", "popWriteForm", "width=800, height=1200");
+        window.open("/nadri/area/popWriteForm?main_seq=" + $('#main_seq').val(), "popWriteForm", "width=800, height=1200");
     });
 
     $('#addHotelBtn').click(function() {

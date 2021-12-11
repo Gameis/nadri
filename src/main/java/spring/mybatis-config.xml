@@ -14,7 +14,9 @@
 		<typeAlias type="pop.bean.TripPopCountDTO" alias="popCount"/>
 		<typeAlias type="pop.bean.TripPopReviewContentDTO" alias="popContent"/>
 		<typeAlias type="pop.bean.TripPopReviewImgDTO" alias="popContentImg"/>
+		<typeAlias type="pop.bean.TripPopReviewSearchDTO" alias="popSearch"/>
 		
+		<typeAlias type="area.bean.OnAreaDTO" alias="onArea"/>
 		<typeAlias type="area.bean.ImgDTO" alias="img"/>
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
@@ -33,4 +35,5 @@
 		<typeAlias type="tripmoment.bean.TripViewDTO" alias="tripView"/>
 
 	</typeAliases>
+	
 </configuration>

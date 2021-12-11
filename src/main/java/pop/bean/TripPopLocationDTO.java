@@ -12,9 +12,5 @@ public class TripPopLocationDTO {
 	private String address_name;
 	private String map_x;
 	private String map_y;
-	
-//	private 조회수
-//	private 좋아요수
-//	private 리뷰평점
-	
+	private String detailInfo;
 }

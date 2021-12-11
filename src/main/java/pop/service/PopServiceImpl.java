@@ -10,6 +10,7 @@ import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.bean.TripPopReviewSearchDTO;
 import pop.dao.PopDAO;
 
 @Service
@@ -44,11 +45,26 @@ public class PopServiceImpl implements PopService {
 	public TripPopCountDTO getCountView() {
 		return popDAO.getCountView();
 	}
+	
+	@Override
+	public int getReviewContentCnt(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
+		return popDAO.getReviewContentCnt(tripPopReviewSearchDTO);
+	}
 
 	@Override
-	public List<TripPopReviewContentDTO> getReviewContent() {
-		
-		return popDAO.getReviewContent();
+	public List<TripPopReviewContentDTO> getReviewContent(TripPopReviewSearchDTO tripPopReviewSearchDTO) {	
+		return popDAO.getReviewContent(tripPopReviewSearchDTO);
 	}
+
+	@Override
+	public Object getReviewContentPhotoCnt(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
+		return popDAO.getReviewContentPhotoCnt(tripPopReviewSearchDTO);
+	}
+
+	@Override
+	public Object getReviewContentPhoto(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
+		return popDAO.getReviewContentPhoto(tripPopReviewSearchDTO);
+	}
+
 
 }

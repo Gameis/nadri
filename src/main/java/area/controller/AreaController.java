@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
+import area.bean.OnAreaDTO;
 import area.bean.PopMainDTO;
 import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
@@ -30,10 +31,10 @@ public class AreaController {
 	@Autowired
 	private AreaService areaService;
 
-	@RequestMapping(value = "/area", method = RequestMethod.GET)
-	public String area() {
-		
-		return "/repository/jsp/area/area";
+	@RequestMapping(value = "/onArea", method = RequestMethod.GET)
+	@ResponseBody
+	public List<OnAreaDTO> onArea(@RequestParam("main_seq") String main_seq) {
+		return areaService.onArea(main_seq);
 	}
 	
 	@RequestMapping(value = "/popWriteForm", method = RequestMethod.GET)

@@ -9,12 +9,13 @@
 <body>
     <form id="popWriteForm" class="popWriteForm">
     	<input type="hidden" name="content_seq" id="content_seq" value="3"/><br/>
-    	<input type="hidden" name="main_seq" id="main_seq" value="99"/><br/>
+    	<input type="hidden" name="main_seq" id="main_seq" value="${param.main_seq }"/><br/>
         명소이름 : <input type="text" name="pop_name" id="pop_name"/><br/>
         영업시간 : <input type="text" name="pop_businessTime" id="pop_businessTime"/><br/>
         관광시간 : <input type="text" name="pop_tourismTime" id="pop_tourismTime"/><br/>
         전화번호 : <input type="text" name="pop_call" id="pop_call"/><br/>
         주소 : <input type="text" name="address_name" id="address_name" class="address_name" readonly/><br/>
+        추가정보소개 : <textarea rows="3" cols="3" name="detailInfo" id="detailInfo"></textarea>
         x : <input type="text" name="map_x" id="map_x" class="map_x" readonly/><br/>
         y : <input type="text" name="map_y" id="map_y" class="map_y" readonly/><br/>
         메인이미지 : <input type="file" name="main_img" id="main_Img"/><br/>

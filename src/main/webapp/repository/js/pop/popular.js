@@ -1,12 +1,408 @@
-// document.write('<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a"></script>');
-// document.write('<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a&libraries=services,clusterer,drawing"></script>');
+//리뷰태그 클릭시 이동
+$('.pop-review-reviewIcon #goReview').click(function(){
+    // 이동 버튼을 클릭시 pre 태그로 스크롤의 위치가 이동되도록 한다.
+ 
+    // 1. pre태그의 위치를 가지고 있는 객체를 얻어온다. => offset 객체
+    var target = $("#reviewContainer").offset();
 
-// function addJavascript(jsname){
-// 	var th = document.getElementsByTagName('head')[0];
-// 	var s = document.createElement('script');
-// 	s.setAttribute('type','text/javascript');
-// 	s.setAttribute('src', jsname);
-// 	th.appendChild(s);
-// }
-// addJavascript('//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a');
-// addJavascript('//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a&libraries=services,clusterer,drawing');
+    // offset은 절대 위치를 가져온다. offset.top을 통해 상단의 좌표를 가져온다.
+    // position은 부모를 기준으로한 상대위치를 가져온다.
+    $("html").animate({scrollTop:target.top},400);
+});
+
+//like 버튼 클릭
+$('.favorite-wrap').click(function(){
+
+	$('.fa-heart').toggleClass('checked');
+
+});
+
+function resetValue(){
+	$('#pageNum').val('');
+    $('#searchType').val('');
+    $('#isDesc').val('');
+}
+
+function getLocation(){
+		//지도API
+		$.ajax({
+			url: '/nadri/popular/getLocation',
+			type: 'get',
+			data: 'pop_seq='+$('#pop_seq').val(),
+			success: function(data){
+				alert(JSON.stringify(data));
+				
+				$('#popularLocation_name h1').text(data.pop_name);
+				$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
+				$('.pop-tourismtime .one-line .field').text(data.pop_tourismtime);
+				$('.pop-address-map .one-line .field').text(data.address_name);
+				$('.pop-call .one-line .field').text(data.pop_call);
+				$('title').text(data.pop_name+'정보 및 후기 | 트립닷컴');
+				$('.detailInfo-content').text(data.detailInfo);
+				
+				
+				//카카오맵 API
+				let location1 = data.pop_name;
+				let map_x = data.map_y;
+				let map_y = data.map_x;
+				
+				$('.more-btn a').prop('href', 'https://map.kakao.com/link/map/'+location1+','+map_x+','+map_y);
+
+				let mapContainer = document.getElementById('kakaoMap'), // 지도를 표시할 div 
+		          mapOption = {
+		              center: new kakao.maps.LatLng(map_x, map_y), // 지도의 중심좌표
+		              level: 3, // 지도의 확대 레벨
+		              mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		          }; 
+
+		      // 지도를 생성한다 
+		      let map = new kakao.maps.Map(mapContainer, mapOption);
+
+				//마커가 표시될 위치입니다 
+				let markerPosition  = new kakao.maps.LatLng(map_x, map_y); 
+
+				//마커를 생성합니다
+				let marker = new kakao.maps.Marker({
+				position: markerPosition
+				});
+
+				//마커가 지도 위에 표시되도록 설정합니다
+				marker.setMap(map);
+				let iwContent = '<div style="padding:5px;">'+location1+' <br><a href="https://map.kakao.com/link/map/'+location1+','+map_x+','+map_y+'" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/'+location1+','+map_x+','+map_y+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+				iwPosition = new kakao.maps.LatLng(map_x, map_y); //인포윈도우 표시 위치입니다
+				iwRemoveable = true;
+
+
+				//인포윈도우를 생성합니다
+				let infowindow = new kakao.maps.InfoWindow({
+				position : iwPosition, 
+				content : iwContent,
+				removable : iwRemoveable
+				});
+
+				// 마커에 클릭이벤트를 등록합니다
+				kakao.maps.event.addListener(marker, 'click', function() {
+				      // 마커 위에 인포윈도우를 표시합니다
+				      infowindow.open(map, marker);  
+				});
+				
+			},error: function(err){
+				console.log(err);
+				alert('실패했따');
+			}
+		});
+	}
+	
+	function removeReviewList() {
+	//review list 전체 삭제
+		
+		var list = document.getElementById("review-comment-detail");
+		while(list.hasChildNodes()){
+			list.removeChild(list.firstChild);
+		}
+	}
+
+	function getCountView(){
+		//평점,평점내용,긍정,부정,리뷰수 출력
+		$.ajax({
+			url: '/nadri/popular/getCountView',
+			success: function(data){
+				alert(JSON.stringify(data));
+
+				var avg_score_content = null;
+				const avg_score = parseFloat($.trim(data.avg_score));
+				const total_negativeReview = parseFloat($.trim(data.total_negativeReview));
+				const total_review = parseFloat($.trim(data.total_review));
+				const total_positiveReview = parseFloat($.trim(data.total_positiveReview));
+				const total_photo = parseFloat($.trim(data.total_photo));
+
+				if(avg_score<=1){
+					avg_score_content = '최악이에요';
+				}else if(avg_score<=2){
+					avg_score_content = '보통이에요';
+				}else if(avg_score<=3){
+					avg_score_content = '좋아요!';
+				}else if(avg_score<=4){
+					avg_score_content = '최고에요!';
+				}else if(avg_score<=5){
+					avg_score_content = '완벽해요!';
+				}
+
+				$('.pop-score .pop-score-avg').text(data.avg_score);
+				$('.pop-review-reviewIcon div').text(data.total_review+'건의 리뷰');
+				$('.switch-container .switch-sort .sort-get-score').text(data.avg_score);
+				$('.switch-container .switch-sort .sort-get-catergory').text(avg_score_content);
+				$('.switch-list-container .btn-group .btn-outline-primary:eq(0)').text('모두보기 ('+(total_review || 0)+')');
+				$('.switch-list-container .btn-group .btn-outline-primary:eq(2)').text('긍정적 ('+(total_positiveReview || 0)+')');
+				$('.switch-list-container .btn-group .btn-outline-primary:eq(3)').text('부정적 ('+(total_negativeReview || 0)+')');
+				$('.switch-list-container .btn-group .btn-outline-primary:eq(4)').text('사진 ('+(total_photo || 0)+')');
+
+			},error: function(err){
+				console.log(err);
+			}
+		});
+	}
+
+	
+	function getPopImg(){
+		//메인이미지
+		$.ajax({
+			url: '/nadri/popular/getPopImg',
+			type: 'post',
+			data: 'pop_seq='+$('#pop_seq').val(),
+			success: function(data){
+				alert(JSON.stringify(data));
+				
+				//이미지 데이터 넣기
+				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+				$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				
+				$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+				$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				
+				//이미지 클릭시 보여주기
+				$('.row-cols-4').find('#col-img0').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+				});
+				$('.row-cols-4').find('#col-img1').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				});
+				$('.row-cols-4').find('#col-img2').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				});
+				$('.row-cols-4').find('#col-img3').click(function() {
+                    $('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				});
+
+
+			},
+			error: function(err){
+				console.log(err);
+				alert('이미지 ajax 실패했다')
+			}
+		});
+	}
+
+    function getReviewList(){
+        //모든 리뷰리스트 출력
+        var pageNum = $.trim($('#pageNum').val() || 0);
+        var searchType = $.trim($('#searchType').val() || '');
+        var isDesc = $.trim($('#isDesc').val() || '');
+        
+        //리스트삭제
+        removeReviewList();
+        
+        $.ajax({
+            url: '/nadri/popular/getReviewContent',
+            type: 'get',
+            data: 'pageNum='+pageNum+'&searchType='+searchType+'&isDesc='+isDesc,
+            success: function(data){
+                alert(JSON.stringify(data));
+                const list = data.list;
+                
+                for(var i = 0; i < data.list.length; i++){
+                    var private_score_content = null;
+                    const private_score = parseFloat($.trim(list[i].review_score));
+                    var img_path = ($.trim(list[i].imgList[0].img_path));
+                    var image_name1='';
+                    var image_name2='';
+                    var image_name3='';
+                    var image_name4='';
+                    var image_name5='';
+                    var image_name6='';
+                    var image_name7='';
+                    var noImge = "noImg.jpg";
+                    
+                    //content내용 뽑기
+                    if(private_score<=1){
+                        private_score_content = '최악이에요';
+                    }else if(private_score<=2){
+                        private_score_content = '보통이에요';
+                    }else if(private_score<=3){
+                        private_score_content = '좋아요!';
+                    }else if(private_score<=4){
+                        private_score_content = '최고에요!';
+                    }else if(private_score<=5){
+                        private_score_content = '완벽해요!';
+                    }
+                    
+                    //img_name 빈값 정리
+
+                        if(list[i].imgList.length == 0){
+                            image_name1 = noImge;
+                            image_name2 = noImge;
+                            image_name3 = noImge;
+                            image_name4 = noImge;
+                            image_name5 = noImge;
+                            image_name6 = noImge;
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 1){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = noImge;
+                            image_name3 = noImge;
+                            image_name4 = noImge;
+                            image_name5 = noImge;
+                            image_name6 = noImge;
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 2){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = $.trim(list[i].imgList[1].img_name);
+                            image_name3 = noImge;
+                            image_name4 = noImge;
+                            image_name5 = noImge;
+                            image_name6 = noImge;
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 3){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = $.trim(list[i].imgList[1].img_name);
+                            image_name3 = $.trim(list[i].imgList[2].img_name);
+                            image_name4 = noImge;
+                            image_name5 = noImge;
+                            image_name6 = noImge;
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 4){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = $.trim(list[i].imgList[1].img_name);
+                            image_name3 = $.trim(list[i].imgList[2].img_name);
+                            image_name4 = $.trim(list[i].imgList[3].img_name);
+                            image_name5 = noImge;
+                            image_name6 = noImge;
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 5){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = $.trim(list[i].imgList[1].img_name);
+                            image_name3 = $.trim(list[i].imgList[2].img_name);
+                            image_name4 = $.trim(list[i].imgList[3].img_name);
+                            image_name5 = $.trim(list[i].imgList[4].img_name);
+                            image_name6 = noImge;
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 6){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = $.trim(list[i].imgList[1].img_name);
+                            image_name3 = $.trim(list[i].imgList[2].img_name);
+                            image_name4 = $.trim(list[i].imgList[3].img_name);
+                            image_name5 = $.trim(list[i].imgList[4].img_name);
+                            image_name6 = $.trim(list[i].imgList[5].img_name);
+                            image_name7 = noImge;
+                        }
+                        
+                        if(list[i].imgList.length == 7){
+                            image_name1 = $.trim(list[i].imgList[0].img_name);
+                            image_name2 = $.trim(list[i].imgList[1].img_name);
+                            image_name3 = $.trim(list[i].imgList[2].img_name);
+                            image_name4 = $.trim(list[i].imgList[3].img_name);
+                            image_name5 = $.trim(list[i].imgList[4].img_name);
+                            image_name6 = $.trim(list[i].imgList[5].img_name);
+                            image_name7 = $.trim(list[i].imgList[6].img_name);
+                        }
+                    
+                    
+                    ($('<li/>', {
+                        class: "reviewCommentDetail",
+                        id: "reviewCommentDetail",
+                        style: "border-top: 1px solid rgb(218, 223, 230)"
+                    }).append($('<div/>', {
+                        class: "review-user-view"
+                    }).append($('<a/>',{
+                        style:"color: rgb(15, 41, 77"
+                    }).append($('<img/>',{
+                        class: "review-user-img",
+                        alt: "user_icon",
+                        width: "50",
+                        heigth: "50",
+                        src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
+                    }))).append($('<div/>',{
+                        class:"review-user-info"
+                    }).append($('<div/>',{
+                        class:"review-user-name",
+                        text:list[i].user_name
+                    })))).append($('<div/>',{
+                        class: "review-content-detail"
+                    }).append($('<div/>',{
+                        class:"review-switch-sort"
+                    }).append($('<span/>',{
+                        class:"review-score",
+                        text:list[i].review_score
+                    })).append($('<span/>',{
+                        class:"review-all-score"
+                    })).append($('<span/>',{
+                        class:"review-score-name",
+                        text:private_score_content
+                    }))).append($('<div/>',{
+                        class:"review-content-view"
+                    }).append($('<p/>', {
+                        class:"review-content-text",
+                        text:list[i].review_content
+                    }))).append($('<div/>',{
+                        class:"review-content-photolist"
+                    }).append($('<div/>',{
+                        class:"review-content-photowall"
+                    }).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name1",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name1
+                    })).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name2",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name2
+                    })).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name3",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name3
+                    })).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name4",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name4
+                    })).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name5",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name5
+                    })).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name6",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name6
+                    })).append($('<img/>',{
+                        alt:"review-content-photowall",
+                        id:"image_name7",
+                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name7
+                    })))).append($('<div/>',{
+                        class:"review-content-date"
+                    }).append($('<span/>',{
+                        class:"review-content-time"
+                    }).append($('<span/>',{
+                        text:"작성일 : "+list[i].review_logtime
+                    })))))).appendTo($('#review-comment-detail'));
+                    
+                }
+                
+                $('#page-selection').bootpag({
+                	total: data.total,
+                	page: pageNum,
+                	maxVisible: Math.ceil(data.total / 5)
+                });
+				
+				resetValue();
+				
+            }, error: function(err){
+                console.log(err);
+            }
+        });
+    }
+    
+    

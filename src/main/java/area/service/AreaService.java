@@ -3,6 +3,7 @@ package area.service;
 import java.util.List;
 
 import area.bean.ImgDTO;
+import area.bean.OnAreaDTO;
 import area.bean.PopMainDTO;
 import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
@@ -20,4 +21,6 @@ public interface AreaService {
 	public void imgActivityWrite(ImgDTO imgDTO);
 
 	public List<PopMainDTO> onAreaActivity(int main_seq);
+
+	public List<OnAreaDTO> onArea(String main_seq);
 }

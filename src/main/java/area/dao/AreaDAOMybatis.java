@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import area.bean.ImgDTO;
+import area.bean.OnAreaDTO;
 import area.bean.PopMainDTO;
 import area.bean.TripActivityDTO;
 import area.bean.TripPopDTO;
@@ -49,5 +50,10 @@ public class AreaDAOMybatis implements AreaDAO {
 	@Override
 	public List<PopMainDTO> printActivityMain(int main_seq) {
 		return sqlSession.selectList("areaSQL.printActivityMain", main_seq);
+	}
+
+	@Override
+	public List<OnAreaDTO> onArea(String main_seq) {
+		return sqlSession.selectList("areaSQL.onArea", main_seq);
 	}
 }
