@@ -14,4 +14,6 @@ public interface MainService {
 	
 	public List<TripMainImgDTO> mainImgPrint();
 
+	public List<TripMainDTO> mainImgPrint(int main_seq);
+
 }

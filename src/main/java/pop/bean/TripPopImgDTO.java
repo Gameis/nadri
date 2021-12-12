@@ -1,10 +1,5 @@
 package pop.bean;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-
 import lombok.Data;
 
 @Data

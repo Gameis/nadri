@@ -7,9 +7,10 @@ import lombok.Data;
 @Data
 public class TripPopReviewContentDTO {
 	private int pop_review_seq;
-	private String user_name;
+	private String nickname;
 	private int review_score;
 	private String review_content;
+	private String img_path;
 	private String review_logtime;
 	private List<TripPopReviewImgDTO> imgList;
 }

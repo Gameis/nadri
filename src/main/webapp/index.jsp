@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>전 세계 인기 여행지 & 꼭 가봐야 할 명소 추천 | 트립닷컴</title>
+<link rel="stylesheet" type="text/css"
+	href="/nadri/repository/css/main/main_top.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
+
 <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon"
 	type="image/x-icon">
 <link rel="stylesheet" type="text/css"
@@ -256,43 +262,10 @@
 	</div>
 
 </body>
-<!-- 검색창 자동 완성 기능 -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-	List = [ "명동", "종로2가사거리", "창경궁.서울대학교병원", "명륜3가.성대입구", "종로2가.삼일교",
-			"혜화동로터리.여운형활동터", "서대문역사거리", "서울역사박물관.경희궁앞", "서울역사박물관.경희궁앞", "광화문",
-			"광화문", "종로1가", "종로1가", "종로2가", "종로2가", "종로3가.탑골공원", "종로3가.탑골공원",
-			"종로4가.종묘", "종로4가.종묘", "종로5가.광장시장", "종로5가.광장시장", "종로6가.동대문종합시장",
-			"종로6가.동대문종합시장", "동대문역.흥인지문", "동대문(흥인지문)", "동묘앞", "동묘앞", "경기상고",
-			"신교동", "경기상고", "경복고교", "청운중학교", "자하문고개.윤동주문학관", "자하문고개.윤동주문학관",
-			"청운중학교", "경복고교", "통인시장종로구보건소", "통인시장종로구보건소", "효자동", "사직단.어린이도서관",
-			"사직동주민센터", "경복궁역", "경복궁역", "경복궁", "KT광화문지사", "광화문",
-			"서울역사박물관.경교장.강북삼성병원", "광화문.금호아시아나본관앞", "광화문", "세종문화회관",
-			"서울지방경찰청.경복궁역", "사직단", "광화문광화문빌딩", "덕성여중고", "안국역.종로경찰서.인사동",
-			"국민은행세검정지점", "세검정초등학교", "세검정.상명대", "상명대입구.석파랑", "하림각",
-			"자하문터널입구.석파정", "부암동주민센터.무계원", "부암동주민센터.무계원", "자하문터널입구.석파정", "하림각",
-			"상명대입구.세검정교회", "세검정.상명대", "세검정초등학교", "국민은행세검정지점", "승가사입구",
-			"구기동현대빌라", "구기터널.삼성출판박물관", "구기터널.삼성출판박물관", "구기동", "구기동", "승가사입구",
-			"갑을씨티텔앞", "평창파출소", "평창동주민센터", "일성아파트", "롯데아파트", "롯데아파트",
-			"벽산평창힐스아파트", "예능교회", "서울예술고등학교.평창동주민센터", "화정박물관", "강북삼성병원",
-			"독립문역.서대문형무소역사관", "서대문.서울시교육청", "서대문역사거리.적십자병원", "독립문",
-			"창덕궁.서울돈화문국악당", "무교동", "청계1가.광교", "청계2가.수표교", "청계4가.세운교",
-			"청계5가.광장시장", "원남동", "창덕궁.우리소리박물관", "안국역.종로경찰서.인사동", "조계사",
-	// ... 10891개 데이터 생략
-	]
-	$(function() {
-		$("#searchInput").autocomplete({
-			source : List,
-			focus : function(event, ui) { // 방향키로 자동완성단어 선택 가능하게 만들어줌	
-				return false;
-			},
-			minLength : 1,// 최소 글자수
-			delay : 100, //autocomplete 딜레이 시간(ms)
-		//disabled: true, //자동완성 기능 끄기
-		});
-	});
-</script>
+
+<script src="/nadri/repository/js/tripmember/tripmember.js"></script>
+<script src="/nadri/repository/js/modal/modal.js"></script>	
+
 
 
 <!-- video mouseover 시 재생 -->
@@ -503,4 +476,5 @@ function locationhref(moment_seq) {
 		});
 	});
 </script>
+<!-- -->
 </html>

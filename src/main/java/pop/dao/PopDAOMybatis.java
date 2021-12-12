@@ -1,6 +1,7 @@
 package pop.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
+import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
 
 @Repository
@@ -22,9 +24,9 @@ public class PopDAOMybatis implements PopDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public TripPopLocationDTO getLocation(int pop_seq) {
-		TripPopLocationDTO tripPopLocationDTO = sqlSession.selectOne("popSQL.getLocation", pop_seq);
-		return tripPopLocationDTO;
+	public TripPopLocationDTO getLocation(Map<String, Object> resultMap) {
+		
+		return sqlSession.selectOne("popSQL.getLocation", resultMap);
 	}
 
 	@Override
@@ -68,6 +70,13 @@ public class PopDAOMybatis implements PopDAO {
 	public Object getReviewContentPhoto(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
 		return sqlSession.selectList("popSQL.getReviewContentPhoto", tripPopReviewSearchDTO);
 	}
+
+	@Override
+	public List<TripPopReviewImgDTO> getReviewContentPhotoList(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
+		return sqlSession.selectList("popSQL.getReviewContentPhotoList", tripPopReviewSearchDTO);
+	}
+
+	
 	
 	
 	

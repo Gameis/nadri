@@ -33,4 +33,10 @@ public class MainServiceImpl implements MainService {
 		return mainDAO.mainImgPrint();
 	}
 
+	@Override
+	public List<TripMainDTO> mainImgPrint(int main_seq) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -299,6 +299,7 @@ overflow: hidden;
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
+  justify-content: center;
 }
 .pagination > li {
   display: inline;

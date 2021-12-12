@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" type="text/css" href="/nadri/repository/css/member/agreement.css">
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/agreement.css">
 
 </head>
 <body class="agreement">
