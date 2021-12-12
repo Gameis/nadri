@@ -302,13 +302,13 @@ a, a:hover {
 
 .index_popular-dest {
 	width: 100%;
-    position: absolute;
-    z-index: -1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+	position: absolute;
+	z-index: -1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .index_popular {
@@ -317,7 +317,6 @@ a, a:hover {
 	margin-top: 5px;
 	width: 80px;
 	height: 300px;
-	
 }
 
 .DestinationStyle {
@@ -383,7 +382,7 @@ a, a:hover {
 }
 
 video {
-	position: absolute; 
+	position: absolute;
 	top: 0px;
 	opacity: 0;
 }
@@ -494,6 +493,7 @@ video {
 	position: absolute;
 	right: 10px;
 	top: -5px;
+	cursor: pointer;
 }
 
 .release_btn {
@@ -532,6 +532,10 @@ video {
 	cursor: pointer;
 	vertical-align: top;
 	height: 420px;
+}
+
+.card-group>.card {
+	flex: none !important;
 }
 
 .slide_img {
@@ -651,39 +655,39 @@ video {
 }
 
 .carousel-control-prev {
-    left: -83px !important;
-    top: 166px !important; 
+	left: -83px !important;
+	top: 166px !important;
 }
 
 .carousel-control-next {
 	right: -83px !important;
-	top: 166px !important; 
+	top: 166px !important;
 }
 
-.carousel-control-prev-icon{
-    background-image: url(/nadri/repository/img/main/leftBtn.png) !important;
+.carousel-control-prev-icon {
+	background-image: url(/nadri/repository/img/main/leftBtn.png) !important;
 	border: 1px solid #dadfe6;
 	left: -14px;
-    background-color: #fff !important;
-    border-radius: 0%;
-    box-shadow: none;
-    border: 1px solid #dadfe6;
-    width: 3rem !important;
-    height: 3rem !important;
+	background-color: #fff !important;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	width: 3rem !important;
+	height: 3rem !important;
 }
 
-.carousel-control-next-icon{
-	background-image: url(/nadri/repository/img/main/rightBtn.png) !important;
+.carousel-control-next-icon {
+	background-image: url(/nadri/repository/img/main/rightBtn.png)
+		!important;
 	border: 1px solid #dadfe6;
 	left: -14px;
-    background-color: #fff !important;
-    border-radius: 0%;
-    box-shadow: none;
-    border: 1px solid #dadfe6;
-    width: 3rem !important;
-    height: 3rem !important;
+	background-color: #fff !important;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	width: 3rem !important;
+	height: 3rem !important;
 }
-
 
 /* footer */
 #wrap_foot {

@@ -159,8 +159,7 @@
 						    <img id="col-img1" class="col" src="#"></img>
 						    <img id="col-img2" class="col" src="#"></img>
 						    <img id="col-img3" class="col" src="#"></img>
-				  		</div><!-- row-cols-4 -->
-				  		
+				  		</div><!-- row-cols-4 -->		
 					</div><!-- container -->
 				</div><!-- carouselWrap -->
 		    </div><!-- content-wrap -->
@@ -227,6 +226,9 @@ $(function(){
 	
 	//페이징 처리
     pagination();
+
+	//유저정보 처리
+	getUserInfo();
 
 });
 

@@ -19,7 +19,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
 import main.bean.TripMainDTO;
+import main.bean.TripMainImgDTO;
 import main.service.MainService;
+import tripmoment.bean.TripViewDTO;
 
 @Controller
 @RequestMapping(value= "/main")
@@ -60,9 +62,10 @@ public class MainController {
 		}//for
 	}
 	
-	@RequestMapping(value = "/mainImgPrint", method=RequestMethod.POST)
-	public  List<TripMainDTO> mainImgPrint() {
-		return mainService.mainImgPrint(3);
+	@RequestMapping(value = "/mainImgPrint", method=RequestMethod.GET)
+	@ResponseBody
+	public  List<TripMainImgDTO> mainImgPrint() {
+		return mainService.mainImgPrint();
 	}
 	
 	private boolean checkImageType(File file) {

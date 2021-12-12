@@ -4,6 +4,7 @@ import java.util.List;
 
 import area.bean.ImgDTO;
 import main.bean.TripMainDTO;
+import main.bean.TripMainImgDTO;
 
 public interface MainDAO {
 
@@ -11,6 +12,6 @@ public interface MainDAO {
 
 	public void mainImgWrite(ImgDTO imgDTO);
 	
-	public List<TripMainDTO> mainImgPrint(int main_seq);
+	public List<TripMainImgDTO> mainImgPrint();
 
 }
