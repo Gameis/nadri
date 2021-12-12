@@ -228,6 +228,9 @@ $(function(){
 	//페이징 처리
     pagination();
 
+	//유저정보 처리
+	getUserInfo();
+
 });
 
 </script>

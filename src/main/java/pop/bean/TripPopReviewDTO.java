@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class TripPopReviewDTO {
-	private int member_seq;
+	private String member_seq;
 	private String pop_review_content;
 	private int pop_review_seq;
 	private int pop_review_score;

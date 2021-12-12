@@ -24,14 +24,16 @@ function resetValue(){
 }
 
 function getLocation(){
+	var member_seq = $('#member_seq').val();
+	
+	//member_seq가 있을때
 		//지도API
 		$.ajax({
 			url: '/nadri/popular/getLocation',
-			type: 'post',
-			data: 'pop_seq='+$('#pop_seq').val()+'&member_seq='+$('#member_seq').val(),
+			type: 'get',
+			data: 'pop_seq='+$('#pop_seq').val(),
 			success: function(data){
 				alert(JSON.stringify(data));
-				debugger;
 				
 				$('#popularLocation_name h1').text(data.pop_name);
 				$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
@@ -40,6 +42,7 @@ function getLocation(){
 				$('.pop-call .one-line .field').text(data.pop_call);
 				$('title').text(data.pop_name+'정보 및 후기 | 트립닷컴');
 				$('.detailInfo-content').text(data.detailInfo);
+				
 				
 				
 				//카카오맵 API
@@ -206,6 +209,12 @@ function getLocation(){
                 const list = data.list;
                 const contentList = data.contentList;
 				const photoList = data.photoList;
+				var profileImg = $.trim(data.profileImg || "");
+				
+				if(profileImg == ""){
+					profileImg = "defaultImg.png"
+				}
+				
                 
                 if(searchType=='IMAGE'){//사진버튼 클릭시출력부
 	                for(var i = 0; i < contentList.length; i++){
@@ -330,7 +339,7 @@ function getLocation(){
 	                        alt: "user_icon",
 	                        width: "50",
 	                        heigth: "50",
-	                        src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
+	                        src: "/nadri/repository/img/member/"+profileImg
 	                    }))).append($('<div/>',{
 	                        class:"review-user-info"
 	                    }).append($('<div/>',{
@@ -517,7 +526,7 @@ function getLocation(){
 	                        alt: "user_icon",
 	                        width: "50",
 	                        heigth: "50",
-	                        src: "https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg"
+	                        src: "/nadri/repository/img/member/"+profileImg
 	                    }))).append($('<div/>',{
 	                        class:"review-user-info"
 	                    }).append($('<div/>',{
@@ -594,4 +603,26 @@ function getLocation(){
         });
     }
     
+	function getUserInfo(){
+		$.ajax({
+			url: '/nadri/popular/getUserInfo',
+			type: 'post',
+			success: function(data){
+				alert(JSON.stringify(data));
+				var nickName = $.trim(data.nickName || "");
+				
+				
+				if(nickName != ""){
+					$('.reivew-write-userName').text(nickName);
+					$('.review-write-userImg').prop("src", "/nadri/repository/img/member/"+data.profileImg);
+				}else{
+					$('.reivew-write-userName').text("로그인해주세요");
+					$('.review-write-userImg').prop("src", "/nadri/repository/img/member/defaultImg.png");
+				}
+				
+			}, error: function(err){
+				console.log(err);
+			}
+		});
+	}
     

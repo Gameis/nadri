@@ -10,6 +10,7 @@ import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
+import pop.bean.TripPopUserInfoDTO;
 
 public interface PopService {
 
@@ -32,6 +33,8 @@ public interface PopService {
 	public Object getReviewContentPhoto(TripPopReviewSearchDTO tripPopReviewSearchDTO);
 
 	public Object getReviewContentPhotoList(TripPopReviewSearchDTO tripPopReviewSearchDTO);
+
+	public TripPopUserInfoDTO getUserInfo(String member_seq);
 
 
 }

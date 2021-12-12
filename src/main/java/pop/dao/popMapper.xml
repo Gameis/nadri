@@ -20,13 +20,9 @@
 	</insert> -->
 	
 	<select id="getLocation" resultType="popLocation">
-		select * from 
-			(select * from trippop
-					join trippopmap using (pop_seq)
-					where pop_seq = #{pop_seq})
-			cross join
-			(select * from tripmember
-			where member_seq = #{member_seq})
+		select * from trippop
+		join trippopmap using (pop_seq)
+		where pop_seq = #{pop_seq}
 	</select>
 	
 	<select id="getPopImg" parameterType="int" resultType="popImg">
@@ -125,6 +121,7 @@
 	<select id="getReviewContent" parameterType="popSearch" resultMap="tripPopReviewContentMap">
 		select
        a.pop_review_seq,
+       a.profileimg,
        a.nickname,
        a.review_score,
        a.review_content,
@@ -133,7 +130,8 @@
       i.img_name as img_name
       from (
                select trippop_review.pop_review_seq                                   as pop_review_seq,
-                      tripmember.nickname                                                 as nickname,
+               		  tripmember.profileimg                                           as profileimg,
+                      tripmember.nickname                                             as nickname,
                       trippop_review.pop_review_score                                 as review_score,
                       trippop_review.pop_review_content                               as review_content,
                       to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
@@ -177,6 +175,7 @@
 	<select id="getReviewContentPhoto" resultMap="tripPopReviewContentMap">
 		select * from
         (select distinct trippop_review.pop_review_seq as pop_review_seq,
+        	   tripmember.profileimg as profileImg,
 		       tripmember.nickname as nickname,
 		       trippop_review.pop_review_score as review_score,
 		       trippop_review.pop_review_content as review_content,
@@ -201,4 +200,13 @@
         order by seq
 	</select>
 	
+	<select id="getUserInfo" resultType="popUser">
+		select member_seq,
+			   name as memName,
+			   id as memId,
+			   nickname as nickname,
+			   profileimg as profileImg
+		from tripmember
+		where member_seq = #{member_seq}
+	</select>
 </mapper>
