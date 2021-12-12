@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
@@ -34,34 +36,29 @@ import pop.service.PopService;
 public class PopController {
 	
 	@Autowired
-	private PopService popService;	
+	private PopService popService;
 	
+	//멤버세션필요
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
 	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
 								@ModelAttribute TripPopImgDTO tripPopImgDTO,
 								@RequestParam("img[]") List<MultipartFile> list,
-								HttpServletRequest request) {
+								@RequestParam int member_seq) {
 		
 		//String root_path = request.getSession().getServletContext().getRealPath("/");
         String attach_path = "\\popular\\review";
         
         //String path = root_path + attach_path;
         
-		//받아오기전까지만 쓰기
-		int member_seq = 1;
+		//받아오기전까지만 쓰기//////////////////////////////////////////////////////////
+		member_seq = 42;
+		
 		tripPopReviewDTO.setMember_seq(member_seq);
 		
 		System.out.println(tripPopReviewDTO);
 		
 		popService.popReviewWrite(tripPopReviewDTO);
-		
-		//세션받기
-//		ModelAndView mv = new ModelAndView();
-//		HttpSession session = request.getSession();
-//		int member_seq = (int)session.getAttribute("member_seq");
-//		session.setAttribute("member_seq", member_seq);
-//		mv.setViewName("/repository/jsp/popular/popular");
 		
 		
 		for(MultipartFile img : list) {
@@ -77,12 +74,16 @@ public class PopController {
 		return popService.getCountView();
 	}
 	
-	
-	@RequestMapping(value="/getLocation", method=RequestMethod.GET)
+	//세션필요
+	@RequestMapping(value="/getLocation", method=RequestMethod.POST)
 	@ResponseBody
-	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
+	public TripPopLocationDTO getLocation(@RequestParam int pop_seq,
+										  @RequestParam int member_seq) {
+		Map<String, Object> resultMap = new HashMap<>();
+		resultMap.put("pop_seq", pop_seq);
+		resultMap.put("member_seq", member_seq);
 		
-		return popService.getLocation(pop_seq);
+		return popService.getLocation(resultMap);
 		
 	}
 	

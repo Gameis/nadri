@@ -1,6 +1,7 @@
 package pop.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
-import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
 import pop.dao.PopDAO;
 
@@ -20,9 +20,9 @@ public class PopServiceImpl implements PopService {
 	private PopDAO popDAO;
 	
 	@Override
-	public TripPopLocationDTO getLocation(int pop_seq) {
+	public TripPopLocationDTO getLocation(Map<String, Object> resultMap) {
 		
-		return popDAO.getLocation(pop_seq);
+		return popDAO.getLocation(resultMap);
 	}
 
 	@Override
@@ -71,6 +71,5 @@ public class PopServiceImpl implements PopService {
 	public Object getReviewContentPhotoList(TripPopReviewSearchDTO tripPopReviewSearchDTO) {
 		return popDAO.getReviewContentPhotoList(tripPopReviewSearchDTO);
 	}
-
 
 }

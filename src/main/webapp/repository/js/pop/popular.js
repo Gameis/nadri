@@ -27,10 +27,11 @@ function getLocation(){
 		//지도API
 		$.ajax({
 			url: '/nadri/popular/getLocation',
-			type: 'get',
-			data: 'pop_seq='+$('#pop_seq').val(),
+			type: 'post',
+			data: 'pop_seq='+$('#pop_seq').val()+'&member_seq='+$('#member_seq').val(),
 			success: function(data){
 				alert(JSON.stringify(data));
+				debugger;
 				
 				$('#popularLocation_name h1').text(data.pop_name);
 				$('.pop-businesstime .one-line .field').text(data.pop_businesstime);

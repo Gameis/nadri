@@ -25,6 +25,9 @@
 	<input type="hidden" id="pageNum" value="1" />
 	<input type="hidden" id="searchType" value="" />
 	<input type="hidden" id="isDesc" value="" />
+	<input type="hidden" id="member_seq" value="${member_seq }"/>
+	<input type="hidden" id="memName" value="${memName }"/>
+	<input type="hidden" id="memId" value="${memId }"/>
 	
     <div id="areaWrap" class="areaWrap">
         <div id="areaHeader" class="areaHeader">

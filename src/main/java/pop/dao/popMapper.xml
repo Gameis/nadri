@@ -19,10 +19,14 @@
 		insert into tripPopMap values(pop_seq.currval, #{map_x}, #{map_y})
 	</insert> -->
 	
-	<select id="getLocation" parameterType="int" resultType="popLocation">
-		select * from trippop
-		join trippopmap using (pop_seq)
-		where pop_seq = #{pop_seq}
+	<select id="getLocation" resultType="popLocation">
+		select * from 
+			(select * from trippop
+					join trippopmap using (pop_seq)
+					where pop_seq = #{pop_seq})
+			cross join
+			(select * from tripmember
+			where member_seq = #{member_seq})
 	</select>
 	
 	<select id="getPopImg" parameterType="int" resultType="popImg">
@@ -183,7 +187,7 @@
 		      and trippop_review.member_seq = tripmember.member_seq
 		      and not img.img_name = 'noImg.jpg'
 		order by pop_review_seq asc
-		offset (1-1) * 5 row
+		offset (#{pageNum}-1) * 5 row
     	fetch next 5 row only) a
 	</select>
 	
