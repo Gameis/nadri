@@ -1,6 +1,8 @@
 package area.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +57,26 @@ public class AreaDAOMybatis implements AreaDAO {
 	@Override
 	public List<OnAreaDTO> onArea(String main_seq) {
 		return sqlSession.selectList("areaSQL.onArea", main_seq);
+	}
+	
+	@Override
+	public Map<String, String> search(String searchText) {
+		Map<String, String> map = new HashMap<String, String>();
+		System.out.println("searchText = " + searchText);
+		if(sqlSession.selectOne("areaSQL.searchArea", searchText) != null){
+			System.out.println("=" + sqlSession.selectOne("areaSQL.searchArea", searchText));
+			map.put("content_seq", "2");
+			map.put("seq", sqlSession.selectOne("areaSQL.searchArea", searchText));
+		}else if(sqlSession.selectOne("areaSQL.searchPop", searchText) != null) {
+			map.put("content_seq", "3");
+			map.put("seq", sqlSession.selectOne("areaSQL.searchPop", searchText));
+		}else if(sqlSession.selectOne("areaSQL.searchActivity", searchText) != null) {
+			map.put("content_seq", "5");
+			map.put("seq", sqlSession.selectOne("areaSQL.searchActivity", searchText));
+		}else {
+			map.put("content_seq", "없음");
+			map.put("seq", "없음");
+		}
+		return map;
 	}
 }

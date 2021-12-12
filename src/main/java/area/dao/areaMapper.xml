@@ -63,4 +63,16 @@
 		join img on(tripmain.main_seq = seq)
 		where content_seq = 2 and tripmain.main_seq = #{main_seq}
 	</select>
+	
+	<select id="searchArea" parameterType="String" resultType="String">
+		select main_seq from tripmain where main_name = #{searchText}
+	</select>
+	
+	<select id="searchPop" parameterType="String" resultType="String">
+		select pop_seq from trippop where pop_name = #{searchText}
+	</select>
+
+	<select id="searchActivity" parameterType="String" resultType="String">
+		select activity_seq from tripactivity where activity_name = #{searchText}
+	</select>
 </mapper>

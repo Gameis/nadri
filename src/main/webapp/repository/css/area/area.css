@@ -126,10 +126,13 @@ button, input, optgroup, select, textarea {
 /* areaDestination */
 /* areaNav */
 #areaNav {
+	position: sticky;
+	top: 0px;
     margin-top: 24px;
     display: flex;
     max-width: 1160px;
     flex: 1 1 0%;
+    z-index: 99;
 }
 
 .module {
@@ -291,6 +294,37 @@ button, input, optgroup, select, textarea {
     padding-top: 1px;
 }
 
+
+.hotelCard {
+	max-height: 450px; 	
+}
+
+.hotel-score-item {
+	font-size: small;
+	text-align: left;
+}
+
+.score-bar {
+	width: 100%;
+	top: 20px;
+}
+.base-bar {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 8px;
+	background: #DADFE6;
+	top: -10px;
+	
+}
+
+.bar {
+	position: absolute;
+	display: inline-block;
+	height: 8px;
+	background: #4978CE;
+}
+/**/
 .areaActivity_use {
     padding-top: 4px;
 }

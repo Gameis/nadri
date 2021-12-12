@@ -4,7 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,6 +111,12 @@ public class AreaController {
 			areaService.imgActivityWrite(imgDTO);
 		}//for
 		
+	}
+	
+	@RequestMapping(value="/search", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, String> search(@RequestParam("searchText") String searchText) {
+		return areaService.search(searchText);
 	}
 	
 	private boolean checkImageType(File file) {

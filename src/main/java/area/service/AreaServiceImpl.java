@@ -1,6 +1,7 @@
 package area.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -57,6 +58,11 @@ public class AreaServiceImpl implements AreaService {
 	public List<OnAreaDTO> onArea(String main_seq) {
 		return areaDAO.onArea(main_seq);
 		
+	}
+	
+	@Override
+	public Map<String, String> search(String searchText) {
+		return areaDAO.search(searchText);
 	}
 
 

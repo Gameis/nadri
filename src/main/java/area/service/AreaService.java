@@ -1,6 +1,7 @@
 package area.service;
 
 import java.util.List;
+import java.util.Map;
 
 import area.bean.ImgDTO;
 import area.bean.OnAreaDTO;
@@ -23,4 +24,6 @@ public interface AreaService {
 	public List<PopMainDTO> onAreaActivity(int main_seq);
 
 	public List<OnAreaDTO> onArea(String main_seq);
+
+	public Map<String, String> search(String searchText);
 }

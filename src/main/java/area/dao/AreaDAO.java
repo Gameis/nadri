@@ -1,6 +1,7 @@
 package area.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import area.bean.ImgDTO;
 import area.bean.OnAreaDTO;
@@ -24,5 +25,7 @@ public interface AreaDAO {
 	public List<PopMainDTO> printActivityMain(int main_seq);
 
 	public List<OnAreaDTO> onArea(String main_seq);
+
+	public Map<String, String> search(String searchText);
 
 }
