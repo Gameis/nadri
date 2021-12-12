@@ -31,6 +31,11 @@ public class TripmomentController {
 	@Autowired
 	private TripmomentService tripmomentService;
 	
+	@RequestMapping(value = "/tripmoment_writeForm", method = RequestMethod.GET)
+	public String tripmoment_writeForm() {	
+		return "/repository/jsp/tripmoment/tripmoment_writeForm";
+	}
+	
 	@RequestMapping(value = "/tripmoment_writeForm", method=RequestMethod.POST)
 	@ResponseBody
 	public String tripmoment_writeForm(
@@ -50,7 +55,7 @@ public class TripmomentController {
 		} //for
 
 		
-		return "/main/tripmoment_writeForm";
+		return "/tripmoment/tripmoment_writeForm";
 	}
 	
 	private boolean checkImageType(File file) {
@@ -88,10 +93,16 @@ public class TripmomentController {
 		return tripmomentService.getTripView(moment_seq);
 	}
 	
+	@RequestMapping(value="/onReTripmoment", method=RequestMethod.GET)
+	@ResponseBody
+	public List<MainTripmomentDTO> onReTripmoment(@RequestParam("moment_seq") String moment_seq) {
+		return tripmomentService.onReTripmoment(moment_seq);
+	}
+	
 		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
-//			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
+			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
 			//String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
-			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+			//String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
 			
 			String fileName = null;
 			File file = null;

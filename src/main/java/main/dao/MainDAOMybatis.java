@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import area.bean.ImgDTO;
 import main.bean.TripMainDTO;
+import main.bean.TripMainImgDTO;
 
 @Repository
 @Transactional
@@ -28,8 +29,8 @@ public class MainDAOMybatis implements MainDAO {
 	}
 
 	@Override
-	public List<TripMainDTO> mainImgPrint(int main_seq) {
-		return sqlSession.selectList("mainSQL.mainImgPrint", main_seq);
+	public List<TripMainImgDTO> mainImgPrint() {
+		return sqlSession.selectList("mainSQL.mainImgPrint");
 	}
 
 }

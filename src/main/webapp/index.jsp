@@ -117,14 +117,13 @@
 			<!-- 인기여행지 -->
 			<span class="popular_trip_destination">인기여행지 <input
 				type="button" id="addAreaBtn" class="addButton" value="+">
-				</h2>
 			</span>
 
 
 			<div class="popular_trip_destination_index_content">
 				<div class="popularcitylist">
 					<div class="index_content_popular">
-						<div class="index_popular-dest"
+						<div class="index_popular-dest" id="index_popular-dest"
 							style="z-index: 1; position: relative">
 
 							<div class="index_popular">
@@ -203,72 +202,13 @@
 										</video>
 										<img class="Video_module"
 											src="/nadri/repository/img/main/jeonju_7.jpg"
-											style="width: 100%; height: 100%;"> </a>
+											style="width: 100%; height: 100%;">
 										<p class="img-wrap_title">
 											<a class="title" title="전주" href="">전주</a>
 										</p>
 									</div>
 								</div>
 							</div>
-
-							<div class="index_popular">
-								<div class="DestinationStyle">
-									<div class="img-wrap">
-										<a title="" href=""> <img alt=""
-											src="./repository/img/main/jeonju_1.jpg">
-										</a>
-										<p class="img-wrap_title">
-											<a class="title" title="" href=""></a>
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="index_popular">
-								<div class="DestinationStyle">
-									<div class="img-wrap">
-										<a title="" href=""> <img alt=""
-											src="./repository/img/main/jeonju_1.jpg">
-										</a>
-										<p class="img-wrap_title">
-											<a class="title" title="" href=""></a>
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="index_popular">
-								<div class="DestinationStyle">
-									<div class="img-wrap">
-										<a title="" href=""> <img alt=""
-											src="./repository/img/main/jeonju_1.jpg">
-										</a>
-										<p class="img-wrap_title">
-											<a class="title" title="" href=""></a>
-										</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="index_popular">
-								<div class="DestinationStyle">
-									<div class="img-wrap">
-										<a title="" href=""> <img alt=""
-											src="./repository/img/main/jeonju_1.jpg">
-										</a>
-										<p class="img-wrap_title">
-											<a class="title" title="" href=""></a>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="MoreBtnStyle">
-							<a style="margin-top: unset" title="인기 여행지 더 보기" href=""
-								class="moreBtn">인기 여행지 더 보기</a>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -278,7 +218,9 @@
 				style="position: relative; background-color: #fff; max-width: 1160px; margin: 0px auto;">
 				<h2 class="trip_moment_title">트립 모먼트</h2>
 				<div class="release_btn_con">
-					<div class="release_btn">포스팅하러 가기</div>
+					<div class="release_btn">
+						<a type="button" href="/nadri/tripmoment/tripmoment_writeForm" style="color: #fff;">포스팅하러 가기</a>
+					</div>
 				</div>
 			</div>
 
@@ -312,8 +254,6 @@
 			</jsp:include>
 		</footer>
 	</div>
-
-
 
 </body>
 <!-- 검색창 자동 완성 기능 -->
@@ -402,6 +342,48 @@
 	Video_module_jeonju.addEventListener('mouseout', function() {
 		video.pause()
 	}, false);
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url : '/nadri/main/mainImgPrint',
+			type : 'get',
+			success : function(data) {
+				alert(JSON.stringify(data));
+				alert('성공~');
+				
+			$.each(data, function(index, items){	
+				
+				$('<div>', {
+					class : "index_popular"
+				}).append($('<div>', {
+					class : 'DestinationStyle'
+				}).append($('<div>', {
+					class : 'img-wrap'
+				}).append($('<a>', {
+					title: '',
+					href : ''
+				}).append($('<img>', {
+					alt : '',
+					src : '/nadri/repository/img/' + items.img_path + '/' + items.img_name
+				}))).append($('<p>', {
+					class : "img-wrap_title"	
+				}).append($('<a>', {
+					class : "title",
+					title : "",
+					href : "",
+					text : '제주'
+				}))))).appendTo($('#index_popular-dest'));
+				
+			})//each
+				
+			},
+			error : function(err) {
+				alert('???')
+			}
+		});
+	});
 </script>
 
 <!-- Channel Plugin Scripts -->

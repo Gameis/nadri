@@ -42,4 +42,9 @@ public class TripmomentServiceImpl implements TripmomentService {
 	public TripViewDTO getTripView(String moment_seq) {
 		return tripmomentDAO.getTripView(moment_seq);
 	}
+
+	@Override
+	public List<MainTripmomentDTO> onReTripmoment(String moment_seq) {
+		return tripmomentDAO.onReTripmoment(moment_seq);
+	}
 }

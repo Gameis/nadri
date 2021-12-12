@@ -108,11 +108,16 @@
 						<div class="PublicPrivacyContainer tripmt-pv">
 							<div class="agreement">
 								<div class="checkbox">
-									<img alt="checkbox"
-										src="/nadri/repository/img/main/checkbox.png"
-										class="checkbox-icon"> <span class="privacy-text">콘텐츠
-										업로드에 있어서, 트립닷컴의 이용약관에 동의합니다.</span> <a class="protocol"
+									<input type="hidden" id="checked" value="false"> 
+									<img alt="checkbox" src="/nadri/repository/img/main/checkbox.png"
+										class="checkbox-icon" id="checkbox"> 
+									<img alt="checkbox_checked" src="/nadri/repository/img/main/checkbox_checked.png"
+										class="checkbox-icon checkbox_checked" id="checkbox_checked">
+									<span class="privacy-text"> 콘텐츠 업로드에 있어서, 트립닷컴의 이용약관에 동의합니다. <a class="protocol"
 										href="https://pages.trip.com/m/service-clause-ko-kr.html">이용약관</a>
+									</span>
+									<p class="privacy-unagree-tips">사용약관 및 개인정보 보호 정책을 읽은 후
+										체크박스에 동의해주세요</p>
 								</div>
 							</div>
 						</div>
@@ -130,7 +135,8 @@
 		<footer> </footer>
 	</div>
 	</div>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript"
+		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
     window.onload = function(){
        ( /* att_zone : 이미지들이 들어갈 위치 id, btn : file tag id */
@@ -166,7 +172,6 @@
                  attZone.addEventListener('dragover', function(e){
                    e.preventDefault();
                    e.stopPropagation();
-                   
                  }, false)
                
                  attZone.addEventListener('drop', function(e){
@@ -233,6 +238,22 @@
  }
 </script>
 	<script>
+	$(function(){
+		$("#checkbox").show();
+		$('#checkbox_checked').hide();
+		
+		$('#checkbox').click(function(){
+			$('#checkbox').hide();
+			$('#checkbox_checked').show();
+			$('#checked').val('true');
+		});
+		
+		$('#checkbox_checked').click(function(){
+			$('#checkbox').show();
+			$('#checkbox_checked').hide();
+			$('#checked').val('false');
+		});
+	});
     $(".submit").click(function() {
         <%--var img[] = $('.image-upload').val(); --%>
         var moment_title = $('#moment_title').val();
@@ -243,6 +264,7 @@
         $('.title-warn').css('display', 'none');
         $('.content-warn').css('display', 'none');
         $('.location-warn').css('display', 'none');
+        $('.privacy-unagree-tips').css('display', 'none');
 
         if (!$('#btnAtt').val()) {
            $('.image-warn').css('display', 'block');
@@ -258,7 +280,11 @@
 
         else if (pop_name == "") {
            $('.location-warn').css('display', 'block');
+        }
 
+        else if ($('#checked').val() == 'false') {
+           $('.privacy-unagree-tips').css('display', 'block');
+           
         } else {
 
            var formData = new FormData(
@@ -277,10 +303,12 @@
                  console.log(err)
               }
            });
+            
+                 return "/nadri/repository/index";
         }
      });
 </script>
 
-	
+
 </body>
 </html>

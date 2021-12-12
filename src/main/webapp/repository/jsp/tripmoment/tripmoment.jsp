@@ -18,13 +18,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+	crossorigin="anonymous"></script>
 </head>
 <body>
-<input type="hidden" id="moment_seq" value="${param.moment_seq}"/>
+	<input type="hidden" id="moment_seq" value="${param.moment_seq}" />
 
 	<div class="travel_guide_root_class">
 		<div class="TravelDetailContainer">
@@ -61,7 +81,7 @@
 				<!-- Tripmoment container -->
 				<div style="margin-top: 8px; width: 100%;">
 					<div class="PhotoStyle photo_style">
-						<div class="imageGallery">
+						<div class="imageGallery imagallery-noback">
 							<div class="carouselWrap">
 								<div class="carousel_list_imgs_list">
 									<div class="image-gallery" aria-live="polite">
@@ -70,30 +90,30 @@
 												<div id="carouselExampleFade"
 													class="carousel slide carousel-fade"
 													data-bs-ride="carousel">
-													<div class="carousel-inner">
+													<div id="carousel-inner" class="carousel-inner">
 														<div class="carousel-item active">
-															<img alt=""
-																src="/nadri/repository/img/main/gangneung_4.jpg"
-																class="img-img">
+															<img alt="" src="#" class="img-img" id="carousel_item0">
 															<div class="img-grey"></div>
-															<img src="/nadri/repository/img/main/gangneung_4.jpg"
-																class="d-block w-100" alt="...">
+															<img id="carousel-item0" src="#" class="d-block w-100"
+																alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt=""
-																src="/nadri/repository/img/main/gangneung_2.jpg"
-																class="img-img">
+															<img alt="" src="#" class="img-img" id="carousel_item1">
 															<div class="img-grey"></div>
-															<img src="/nadri/repository/img/main/gangneung_2.jpg"
-																class="d-block w-100" alt="...">
+															<img id="carousel-item1" src="#" class="d-block w-100"
+																alt="...">
 														</div>
 														<div class="carousel-item">
-															<img alt=""
-																src="/nadri/repository/img/main/gangneung_3.jpg"
-																class="img-img">
+															<img alt="" src="#" class="img-img" id="carousel_item2">
 															<div class="img-grey"></div>
-															<img src="/nadri/repository/img/main/gangneung_3.jpg"
-																class="d-block w-100" alt="..." style="width: 650px;">
+															<img id="carousel-item2" src="#" class="d-block w-100"
+																alt="...">
+														</div>
+														<div class="carousel-item">
+															<img alt="" src="#" class="img-img" id="carousel_item3">
+															<div class="img-grey"></div>
+															<img id="carousel-item3" src="#" class="d-block w-100"
+																alt="...">
 														</div>
 													</div>
 													<button class="carousel-control-prev" type="button"
@@ -108,55 +128,22 @@
 													</button>
 												</div>
 
-												<div class="image-gallery-index">
-													<span class="image-gallery-index-current">1</span> <span
-														class="image-gallery-index-separator">/</span> <span
-														class="image-gallery-index-total">8</span>
+												<div id="container-pop" class="container">
+													<div id="row-cols-4-pop" class="row row-cols-4">
+														<img id="col-img0" class="col" src="#"></img> <img
+															id="col-img1" class="col" src="#"></img> <img
+															id="col-img2" class="col" src="#"></img> <img
+															id="col-img3" class="col" src="#"></img>
+													</div>
+													<!-- row-cols-4 -->
 												</div>
+												<!-- container -->
+
 											</div>
 											<!-- image-gallery-slide-wrapper bottom -->
 
 											<!-- thumbnails -->
-											<div
-												class="image-gallery-thumbnails-wrapper container image-gallery-overview">
-												<div class="image-gallery-thumbnails">
-													<div style="display: flex;">
-														<button type="button"
-															class="image-gallery-left-nav image-gallery-overview-left-nav">
-															<i class="c-icon icon-back-top arrow-left"></i>
-														</button>
 
-														<button type="button"
-															class="image-gallery-right-nav image-gallery-overview-right-nav">
-															<i class="c-icon icon-back-top arrow-right"></i>
-														</button>
-													</div>
-													<div class="row row-cols-4">
-
-														<a role="button" aria-pressed="true"
-															aria-label="Go to Slide 3"
-															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img id="col-img1" class="col"
-															src="/nadri/repository/img/main/gangneung_5.jpg"></img>
-														</a> <a role="button" aria-pressed="true"
-															aria-label="Go to Slide 3"
-															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img id="col-img2" class="col"
-															src="/nadri/repository/img/main/gangneung_6.jpg"></img>
-														</a> <a role="button" aria-pressed="true"
-															aria-label="Go to Slide 3"
-															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img id="col-img3" class="col"
-															src="/nadri/repository/img/main/gangneung_7.jpg"></img>
-														</a> <a role="button" aria-pressed="true"
-															aria-label="Go to Slide 4"
-															class="image-gallery-thumbnail image-gallery-thumbnail-photo-list active overview-list">
-															<img id="col-img4" class="col"
-															src="/nadri/repository/img/main/gangneung_8.jpg"></img>
-														</a>
-													</div>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -253,332 +240,8 @@
 				</div>
 				<!-- 관련 트립 모먼트 -->
 				<div class="travel-photo-title">관련 트립모먼트</div>
-				<div class="PhotoListStyle tripphoto">
-					<div style="position: relative; height: 1250px;">
-						<div class="item item-odd"
-							style="position: absolute; left: 0px; top: 0px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-even"
-							style="position: absolute; left: 290px; top: 0px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-										<path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-										</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-odd"
-							style="position: absolute; left: 580px; top: 0px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-even"
-							style="position: absolute; left: 870px; top: 0px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  										<path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-										</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-odd"
-							style="position: absolute; left: 0px; top: 430px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  										<path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-										</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-even"
-							style="position: absolute; left: 290px; top: 430px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  										<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  										<path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-										</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-odd"
-							style="position: absolute; left: 580px; top: 430px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-even"
-							style="position: absolute; left: 870px; top: 430px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-odd"
-							style="position: absolute; left: 580px; top: 860px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-even"
-							style="position: absolute; left: 0px; top: 860px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-odd"
-							style="position: absolute; left: 290px; top: 860px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="/nadri/repository/img/main/jeonju_1.jpg">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item item-even"
-							style="position: absolute; left: 870px; top: 860px;">
-							<div class="content">
-								<div class="img-tripmoment">
-									<a href="" title="서울, 추천 트립 모먼트"> <img class="img"
-										alt="서울, 추천 트립 모먼트"
-										src="https://youimg1.tripcdn.com/target/100s1f000001gx70tD814_C_640_470.jpg_.webp?proc=source%2ftrip">
-									</a>
-								</div>
-
-
-								<div class="text">
-									<a style="color: black;" data-line-clamp="2" class="item-title"
-										title="서울, 추천 트립 모먼트"> 추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜</a>
-									<div class="user ellipsis">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-											fill="currentColor" class="bi bi-person-circle"
-											viewBox="0 0 16 16">
-  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-  <path fill-rule="evenodd"
-												d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-</svg>
-										<span class="nickname">골골골</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<div class="PhotoListStyle tripphoto" id="PhotoListStyle">
+					<div style="position: relative; height: 1250px;"></div>
 				</div>
 			</div>
 		</div>
@@ -596,52 +259,8 @@
 		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript"
 		src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
-	<!-- <script type="text/javascript">
-$(function(){
-	
-	//이미지
-	$.ajax({
-		url: '/nadri/popular/getPopImg',
-		type: 'post',
-		data: 'pop_seq='+$('#pop_seq').val(),
-		success: function(data){
-			alert(JSON.stringify(data));
-			
-			//이미지 데이터 넣기
-			$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
-			$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
-			$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
-			$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
-			
-			$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
-			$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
-			$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
-			$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
-			
-			//이미지 클릭시 보여주기
-			$('.row-cols-4').find('#col-img0').click(function() {
-				$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
-			});
-			$('.row-cols-4').find('#col-img1').click(function() {
-				$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
-			});
-			$('.row-cols-4').find('#col-img2').click(function() {
-				$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
-			});
-			$('.row-cols-4').find('#col-img3').click(function() {
-				$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
-			});
 
-
-		},
-		error: function(err){
-			console.log(err);
-			alert('이미지 ajax 실패했다')
-		}
-	});
-</script> -->
-
-<script type="text/javascript">
+	<script type="text/javascript">
 	$(function() {
 		$.ajax({
 			url : '/nadri/tripmoment/getTripImg',
@@ -649,7 +268,37 @@ $(function(){
 			data : 'moment_seq=' + $('#moment_seq').val(),
 			success : function(data) {
 				alert(JSON.stringify(data));
-				alert('성공');
+				alert('오옷! 성공~');
+				
+				//이미지 데이터 넣기
+				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
+				$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
+				$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
+				$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
+				
+				$('#carousel_item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
+				$('#carousel_item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
+				$('#carousel_item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
+				$('#carousel_item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
+				
+				$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
+				$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
+				$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
+				$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
+				
+				//이미지 클릭시 보여주기
+				$('.row-cols-4').find('#col-img0').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/' + data[0].img_name);
+				});
+				$('.row-cols-4').find('#col-img1').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/' + data[1].img_name);
+				});
+				$('.row-cols-4').find('#col-img2').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/' + data[2].img_name);
+				});
+				$('.row-cols-4').find('#col-img3').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/' + data[3].img_name);
+				});
 			},
 			
 			error : function(err) {
@@ -668,6 +317,62 @@ $(function(){
 			
 			error : function(err) {
 				alert('ㅠㅠ')
+			}
+		});
+		
+		$.ajax({
+			url : '/nadri/tripmoment/onReTripmoment',
+			type : 'get',
+			data : 'moment_seq=' + $('#moment_seq').val(),
+			success : function(data) {
+				alert(JSON.stringify(data));
+				alert('성공~~~~~~~~~~~~~~~~~~~~~~~~~~');
+
+				var left = 0; 
+				var top = -430;
+				$.each(data, function(index, items){
+			
+				if(index % 4 == 0) {
+					left = 0; top = top + 430; 
+				}
+				else if(index % 4 == 1) left = 290;
+				else if(index % 4 == 2) left = 580;
+				else if(index % 4 == 3) left = 870;
+
+				$('<div>', {
+					class: 'item item-odd',
+					style : 'position : absolute; left: '+left+'px; top: '+ top +'px'
+				}).append($('<div>', {
+					class : 'content'	
+				}).append($('<div>', {
+					class : 'img-tripmoment'
+				}).append($('<a>', {
+					href : "",
+					title : '서울, 추천 트립 모먼트'
+				}).append($('<img>', {
+					class : 'img',
+					alt : '서울, 추천 트립모먼트',
+					src : '/nadri/repository/img/' + items.img_path + '/' + items.img_name
+				})))).append($('<div>', {
+					class : 'text'	
+				}).append($('<a>', {
+					style : 'color : black;',
+					class : 'item-title',
+					title : '서울, 추천 트립 모먼트',
+					text : '추운날 몸을 녹여줄 따뜻한 돼지곰탕🍜🍜🍜'
+				})).append($('<div>', {
+					class : 'user ellipsis'
+				}).append($('<i>', {
+					class : 'bi bi-person-circle'			
+				})).append($('<span>', {
+					class : 'nickname',
+					text : '골골골'
+				}))))).appendTo($('#PhotoListStyle > div'));
+				
+				})//each	
+			},
+			error : function(err) {
+				alert('실~~~~~~~~~~패~~~~~~~')
 			}
 		});
 	});
