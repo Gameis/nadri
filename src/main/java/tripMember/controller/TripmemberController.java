@@ -52,7 +52,12 @@ public class TripmemberController {
 			session.setAttribute("memName", tripmemberDTO2.getName());
 			session.setAttribute("memId",  tripmemberDTO2.getId());
 			session.setAttribute("memEmail",tripmemberDTO2.getEmail1()+"@"+tripmemberDTO2.getEmail2());
-					
+			session.setAttribute("profileImg",tripmemberDTO2.getProfileImg());
+			session.setAttribute("member_seq",tripmemberDTO2.getMember_seq());
+			session.setAttribute("nickName",tripmemberDTO2.getNickName());
+
+			
+			
 			//복호화된 비밀번호 비밀번호 비교하기
 			inputPwd = tripmemberDTO.getPwd();	//로그인시 입력한 비번
 			dbPwd = tripmemberDTO2.getPwd();		//db에서 꺼내온 비번

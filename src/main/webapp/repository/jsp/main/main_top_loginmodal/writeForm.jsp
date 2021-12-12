@@ -55,9 +55,9 @@
 	
 		
 			<div class="id_wrap">
-				<div class="img_name">사진</div>
+				<div class="img_name"></div>
 				<div class="img_input_box">
-					<input class="img_input" id="profileImg" name="profileImg">
+					<input type="hidden" class="img_input" id="profileImg" name="profileImg" value="defaultImg.png">
 				</div>
 			</div>
 	

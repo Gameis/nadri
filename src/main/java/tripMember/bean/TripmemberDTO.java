@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 public class TripmemberDTO {
 
+	private String member_seq;
 	private String name;
 	private String id;
 	private String nickName;
