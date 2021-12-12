@@ -134,8 +134,13 @@ button, input, optgroup, select, textarea {
 	flex-direction: row;
 	margin-bottom: 64px;
 	display: flex;
+	position: relative;
+	margin-top: 8px;
+	flex-direction: row;
+	margin-bottom: 64px;
 }
 
+}
 .imageGallery {
 	position: relative;
 	top: 0px;
@@ -149,249 +154,71 @@ button, input, optgroup, select, textarea {
 	order: 1;
 }
 
-.imageGallery .carouselWrap {
-	position: relative;
-}
-
-.carousel_list_imgs_list {
-	transform: scale(1, 1) translateX(0px);
-}
-
-.image-gallery-content {
-	padding: 0px;
-}
-
-.image-gallery-slide-wrapper {
-	position: relative;
-}
-
-.carousel-item {
-	bottom: 0px !important;
-}
-
-.carousel-item .img-img {
-	overflow: hidden;
-	position: relative;
-	margin-left: 0px;
-	width: 100% !important;
-	height: 100% !important;
-	transform: scaleX(1) !important;
-}
-
-.carousel-item img {
-	position: absolute;
-	right: 0px;
-}
-
-.img-grey {
-	background: rgba(78, 78, 78, 0.75);
-}
-
-.carousel-item img {
-	top: 0px;
-	left: 0px;
-	width: 100% !important;
-	object-fit: contain !important;
-	width: 625px !important;
-	display: block;
-}
-
-.carousel-control-prev-icon {
-	height: 64px;
-	width: 64px;
-	box-shadow: none;
-	transform: translateY(-50%) scale(1);
-	left: 16px !important;
-	margin-top: 52px;
-	background:
-		url(https://ak-d.tripcdn.com/images/0AS4s120008am3vd9B541.png) 0% 0%/100%
-		100% no-repeat transparent;
-	padding: 0px;
-	border-width: initial;
-	border-style: none;
-	border-color: initial;
-	border-image: initial;
-	background:
-		url(https://ak-d.tripcdn.com/images/0AS4s120008am3vd9B541.png) 0% 0%/100%
-		100% no-repeat transparent;
-}
-
-.carousel-control-next-icon {
-	height: 64px;
-	width: 64px;
-	box-shadow: none;
-	transform: translateY(-50%) scale(1);
-	right: 16px !important;
-	margin-top: 52px;
-	background:
-		url(https://ak-d.tripcdn.com/images/0AS6t120008am43i619BF.png) 0% 0%/100%
-		100% no-repeat transparent;
-	padding: 0px;
-	border-width: initial;
-	border-style: none;
-	border-color: initial;
-	border-image: initial;
-}
-
-/* 페이지 표시 */
-.image-gallery-index {
-	text-align: center;
-	position: absolute;
-	bottom: 20px;
-	width: 100%;
-	transform: scale(1);
-}
-
-.image-gallery-index span {
-	font-family: #fff;
-}
-
-/* Image Carousel 하단부 */
-.image-gallery-thumbnails-wrapper.image-gallery-overview {
-	width: 650px !important;
-	background: rgba(0, 0, 0, .8);
-}
-
-.carouselWrap .carousel_list_imgs_list .image-gallery-thumbnails-wrapper
-	{
-	margin-left: auto !important;
-	margin-right: auto !important;
-	overflow: hidden !important;
-}
-
-.image-gallery-thumbnails-wrapper {
-	position: relative;
-	margin: 0 1px;
-}
-
-.image-gallery-thumbnails {
-	overflow: hidden;
-	padding: 5px 0;
-	position: relative;
-}
-
-.image-gallery-left-nav[disabled].image-gallery-overview-left-nav {
-	background-color: rgba(0, 0, 0, 0) !important;
-}
-
-.image-gallery .image-gallery-left-nav.image-gallery-overview-left-nav {
-	width: 48px;
-	height: 136px;
-	display: flex;
-	-webkit-box-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	align-items: center;
-	left: 0px !important;
-	background-image: none !important;
-	background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-.image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
-	{
-	color: rgb(42, 125, 250);
-}
-
-.image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left {
-	color: rgb(255, 255, 255);
-	transform: rotateZ(270deg);
-}
-
-.image-gallery-left-nav:hover.image-gallery-overview-left-nav .arrow-left
-	{
-	color: rgb(42, 125, 250);
-}
-
-.image-gallery-left-nav.image-gallery-overview-left-nav .arrow-left {
-	color: rgb(255, 255, 255);
-	transform: rotateZ(270deg);
-}
-
-.image-gallery .image-gallery-right-nav.image-gallery-overview-right-nav
-	{
-	width: 48px;
-	height: 136px;
-	display: flex;
-	-webkit-box-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	align-items: center;
-	left: 578px !important;
-	right: 0px !important;
-	background-image: none !important;
-	background-color: rgba(0, 0, 0, 0.7) !important;
-	position: absolute;
-}
-
-.image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
-	{
-	color: rgb(255, 255, 255);
-	opacity: 0.2;
-}
-
-.image-gallery-right-nav[disabled].image-gallery-overview-right-nav .arrow-right
-	{
-	color: rgb(255, 255, 255);
-	opacity: 0.2;
-}
-
-.image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right {
-	color: rgb(255, 255, 255);
-	transform: rotateZ(90deg);
-}
-
-.image-gallery-right-nav.image-gallery-overview-right-nav .arrow-right {
-	color: rgb(255, 255, 255);
-	transform: rotateZ(90deg);
-}
-
-.image-gallery-overview .row-cols-4 {
-	/* padding: 0 52px; */
-	
-}
-
-.image-gallery-thumbnails .row-cols-4 {
-	text-align: center;
-	-webkit-transition: -webkit-transform .45s ease-out;
-	transition: -webkit-transform .45s ease-out;
-	transition: transform .45s ease-out;
-	transition: transform .45s ease-out, -webkit-transform .45s ease-out;
-	white-space: nowrap;
-	position: absolute;
-	z-index: 100;
-	bottom: 14.7px;
-	left: 60px;
-}
-
-.imageGallery .carouselWrap .carousel_list_imgs_list .image-gallery-thumbnail.active
-	{
-	margin-left: 1px;
-}
-
-.image-gallery-thumbnail.active {
-	border: 4px solid #2979ff;
-}
-
-.image-gallery-thumbnail-photo-list.overview-list {
-	height: 120px;
-	width: 120px;
-}
-
-.image-gallery-thumbnail>div, .image-gallery-thumbnail img {
-	vertical-align: middle;
-	width: 100%;
+.carouselWrap {
+	width: 670px;
 	height: 100%;
 }
 
-/*.PhotoStyle .img-grey {
+.carousel-item .img-img {
+	z-index: -1;
+	position: relative;
+	margin-left: 0px;
+	width: 100% !important;
+	/* height: 100% !important; */
+	object-fit: fill !important;
+}
+
+.carousel-item img {
+	background-image: none ! important;
+}
+
+.carousel-item img {
+	position: absolute;
+	top: 6px;
+	left: 0px;
+	height: 630px;
+}
+
+.carousel-item .img-grey {
 	background: rgba(78, 78, 78, 0.75);
 	z-index: -1;
-    margin-left: 0px;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: fill !important;
+	margin-left: 0px;
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: fill !important;
 }
-*/
+
+.carousel-item img {
+	/* height: 100%; */
+	object-fit : contain !important;
+	background: rgba(78, 78, 78, 0.75);
+}
+
+#container-pop {
+	height: 150px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.row-cols-4 {
+	overflow: hidden;
+	height: 100%;
+}
+
+.row-cols-4>img {
+	justify-content: space-between;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+	width: 25%;
+	object-fit: cover;
+	border: 7px solid rgb(15, 41, 77, 0.7);
+}
+
+#row-cols-4-pop>.col:hover {
+	border: 5px solid #2979ff;;
+}
 
 /* BoxRight */
 .BoxRight {

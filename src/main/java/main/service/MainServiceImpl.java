@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import area.bean.ImgDTO;
 import main.bean.TripMainDTO;
+import main.bean.TripMainImgDTO;
 import main.dao.MainDAO;
 
 @Component
@@ -28,8 +29,14 @@ public class MainServiceImpl implements MainService {
 	}
 
 	@Override
+	public List<TripMainImgDTO> mainImgPrint() {
+		return mainDAO.mainImgPrint();
+	}
+
+	@Override
 	public List<TripMainDTO> mainImgPrint(int main_seq) {
-		return mainDAO.mainImgPrint(main_seq);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

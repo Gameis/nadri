@@ -7,6 +7,7 @@
 	<typeAliases>
 	
 		<typeAlias type="main.bean.TripMainDTO" alias="tripMain"/>
+		<typeAlias type="main.bean.TripMainImgDTO" alias="tripMainImg"/>
 		
 		<typeAlias type="pop.bean.TripPopReviewDTO" alias="popReview"/>
 		<typeAlias type="pop.bean.TripPopLocationDTO" alias="popLocation"/>
