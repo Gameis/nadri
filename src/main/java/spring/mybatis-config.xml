@@ -24,8 +24,8 @@
 
  		<typeAlias type="tripmember.bean.TripmemberDTO" alias="tripmember"/>
 		<typeAlias type="tripmember.bean.ZipcodeDTO" alias="zipcode"/>		
-		<typeAlias type="tripmember.bean.TripmemberImageDTO" alias="tripmemberImg"/>		
-		
+<!-- 		<typeAlias type="tripmember.bean.TripmemberImageDTO" alias="tripmemberImg"/>		
+ -->		
 		<typeAlias type="area.bean.PopMainDTO" alias="popMain"/>
 		<typeAlias type="area.bean.ActivityMainDTO" alias="activityMain"/>
 		

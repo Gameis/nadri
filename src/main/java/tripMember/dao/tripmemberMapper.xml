@@ -22,11 +22,11 @@
 	</select> 	
 	
  	<insert id="write" parameterType="tripmember">
-		insert into tripmember values(#{name}, #{id}, #{pwd}
-								,#{email1}, #{email2}
+		insert into tripmember values(member_seq.nextval,#{name}, #{id},#{nickName},#{pwd}
 								,#{tel1}, #{tel2}, #{tel3}
-								,#{zipcode}, #{address}, #{addressDetail}
-								,#{profileImg},#{nickName}, sysdate) 	
+								,#{email1}, #{email2}
+								,#{zipcode}, #{address}, #{addressDetail},#{profileImg}
+								, sysdate) 	
 	</insert>	
 	
  	<select id="getTripmemberInfo" parameterType="String" resultType="tripmember">

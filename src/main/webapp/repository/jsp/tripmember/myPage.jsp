@@ -12,7 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
  
     <!-- Custom styles for this template -->
-<link href="/nadri/repository/css/member/myPage.css" rel="stylesheet">
+<link href="/nadri/repository/css/tripmember/myPage.css" rel="stylesheet">
   </head>
 <body>
 
@@ -40,11 +40,12 @@
 		         	<li><a href="#" id="memberInfo" class="link-dark rounded">개인정보확인</a></li>	  		  
 		    	  --> 
 		            
-		          	<li><a href="/nadri/member/getMember" class="link-dark rounded">개인정보확인</a></li>
+		          	<li><a href="/nadri/tripmember/getTripmember" class="link-dark rounded">개인정보확인</a></li>
 		            	           	           
-		            <li><a href="/nadri/member/tripWrite" class="link-dark rounded">작성글관리</a></li>
-		            <li><a href="/nadri/member/modifyForm" class="link-dark rounded">회원정보수정</a></li>
-		            <li><a href="/nadri/member/deleteForm" class="link-dark rounded">회원탈퇴</a></li>        
+<!-- 		            <li><a href="/nadri/tripmember/tripWrite" class="link-dark rounded">작성글관리</a></li>
+ -->		          
+ 					<li><a href="/nadri/tripmember/modifyForm" class="link-dark rounded">회원정보수정</a></li>
+		            <li><a href="/nadri/tripmember/deleteForm" class="link-dark rounded">회원탈퇴</a></li>        
 		            <li><a href="#" class="link-dark rounded">알림설정</a></li>         
 		          </ul>
 		        </div>
@@ -94,6 +95,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/nadri/repository/js/member/myPage.js"></script>
+<script src="/nadri/repository/js/tripmember/myPage.js"></script>
 </body>
 </html>

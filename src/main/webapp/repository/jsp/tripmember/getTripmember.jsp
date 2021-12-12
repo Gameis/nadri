@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img alt="기본이미지" src="/nadri/repository/img/member/defaultimage.jfif" width="70" height="70" 
-style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/member/imageForm.jsp'">
+<img alt="기본이미지" src="/nadri/repository/img/tripmember/defaultimage.jfif" width="70" height="70" 
+style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/tripmember/imageForm.jsp'">
 <h3 style="display:inline;color:green;">등록된 이미지</h3>
 
 	<table id="memberTable" border="0" cellspacing="0" cellpadding="5" width="1000">
@@ -88,7 +88,7 @@ style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/member/ima
 $(function(){
 	$.ajax({
 		
-		url: '/nadri/member/getMemberInfo',
+		url: '/nadri/tripmember/getTripmemberInfo',
 		type: 'post',
 		dataType: 'json',
 		success:function(data){
@@ -99,7 +99,7 @@ $(function(){
 
 			$('#email').val(data.email1+"@"+data.email2);
 			$('#tel').val(data.tel1+"-"+data.tel2+"-"+data.tel3);
-			$('#add').val(data.zipcode+" "+data.addr1+" "+data.addr2);
+			$('#add').val(data.zipcode+" "+data.address+" "+data.addressDetail);
 			$('#date').val(data.logtime);
 
 		},	//success

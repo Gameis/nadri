@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<img alt="기본이미지" src="/nadri/repository/img/member/defaultimage.jfif" width="70" height="70" 
-style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/member/imageForm.jsp'">
+<img alt="기본이미지" src="/nadri/repository/img/tripmember/defaultimage.jfif" width="70" height="70" 
+style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/tripmember/imageForm.jsp'">
 <h3 style="display:inline;color:green;">등록된 이미지</h3>
 <input type="button" value="이미지변경하기">
 
@@ -128,7 +128,7 @@ style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/member/ima
  <script type="text/javascript">
 $(function(){
 	$.ajax({
-		url: '/nadri/member/getMemberInfo',
+		url: '/nadri/tripmember/getMemberInfo',
 		type: 'post',
 		dataType: 'json',
 		success:function(data){
@@ -138,7 +138,7 @@ $(function(){
 
 			$('#email').val(data.email1+"@"+data.email2);
 			$('#tel').val(data.tel1+"-"+data.tel2+"-"+data.tel3);
-			$('#add').val(data.zipcode+" "+data.addr1+" "+data.addr2);
+			$('#add').val(data.zipcode+" "+data.address+" "+data.addressDetail);
 		},
 		error:function(err){
 			console.log(err);
@@ -170,7 +170,7 @@ $('#modifyBtn').click(function(){
 
 	}else{
 		$.ajax({
-			url:'/nadri/member/modify',
+			url:'/nadri/tripmember/modify',
 			type:'post',		
 			data:$('#modifyForm').serialize(),
 

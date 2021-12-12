@@ -14,7 +14,7 @@ $('#loginBtn').click(function(){
 	else{
 
 		$.ajax({
-			url:'/nadri/member/login',
+			url:'/nadri/tripmember/login',
 			type: 'post',
 		//	data:$('#loginForm').serialize(),
 			
@@ -49,7 +49,7 @@ $('#loginBtn').click(function(){
 //로그아웃				
 $('#logoutBtn').click(function(){
 	$.ajax({
-			url:'/nadri/member/logOut',
+			url:'/nadri/tripmember/logOut',
 			type: 'post',
 						
 		success: function(){
@@ -87,7 +87,7 @@ $('#writeBtn').click(function(){
 	
 	}else{
 		$.ajax({
-			url:'/nadri/member/write',
+			url:'/nadri/tripmember/write',
 			type:'post',
 			data:$('#writeForm').serialize(),
 
@@ -111,7 +111,7 @@ $('#id').focusout(function(){
 		$('#idDiv').html('아이디를 입력해주세요');
 	}else{
 		$.ajax({
-			url:"/nadri/member/checkId",
+			url:"/nadri/tripmember/checkId",
 			type:'post',
 			data:'id='+$('#id').val(),	//json타입형식 {'id':$('#id').val()}
 
@@ -132,17 +132,17 @@ $('#id').focusout(function(){
 
 
 
-
+/*
 //우편번호 체크
 $('#zipcodeBtn').click(function(){
-	window.open("/nadri/repository/jsp/member/checkPost.jsp", "checkPost", "width=500 height=500 top=200 left=700");
+	window.open("/nadri/repository/jsp/tripmember/checkPost.jsp", "checkPost", "width=500 height=500 top=200 left=700");
 });
 
 
 //현재 새로운창이 떠있는상태
 $('#checkPostSearchBtn').click(function(){
 	$.ajax({
-		url:'/nadri/member/checkPostSearch',
+		url:'/nadri/tripmember/checkPostSearch',
 		type:'post',		
 		data:$('#checkPostForm').serialize(),
 		dataType: 'json',
@@ -178,9 +178,9 @@ $('#checkPostSearchBtn').click(function(){
 		$('.addressA').click(function(){
 			$('#zipcode', opener.document).val($(this).parent().prev().text());
 		
-			$('#addr1', opener.document).val($(this).text());
+			$('#address', opener.document).val($(this).text());
 			window.close();		//창만 닫힐뿐 제어권이 사라진게 아니다
-			$('#addr2', opener.document).focus();
+			$('#addressDetail', opener.document).focus();
 		});		// addressA click
 	
 			
@@ -193,7 +193,7 @@ $('#checkPostSearchBtn').click(function(){
 	});		//ajax
 });		//checkPostSearchBtn click
 
-
+*/
 //이메일 인증번호전송
 var mailcode = "";
 $("#mailcheckBtn").click(function(){
@@ -212,7 +212,7 @@ $("#mailcheckBtn").click(function(){
 		console.log(email);
 	   	$.ajax({
 	        type:"GET",
-	        url:"/nadri/member/mailCheck?email=" + email,
+	        url:"/nadri/tripmember/mailCheck?email=" + email,
 
 	        
 	           success:function(data){

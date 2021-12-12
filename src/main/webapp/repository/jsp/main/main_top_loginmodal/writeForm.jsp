@@ -5,124 +5,151 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/nadri/repository/css/tripmember/writeForm.css">
 </head>
 <body>
-<style type="text/css">
-#writeForm div {
-	color: pink;
-	font-size: 8pt;
-	font-weight: bold;
-}
-</style>
-<form name="writeForm" id="writeForm">
-	<table border="1" cellspacing="0" cellpadding="5">
-		<tr>
-			<td width="100" align="center">이름</td>
-			<td>
-				<input type="text" name="name" id="name" placeholder="이름 입력">
-				<div id= "nameDiv"></div>
-			</td>	
-		</tr>
-		
-		<tr>
-			<td width="100" align="center">아이디</td>
-			<td>
-				<input type="text" name="id" id="id" placeholder="아이디 입력">
 
-				<input type="hidden" name="checkId" id="checkId" value="">
-				<div id= "idDiv"></div>
-			</td>	
-		</tr>	
-		
+<div class="wrapper">
+	<form id="writeForm">
+	<div class="wrap">
+			<div class="subjecet">
+				<span>회원가입</span>
+			</div>
 			
-		<tr>
-			<td width="100" align="center">닉네임</td>
-			<td>
-				<input type="text" name="nickName" id="nickName" placeholder="닉네임 입력">
-
-				<input type="hidden" name="checkNick" id="checkNick" value="">
-				<div id= "nickDiv"></div>
-			</td>
-		</tr>	
+			<div class="user_wrap">
+				<div class="user_name">이름</div><div id="nameDiv"></div>
+				<div class="user_input_box">
+					<input class="user_input" id="name" name="name">
+				</div>
+			</div>
+			
+			<div class="id_wrap">
+				<div class="id_name">아이디</div><div id="idDiv"></div>
+				<div class="id_input_box">
+					<input class="id_input" id="id" name="id">
+				</div>
+			</div>
+			
+			<div class="pw_wrap">
+				<div class="pw_name">비밀번호</div><div id="pwdDiv"></div>
+				<div class="pw_input_box">
+					<input class="pw_input" type="password" id="pwd" name="pwd">
+				</div>
+			</div>
+			
+			<div class="pwck_wrap">
+				<div class="pwck_name">비밀번호 확인</div>
+				<div class="pwck_input_box">
+					<input class="pwck_input" type="password" id="repwd" name="repwd">
+				</div>
+			</div>
+			
+			<div class="nick_wrap">
+				<div class="nick_name">닉네임</div><div id="nickDiv"></div>
+				<div class="nick_input_box">
+					<input class="nick_input" id="nickName" name="nickName">
+				</div>
+			</div>
+	
+			
+	
 		
+			<div class="id_wrap">
+				<div class="img_name">사진</div>
+				<div class="img_input_box">
+					<input class="img_input" id="profileImg" name="profileImg">
+				</div>
+			</div>
+	
+
+
 				
-		<tr>
-			<td width="100" align="center">비밀번호</td>
-			<td>
-				<input type="password" name="pwd" id="pwd" size="30" placeholder="비밀번호 입력">
-				<div id= "pwdDiv"></div>
-			</td>	
-		</tr>
-		
-		<tr>
-			<td width="100" align="center">재확인</td>
-			<td>
-				<input type="password" name="repwd" id="repwd" size="30" placeholder="비밀번호 확인">
-				<div id= "repwdDiv"></div>
-			</td>	
-		</tr>
-		
-		<tr>
-			<td class="line" width="100" align="center">이메일</td>
-			<td>
-				<input type="text" name="email1" id="email1">
-				@
-				<input type="text" name="email2" id="email2" list="email2" placeholder="직접입력">
-				<datalist id="email2">
-					<option value="naver.com">naver.com
-					<option value="daum.net">daum.net
-					<option value="gmail.com">gmail.com
-				</datalist>
-				<input type="button" name="mailcheckBtn" id="mailcheckBtn" size="30" value="인증메일전송"><br>
-				<input type="text" class="mailcheckinput" name="mailcheck" id="mailcheck" size="30" disabled="disabled" placeholder="메일인증번호">
-				<div id="mailcheckDiv"></div>				
-			</td>
-		</tr>
-			
-		<tr>
-			<td width="100" align="center">핸드폰</td>
-			<td>
-				<select name="tel1" style="width: 70px;">
+			<div class="tel_wrap">
+				<div class="tel_name">핸드폰</div>
+				
+				<select name="tel1" class="tel" id="tel1" name="tel1">
 					<option value="010" selected>010</option>
 					<option value="011" >011</option>
 					<option value="019" >019</option>
 				</select>
 				-
-				<input type="text" name="tel2" size="6" maxlength="4">
+				<input type="text" id="tel2" name="tel2" class="tel2" size="6" maxlength="4">
 				-
-				<input type="text" name="tel3" size="6" maxlength="4">
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100" align="center">주소</td>
-			<td>
-				<input type="text" name="zipcode" id="zipcode" readonly>
-				<input type="button" value="우편번호 검색" id="zipcodeBtn"><br>
-				<input type="text" name="addr1" id="addr1" size="60" placeholder="주소" readonly><br>
-				<input type="text" name="addr2" id="addr2" size="60" placeholder="상세주소">
-			</td>
-		</tr>
+				<input type="text" id="tel3" name="tel3" class="tel2" size="6" maxlength="4">
+			
+			</div>
 	
-		<tr>
-			<td width="100" align="center">이미지</td>
-		<td>
-				<input type="text" name="img" id="img" placeholder="닉네임 입력">
+			
 
-				<input type="hidden" name="img2" id="img2" value="">
-				<div id= "nickDiv"></div>
-			</td>
-		</tr>
+			<div class="mail_wrap">
+				<div class="mail_name">이메일</div> 
+					<div>
+					<input type="text" name="email1" id="email1" class="mail_input_box">
+					@
+					<input type="text" name="email2" id="email2" list="email2" class="mail_input_box" placeholder="직접입력">
+					<datalist id="email2">
+						<option value="naver.com">naver.com
+						<option value="daum.net">daum.net
+						<option value="gmail.com">gmail.com
+					</datalist>
+					<div class="mail_check_button">
+						<span>인증번호전송</span>
+					</div>
+					</div>
+					
+				<div class="mail_check_wrap">
+					<div class="mail_check_input_box">
+						<input class="mail_check_input">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+					
+			<div class="address_wrap">
+				<div class="address_name">주소</div>
+				<div class="address_input_1_wrap">
+					<div class="address_input_1_box">
+						<input class="address_input_1" id="zipcode" name="zipcode">
+					</div>
+					
+					<div class="address_button" id="zipcodeBtn">
+						<span>우편번호검색</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				<div class ="address_input_2_wrap">
+					<div class="address_input_2_box">
+						<input class="address_input_2" placeholder="도로주소" id="address" name="address">
+						
+					</div>
+				</div>
+				
+				<div class ="address_input_3_wrap">
+					<div class="address_input_3_box">
+						<input class="address_input_3" placeholder="상세주소" id="addressDetail" name="addressDetail">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="member_button_wrap">
+				<input type="button" class="member_button" id="writeBtn" value="가입하기">
+			</div>
+			
+		</div>
+	</form>
+</div>
 
-		
-		<tr>
-			<td colspan="2" align="center">
-				<input type="button" id="writeBtn" value="회원가입">
-				<input type="reset" value="다시작성">
-			</td>
-		</tr>
-	</table>
-</form>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+//우편번호 체크
+$('#zipcodeBtn').click(function(){
+	window.open("/nadri/repository/jsp/tripmember/checkPost.jsp", "checkPost", "width=500 height=500 top=200 left=700");
+});
+
+</script>
 </body>
 </html>

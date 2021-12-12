@@ -65,8 +65,67 @@ td {
 </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/nadri/repository/js/member/member.js"></script>
 
+<script type="text/javascript">
+
+
+//현재 새로운창이 떠있는상태
+$('#checkPostSearchBtn').click(function(){
+	$.ajax({
+		url:'/nadri/tripmember/checkPostSearch',
+		type:'post',		
+		data:$('#checkPostForm').serialize(),
+		dataType: 'json',
+		
+		success:function(data){
+			//alert(JSON.stringify(data));
+			
+			$('#zipcodeTable tr:gt(2)').remove();
+			$.each(data, function(index,items){
+				var address = items.sido+'  '
+							+items.sigungu+'  '
+							+items.yubmyundong+'  '
+							+items.ri+'  '
+							+items.roadname+'  '
+							+items.buildingname;	//마지막엔 ; 없어도 됨
+							
+			address = address.replace(/null/g,''); //null이라는것을 g 글로벌전체에서 찾아서 ''로 바꿔라				
+			$('<tr/>').append($('<td/>',{
+				align:'center',
+				text:items.zipcode
+			})).append($('<td/>',{
+				colspan:3
+			
+				}).append($('<a/>',{	//td안에 a태그를 붙임
+					href:'#',
+					text:address,
+					class:'addressA'
+				
+			}))).appendTo($('#zipcodeTable'));												
+		});	//each
+		
+	
+		$('.addressA').click(function(){
+			$('#zipcode', opener.document).val($(this).parent().prev().text());
+		
+			$('#address', opener.document).val($(this).text());
+			window.close();		//창만 닫힐뿐 제어권이 사라진게 아니다
+			$('#addressDetail', opener.document).focus();
+		});		// addressA click
+	
+			
+		},	//success
+		
+		error:function(err){
+			console.log(err);
+		}	
+			
+	});		//ajax
+});		//checkPostSearchBtn click
+
+
+
+</script>
 </body>
 </html>
 

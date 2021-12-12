@@ -94,7 +94,7 @@
 $(function(){
 	
 	$.ajax({
-		url: '/nadri/member/getMemberInfo',
+		url: '/nadri/tripmember/getTripmemberInfo',
 		type: 'post',
 		dataType: 'json',
 		success:function(data){
@@ -125,7 +125,7 @@ $('#deleteBtn').click(function(){
 	}else {
 		
 		$.ajax({
-			url:'/nadri/member/compare',
+			url:'/nadri/tripmember/compare',
 			type: 'post',
 			
 			data:{'pwd':$('#pwd').val()},
@@ -140,14 +140,14 @@ $('#deleteBtn').click(function(){
 					if(confirm('정말로 탈퇴하시겠습니까')){
 						
 						$.ajax({
-							url:'/nadri/member/delete',
+							url:'/nadri/tripmember/delete',
 							type:'post',
 							
 							success:function(){
 								alert("회원탈퇴가 완료되었습니다");
 								
 								$.ajax({
-									url:'/nadri/member/logOut',
+									url:'/nadri/tripmember/logOut',
 									type: 'post',
 													
 									success: function(){	

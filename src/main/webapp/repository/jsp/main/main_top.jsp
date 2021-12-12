@@ -132,7 +132,7 @@
       
       <div class="modal-footer">
         <div class="login"><button class="btn btn-primary" data-bs-target="#loginmodal" data-bs-toggle="modal">로그인화면으로</button></div>
-        <div class="membership"><button class="btn btn-primary" data-bs-target="#membershipmodal" data-bs-toggle="modal" onclick='return false;' disabled='disabled'>회원가입으로</button></div> 
+        <div class="membership"><button class="btn btn-primary" data-bs-target="#membershipmodal" data-bs-toggle="modal" onclick='return false;'>회원가입으로</button></div> 
       </div>
       
       
