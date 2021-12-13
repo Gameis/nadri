@@ -6,7 +6,7 @@ $(function() {
 
     $('#addHotelBtn').click(function() {
         alert('addHotelBtn');
-        //window.open("/nadri/area/WriteForm");
+        window.open("/nadri/area/hotelWriteForm?main_seq=" + $('#main_seq').val(), "hotelWriteForm", "width=800, height=1200");
     });
 
     $('#addActivityBtn').click(function() {
@@ -33,6 +33,24 @@ $(function() {
         });
     });
 
+    $('#hotelWriteBtn').click(function() {
+        alert("버튼은 눌렀는데");
+        var formData = new FormData($('#hotelWriteForm')[0]);
+        $.ajax({
+            url: '/nadri/area/hotelWrite',
+            type: 'post',
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function() {
+                alert('데이터 등록 완료');
+            },
+            error: function() {
+                console.log(err);
+            }
+        });
+    });
     $('#activityWriteBtn').click(function() {
         var formData = new FormData($('#activityWriteForm')[0]);
         $.ajax({

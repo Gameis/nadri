@@ -23,6 +23,8 @@
 		<typeAlias type="area.bean.TripPopDTO" alias="tripPop"/>
 		<typeAlias type="area.bean.TripPopMapDTO" alias="tripPopMap"/>
 		<typeAlias type="area.bean.TripActivityDTO" alias="tripActivity"/>
+		<typeAlias type="area.bean.TripHotelDTO" alias="tripHotel"/>
+		<typeAlias type="area.bean.HotelMainDTO" alias="hotelMain"/>
 
  		<typeAlias type="tripmember.bean.TripmemberDTO" alias="tripmember"/>
 		<typeAlias type="tripmember.bean.ZipcodeDTO" alias="zipcode"/>		

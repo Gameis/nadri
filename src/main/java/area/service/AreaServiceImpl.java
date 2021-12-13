@@ -6,10 +6,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import area.bean.HotelMainDTO;
 import area.bean.ImgDTO;
 import area.bean.OnAreaDTO;
 import area.bean.PopMainDTO;
 import area.bean.TripActivityDTO;
+import area.bean.TripHotelDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 import area.dao.AreaDAO;
@@ -63,6 +65,22 @@ public class AreaServiceImpl implements AreaService {
 	@Override
 	public Map<String, String> search(String searchText) {
 		return areaDAO.search(searchText);
+	}
+
+	@Override
+	public void hotelWrite(TripHotelDTO tripHotelDTO) {
+		areaDAO.hotelWrite(tripHotelDTO);
+		
+	}
+
+	@Override
+	public void imgHotelWrite(ImgDTO imgDTO) {
+		areaDAO.imgHotelWrite(imgDTO);
+	}
+
+	@Override
+	public List<HotelMainDTO> onAreaHotel() {
+		return areaDAO.onAreaHotel();
 	}
 
 
