@@ -76,6 +76,7 @@
 	
 	<resultMap id="tripPopReviewContentMap" type="popContent">
 		<result property="pop_review_seq" column="pop_review_seq"/>
+		<result property="profileImg" column="profileImg"/>
 		<result property="nickname" column="nickname"/>
 		<result property="review_score" column="review_score"/>
 		<result property="review_content" column="review_content"/>
@@ -196,6 +197,7 @@
                 img_name
         from img, trippop_review
         where seq=pop_review_seq
+            and img_path='review'
             and not img_name='noImg.jpg'
         order by seq
 	</select>

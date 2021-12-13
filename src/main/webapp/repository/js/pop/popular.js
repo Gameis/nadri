@@ -112,7 +112,7 @@ function getLocation(){
 			url: '/nadri/popular/getCountView',
 			success: function(data){
 				alert(JSON.stringify(data));
-
+				
 				var avg_score_content = null;
 				const avg_score = parseFloat($.trim(data.avg_score));
 				const total_negativeReview = parseFloat($.trim(data.total_negativeReview));
@@ -220,7 +220,7 @@ function getLocation(){
 	                for(var i = 0; i < contentList.length; i++){
 	                    var private_score_content = null;
 	                    const private_score = parseFloat($.trim(contentList[i].review_score));
-	                    var img_path = ($.trim(photoList[i].imgList[0].img_path));
+	                    var img_path = ($.trim(photoList[i].imgList[0].img_path) || "");
 	                    var image_name1='';
 	                    var image_name2='';
 	                    var image_name3='';
@@ -228,7 +228,7 @@ function getLocation(){
 	                    var image_name5='';
 	                    var image_name6='';
 	                    var image_name7='';
-	                    var noImge = "noImg.jpg";
+	                    var noImge = "https://www.publicdomainpictures.net/pictures/30000/velka/plain-white-background.jpg";
 	                    
 	                    //content내용 뽑기
 	                    if(private_score<=1){
@@ -244,19 +244,9 @@ function getLocation(){
 	                    }
 	                    
 	                    //img_name 빈값 정리
-	
-	                        if(photoList[i].imgList.length == 0){
-	                            image_name1 = noImge;
-	                            image_name2 = noImge;
-	                            image_name3 = noImge;
-	                            image_name4 = noImge;
-	                            image_name5 = noImge;
-	                            image_name6 = noImge;
-	                            image_name7 = noImge;
-	                        }
-	                        
+						
 	                        if(photoList[i].imgList.length == 1){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
 	                            image_name2 = noImge;
 	                            image_name3 = noImge;
 	                            image_name4 = noImge;
@@ -264,65 +254,59 @@ function getLocation(){
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
 	                        if(photoList[i].imgList.length == 2){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
 	                            image_name3 = noImge;
 	                            image_name4 = noImge;
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
 	                        if(photoList[i].imgList.length == 3){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
 	                            image_name4 = noImge;
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
 	                        if(photoList[i].imgList.length == 4){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
 	                        if(photoList[i].imgList.length == 5){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
-	                            image_name5 = $.trim(photoList[i].imgList[4].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[4].img_name);
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
 	                        if(photoList[i].imgList.length == 6){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
-	                            image_name5 = $.trim(photoList[i].imgList[4].img_name);
-	                            image_name6 = $.trim(photoList[i].imgList[5].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[4].img_name);
+	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[5].img_name);
 	                            image_name7 = noImge;
 	                        }
-	                        
 	                        if(photoList[i].imgList.length == 7){
-	                            image_name1 = $.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = $.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = $.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = $.trim(photoList[i].imgList[3].img_name);
-	                            image_name5 = $.trim(photoList[i].imgList[4].img_name);
-	                            image_name6 = $.trim(photoList[i].imgList[5].img_name);
-	                            image_name7 = $.trim(photoList[i].imgList[6].img_name);
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[4].img_name);
+	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[5].img_name);
+	                            image_name7 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[6].img_name);
 	                        }
 	                    
 	                    
@@ -369,31 +353,31 @@ function getLocation(){
 	                    }).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name1",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name1
+	                        src:image_name1
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name2",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name2
+	                        src:image_name2
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name3",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name3
+	                        src:image_name3
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name4",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name4
+	                        src:image_name4
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name5",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name5
+	                        src:image_name5
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name6",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name6
+	                        src:image_name6
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name7",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name7
+	                        src:image_name7
 	                    })))).append($('<div/>',{
 	                        class:"review-content-date"
 	                    }).append($('<span/>',{
@@ -415,7 +399,8 @@ function getLocation(){
 	                    var image_name5='';
 	                    var image_name6='';
 	                    var image_name7='';
-	                    var noImge = "noImg.jpg";
+	                    var noImge = "https://www.publicdomainpictures.net/pictures/30000/velka/plain-white-background.jpg";
+	                    
 	                    
 	                    //content내용 뽑기
 	                    if(private_score<=1){
@@ -431,8 +416,8 @@ function getLocation(){
 	                    }
 	                    
 	                    //img_name 빈값 정리
-	
-	                        if(list[i].imgList.length == 0){
+	          			
+		          			if(list[i].imgList[1] == undefined && list[i].imgList[0].img_name == 'noImg.jpg'){
 	                            image_name1 = noImge;
 	                            image_name2 = noImge;
 	                            image_name3 = noImge;
@@ -440,10 +425,8 @@ function getLocation(){
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
-	                        }
-	                        
-	                        if(list[i].imgList.length == 1){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
+	                        }else if(list[i].imgList[1] == undefined && list[i].imgList[0].img_name != 'noImg.jpg'){
+	                        	image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
 	                            image_name2 = noImge;
 	                            image_name3 = noImge;
 	                            image_name4 = noImge;
@@ -452,64 +435,60 @@ function getLocation(){
 	                            image_name7 = noImge;
 	                        }
 	                        
-	                        if(list[i].imgList.length == 2){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
-	                            image_name2 = $.trim(list[i].imgList[1].img_name);
+	                        
+	                        if(list[i].imgList[1] != undefined && list[i].imgList[1].img_name != "noImg.jpg"){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[1].img_name);
 	                            image_name3 = noImge;
 	                            image_name4 = noImge;
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
-	                        if(list[i].imgList.length == 3){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
-	                            image_name2 = $.trim(list[i].imgList[1].img_name);
-	                            image_name3 = $.trim(list[i].imgList[2].img_name);
+	                        if(list[i].imgList[2] != undefined && list[i].imgList[2].img_name != "noImg.jpg"){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[2].img_name);
 	                            image_name4 = noImge;
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
-	                        if(list[i].imgList.length == 4){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
-	                            image_name2 = $.trim(list[i].imgList[1].img_name);
-	                            image_name3 = $.trim(list[i].imgList[2].img_name);
-	                            image_name4 = $.trim(list[i].imgList[3].img_name);
+	                        if(list[i].imgList[3] != undefined && list[i].imgList[3].img_name != "noImg.jpg"){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[3].img_name);
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
-	                        if(list[i].imgList.length == 5){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
-	                            image_name2 = $.trim(list[i].imgList[1].img_name);
-	                            image_name3 = $.trim(list[i].imgList[2].img_name);
-	                            image_name4 = $.trim(list[i].imgList[3].img_name);
-	                            image_name5 = $.trim(list[i].imgList[4].img_name);
+	                        if(list[i].imgList[4] != undefined && list[i].imgList[4].img_name != "noImg.jpg"){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[4].img_name);
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        
-	                        if(list[i].imgList.length == 6){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
-	                            image_name2 = $.trim(list[i].imgList[1].img_name);
-	                            image_name3 = $.trim(list[i].imgList[2].img_name);
-	                            image_name4 = $.trim(list[i].imgList[3].img_name);
-	                            image_name5 = $.trim(list[i].imgList[4].img_name);
-	                            image_name6 = $.trim(list[i].imgList[5].img_name);
+	                        if(list[i].imgList[5] != undefined && list[i].imgList[5].img_name != "noImg.jpg"){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[4].img_name);
+	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[5].img_name);
 	                            image_name7 = noImge;
 	                        }
-	                        
-	                        if(list[i].imgList.length == 7){
-	                            image_name1 = $.trim(list[i].imgList[0].img_name);
-	                            image_name2 = $.trim(list[i].imgList[1].img_name);
-	                            image_name3 = $.trim(list[i].imgList[2].img_name);
-	                            image_name4 = $.trim(list[i].imgList[3].img_name);
-	                            image_name5 = $.trim(list[i].imgList[4].img_name);
-	                            image_name6 = $.trim(list[i].imgList[5].img_name);
-	                            image_name7 = $.trim(list[i].imgList[6].img_name);
+	                        if(list[i].imgList[6] != undefined && list[i].imgList[6].img_name != "noImg.jpg"){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[4].img_name);
+	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[5].img_name);
+	                            image_name7 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(list[i].imgList[6].img_name);
 	                        }
 	                    
 	                    
@@ -556,31 +535,31 @@ function getLocation(){
 	                    }).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name1",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name1
+	                        src:image_name1
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name2",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name2
+	                        src:image_name2
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name3",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name3
+	                        src:image_name3
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name4",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name4
+	                        src:image_name4
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name5",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name5
+	                        src:image_name5
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name6",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name6
+	                        src:image_name6
 	                    })).append($('<img/>',{
 	                        alt:"review-content-photowall",
 	                        id:"image_name7",
-	                        src:"/nadri/repository/img/popular/"+img_path+"/"+image_name7
+	                        src:image_name7
 	                    })))).append($('<div/>',{
 	                        class:"review-content-date"
 	                    }).append($('<span/>',{
