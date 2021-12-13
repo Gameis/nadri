@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="/nadri/repository/css/area/area.css">
 </head>
 <body>
-	<input type="hidden" id="main_seq" value="${param.main_seq}">
+	<input type="hidden" id="main_seq" value="${param.main_seq}"/>
+	<input type="hidden" id="memId" value="${memId }"/>
     <div id="areaWrap">
         <div id="areaHeader">
             <div id="areaPath">
@@ -70,7 +71,7 @@
             </div>
         </div><!--areaMainImg-->
         <div class="areaSlideTitle">
-          <h2 style="font-weight: bold;">지역이름 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+"></h2>
+          <h2 style="font-weight: bold;"><span>지역 이름 인기명소</span><input type="button" id="addPopBtn" class="addButton" value="+"></h2>
           <!--divSlide-->
           <div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
             <div id="areaPopularLocation_slide" class="carousel slide" data-bs-ride="carousel">
@@ -95,44 +96,7 @@
           <!--divSlide-->
           <div class="areaSlide">
             <div id="areaHotel_slide" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="card-group">
-                    <div class="card hotelCard">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel1.jpg" class="card-img-top" alt="hotel1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">그랜드 워커힐 서울</a></div>
-                        <div class="hotel-score">
-                        	<div class="hotel-score-item">
-                     			<div class="hotel-score-clean">청결도</div>
-                     			<div class="score-bar">
-                     				<span class="base-bar"><span class="bar" style="width: 76%;"></span></span>
-                     			</div>
-                     		</div>
-                     		<div class="hotel-score-item">
-                     			<div class="hotel-score-facility">호텔 시설</div>
-                     			<div class="score-bar">
-                     				<span class="base-bar"><span class="bar" style="width: 87%;"></span></span>
-                     			</div>
-                     		</div>
-                     		<div class="hotel-score-item">
-                     			<div class="hotel-score-location">위치</div>
-                     			<div class="score-bar">
-                     				<span class="base-bar"><span class="bar" style="width: 94%;"></span></span>
-                     			</div>
-                     		</div>
-                     		<div class="hotel-score-item">
-                     			<div class="hotel-score-service">서비스</div>
-                     			<div class="score-bar">
-                     				<span class="base-bar"><span class="bar" style="width: 63%;"></span></span>
-                     			</div>
-                        	</div>
-                        </div>
-                      </div><!--card-body-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
+              <div class="carousel-inner" id="hotel-carousel-inner">
               </div><!--carousel-inner-->
               <button class="carousel-control-prev" type="button" data-bs-target="#areaHotel_slide" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -285,6 +249,10 @@
 	}
 	
 	$(function() {
+		
+		if($('#memId').val() != 'admin') $('.addButton').hide();
+		else $('.addButton').show();
+		
 		$.ajax({
 			url: '/nadri/area/onArea',
 			type: 'get',
@@ -295,7 +263,7 @@
 				$.each(data, function(index, items){
 					$('.areaPathItem:eq(1) > a').text(items.main_name);
 					$('#areaDestination_name').text(items.main_name);
-					$('.areaSlideTitle:eq(0) h2').html(items.main_name + ' 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+">');
+					$('.areaSlideTitle:eq(0) h2 > span').text(items.main_name + ' 인기 명소');
 					$('.areaInfo h2').text(items.main_name + ' 여행' + ' 정보');
 					$('.area-title-text').text(items.main_name + ' 소개');
 					$('.area-weather h2').text(items.main_name + ' 날씨');
@@ -379,6 +347,111 @@
         console.log(err);
         alert('실패');
       }
+    });
+    
+    $.ajax({
+    	url: '/nadri/area/onAreaHotel',
+    	type: 'get',
+    	success: function(data) {
+    		alert('호텔 성공');
+    		alert(JSON.stringify(data));
+    		var count = -1;
+            var activityCount = 1;
+            
+            $.each(data, function(index, items){
+            	if(index % 4 == 0) {
+
+                    if(index == 0) {
+                      $('<div/>', {
+                        class: 'carousel-item active'
+                      }).append($('<div/>', {
+                        class: 'card-group'
+                      })).appendTo($('#hotel-carousel-inner'));
+                    }else {
+                      $('<div/>', {
+                        class: 'carousel-item'
+                      }).append($('<div/>', {
+                        class: 'card-group'
+                      })).appendTo($('#hotel-carousel-inner'));
+                    }
+                    
+                    count++;
+                  }
+                
+            	var clean = ((items.hotel_clean / (110/19)).toFixed(2) * 100) + '%;';
+                var facility = ((items.hotel_facility / (110/19)).toFixed(2) * 100) + '%;';
+                var location = ((items.hotel_location / (110/19)).toFixed(2) * 100) + '%;';
+                var service = ((items.hotel_service / (110/19)).toFixed(2) * 100) + '%;';
+                
+                alert("clean = " + clean + ", facility = " + facility + ", location = " + location + ", service = " + service)
+                
+                $('<div/>', {
+                	class: 'card hotelCard'  
+                  }).append($('<div/>', {
+                	  class: 'slide_img'
+                  }).append($('<img/>', {
+                	  src: '/nadri/repository/img/'+ items.img_path + '/' + items.img_name,
+                	  class: 'card-img-top',
+                	  alt: '호텔 이미지'
+                  }))).append($('<div/>', {
+                	  class: 'card-body'
+                  }).append($('<div/>', {
+                	  class: 'pop-title'
+                  }).append($('<a/>', {
+                	  text: items.hotel_name
+                  }))).append($('<div/>', {
+                	  class: 'hotel-score'
+                  }).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '청결도'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + clean
+                  }))))).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '호텔 시설'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + facility
+                  }))))).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '위치'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + location
+                  }))))).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '서비스'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + service
+                  }))))))).appendTo($('#hotel-carousel-inner .card-group:eq(' + count + ')'));
+            });//each
+    	}
     });
     
      $.ajax({

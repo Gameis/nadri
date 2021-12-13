@@ -19,10 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import area.bean.HotelMainDTO;
 import area.bean.ImgDTO;
 import area.bean.OnAreaDTO;
 import area.bean.PopMainDTO;
 import area.bean.TripActivityDTO;
+import area.bean.TripHotelDTO;
 import area.bean.TripPopDTO;
 import area.bean.TripPopMapDTO;
 import area.service.AreaService;
@@ -84,6 +86,31 @@ public class AreaController {
 		return "/repository/jsp/popular/popular";
 	}
 	
+	@RequestMapping(value="/hotelWriteForm", method=RequestMethod.GET)
+	public String hotelWriteForm() {
+		return "/repository/jsp/area/hotelWriteForm";
+	}
+	
+	@RequestMapping(value = "/hotelWrite", method = RequestMethod.POST)
+	@ResponseBody
+	public void hotelWrite(@ModelAttribute TripHotelDTO tripHotelDTO,
+						 	  @ModelAttribute ImgDTO imgDTO,
+						 	  @RequestParam("main_img") MultipartFile main_img) {
+		
+		areaService.hotelWrite(tripHotelDTO);
+		
+		System.out.println("main_seq = " + imgDTO.getMain_seq());
+		imgReNameCopy(imgDTO, main_img, "T", "hotel", "\\hotel");
+		areaService.imgHotelWrite(imgDTO);
+		
+	}
+	
+	@RequestMapping(value = "/onAreaHotel", method = RequestMethod.GET)
+	@ResponseBody
+	public List<HotelMainDTO> onAreaHotel() {
+		return areaService.onAreaHotel();
+	}
+	
 	@RequestMapping(value="/activity", method=RequestMethod.GET)
 	public String activity() {
 		return "/repository/jsp/activities/activities";
@@ -132,8 +159,8 @@ public class AreaController {
 	
 	//함수
 	public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
-//		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
-		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
+		//String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
 		
 		String fileName = null;
 		File file = null;
