@@ -87,9 +87,15 @@
 									</div>
 								</div>
 							</div>
-							<div class="m_footer_bottom">
+							<!-- <div class="m_footer_bottom">
 								<div class="m_footer_bottom_btn">예약하기</div>
-							</div>
+							</div> -->
+							<form method="post" action="/nadri/KakaoPay">
+    							<div class="m_footer_bottom">
+    							
+									<button class="m_footer_bottom_btn">예약하기</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</section>
