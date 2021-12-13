@@ -27,7 +27,7 @@
 	
 	<select id="getPopImg" parameterType="int" resultType="popImg">
 		select * from img 
-		where seq=#{pop_seq}
+		where seq=#{pop_seq} and content_seq = 3
 	</select>
 	
 	<insert id="popReviewImgWrite" parameterType="popImg">

@@ -2,14 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
-	</head>
-<body>
+
 	<div class="trip_main_hd_top_nav">
 		<div class="main_hd trip_main_hd main_hd_line">
 			<div class="main_hd_inner main_hd_newline">
@@ -202,7 +196,4 @@ function kakaoLogout() {
     }
   }  
 </script>	
-	
-</body>
-</html>
 

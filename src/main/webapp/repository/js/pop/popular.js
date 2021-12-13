@@ -604,4 +604,77 @@ function getLocation(){
 			}
 		});
 	}
+	
+	function locationhref(moment_seq) {
+	location.href="/nadri/tripmoment/tripmomentView?moment_seq=" + moment_seq 
+	}
+	
+	function getTripMoment(){
+		$.ajax({
+			url : '/nadri/tripmoment/onTripmoment',
+			type : 'get',
+			success : function(data) {
+				alert('성공');
+				alert(JSON.stringify(data));
+					var count = -1;
+			        var momentCount = 1;	
+
+				$.each(data, function(index, items){
+					if(index % 4 == 0) {
+
+			            if(index == 0) {
+			              $('<div/>', {
+			                class: 'carousel-item active'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }else {
+			              $('<div/>', {
+			                class: 'carousel-item'
+			              }).append($('<div/>', {
+			                class: 'card-group'
+			              })).appendTo($('#moment_carousel_inner'));
+			            }            
+			            count++;
+			          }
+					
+					$('<div>', {
+						class: 'cardstyle card index_card_con',
+						onclick : 'locationhref('+ items.moment_seq + ')'
+					}).append($('<div>', {
+						style: 'padding-bottom: 106%', 
+						class: 'slide_img'
+					}).append($('<div>', {
+						class: 'img'
+					}).append($('<img>', {
+						src: '/nadri/repository/img/' + items.img_path + '/' + items.img_name,
+						class: 'card-img-top',
+						alt: '트립1'
+					})))).append($('<div>', {
+						class: 'bottom_con'
+					}).append($('<div>', {
+						style: '-webkit-box-orient: vertical', 
+						class: 'bottom_desc',
+						text: items.moment_content
+					})).append($('<div>', {
+						class: 'bottom_user_left'
+					}).append($('<i>', {
+						class: 'bi bi-person-circle'
+					})).append($('<span>', {
+						text: '개복치'
+					}))).append($('<div>', {
+						class: 'bottom_user_right'
+					}).append($('<img>', {
+						src: "/nadri/repository/img/main/thumb.png"
+					})).append($('<span>', {
+						text : '34'
+					})))).appendTo($('#moment_carousel_inner .card-group:eq(' + count + ')'));
+				})//each
+				
+			},
+			error : function(err) {
+				alert('실패')
+			}
+		});
+	}
     

@@ -14,15 +14,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-	<!-- Header -->
-	<%-- <div class="trip_common_head_con">
-		<jsp:include page="../main/main_top.jsp">
-			<jsp:param value="param1" name="param1" />
-		</jsp:include>
-	</div> --%>
-	
+
 	<input type="hidden" id="pop_seq" value="${param.pop_seq }"/>
-	<input type="hidden" id="pageNum" value="1" />
+	<input type="hidden" id="pageNum" value="1"/>
 	<input type="hidden" id="searchType" value="" />
 	<input type="hidden" id="isDesc" value="" />
 	<input type="hidden" id="member_seq" value="${member_seq }"/>
@@ -189,7 +183,29 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- tripmoment slide -->
+	<div class="tripmomentSlide">
+		<div id="carousel_tripmoment_slide" class="carousel slide"
+			data-bs-ride="carousel">
+			<div class="carousel-inner" id="moment_carousel_inner"></div>
+			<button id="carousel-control-prev" class="carousel-control-prev" type="button"
+				data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
+				<span id="carousel-control-prev-icon" class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carousel_tripmoment_slide" data-bs-slide="next">
+				<span id="carousel-control-next-icon" class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+	<!-- tripmoment slide -->
+		
 	</div><!-- areaWrap -->
+	
+	
 	
 	<!-- footer -->
 	<div id="wrap_foot">
@@ -208,7 +224,6 @@
 <script type="text/javascript" src="/nadri/repository/js/pop/popular_review.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a&libraries=services,clusterer,drawing"></script>
 <script type="text/javascript" src="/nadri/repository/js/pop/jquery.bootpag.min.js"></script>
-<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
 <script type="text/javascript">
 //온로드부분
 $(function(){
@@ -229,6 +244,9 @@ $(function(){
 
 	//유저정보 처리
 	getUserInfo();
+	
+	//트립모멘트 불러오기
+	getTripMoment();
 
 });
 

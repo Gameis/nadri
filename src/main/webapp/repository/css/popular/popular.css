@@ -31,6 +31,11 @@ button, input, optgroup, select, textarea {
     margin: 0;
 }
 
+.trip_common_head_con {
+	position: relative;
+	z-index: 2;
+}
+
 #areaWrap {
     max-width: 1160px;
     margin: 0 auto;
@@ -318,7 +323,7 @@ button, input, optgroup, select, textarea {
 	width: 670px;
 	height: 100%;
 }
-.carousel-inner img{
+#carousel-inner img{
 	height: 550px;
 }
 #container-pop{
@@ -398,4 +403,235 @@ button, input, optgroup, select, textarea {
     overflow: hidden;
     white-space: inherit;
     text-overflow: ellipsis;
+}
+
+
+/* 트립모멘트 */
+
+/* 트립모먼트 */
+.trip_moment_title {
+	text-align: center;
+	font-size: 35px;
+	color: rgb(15, 41, 77);
+	line-height: 34px;
+	font-family: arial, sans-serif;
+	margin: 32px 0px 24px;
+	display: block;
+	font-weight: bold;
+}
+
+/* 포스팅하러가기 버튼 */
+.index_trip_moment_con .release_btn_con {
+	position: absolute;
+	right: 10px;
+	top: -5px;
+	cursor: pointer;
+}
+
+.release_btn {
+	padding: 9px 20px 6px;
+	color: #fff;
+	background: #287dfa;
+	border-radius: 2px;
+	font-size: 16px;
+}
+
+/* 트립모먼트 slide */
+.tripmomentSlide {
+	position: relative;
+	margin: 0 auto;
+	width: 1160px;
+}
+
+.carousel-inner {
+	text-align: left;
+	float: left;
+}
+
+.active {
+	width: 16.667%;
+}
+
+.index_card_con {
+	padding: 0 8px !important;
+}
+
+.card {
+	width: 25%;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0px 0px;
+	cursor: pointer;
+	vertical-align: top;
+	height: 420px;
+}
+
+.card-group>.card {
+	flex: none !important;
+}
+
+.slide_img {
+	background: rgb(235, 235, 242);
+	width: 100%;
+	height: 0px;
+	padding-bottom: 56%;
+	overflow: hidden;
+	margin: 0px;
+	position: relative;
+	border-radius: 2px;
+}
+
+.index_card_con .img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all 1.2s ease 0s;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: none;
+	animation-play-state: running;
+	animation-name: fLRwcH;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out !important;
+}
+
+.index_card_con .img img {
+	transition: all 1.2s ease 0s;
+	width: 100%;
+	object-fit: cover;
+	height: 100%;
+	font-family: "object-fit: cover";
+}
+
+.index_card_con .bottom_con {
+	padding: 16px 16px 13px;
+	border: 1px solid #dadfe6;
+	border-top: none;
+}
+
+.index_trip_moment_con .bottom_con {
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.bottom_desc {
+	height: 40px;
+	line-height: 20px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+
+.index_card_con .bottom_user_con {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.index_card_con .bottom_con .bottom_user_con .bottom_user_left {
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 8px;
+}
+
+.bi-person-circle {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.bottom_user_right {
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+}
+
+.support_count {
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.bottom_user_right img {
+	width: 24px;
+	height: 24px;
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.bottom_user_right span {
+	font-size: 16px;
+	color: #455873;
+	line-height: 18px;
+}
+
+#carousel-control-prev {
+	left: -83px !important;
+	top: 166px !important;
+}
+
+.carousel-control-next {
+	right: -83px !important;
+	top: 166px !important;
+}
+
+#carousel-control-prev-icon {
+	background-image: url(/nadri/repository/img/main/leftBtn.png) !important;
+	border: 1px solid #dadfe6;
+	left: -14px;
+	background-color: #fff !important;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	width: 3rem !important;
+	height: 3rem !important;
+}
+
+#carousel-control-next-icon {
+	background-image: url(/nadri/repository/img/main/rightBtn.png)
+		!important;
+	border: 1px solid #dadfe6;
+	left: -14px;
+	background-color: #fff !important;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	width: 3rem !important;
+	height: 3rem !important;
+}
+
+/* footer */
+#wrap_foot {
+	min-height: 20vh;
+	position: relative;
+	width: 100%;
+	bottom: -400px;
+}
+
+footer {
+	width: 100%;
+	height: 110px;
+	bottom: 0px;
+	position: absolute;
 }
