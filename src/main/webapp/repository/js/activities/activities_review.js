@@ -92,7 +92,6 @@ function getActReviewCnt(){
 function getReviewList(){
 	//모든 리뷰리스트 출력
     var pageNum = $.trim($('#pageNum').val() || 0);
-    
     //리스트삭제
     removeReviewList();
     
