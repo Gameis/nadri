@@ -14,4 +14,5 @@ public class TripMainImgDTO {
 	private int seq;
 	private String main_seq;
 	private String mainImg;
+	private String main_name;
 }

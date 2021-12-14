@@ -48,7 +48,7 @@ button, input, optgroup, select, textarea {
 	padding: 0 1%;
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
+	width: 1174px;
 }
 
 .tripmomentPath {
@@ -82,7 +82,7 @@ button, input, optgroup, select, textarea {
 
 .tripmomentSearch {
 	position: relative;
-	margin-left: 50px;
+	margin-left: 810px;
 	width: 350px;
 	height: 32px;
 	margin-top: 1rem;
@@ -190,7 +190,7 @@ button, input, optgroup, select, textarea {
 
 .carousel-item img {
 	/* height: 100%; */
-	object-fit : contain !important;
+	object-fit: contain !important;
 	background: rgba(78, 78, 78, 0.75);
 }
 
@@ -329,6 +329,90 @@ button, input, optgroup, select, textarea {
 	line-height: 22px;
 }
 
+/* 댓글 부착되는 부분 */
+.comment_container {
+	width: 100%;
+	border-top: 1px solid rgb(234, 234, 234);
+	box-sizing: border-box;
+	padding-left: 32px;
+	padding-right: 32px;
+}
+
+.scroll_comment {
+	position: relative;
+	width: 100%;
+}
+
+.scroll_comment .user {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.scroll_comment .bi-person-circle {
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 8px;
+	background-color: rgb(245, 247, 250);
+}
+
+.scroll_comment .user_nickname {
+	line-height: 24px;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(15, 41, 77);
+}
+
+.scroll_comment .content {
+	margin: 0px 0px 0px 36px;
+	line-height: 24px;
+	font-size: 16px;
+	font-family: ArialMT;
+	color: rgb(15, 41, 77);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	word-break: break-all;
+}
+
+.scroll_comment .footer {
+	margin-left: 36px;
+	margin-top: 8px;
+	margin-right: 0px;
+	line-height: 16px;
+	font-size: 12px;
+	font-family: ArialMT;
+	color: rgb(133, 146, 166);
+	display: flex;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.post_time {
+	line-height: 16px;
+	font-size: 12px;
+	font-family: ArialMT;
+	color: rgb(133, 146, 166);
+}
+
+.devider {
+	height: 1px;
+	width: calc(100% - 0px);
+	background-color: rgb(218, 223, 230);
+	position: absolute;
+	bottom: 0px;
+}
+
+/* 좋아요 & 댓글 달기 */
 .input_view {
 	position: absolute;
 	bottom: 0;
@@ -424,6 +508,8 @@ button, input, optgroup, select, textarea {
 	margin-left: 16px;
 	font-weight: bold;
 	font-size: 16px;
+	cursor: pointer;
+	color: rgb(40, 125, 250);
 }
 
 .travel-photo-title {
@@ -520,20 +606,3 @@ a {
 	margin-left: 32px;
 	overflow: hidden;
 }
-
-/* .carousel-inner img {
-	height: 550px;
-}
-
-.container {
-	display: inline-block;
-	height: 150px;
-}
-
-.row-cols-4>img {
-	padding: 0;
-	text-align: center;
-	height: 120px;
-	width: 25%;
-	border: 5px solid rgb(15, 41, 77, 0.7);
-} */

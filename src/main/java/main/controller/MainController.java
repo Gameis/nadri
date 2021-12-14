@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -30,9 +32,21 @@ public class MainController {
 	@Autowired
 	private MainService mainService;
 	
+	@RequestMapping(value = "/kakaoLogin", method = RequestMethod.POST)
+	@ResponseBody
+	public void kakaoLogin(@RequestParam("memId") String memId, HttpSession session) {
+		session.setAttribute("memId", memId);
+		session.setAttribute("memName", "guest");
+	}
+	
 	@RequestMapping(value = "/area", method = RequestMethod.GET)
 	public String area() {	
 		return "/repository/jsp/area/area";
+	}
+	
+	@RequestMapping(value = "/mainWriteForm", method = RequestMethod.GET)
+	public String mainWriteForm() {
+		return "/repository/jsp/main/mainWriteForm";
 	}
 	
 	@RequestMapping(value = "/mainWrite", method = RequestMethod.POST)

@@ -13,6 +13,7 @@
 </head>
 <body>
 	<input type="hidden" id="main_seq" value="${param.main_seq}"/>
+	<input type="hidden" id="main_name" value=""/>
 	<input type="hidden" id="memId" value="${memId }"/>
     <div id="areaWrap">
         <div id="areaHeader">
@@ -261,6 +262,7 @@
 				alert(JSON.stringify(data));
 				num = 0;
 				$.each(data, function(index, items){
+					$('#main_name').val(items.main_name);
 					$('.areaPathItem:eq(1) > a').text(items.main_name);
 					$('#areaDestination_name').text(items.main_name);
 					$('.areaSlideTitle:eq(0) h2 > span').text(items.main_name + ' 인기 명소');
@@ -325,7 +327,7 @@
             }).append($('<div/>', {
               class: 'pop-title'
             }).append($('<a/>', {
-              href: '/nadri/area/popular?pop_seq=' + items.pop_seq,
+              href: '/nadri/area/popular?pop_seq=' + items.pop_seq + '&main_seq=' + $('#main_seq').val() + '&main_name=' + $('#main_name').val(),
               text: items.pop_name
             }))).append($('<div/>', {
               class: 'pop-review'
