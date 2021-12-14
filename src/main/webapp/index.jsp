@@ -164,8 +164,7 @@
 					<!-- 카카오 -->
 					<div>
 						<a style="text-decoration: none" href="javascript:void(0)"> 
-						<img src="/nadri/repository/img/tripmember/kakao.png" alt="kakao"
-							onclick="kakaoLogin();">
+						<img src="/nadri/repository/img/member/kakao.png" alt="kakao" onclick="kakaoLogin();" class="kakaoPNG kakaologin">
 						</a>
 					</div>
 
@@ -175,7 +174,6 @@
 					<div id="loginResult"></div>
 				</form>
 			</div>
-
 
 			아직 회원가입을 하지 않으셨나요?
 			<div class="modal-footer">
@@ -326,40 +324,41 @@
 					data-bs-target="#exampleModal" data-bs-whatever="@mdo">+
 				</button>
 
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="opacity:1;"> 
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">인기여행지 등록</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal"
-									aria-label="Close"></button>
+									aria-label="Close">
+								</button>
 							</div>
-							<div class="modal-body" id="mainWriteForm">
+							<div class="modal-body" id="mainWriteFormDiv">
 								<form id="mainWriteForm">
 									<input type="hidden" name="content_seq" id="content_seq" value="1" />
 									<div class="mb-3">
 										<label for="recipient-name" class="col-form-label">지역이름:</label>
-										<input type="text" class="form-control" id="main_name">
+										<input type="text" class="form-control" name="main_name">
 									</div>
 									<div class="mb-3">
 										<label for="message-text" class="col-form-label">지역정보:</label>
-										<input type="text"  class="form-control" id="main_info"></input>
+										<input type="text"  class="form-control" name="main_info"></input>
 									</div>
 									<div class="mb-3">
 										<label for="message-text" class="col-form-label">메인이미지:</label>
-										<input type="file" class="form-control" id="main_img"></input>
+										<input type="file" class="form-control" name="main_img"></input>
 									</div>
 									<div class="mb-3">
 										<label for="message-text" class="col-form-label">지역이미지:</label>
-										<input type="file" class="form-control" id="areaMain_img"></input>
+										<input type="file" class="form-control" name="areaMain_img"></input>
 									</div>
 									<div class="mb-3">
 										<label for="message-text" class="col-form-label">이미지:</label>
-										<input type="file" class="form-control" id="img"></input>
+										<input type="file" class="form-control" name="img[]" multiple></input>
 									</div>
 									<div class="mb-3">
 										<label for="message-text" class="col-form-label">지도이미지:</label>
-										<input type="file" class="form-control" id="map"></input>
+										<input type="file" class="form-control" name="map"></input>
 									</div>
 								</form>
 							</div>
@@ -1035,7 +1034,8 @@ $(function() {
 			contentType : false,
 			data : formData,
 			success : function() {
-
+				alert('성공');
+				
 			},
 			error : function() {
 				alert('데이터 어디갔나융? 당장 찾아오세용');
@@ -1144,12 +1144,6 @@ function locationhref(moment_seq) {
 						class: 'bi bi-person-circle'
 					})).append($('<span>', {
 						text: items.nickname
-					}))).append($('<div>', {
-						class: 'bottom_user_right'
-					}).append($('<img>', {
-						src: "/nadri/repository/img/main/thumb.png"
-					})).append($('<span>', {
-						text : '34'
 					})))).appendTo($('#moment_carousel_inner .card-group:eq(' + count + ')'));
 				})//each
 			},
@@ -1161,9 +1155,9 @@ function locationhref(moment_seq) {
 </script>
 
 <script type="text/javascript">
-$('#addAreaBtn').click(function() {
+/* $('#addAreaBtn').click(function() {
     window.open("/nadri/main/mainWriteForm", "mainWriteForm", "width=800, height=1200");
-});
+}); */
 
 function writeTripmoment() {
 	if($('#memId').val() != "") location.href="/nadri/tripmoment/tripmoment_writeForm"

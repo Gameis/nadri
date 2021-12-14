@@ -18,7 +18,9 @@
     <div id="areaWrap">
         <div id="areaHeader">
             <div id="areaPath">
-                <div class="areaPathItem"><a href="/nadri">홈</a></div>
+                <div class="areaPathItem"><a href="/nadri">&nbsp;&nbsp;홈&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;아시아&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;대한민국&nbsp;&nbsp;</a></div>
                 <div class="areaPathItem"><a href="#">지역 이름</a></div>
             </div><!--areaPath-->
             <div id="areaSearch">
@@ -227,15 +229,12 @@
 	//검색
 	function searchEnterkey() {
 	    if (window.event.keyCode == 13) {
-	        alert('엔터키가 눌렸어요~');
 	        if($('.search').val() != "") 
 	        $.ajax({
 	        	url: '/nadri/area/search',
 	        	type: 'get',
 	        	data: 'searchText=' + $('.search').val(),
 	        	success: function(data) {
-	        		alert('성공');
-	        		alert(JSON.stringify(data));
 	        		if(data.content_seq == '2') location.href="/nadri/main/area?main_seq=" + data.seq;
 	        		else if(data.content_seq == '3') location.href="/nadri/area/popular?pop_seq=" + data.seq;
 	        		else if(data.content_seq == '5') location.href="/nadri/area/activity?activity_seq=" + data.seq;
@@ -259,7 +258,6 @@
 			type: 'get',
 			data: 'main_seq=' + $('#main_seq').val(),
 			success: function(data) {
-				alert(JSON.stringify(data));
 				num = 0;
 				$.each(data, function(index, items){
 					$('#main_name').val(items.main_name);
@@ -355,8 +353,6 @@
     	url: '/nadri/area/onAreaHotel',
     	type: 'get',
     	success: function(data) {
-    		alert('호텔 성공');
-    		alert(JSON.stringify(data));
     		var count = -1;
             var activityCount = 1;
             
@@ -384,8 +380,6 @@
                 var facility = ((items.hotel_facility / (110/19)).toFixed(2) * 100) + '%;';
                 var location = ((items.hotel_location / (110/19)).toFixed(2) * 100) + '%;';
                 var service = ((items.hotel_service / (110/19)).toFixed(2) * 100) + '%;';
-                
-                alert("clean = " + clean + ", facility = " + facility + ", location = " + location + ", service = " + service)
                 
                 $('<div/>', {
                 	class: 'card hotelCard'  
