@@ -48,7 +48,20 @@ public class TripmemberServiceImpl implements TripmemberService {
 		
 	}	//checkId
 	
+	@Override
+	public String checkNickName(String nickName) {
 
+		TripmemberDTO tripmemberDTO=tripmemberDAO.checkNickName(nickName);
+		
+		if(tripmemberDTO==null)
+			return "non-exist";
+		else {
+			return "exist";
+		}
+		
+	}	//checkId
+	
+	
 	// 회원가입
 	@Override
 	public void write(TripmemberDTO tripmemberDTO) {
@@ -72,6 +85,12 @@ public class TripmemberServiceImpl implements TripmemberService {
 	@Override
 	public void delete(String id) {
 		tripmemberDAO.delete(id);	
+	}
+
+	@Override
+	public void imgModify(TripmemberDTO tripmemberDTO) {
+	
+		tripmemberDAO.imgModify(tripmemberDTO);
 	}
 
 

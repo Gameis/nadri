@@ -96,7 +96,7 @@ function getReviewList(){
 	//모든 리뷰리스트 출력
     var pageNum = $.trim($('#pageNum').val() || 0);
     var activity_seq = $.trim($('#activity_seq').val() || 0);
-    debugger
+
     //리스트삭제
     removeReviewList();
     

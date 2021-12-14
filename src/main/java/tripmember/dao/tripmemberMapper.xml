@@ -12,6 +12,10 @@
  		select * from tripmember where id=#{id}
  	</select>
  	
+ 	<select id="checkNickName" parameterType="String" resultType="tripmember">
+ 		select * from tripmember where nickName=#{nickName}
+ 	</select>
+ 	
 	<select id="checkPostSearch" parameterType="java.util.Map" resultType="zipcode">
 		select * from newzipcode 
 		where sido like '%'||#{sido}||'%'
@@ -45,16 +49,21 @@
  -->
 
  	<update id="modify" parameterType="tripmember">
- 		update tripmember set name=#{name}, pwd=#{pwd}, email1=#{email1}, email2=#{email2}
+ 		update tripmember set    pwd=#{pwd}, email1=#{email1}, email2=#{email2}
 								,tel1=#{tel1}, tel2=#{tel2}, tel3=#{tel3}, zipcode=#{zipcode}
 								,address=#{address}, addressDetail=#{addressDetail} 
 								,profileImg=#{profileImg}, nickName=#{nickName} where id=#{id}
  	</update>
  	
+	 <update id="imgModify" parameterType="tripmember" >
+		update tripmember set profileImg=#{profileImg} where id=#{id}
+  	</update>	
+  	
  	<delete id="delete" parameterType="String">
  		delete tripmember where id=#{id}
  	</delete> 	
  	
+	
  </mapper>
  
  
