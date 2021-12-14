@@ -8,16 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>전 세계 인기 여행지 & 꼭 가봐야 할 명소 추천 | 트립닷컴</title>
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/main/main_top.css">
-<<<<<<< HEAD
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-=======
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
->>>>>>> 40e9f2d03cbcf203c37950f80028483547f02e76
-
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
 <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="./repository/css/main/main_con.css">
