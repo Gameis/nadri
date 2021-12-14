@@ -1,15 +1,36 @@
 @charset "UTF-8";
 
+/* float 속성 해제 */
+.clearfix{
+	clear: both;
+}
+
+/* 모달 화면처리 완전해결안됨  */
 .modal-backdrop {
   z-index: -10;
 }
 
-
-div>a>img{
-    width: 50px;
+/* 카카오 로그인  */
+#kakaologin{
+	margin-top:10px;
+	padding:10px 5px;
+    width: 270px;
     height: 50px; 
-    border-radius: 70%;
+    border: 1px solid #f8d300; 
+    background: #f8e348; 
+    border-radius: 5%;
     overflow: hidden;
+}
+
+#loginBtn{
+	margin-top:10px;
+	padding:10px 5px;
+    width: 270px;
+    height: 50px; 
+    border: 1px solid #f8d300; 
+    background: #f8e348; 
+    border-radius: 5%;
+    overflow: hidden;	
 }
 
 .loginForm  {
@@ -21,6 +42,26 @@ div>a>img{
     flex-direction: column;
 }
 
+.logout_wrap{
+		float:left;
+	
+}
+/* 로그아웃버튼 */
+#logoutBtn{
+ 	color: #808080;
+	padding:1px 1px;
+    width: 100px;
+    height: 25px; 
+    border: 1px solid #7EC0E4; 
+    background: #8EC0E4; 
+    border-radius: 5%;
+    overflow: hidden;	
+	
+	
+}
+
+
+/*곰돌이 얼굴  */
 svg {
     width: 70%;
     border-radius: 50%;

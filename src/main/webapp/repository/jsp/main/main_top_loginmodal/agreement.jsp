@@ -82,20 +82,27 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+		
+    	//$("#membershipmodalBtn").attr('disabled', true);//이거한줄이랑
+        $("#nextBtn").click(function(){
+        	if(!$("#chk1").is(":checked")){
+        		alert("전자 상거래 표준약관에 동의 하셔야 다음 단계로 진행 가능합니다 ");	
+        		return false;
+        	
+        	}else if(!$("#chk2").is(":checked")){
+                alert("개인정보 보호지침에 동의 하셔야 다음 단계로 진행 가능합니다 ");
+             	return false;
+                
+            }else {
+				$("#membershipmodalBtn").attr('disabled', false); 	
 
-        $("#nextBtn").click(function(){    
-            if($("#chk1").is(":checked") == false){
-                alert("전자 상거래 표준약관에 동의 하셔야 다음 단계로 진행 가능합니다");
-                return;
-            }else if($("#chk2").is(":checked") == false){
-                alert("개인정보 보호지침에 동의 하셔야 다음 단계로 진행 가능합니다");
-                return;
-            }else{
-                $("#nextBtn").submit();
-            }
+        		return false;	//여기에 return false 가 걸려있는데 대체 왜 모달에서 나가지는건지 모르겠어요
+
+        	
+        	}
         });    
     });
-   
+    //if($("#chk1").is(":checked") && $("#chk2").is(":checked")
         
   //전체 선택 전체 해제
     $('#checkAll').click(function(){

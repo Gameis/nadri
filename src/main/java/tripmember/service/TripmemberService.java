@@ -14,6 +14,8 @@ public interface TripmemberService {
 	public void write(TripmemberDTO tripmemberDTO);
 
 	public String checkId(String id);
+	
+	public String checkNickName(String nickName);
 
 //이메일 인증 이건 못했음
 //	public String checkEmail(String email);
@@ -34,6 +36,8 @@ public interface TripmemberService {
 	public void modify(TripmemberDTO tripmemberDTO);
 
 	public void delete(String id);
+
+	public void imgModify(TripmemberDTO tripmemberDTO);
 
 
 
