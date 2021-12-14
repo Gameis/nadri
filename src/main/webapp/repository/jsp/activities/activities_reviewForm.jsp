@@ -129,6 +129,8 @@
 <div class="review-writeContainer">
 	<ul class="review-write-list">
 		<div class="review-write-form">
+			<h2 class="title">리뷰작성</h2>
+			
 			<li class="review-write-detail">
 			
 				<div class="review-write-user">
@@ -218,13 +220,13 @@
 					<div class="title-ffsd">
 						리뷰
 					</div>
-					<div class="append-startingPoint">
+					<div id="append-startingPoint" class="append-startingPoint">
 <!-- 추가되는항목시점 -->
 						<div class="comment-list">	
 							<div class="comment-list-item">
 								<div>
 									<div class="user-image-position">
-										<img src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg" data-src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg">
+										<img src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg" >
 									</div>
 									<div class="user-commentinfo-position">
 										<div>
@@ -237,7 +239,7 @@
 												<em class="good-comment">
 													3<!-- score_act_review -->
 												</em>
-													/5
+												/5
 											</span>
 											<span class="commentDate">
 												act_review_date
@@ -246,13 +248,21 @@
 									</div>
 								</div>
 								<div class="userinfo-position-left comment-container">
-									<div class="text-img"><div class="commentListText">편리하고 빠른 예약으로 즐길수 있어서 최고입니다</div><div class="show-hide-comment dn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="></div></div>
+									<div class="text-img">
+										<div class="commentListText">
+											편리하고 빠른 예약으로 즐길수 있어서 최고입니다
+										</div>
+										<div class="show-hide-comment dn">
+											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg==">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 <!-- 추가되는항목종점 -->
 					</div>
-					
+					<!-- 페이징처리 -->
+	    			<div id="page-selection"></div>
 				</div>
 			</section>
 		</div>

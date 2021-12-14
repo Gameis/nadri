@@ -8,12 +8,14 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import activities.bean.OnActivitiesDTO;
+import activities.bean.TripActReviewCntDTO;
 import activities.bean.TripActReviewDTO;
 import activities.bean.TripActReviewUserDTO;
 import activities.service.ActivitiesService;
@@ -39,8 +41,9 @@ public class ActivitiesController {
 	
 	@RequestMapping(value = "/getActReviewCnt", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> getActReviewCnt(HttpServletRequest request) {
-		TripActReviewUserDTO tripActReviewUserDTO = null;
+	public Map<String, Object> getActReviewCnt(HttpServletRequest request,
+											   @ModelAttribute TripActReviewUserDTO tripActReviewUserDTO,
+											   @ModelAttribute TripActReviewCntDTO tripActireviewCntDTO) {
 		HttpSession session = request.getSession();
 		
 		Map<String, Object> resultMap = new HashMap<>();
@@ -48,11 +51,21 @@ public class ActivitiesController {
 		
 		if(session.getAttribute("member_seq") != null) {
 			String member_seq = (String)session.getAttribute("member_seq");
-		
-			resultMap.put("userInfo", activitiesService.getActReviewUserInfo(member_seq));
+			tripActReviewUserDTO.setMember_seq(member_seq);
+			resultMap.put("userInfo", activitiesService.getActReviewUserInfo(tripActReviewUserDTO));
 			
 		}
 		
+		return resultMap;
+	}
+	
+	@RequestMapping(value="/getReviewList", method=RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> getReviewList(@RequestParam int pageNum){		
+		Map<String, Object> resultMap = new HashMap<>();
+		resultMap.put("totalCnt", activitiesService.getReviewContentCnt());
+		resultMap.put("contentList", activitiesService.getReviewContent(pageNum));
+	
 		return resultMap;
 	}
 	

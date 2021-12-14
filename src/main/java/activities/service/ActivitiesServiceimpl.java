@@ -1,11 +1,15 @@
 package activities.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import activities.bean.OnActivitiesDTO;
 import activities.bean.TripActReviewCntDTO;
 import activities.bean.TripActReviewDTO;
+import activities.bean.TripActReviewListDTO;
+import activities.bean.TripActReviewUserDTO;
 import activities.dao.ActivitiesDAO;
 
 @Component
@@ -29,8 +33,18 @@ public class ActivitiesServiceimpl implements ActivitiesService {
 	}
 
 	@Override
-	public Object getActReviewUserInfo(String member_seq) {
-		return activitiesDAO.getActReviewUserInfo(member_seq);
+	public TripActReviewUserDTO getActReviewUserInfo(TripActReviewUserDTO tripActReviewUserDTO) {
+		return activitiesDAO.getActReviewUserInfo(tripActReviewUserDTO);
+	}
+
+	@Override
+	public int getReviewContentCnt() {
+		return activitiesDAO.getReviewContentCnt();
+	}
+
+	@Override
+	public List<TripActReviewListDTO> getReviewContent(int pageNum) {
+		return activitiesDAO.getReviewContent(pageNum);
 	}
 
 }

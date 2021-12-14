@@ -42,6 +42,7 @@
 		<typeAlias type="activities.bean.TripActReviewDTO" alias="actReview"/>
 		<typeAlias type="activities.bean.TripActReviewCntDTO" alias="actReviewCnt"/>
 		<typeAlias type="activities.bean.TripActReviewUserDTO" alias="actUserInfo"/>
+		<typeAlias type="activities.bean.TripActReviewListDTO" alias="actReviewList"/>
 
 	</typeAliases>
 	

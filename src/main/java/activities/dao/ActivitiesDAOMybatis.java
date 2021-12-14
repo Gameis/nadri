@@ -1,5 +1,7 @@
 package activities.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -8,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 import activities.bean.OnActivitiesDTO;
 import activities.bean.TripActReviewCntDTO;
 import activities.bean.TripActReviewDTO;
+import activities.bean.TripActReviewListDTO;
+import activities.bean.TripActReviewUserDTO;
 
 @Repository
 @Transactional
@@ -33,8 +37,18 @@ public class ActivitiesDAOMybatis implements ActivitiesDAO {
 	}
 
 	@Override
-	public Object getActReviewUserInfo(String member_seq) {
-		return sqlSession.selectOne("activitiesSQL.getActReviewUserInfo");
+	public TripActReviewUserDTO getActReviewUserInfo(TripActReviewUserDTO tripActReviewUserDTO) {
+		return sqlSession.selectOne("activitiesSQL.getActReviewUserInfo", tripActReviewUserDTO);
+	}
+
+	@Override
+	public int getReviewContentCnt() {
+		return sqlSession.selectOne("activitiesSQL.getReviewContentCnt");
+	}
+
+	@Override
+	public List<TripActReviewListDTO> getReviewContent(int pageNum) {
+		return sqlSession.selectList("activitiesSQL.getReviewContent", pageNum);
 	}
 
 }

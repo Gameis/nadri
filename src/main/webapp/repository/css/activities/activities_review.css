@@ -600,9 +600,20 @@ overflow: hidden;
 }
 .review-write-list{
     background: rgb(255, 255, 255);
-    padding: 0px 24px;
+    padding: 0px;
     margin: 0;
     list-style: none;
+}
+.review-write-form .title{
+	font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 24px;
+    color: #111;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 .review-write-detail{
     /* padding: 24px 0px;*/

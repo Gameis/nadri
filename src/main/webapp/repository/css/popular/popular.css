@@ -448,9 +448,9 @@ button, input, optgroup, select, textarea {
 	float: left;
 }
 
-.active {
+/* .active {
 	width: 16.667%;
-}
+} */
 
 .index_card_con {
 	padding: 0 8px !important;
