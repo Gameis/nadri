@@ -37,6 +37,8 @@
 		<typeAlias type="tripmoment.bean.TripViewDTO" alias="tripView"/>
 		
 		<typeAlias type="activities.bean.OnActivitiesDTO" alias="onActivities"/>
+		
+		<typeAlias type="tripmoment.bean.TripmomentCommentDTO" alias="tripmomentComment"/>
 
 	</typeAliases>
 	

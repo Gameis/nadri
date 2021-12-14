@@ -25,6 +25,7 @@
 </head>
 <body>
 	<form id="uploadImageForm" class="photos" id="photos">
+	<input type="hidden" name="member_seq" value="${member_seq}">
 		<div>
 			<div class="travel_guide_root_class">
 				<div class="PublishMainContainer">
@@ -41,12 +42,9 @@
 									<div class="icon-upload">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
 											class="bi bi-camera-fill" viewBox="0 0 16 16">
-                              <path
-												d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                              <path
-												d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
-                              </svg>
-
+                              			<path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                              			<path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+                              			</svg>
 									</div>
 									<p class="current-total">
 										<input type="file" id="btnAtt" style="overflow: hidden;"
@@ -135,8 +133,7 @@
 		<footer> </footer>
 	</div>
 	</div>
-	<script type="text/javascript"
-		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
     window.onload = function(){
        ( /* att_zone : 이미지들이 들어갈 위치 id, btn : file tag id */
@@ -285,8 +282,7 @@
         else if ($('#checked').val() == 'false') {
            $('.privacy-unagree-tips').css('display', 'block');
            
-        } else {
-
+        }else {
            var formData = new FormData(
                  $('#uploadImageForm')[0]); //form안에 있는 모든 것
            $.ajax({
@@ -298,17 +294,14 @@
               data : formData,
               success : function() {
                  alert('이미지 등록 완료');
+                 location.href = '/nadri';
               },
               error : function(err) {
                  console.log(err)
               }
            });
-            
-                 return "/nadri/repository/index";
         }
      });
 </script>
-
-
 </body>
 </html>

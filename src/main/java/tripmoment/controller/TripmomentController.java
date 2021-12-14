@@ -38,12 +38,12 @@ public class TripmomentController {
 	
 	@RequestMapping(value = "/tripmoment_writeForm", method=RequestMethod.POST)
 	@ResponseBody
-	public String tripmoment_writeForm(
+	public void tripmoment_writeForm(
 									   @ModelAttribute TripmomentDTO tripmomentDTO,
 									   @ModelAttribute ImgDTO imgDTO,
 									   @RequestParam("img[]") List<MultipartFile> list) {
 		
-		
+		System.out.println("member_seq = " + tripmomentDTO.getMember_seq());
 		tripmomentService.tripmoment_write(tripmomentDTO);
 		
 		int count = 0;
@@ -53,9 +53,6 @@ public class TripmomentController {
 			tripmomentService.tripmoment_writeForm(imgDTO, tripmomentDTO.getPop_name());
 			count++;
 		} //for
-
-		
-		return "/tripmoment/tripmoment_writeForm";
 	}
 	
 	private boolean checkImageType(File file) {
