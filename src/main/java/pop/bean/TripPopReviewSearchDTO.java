@@ -7,4 +7,5 @@ public class TripPopReviewSearchDTO {
 	private int pageNum;
 	private String searchType;
     private String isDesc;
+    private String pop_seq;
 }

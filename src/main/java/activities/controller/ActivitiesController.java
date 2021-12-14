@@ -43,11 +43,12 @@ public class ActivitiesController {
 	@ResponseBody
 	public Map<String, Object> getActReviewCnt(HttpServletRequest request,
 											   @ModelAttribute TripActReviewUserDTO tripActReviewUserDTO,
-											   @ModelAttribute TripActReviewCntDTO tripActireviewCntDTO) {
+											   @ModelAttribute TripActReviewCntDTO tripActireviewCntDTO,
+											   @RequestParam("activity_seq") String activity_seq) {
 		HttpSession session = request.getSession();
 		
 		Map<String, Object> resultMap = new HashMap<>();
-		resultMap.put("reviewCnt", activitiesService.getActReviewCnt());
+		resultMap.put("reviewCnt", activitiesService.getActReviewCnt(activity_seq));
 		
 		if(session.getAttribute("member_seq") != null) {
 			String member_seq = (String)session.getAttribute("member_seq");
@@ -61,10 +62,15 @@ public class ActivitiesController {
 	
 	@RequestMapping(value="/getReviewList", method=RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> getReviewList(@RequestParam int pageNum){		
+	public Map<String, Object> getReviewList(@RequestParam int pageNum,
+											 @RequestParam("activity_seq") String activity_seq){		
 		Map<String, Object> resultMap = new HashMap<>();
-		resultMap.put("totalCnt", activitiesService.getReviewContentCnt());
-		resultMap.put("contentList", activitiesService.getReviewContent(pageNum));
+		resultMap.put("totalCnt", activitiesService.getReviewContentCnt(activity_seq));
+		
+		Map<String, Object> activityMap = new HashMap<>();
+		activityMap.put("pageNum", pageNum);
+		activityMap.put("activity_seq", activity_seq);
+		resultMap.put("contentList", activitiesService.getReviewContent(activityMap));
 	
 		return resultMap;
 	}

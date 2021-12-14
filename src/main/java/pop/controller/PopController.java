@@ -68,10 +68,10 @@ public class PopController {
 		
 	}
 			
-	@RequestMapping(value="getCountView")
+	@RequestMapping(value="getCountView", method=RequestMethod.GET)
 	@ResponseBody
-	public TripPopCountDTO getCountView() {
-		return popService.getCountView();
+	public TripPopCountDTO getCountView(@RequestParam String pop_seq) {
+		return popService.getCountView(pop_seq);
 	}
 	
 	@RequestMapping(value="/getLocation", method=RequestMethod.GET)

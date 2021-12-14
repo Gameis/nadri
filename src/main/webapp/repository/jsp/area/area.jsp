@@ -291,9 +291,10 @@
       success: function(data) {
         var count = -1;
         var popCount = 1;
+        
         $.each(data, function(index, items){
           if(index % 4 == 0) {
-
+		
             if(index == 0) {
               $('<div/>', {
                 class: 'carousel-item active'

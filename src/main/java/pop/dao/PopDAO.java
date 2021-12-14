@@ -21,7 +21,7 @@ public interface PopDAO {
 
 	public void popReviewWrite(TripPopReviewDTO tripPopReviewDTO);
 
-	public TripPopCountDTO getCountView();
+	public TripPopCountDTO getCountView(String pop_seq);
 
 	public int getReviewContentCnt(TripPopReviewSearchDTO tripPopReviewSearchDTO);
 	
