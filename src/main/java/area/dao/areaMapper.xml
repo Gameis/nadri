@@ -11,6 +11,10 @@
 		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, activity_seq.currval, #{main_seq}, #{mainImg})
 	</insert>
 	
+	<insert id="imgHotelWrite" parameterType="img">
+		insert into img values(img_seq.nextval, #{img_name}, #{img_path}, #{content_seq}, hotel_seq.currval, #{main_seq}, #{mainImg})
+	</insert>
+	
 	<insert id="popWrite" parameterType="tripPop">
 		insert into tripPop values(pop_seq.nextval, #{pop_name}, #{pop_businessTime}, #{pop_tourismTime}, #{pop_call}, #{main_seq}, #{detailInfo})
 	</insert>
@@ -49,6 +53,23 @@
 										#{main_seq})
 	</insert>
 	
+	<insert id="hotelWrite" parameterType="tripHotel">
+		insert into tripHotel values(hotel_seq.nextval, 
+									 #{hotel_name}, 
+									 #{hotel_address}, 
+									 #{hotel_year}, 
+									 #{hotel_remodeling}, 
+									 #{hotel_room}, 
+									 #{hotel_info}, 
+									 #{hotel_clean}, 
+									 #{hotel_facility}, 
+									 #{hotel_location}, 
+									 #{hotel_service}, 
+									 #{main_seq})
+	</insert>
+	
+	
+	
 	<select id="printActivityMain" resultType="activityMain">
 		select activity_seq, activity_name, activity_salerate, activity_price * ((100 - activity_salerate)/100) as price, img_name, img_path
 		from tripactivity
@@ -74,5 +95,25 @@
 
 	<select id="searchActivity" parameterType="String" resultType="String">
 		select activity_seq from tripactivity where activity_name = #{searchText}
+	</select>
+	
+	<select id="onAreaHotel" resultType="hotelMain">
+		select hotel_seq, 
+		       hotel_name, 
+		       hotel_address, 
+		       hotel_year, 
+		       hotel_remodeling, 
+		       hotel_room, 
+		       hotel_info, 
+		       hotel_clean, 
+		       hotel_facility, 
+		       hotel_location, 
+		       hotel_service, 
+		       triphotel.main_seq as "main_seq", 
+		       img_name, 
+		       img_path
+		from triphotel
+		join img on(hotel_seq = seq)
+		where content_seq = 4
 	</select>
 </mapper>

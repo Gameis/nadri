@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<link rel="stylesheet" type="text/css"
-	href="/nadri/repository/css/tripmember/loginmodal.css">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<div class="trip_main_hd_top_nav">
-	<div class="main_hd trip_main_hd main_hd_line">
-		<div class="main_hd_inner main_hd_newline">
-			<div class="main_hd_flex">
-				<div class="trip_main_hd_logo">
-					<a class="trip" href="#">trip.com</a>
-				</div>
+	<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
+
+	<div class="trip_main_hd_top_nav">
+		<div class="main_hd trip_main_hd main_hd_line">
+			<div class="main_hd_inner main_hd_newline">
+				<div class="main_hd_flex">
+					<div class="trip_main_hd_logo">
+						<a class="trip" href="#">trip.com</a>
+					</div>
 
 				<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
 
@@ -174,6 +174,7 @@
 </div>
 
 <%-- 세번째 모달 회원가입  --%>
+<<<<<<< HEAD
 <div class="modal fade" id="membershipmodal" aria-hidden="true"
 	data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel3"
 	tabindex="-1">
@@ -186,6 +187,69 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal"
 					aria-label="Close"></button>
 			</div>
+=======
+<div class="modal fade" id="membershipmodal" aria-hidden="true" data-bs-backdrop="static" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel3" style="color:#8EC0E4;">회원가입</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <%--회원가입신청 --%>
+      <div class="modal-body">
+      		<jsp:include page="main_top_loginmodal/writeForm.jsp" />	
+      </div>
+      
+      <div class="login">
+        <button class="btn btn-primary" data-bs-target="#agreementmodal" data-bs-toggle="modal">약관신청화면으로</button>
+      </div>
+    </div>
+  </div>
+</div>
+	
+	
+<!-- 카카오 스크립트 -->
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+Kakao.init('3e185ce5fc211a923e30507eac3d2f59'); //발급받은 키 중 javascript키를 사용해준다.
+console.log(Kakao.isInitialized()); // sdk초기화여부판단
+//카카오로그인
+function kakaoLogin() {
+    Kakao.Auth.login({
+      success: function (response) {
+        Kakao.API.request({
+          url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+//카카오로그아웃  
+function kakaoLogout() {
+    if (Kakao.Auth.getAccessToken()) {
+      Kakao.API.request({
+        url: '/v1/user/unlink',
+        success: function (response) {
+        	console.log(response)
+        },
+        fail: function (error) {
+          console.log(error)
+        },
+      })
+      Kakao.Auth.setAccessToken(undefined)
+    }
+  }  
+</script>	
+>>>>>>> a5b16d1bb210410c21b2bfc9c24bf5d1e6bf2858
 
 			<%--회원가입신청 --%>
 			<div class="modal-body">
