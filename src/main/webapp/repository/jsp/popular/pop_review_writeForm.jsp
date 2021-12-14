@@ -26,11 +26,11 @@
 				
 					<div class="review-write-user">
 						<a style="color: rgb(15, 41, 77); text-decoration: none;">
-							<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg">
+							<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="/nadri/repository/img/member/defaultImg.png">
 						</a>
 						<div class="review-write-userInfo">
 							<div class="reivew-write-userName">
-								user_name
+								nickName
 							</div><!-- reivew-write-userName -->
 						</div><!-- review-write-userInfo -->
 					</div><!-- review-write-user -->
@@ -81,7 +81,6 @@
 							
 						</form>
 					</div><!-- review-write-content -->
-					
 				</li><!-- review-write-detail -->
 			</div><!-- review-write-form -->
 		</ul><!-- review-write-list -->

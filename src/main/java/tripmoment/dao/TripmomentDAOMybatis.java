@@ -31,7 +31,7 @@ public class TripmomentDAOMybatis implements TripmomentDAO {
 
 	@Override
 	public void tripmoment_write(TripmomentDTO tripmomentDTO) {
-		sqlSession.insert("tripmomentSQL.tripmomment_write", tripmomentDTO);
+		sqlSession.insert("tripmomentSQL.tripmoment_write", tripmomentDTO);
 	}
 
 	@Override
@@ -47,5 +47,10 @@ public class TripmomentDAOMybatis implements TripmomentDAO {
 	@Override
 	public TripViewDTO getTripView(String moment_seq) {
 		return sqlSession.selectOne("tripmomentSQL.getTripView", moment_seq);		
+	}
+
+	@Override
+	public List<MainTripmomentDTO> onReTripmoment(String moment_seq) {
+		return sqlSession.selectList("tripmomentSQL.onReTripmoment", moment_seq);		
 	}
 }

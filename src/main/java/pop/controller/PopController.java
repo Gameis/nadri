@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,7 @@ import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewDTO;
 import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
+import pop.bean.TripPopUserInfoDTO;
 import pop.service.PopService;
 
 @Controller
@@ -34,8 +36,9 @@ import pop.service.PopService;
 public class PopController {
 	
 	@Autowired
-	private PopService popService;	
+	private PopService popService;
 	
+	//멤버세션했고 무조건 세션이 있을때만 작성가능하게 바꿀껏
 	@RequestMapping(value="/pop_review_write", method=RequestMethod.POST)
 	@ResponseBody
 	public void pop_reviewWrite(@ModelAttribute TripPopReviewDTO tripPopReviewDTO,
@@ -43,29 +46,23 @@ public class PopController {
 								@RequestParam("img[]") List<MultipartFile> list,
 								HttpServletRequest request) {
 		
-		//String root_path = request.getSession().getServletContext().getRealPath("/");
-        String attach_path = "\\popular\\review";
+		String root_path = request.getSession().getServletContext().getRealPath("/");
+        String attach_path = "repository\\img\\popular\\review";
+        String path = root_path + attach_path;
         
-        //String path = root_path + attach_path;
-        
-		//받아오기전까지만 쓰기
-		int member_seq = 1;
+        System.out.println(request.getSession().getServletContext().getRealPath("/"));
+		//받아오기전까지만 쓰기//////////////////////////////////////////////////////////
+    	HttpSession session = request.getSession();
+		
+		String member_seq = (String)session.getAttribute("member_seq");			
+		
 		tripPopReviewDTO.setMember_seq(member_seq);
-		
-		System.out.println(tripPopReviewDTO);
-		
+				
 		popService.popReviewWrite(tripPopReviewDTO);
-		
-		//세션받기
-//		ModelAndView mv = new ModelAndView();
-//		HttpSession session = request.getSession();
-//		int member_seq = (int)session.getAttribute("member_seq");
-//		session.setAttribute("member_seq", member_seq);
-//		mv.setViewName("/repository/jsp/popular/popular");
 		
 		
 		for(MultipartFile img : list) {
-			imgReNameCopy(tripPopImgDTO, img, "F", "review", attach_path);
+			imgReNameCopy(tripPopImgDTO, img, "F", "review", path);
 			popService.popReviewImgWrite(tripPopImgDTO);
 		}//for
 		
@@ -77,13 +74,15 @@ public class PopController {
 		return popService.getCountView();
 	}
 	
-	
 	@RequestMapping(value="/getLocation", method=RequestMethod.GET)
 	@ResponseBody
-	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {
+	public TripPopLocationDTO getLocation(@RequestParam int pop_seq) {		
 		
-		return popService.getLocation(pop_seq);
+		Map<String, Object> resultMap = new HashMap<>();
 		
+		resultMap.put("pop_seq", pop_seq);
+		
+		return popService.getLocation(resultMap);
 	}
 	
 	@RequestMapping(value="/getPopImg", method=RequestMethod.POST)
@@ -110,6 +109,24 @@ public class PopController {
 		return resultMap;
 	}
 	
+	//유저정보가져오기
+	@RequestMapping(value="getUserInfo", method=RequestMethod.POST)
+	@ResponseBody
+	public TripPopUserInfoDTO getUserInfo(TripPopUserInfoDTO tripPopUserInfoDTO,
+										  HttpServletRequest request) {
+		
+		tripPopUserInfoDTO = null;
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("member_seq") != null) {
+			String member_seq = (String)session.getAttribute("member_seq");
+		
+			tripPopUserInfoDTO = popService.getUserInfo(member_seq);
+		}
+		
+		return tripPopUserInfoDTO;
+	}
+	
 	//img파일인지 체크 메소드
 	private boolean checkImageType(File file) {
 		try {
@@ -123,9 +140,9 @@ public class PopController {
 	}
 	
 	//함수
-		public void imgReNameCopy(TripPopImgDTO tripPopImgDTO, MultipartFile img, String isMain, String img_path, String attach_path) {
+		public void imgReNameCopy(TripPopImgDTO tripPopImgDTO, MultipartFile img, String isMain, String img_path, String path) {
 //		String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
-		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + attach_path; //현석
+		String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\popular\\review"; //현석
 //		String filePath = path; //현석
 		
 		String fileName = null;
@@ -144,8 +161,7 @@ public class PopController {
 		if(fileName==""){
 			System.out.println("땡땡찍혔따");
 			fileName = "noImg.jpg";
-			
-			file = new File(filePath, fileName);
+			file = new File(path, fileName);
 		
 		}
 		

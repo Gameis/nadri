@@ -12,19 +12,18 @@
     <link rel="stylesheet" href="/nadri/repository/css/area/area.css">
 </head>
 <body>
-	<input type="hidden" id="main_seq" value="${param.main_seq}">
+	<input type="hidden" id="main_seq" value="${param.main_seq}"/>
+	<input type="hidden" id="main_name" value=""/>
+	<input type="hidden" id="memId" value="${memId }"/>
     <div id="areaWrap">
         <div id="areaHeader">
             <div id="areaPath">
-                <div class="areaPathItem"><a href="#">홈</a></div>
-                <div class="areaPathItem"><a href="#">트립 가이드</a></div>
-                <div class="areaPathItem"><a href="#">아시아</a></div>
-                <div class="areaPathItem"><a href="#">대한민국</a></div>
-                <div class="areaPathItem"><a href="#">서울</a></div>
+                <div class="areaPathItem"><a href="/nadri">홈</a></div>
+                <div class="areaPathItem"><a href="#">지역 이름</a></div>
             </div><!--areaPath-->
             <div id="areaSearch">
                 <div id="areaSearch_input">
-                    <input type="text" placeholder="여행지, 명소, 호텔 등으로 검색">
+                    <input type="text" class="search" placeholder="여행지, 명소, 호텔 등으로 검색" value="" onkeyup="searchEnterkey()">
                 </div>
                 <div id="areaSearch_button">
                     <div id="areaSearch_icon"></div>
@@ -40,19 +39,19 @@
             </div>
         </div><!--areaDestination-->
         <div id="areaNav">
-            <a href="#">
+            <a href="#addPopBtn">
                 <div class="module">
                     <i class="bi bi-bank"></i>
                     <div><span>명소</span></div>
                 </div>
             </a>
-            <a href="#">
+            <a href="#addHotelBtn">
                 <div class="module">
                     <i class="bi bi-building"></i>
                     <div><span>호텔</span></div>
                 </div>
             </a>
-            <a href="#">
+            <a href="#addActivityBtn">
                 <div class="module">
                     <i class="bi bi-tsunami"></i>
                     <div><span>액티비티</span></div>
@@ -73,7 +72,7 @@
             </div>
         </div><!--areaMainImg-->
         <div class="areaSlideTitle">
-          <h2 style="font-weight: bold;">지역이름 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+"></h2>
+          <h2 style="font-weight: bold;"><span>지역 이름 인기명소</span><input type="button" id="addPopBtn" class="addButton" value="+"></h2>
           <!--divSlide-->
           <div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
             <div id="areaPopularLocation_slide" class="carousel slide" data-bs-ride="carousel">
@@ -98,199 +97,7 @@
           <!--divSlide-->
           <div class="areaSlide">
             <div id="areaHotel_slide" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="card-group">
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel1.jpg" class="card-img-top" alt="hotel1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">그랜드 워커힐 서울</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel2.jpg" class="card-img-top" alt="hotel2.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">포시즌스호텔 서울</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel3.jpg" class="card-img-top" alt="hotel3.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">인터컨티넨탈 서울 코엑스</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel4.jpg" class="card-img-top" alt="hotel4.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">노보텔 앰배서더 서울 동대문 호텔 & 레지던스</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
-                <div class="carousel-item">
-                  <div class="card-group">
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel1.jpg" class="card-img-top" alt="hotel1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel2.jpg" class="card-img-top" alt="hotel2.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel3.jpg" class="card-img-top" alt="hotel3.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/hotel4.jpg" class="card-img-top" alt="hotel4.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
-                <div class="carousel-item">
-                  <div class="card-group">
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/pop1.jpg" class="card-img-top" alt="pop1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/pop1.jpg" class="card-img-top" alt="pop1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/pop1.jpg" class="card-img-top" alt="pop1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                    <div class="card">
-                      <div class="slide_img">
-                        <img src="/nadri/repository/img/area/pop1.jpg" class="card-img-top" alt="pop1.jpg">
-                      </div>
-                      <div class="card-body">
-                        <div class="pop-title"><a href="#">명동</a></div>
-                        <div class="pop-review">
-                            <div class="pop-review-score">
-                                <span class="pop-review-score-current">4.5</span>
-                                <span class="pop-review-score-total">/5</span>
-                            </div>
-                            <div class="pop-review-text">5,808건의 리뷰</div>
-                        </div>
-                      </div><!--card-body-->
-                    </div><!--card-->
-                  </div><!--card-group-->
-                </div><!--carousel-item-->
+              <div class="carousel-inner" id="hotel-carousel-inner">
               </div><!--carousel-inner-->
               <button class="carousel-control-prev" type="button" data-bs-target="#areaHotel_slide" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -416,7 +223,37 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/nadri/repository/js/area/area.js"></script>
 <script type="text/javascript">
+
+	//검색
+	function searchEnterkey() {
+	    if (window.event.keyCode == 13) {
+	        alert('엔터키가 눌렸어요~');
+	        if($('.search').val() != "") 
+	        $.ajax({
+	        	url: '/nadri/area/search',
+	        	type: 'get',
+	        	data: 'searchText=' + $('.search').val(),
+	        	success: function(data) {
+	        		alert('성공');
+	        		alert(JSON.stringify(data));
+	        		if(data.content_seq == '2') location.href="/nadri/main/area?main_seq=" + data.seq;
+	        		else if(data.content_seq == '3') location.href="/nadri/area/popular?pop_seq=" + data.seq;
+	        		else if(data.content_seq == '5') location.href="/nadri/area/activity?activity_seq=" + data.seq;
+	        		else alert('검색어를 제대로 입력 해 주세요');
+	        	},
+	        	error: function(err) {
+	        		alert('실패');
+	        		console.log(err);
+	        	}
+	        });
+	    }
+	}
+	
 	$(function() {
+		
+		if($('#memId').val() != 'admin') $('.addButton').hide();
+		else $('.addButton').show();
+		
 		$.ajax({
 			url: '/nadri/area/onArea',
 			type: 'get',
@@ -425,8 +262,10 @@
 				alert(JSON.stringify(data));
 				num = 0;
 				$.each(data, function(index, items){
+					$('#main_name').val(items.main_name);
+					$('.areaPathItem:eq(1) > a').text(items.main_name);
 					$('#areaDestination_name').text(items.main_name);
-					$('.areaSlideTitle:eq(0) h2').html(items.main_name + ' 인기 명소 <input type="button" id="addPopBtn" class="addButton" value="+">');
+					$('.areaSlideTitle:eq(0) h2 > span').text(items.main_name + ' 인기 명소');
 					$('.areaInfo h2').text(items.main_name + ' 여행' + ' 정보');
 					$('.area-title-text').text(items.main_name + ' 소개');
 					$('.area-weather h2').text(items.main_name + ' 날씨');
@@ -488,7 +327,7 @@
             }).append($('<div/>', {
               class: 'pop-title'
             }).append($('<a/>', {
-              href: '/nadri/area/popular?pop_seq=' + items.pop_seq,
+              href: '/nadri/area/popular?pop_seq=' + items.pop_seq + '&main_seq=' + $('#main_seq').val() + '&main_name=' + $('#main_name').val(),
               text: items.pop_name
             }))).append($('<div/>', {
               class: 'pop-review'
@@ -510,6 +349,111 @@
         console.log(err);
         alert('실패');
       }
+    });
+    
+    $.ajax({
+    	url: '/nadri/area/onAreaHotel',
+    	type: 'get',
+    	success: function(data) {
+    		alert('호텔 성공');
+    		alert(JSON.stringify(data));
+    		var count = -1;
+            var activityCount = 1;
+            
+            $.each(data, function(index, items){
+            	if(index % 4 == 0) {
+
+                    if(index == 0) {
+                      $('<div/>', {
+                        class: 'carousel-item active'
+                      }).append($('<div/>', {
+                        class: 'card-group'
+                      })).appendTo($('#hotel-carousel-inner'));
+                    }else {
+                      $('<div/>', {
+                        class: 'carousel-item'
+                      }).append($('<div/>', {
+                        class: 'card-group'
+                      })).appendTo($('#hotel-carousel-inner'));
+                    }
+                    
+                    count++;
+                  }
+                
+            	var clean = ((items.hotel_clean / (110/19)).toFixed(2) * 100) + '%;';
+                var facility = ((items.hotel_facility / (110/19)).toFixed(2) * 100) + '%;';
+                var location = ((items.hotel_location / (110/19)).toFixed(2) * 100) + '%;';
+                var service = ((items.hotel_service / (110/19)).toFixed(2) * 100) + '%;';
+                
+                alert("clean = " + clean + ", facility = " + facility + ", location = " + location + ", service = " + service)
+                
+                $('<div/>', {
+                	class: 'card hotelCard'  
+                  }).append($('<div/>', {
+                	  class: 'slide_img'
+                  }).append($('<img/>', {
+                	  src: '/nadri/repository/img/'+ items.img_path + '/' + items.img_name,
+                	  class: 'card-img-top',
+                	  alt: '호텔 이미지'
+                  }))).append($('<div/>', {
+                	  class: 'card-body'
+                  }).append($('<div/>', {
+                	  class: 'pop-title'
+                  }).append($('<a/>', {
+                	  text: items.hotel_name
+                  }))).append($('<div/>', {
+                	  class: 'hotel-score'
+                  }).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '청결도'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + clean
+                  }))))).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '호텔 시설'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + facility
+                  }))))).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '위치'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + location
+                  }))))).append($('<div/>', {
+                	 class: 'hotel-score-item' 
+                  }).append($('<div/>', {
+                	  class: 'hotel-score-clean',
+                	  text: '서비스'
+                  })).append($('<div/>', {
+                	  class: 'score-bar'
+                  }).append($('<span/>', {
+                	  class: 'base-bar'
+                  }).append($('<span/>', {
+                	  class: 'bar',
+                	  style: 'width: ' + service
+                  }))))))).appendTo($('#hotel-carousel-inner .card-group:eq(' + count + ')'));
+            });//each
+    	}
     });
     
      $.ajax({

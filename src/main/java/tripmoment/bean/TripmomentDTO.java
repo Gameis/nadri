@@ -14,6 +14,6 @@ public class TripmomentDTO {
 	private String moment_content;
 	private Date moment_logdate;
 	private String pop_name;
-	private int member_seq;
+	private String member_seq;
 
 }

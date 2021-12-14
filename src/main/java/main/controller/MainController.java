@@ -7,6 +7,8 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -19,7 +21,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import area.bean.ImgDTO;
 import main.bean.TripMainDTO;
+import main.bean.TripMainImgDTO;
 import main.service.MainService;
+import tripmoment.bean.TripViewDTO;
 
 @Controller
 @RequestMapping(value= "/main")
@@ -28,9 +32,21 @@ public class MainController {
 	@Autowired
 	private MainService mainService;
 	
+	@RequestMapping(value = "/kakaoLogin", method = RequestMethod.POST)
+	@ResponseBody
+	public void kakaoLogin(@RequestParam("memId") String memId, HttpSession session) {
+		session.setAttribute("memId", memId);
+		session.setAttribute("memName", "guest");
+	}
+	
 	@RequestMapping(value = "/area", method = RequestMethod.GET)
 	public String area() {	
 		return "/repository/jsp/area/area";
+	}
+	
+	@RequestMapping(value = "/mainWriteForm", method = RequestMethod.GET)
+	public String mainWriteForm() {
+		return "/repository/jsp/main/mainWriteForm";
 	}
 	
 	@RequestMapping(value = "/mainWrite", method = RequestMethod.POST)
@@ -60,9 +76,10 @@ public class MainController {
 		}//for
 	}
 	
-	@RequestMapping(value = "/mainImgPrint", method=RequestMethod.POST)
-	public  List<TripMainDTO> mainImgPrint() {
-		return mainService.mainImgPrint(3);
+	@RequestMapping(value = "/mainImgPrint", method=RequestMethod.GET)
+	@ResponseBody
+	public  List<TripMainImgDTO> mainImgPrint() {
+		return mainService.mainImgPrint();
 	}
 	
 	private boolean checkImageType(File file) {

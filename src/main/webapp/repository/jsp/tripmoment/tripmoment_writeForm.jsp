@@ -25,6 +25,7 @@
 </head>
 <body>
 	<form id="uploadImageForm" class="photos" id="photos">
+	<input type="hidden" name="member_seq" value="${member_seq}">
 		<div>
 			<div class="travel_guide_root_class">
 				<div class="PublishMainContainer">
@@ -41,12 +42,9 @@
 									<div class="icon-upload">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
 											class="bi bi-camera-fill" viewBox="0 0 16 16">
-                              <path
-												d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                              <path
-												d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
-                              </svg>
-
+                              			<path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                              			<path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z" />
+                              			</svg>
 									</div>
 									<p class="current-total">
 										<input type="file" id="btnAtt" style="overflow: hidden;"
@@ -108,11 +106,16 @@
 						<div class="PublicPrivacyContainer tripmt-pv">
 							<div class="agreement">
 								<div class="checkbox">
-									<img alt="checkbox"
-										src="/nadri/repository/img/main/checkbox.png"
-										class="checkbox-icon"> <span class="privacy-text">콘텐츠
-										업로드에 있어서, 트립닷컴의 이용약관에 동의합니다.</span> <a class="protocol"
+									<input type="hidden" id="checked" value="false"> 
+									<img alt="checkbox" src="/nadri/repository/img/main/checkbox.png"
+										class="checkbox-icon" id="checkbox"> 
+									<img alt="checkbox_checked" src="/nadri/repository/img/main/checkbox_checked.png"
+										class="checkbox-icon checkbox_checked" id="checkbox_checked">
+									<span class="privacy-text"> 콘텐츠 업로드에 있어서, 트립닷컴의 이용약관에 동의합니다. <a class="protocol"
 										href="https://pages.trip.com/m/service-clause-ko-kr.html">이용약관</a>
+									</span>
+									<p class="privacy-unagree-tips">사용약관 및 개인정보 보호 정책을 읽은 후
+										체크박스에 동의해주세요</p>
 								</div>
 							</div>
 						</div>
@@ -166,7 +169,6 @@
                  attZone.addEventListener('dragover', function(e){
                    e.preventDefault();
                    e.stopPropagation();
-                   
                  }, false)
                
                  attZone.addEventListener('drop', function(e){
@@ -233,6 +235,22 @@
  }
 </script>
 	<script>
+	$(function(){
+		$("#checkbox").show();
+		$('#checkbox_checked').hide();
+		
+		$('#checkbox').click(function(){
+			$('#checkbox').hide();
+			$('#checkbox_checked').show();
+			$('#checked').val('true');
+		});
+		
+		$('#checkbox_checked').click(function(){
+			$('#checkbox').show();
+			$('#checkbox_checked').hide();
+			$('#checked').val('false');
+		});
+	});
     $(".submit").click(function() {
         <%--var img[] = $('.image-upload').val(); --%>
         var moment_title = $('#moment_title').val();
@@ -243,6 +261,7 @@
         $('.title-warn').css('display', 'none');
         $('.content-warn').css('display', 'none');
         $('.location-warn').css('display', 'none');
+        $('.privacy-unagree-tips').css('display', 'none');
 
         if (!$('#btnAtt').val()) {
            $('.image-warn').css('display', 'block');
@@ -258,9 +277,12 @@
 
         else if (pop_name == "") {
            $('.location-warn').css('display', 'block');
+        }
 
-        } else {
-
+        else if ($('#checked').val() == 'false') {
+           $('.privacy-unagree-tips').css('display', 'block');
+           
+        }else {
            var formData = new FormData(
                  $('#uploadImageForm')[0]); //form안에 있는 모든 것
            $.ajax({
@@ -272,6 +294,7 @@
               data : formData,
               success : function() {
                  alert('이미지 등록 완료');
+                 location.href = '/nadri';
               },
               error : function(err) {
                  console.log(err)
@@ -280,7 +303,5 @@
         }
      });
 </script>
-
-	
 </body>
 </html>

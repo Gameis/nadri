@@ -5,9 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <title>dd</title>
 <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities.css">
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities_review.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 
@@ -19,6 +22,8 @@
 	</div> --%>
 	<!-- 몸통 -->
 	<input type="hidden" id="activity_seq" value="${param.activity_seq}"/>
+	<input type="hidden" id="member_seq" value="${member_seq }"/>
+	<input type="hidden" id="pageNum" value="1"/>
 	<div class="productdetail-container">
 		<input type="hidden" id="page_id" value="10650010429">
 		<!-- 눈썹 -->
@@ -51,8 +56,8 @@
 			<div class="comment-height">
 				<div class="comment-sold">
 					<section>
-						<span class="comment-score"> <em class="good-comment">3.3</em> /5
-						</span> <span class="comment-count">리뷰 3개</span>
+						<span class="comment-score"> <em class="good-comment">total_avg_act_review</em> /5
+						</span><span class="comment-count">리뷰 total_cnt_act_review개</span>
 					</section>
 				</div>
 				<div class="collection default-collection">
@@ -87,9 +92,17 @@
 									</div>
 								</div>
 							</div>
-							<div class="m_footer_bottom">
-								<div class="m_footer_bottom_btn">예약하기</div>
-							</div>
+							
+							<!-- <form method="post" action="/nadri/KakaoPay">
+    							<div class="m_footer_bottom ">
+									<button class="m_footer_bottom_btn ">예약하기</button>
+								</div>
+							</form> 카카오페이 api -->
+							
+    							<div class="m_footer_bottom ">
+									<button class="m_footer_bottom_btn" id="check_module" type="button">예약하기</button>
+								</div> <!-- i'amport api -->
+							
 						</div>
 					</div>
 				</section>
@@ -284,6 +297,29 @@
 							</div>
 						</section>
 					</div>
+
+					<!-- 리뷰폼 들어가는곳 -->
+					<jsp:include page="./activities_reviewForm.jsp">
+						<jsp:param value="param1" name="param1" />
+					</jsp:include>
+					
+					<div class="detail-imageShow-container dn">
+						<button class="quitImageShow">
+							<img width="24px" height="24px"
+								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAA0ZJREFUeAHtnE1u20AMhe0uu+gVdJIWzj4HyJ1yCJ0i62Ydr3WD3iBpt+57sgawAkmZH5LDEUyAkT3SkHwfqJ8Y9hwOk10ulw7ewwf4O/wMf4b/CMfsbUttk0ZqpWZq7+HdTCsGnuAf8CX7g8Ffswk7eENNcGpbMrJ4GmXiRQdfg4Ndo/3F39MOuATNJ+ihpi0jk+6AP/3WUTf7GPChdUjUAP8KTpDdE9AQ3kVsGbjZTmLt8Fg4xDEQEC9OKcYEzXUSa4anwCGTdwLiFTzVmuokiEvtnMDj/A3XlNeM68p3zHlBFPedNNX4gnpZc6q9soP4LLB2u8OuTXPdSag8t3Momkyuz4B4wWeC1PMTU0ZzCQmVlcChpp+zdhMIeJoFrPhGTYtaYENY6hrUEyjCMqvdLJEgLPOaBRKaPQKg1pyHQEwbLf8mg+mldwJ1SKixDpzQ/Z4hVYfjGZIbOB4huYPjCZJbOB4guYdTE1IzcG4gld5eox8BBOBE5wr6RLYWhVvkEIGxFkRTgGbsNT0q4xpCNGKqiI8NKilIMlZs/SbHSQiTiGEiNjeJgMCSj37r3K1SYRVCwvRkI9Q24ASYLBie2w0phNqDYwipXTgGkNqHowhpP3AUIO0PjiAkczj88sLdPBAQvO2bd5E6P0E44floP5AU4OwHkiKc9iEZwGkXkiGc9iAVwuHFl55j/i/cUFXyH/woUCKG+m05J4GkMMlYOVrE52gI0ogpLjwmoKYQzdgx2oqPsRBgkaMYxFIAy8Itcy1pTR6rUXCNnMlgOKFmoTVzR8HyUKCHGhZheSrMUy0jLHcFVT7VZx3kEU4osHpt1QsIJDa21WqslngDxtou81rNE64pTxg3q9ksUYL42EPVa1dPEKu04Dg1DWqBC8TmThXXgoClP+p19+UlAUjXBV0QqPRn4e7ghM4rhHT9WTiCcI2gHPP/ITlIQVjJ5+TPDJC7NIXbzgkdFLYFkM4EdF/cBBBWbFzcZFjZuTTcxGkVOufzFoJST7eB3w96+xxo5f0/jD8ej8ffK/vdD0+1P6JQaomxN55iHTxmia5mrjlfKY/spOsSXQyGCfdF3gDhxgjnushboI2BDt7DeU26LxM4gfkPrLKZl+UkenkAAAAASUVORK5CYII=" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAA0ZJREFUeAHtnE1u20AMhe0uu+gVdJIWzj4HyJ1yCJ0i62Ydr3WD3iBpt+57sgawAkmZH5LDEUyAkT3SkHwfqJ8Y9hwOk10ulw7ewwf4O/wMf4b/CMfsbUttk0ZqpWZq7+HdTCsGnuAf8CX7g8Ffswk7eENNcGpbMrJ4GmXiRQdfg4Ndo/3F39MOuATNJ+ihpi0jk+6AP/3WUTf7GPChdUjUAP8KTpDdE9AQ3kVsGbjZTmLt8Fg4xDEQEC9OKcYEzXUSa4anwCGTdwLiFTzVmuokiEvtnMDj/A3XlNeM68p3zHlBFPedNNX4gnpZc6q9soP4LLB2u8OuTXPdSag8t3Momkyuz4B4wWeC1PMTU0ZzCQmVlcChpp+zdhMIeJoFrPhGTYtaYENY6hrUEyjCMqvdLJEgLPOaBRKaPQKg1pyHQEwbLf8mg+mldwJ1SKixDpzQ/Z4hVYfjGZIbOB4huYPjCZJbOB4guYdTE1IzcG4gld5eox8BBOBE5wr6RLYWhVvkEIGxFkRTgGbsNT0q4xpCNGKqiI8NKilIMlZs/SbHSQiTiGEiNjeJgMCSj37r3K1SYRVCwvRkI9Q24ASYLBie2w0phNqDYwipXTgGkNqHowhpP3AUIO0PjiAkczj88sLdPBAQvO2bd5E6P0E44floP5AU4OwHkiKc9iEZwGkXkiGc9iAVwuHFl55j/i/cUFXyH/woUCKG+m05J4GkMMlYOVrE52gI0ogpLjwmoKYQzdgx2oqPsRBgkaMYxFIAy8Itcy1pTR6rUXCNnMlgOKFmoTVzR8HyUKCHGhZheSrMUy0jLHcFVT7VZx3kEU4osHpt1QsIJDa21WqslngDxtou81rNE64pTxg3q9ksUYL42EPVa1dPEKu04Dg1DWqBC8TmThXXgoClP+p19+UlAUjXBV0QqPRn4e7ghM4rhHT9WTiCcI2gHPP/ITlIQVjJ5+TPDJC7NIXbzgkdFLYFkM4EdF/cBBBWbFzcZFjZuTTcxGkVOufzFoJST7eB3w96+xxo5f0/jD8ej8ffK/vdD0+1P6JQaomxN55iHTxmia5mrjlfKY/spOsSXQyGCfdF3gDhxgjnushboI2BDt7DeU26LxM4gfkPrLKZl+UkenkAAAAASUVORK5CYII=">
+						</button>
+						<div style="height: 15.5%;"></div>
+						<div class="imageListContainer">
+							<div class="imageInner"></div>
+						</div>
+						<div style="height: 4.1%;"></div>
+						<div class="imageIndexContainer">
+							<p class="ffpm tc c7">1/0</p>
+							<div style="height: 1.6%;"></div>
+							<div class="indexImageContainer tc"></div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</article>
@@ -291,127 +327,7 @@
 
 		<div class="toastcomponent"></div>
 	
-	<div name="review-header" id="review-header" class="review-header">	
-	<div name="reviewContainer" id="reviewContainer" class="reviewContainer">
-		<div class="reviewHeaderContainer">
-			<div class="review-box">
-				<div>
-					<div class="review-title">리뷰 작성하기</div>
-					<div class="reivew-tip">
-						<span name="tip-text" class="tip-text">
-							
-						</span>
-					</div>
-				</div>
-			</div><!-- review-box -->
-		</div><!-- reviewHeaderContainer -->
 		
-		<div class="review-writeContainer">
-			<ul class="review-write-list">
-				<div class="review-write-form">
-					<li class="review-write-detail">
-					
-						<div class="review-write-user">
-							<a style="color: rgb(15, 41, 77); text-decoration: none;">
-								<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="https://cdn.pixabay.com/photo/2021/10/15/21/11/squid-game-6713440_1280.jpg">
-							</a>
-							<div class="review-write-userInfo">
-								<div class="reivew-write-userName">
-									user_name
-								</div><!-- reivew-write-userName -->
-							</div><!-- review-write-userInfo -->
-						</div><!-- review-write-user -->
-						
-						<div class="review-write-content">
-							<form id="pop_review_writeForm">
-								<input type="hidden" id="main_seq" name="main_seq" value="99">
-								<input type="hidden" id="content_seq" name="content_seq" value="3"/>
-								<input type="hidden" id="pop_seq" name="pop_seq" value="${param.pop_seq }"/>
-								<!-- 평점 -->
-								<div class="review-write-wrap">
-								    <div class="review-write-selectScore">
-								    	<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio5" value=5 checked>
-											<label class="score btn btn-outline-primary" for="btnRadio5">5점</label>
-											
-											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio4" value=4 >
-											<label class="score btn btn-outline-primary" for="btnRadio4">4점</label>
-												
-											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio3" value=3 >
-											<label class="score btn btn-outline-primary" for="btnRadio3">3점</label>
-											  
-											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio2" value=2 >
-											<label class="score btn btn-outline-primary" for="btnRadio2">2점</label>
-											  
-											<input type="radio" class="btn-check" name="pop_review_score" id="btnRadio1" value=1 >
-											<label class="score btn btn-outline-primary" for="btnRadio1">1점</label>
-										</div>
-									</div><!-- review-write-selectScore -->
-								</div>
-								
-								<!-- 내용 -->
-								<div class="review-write-wrap">
-									<div class="input-group">
-									  <span class="input-group-text">내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</span>
-									  <textarea class="form-control" name="pop_review_content" aria-label="With textarea" style="resize: none;"></textarea>
-									</div>
-								</div>
-								
-								<!-- 파일업로드 -->
-								
-								<button id="pop_review_writeBtn" type="button" class="btn btn-primary">등록</button>
-								<button type="reset" class="btn btn-primary">다시작성</button>
-								
-							</form>
-						</div><!-- review-write-content -->
-						
-					</li><!-- review-write-detail -->
-				</div><!-- review-write-form -->
-			</ul><!-- review-write-list -->
-		</div><!-- review-writeContainer -->
-	</div><!-- reviewContainer -->
-	</div><!-- review -->
-
-		<div id="detailComment" class="productdetail-comment-inner-width">
-			<div class="commentContainer border-container">
-				<div id="test" class="commentlist-contaier">
-					<section class="productdetail-commentlist-container"><h2 class="title">리뷰<em class="commentCount">(1)</em></h2>
-						<div><span class="list-score"><em class="list-good-comment">3.3</em>/5</span> <span class="list-label"></span></div>
-						<p><span id="ibu_dtlopg_comment_filter_all_1" class="filter-all">전체</span></p>
-						<div class="comment-list-box">
-							<div class="title-ffsd">리뷰</div>
-							<div class="comment-list">
-								<div class="comment-list-item">
-									<div>
-										<div class="user-image-position"><img src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg" data-src="https://ak-d.tripcdn.com/images/Z80o180000013ulur1D76.jpg"></div>
-										<div class="user-commentinfo-position"><div><p class="user-comment-name">_NV4*****0697</p></div><div><span class="commentScore"><em class="good-comment">5.0</em>/5</span> <span class="commentDate">2021년 10월 4일</span></div></div>
-									</div>
-									<div class="userinfo-position-left comment-container">
-										<div class="text-img"><div class="commentListText">편리하고 빠른 예약으로 즐길수 있어서 최고입니다</div><div class="show-hide-comment dn"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAOCAYAAAA1+Nx+AAAAAXNSR0IArs4c6QAAAYBJREFUOBG1UltKw1AQnUk+rIruSFGkL61VF+EGTOkiqvXfH7egQqWmrQgK4iq6COvzIxnPCb0StekLvDDcyZ3zuDO5Iv+8dFr9YsNKkciZqqipHPZqGk7DncqgcGJlM7lALFAUJp+Ig05N25NMJhrw5rHKJcUh+kxB5Ks08Uz2w7rejDMZa5BvWMFEriCQQwzEl0IiFkkH+wriAwJ73brye+TyRp7iEGPJp8U9X0q9QJ8YzAEZIHLEEJulM9Ig37St2IY3V3nBLcudQB+dCHOeCWo0IZYcV0/vf0ZUbNpmFMu1mCxizq+4bTk80oc0yeXFU1uLI2njnyzD7N33ZCcM9M7Vuf/ooHRsGyC0nDgMtrPESWaNGF6EHHKpwZpb3waY4zreeQszXUJbb75IBc/w3gGzdmKIJYdcalDL4ZMRpVslEGOp/G7VEbL2rNEmHaC1czdHPMXqrOI0JUc92eW/oBY1eZ4YoLUu8j4B3UBvWZhnkYtxVcHtDzXnkZmN8wVS06dlIL2zIQAAAABJRU5ErkJggg=="></div></div>
-									</div>
-								</div>
-								<div class="detail-imageShow-container dn">
-									<button class="quitImageShow">
-										<img width="24px" height="24px"
-											src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAA0ZJREFUeAHtnE1u20AMhe0uu+gVdJIWzj4HyJ1yCJ0i62Ydr3WD3iBpt+57sgawAkmZH5LDEUyAkT3SkHwfqJ8Y9hwOk10ulw7ewwf4O/wMf4b/CMfsbUttk0ZqpWZq7+HdTCsGnuAf8CX7g8Ffswk7eENNcGpbMrJ4GmXiRQdfg4Ndo/3F39MOuATNJ+ihpi0jk+6AP/3WUTf7GPChdUjUAP8KTpDdE9AQ3kVsGbjZTmLt8Fg4xDEQEC9OKcYEzXUSa4anwCGTdwLiFTzVmuokiEvtnMDj/A3XlNeM68p3zHlBFPedNNX4gnpZc6q9soP4LLB2u8OuTXPdSag8t3Momkyuz4B4wWeC1PMTU0ZzCQmVlcChpp+zdhMIeJoFrPhGTYtaYENY6hrUEyjCMqvdLJEgLPOaBRKaPQKg1pyHQEwbLf8mg+mldwJ1SKixDpzQ/Z4hVYfjGZIbOB4huYPjCZJbOB4guYdTE1IzcG4gld5eox8BBOBE5wr6RLYWhVvkEIGxFkRTgGbsNT0q4xpCNGKqiI8NKilIMlZs/SbHSQiTiGEiNjeJgMCSj37r3K1SYRVCwvRkI9Q24ASYLBie2w0phNqDYwipXTgGkNqHowhpP3AUIO0PjiAkczj88sLdPBAQvO2bd5E6P0E44floP5AU4OwHkiKc9iEZwGkXkiGc9iAVwuHFl55j/i/cUFXyH/woUCKG+m05J4GkMMlYOVrE52gI0ogpLjwmoKYQzdgx2oqPsRBgkaMYxFIAy8Itcy1pTR6rUXCNnMlgOKFmoTVzR8HyUKCHGhZheSrMUy0jLHcFVT7VZx3kEU4osHpt1QsIJDa21WqslngDxtou81rNE64pTxg3q9ksUYL42EPVa1dPEKu04Dg1DWqBC8TmThXXgoClP+p19+UlAUjXBV0QqPRn4e7ghM4rhHT9WTiCcI2gHPP/ITlIQVjJ5+TPDJC7NIXbzgkdFLYFkM4EdF/cBBBWbFzcZFjZuTTcxGkVOufzFoJST7eB3w96+xxo5f0/jD8ej8ffK/vdD0+1P6JQaomxN55iHTxmia5mrjlfKY/spOsSXQyGCfdF3gDhxgjnushboI2BDt7DeU26LxM4gfkPrLKZl+UkenkAAAAASUVORK5CYII=" data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAA0ZJREFUeAHtnE1u20AMhe0uu+gVdJIWzj4HyJ1yCJ0i62Ydr3WD3iBpt+57sgawAkmZH5LDEUyAkT3SkHwfqJ8Y9hwOk10ulw7ewwf4O/wMf4b/CMfsbUttk0ZqpWZq7+HdTCsGnuAf8CX7g8Ffswk7eENNcGpbMrJ4GmXiRQdfg4Ndo/3F39MOuATNJ+ihpi0jk+6AP/3WUTf7GPChdUjUAP8KTpDdE9AQ3kVsGbjZTmLt8Fg4xDEQEC9OKcYEzXUSa4anwCGTdwLiFTzVmuokiEvtnMDj/A3XlNeM68p3zHlBFPedNNX4gnpZc6q9soP4LLB2u8OuTXPdSag8t3Momkyuz4B4wWeC1PMTU0ZzCQmVlcChpp+zdhMIeJoFrPhGTYtaYENY6hrUEyjCMqvdLJEgLPOaBRKaPQKg1pyHQEwbLf8mg+mldwJ1SKixDpzQ/Z4hVYfjGZIbOB4huYPjCZJbOB4guYdTE1IzcG4gld5eox8BBOBE5wr6RLYWhVvkEIGxFkRTgGbsNT0q4xpCNGKqiI8NKilIMlZs/SbHSQiTiGEiNjeJgMCSj37r3K1SYRVCwvRkI9Q24ASYLBie2w0phNqDYwipXTgGkNqHowhpP3AUIO0PjiAkczj88sLdPBAQvO2bd5E6P0E44floP5AU4OwHkiKc9iEZwGkXkiGc9iAVwuHFl55j/i/cUFXyH/woUCKG+m05J4GkMMlYOVrE52gI0ogpLjwmoKYQzdgx2oqPsRBgkaMYxFIAy8Itcy1pTR6rUXCNnMlgOKFmoTVzR8HyUKCHGhZheSrMUy0jLHcFVT7VZx3kEU4osHpt1QsIJDa21WqslngDxtou81rNE64pTxg3q9ksUYL42EPVa1dPEKu04Dg1DWqBC8TmThXXgoClP+p19+UlAUjXBV0QqPRn4e7ghM4rhHT9WTiCcI2gHPP/ITlIQVjJ5+TPDJC7NIXbzgkdFLYFkM4EdF/cBBBWbFzcZFjZuTTcxGkVOufzFoJST7eB3w96+xxo5f0/jD8ej8ffK/vdD0+1P6JQaomxN55iHTxmia5mrjlfKY/spOsSXQyGCfdF3gDhxgjnushboI2BDt7DeU26LxM4gfkPrLKZl+UkenkAAAAASUVORK5CYII=">
-									</button>
-									<div style="height: 15.5%;"></div>
-									<div class="imageListContainer">
-										<div class="imageInner"></div>
-									</div>
-									<div style="height: 4.1%;"></div>
-									<div class="imageIndexContainer">
-										<p class="ffpm tc c7">1/0</p>
-										<div style="height: 1.6%;"></div>
-										<div class="indexImageContainer tc"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</div>
 
 
 	</div>
@@ -443,27 +359,112 @@
 	<script crossorigin="anonymous" type="text/javascript" src="https://ak-s.tripcdn.com/locale/v2/330151/ko-KR.js?etagc=6a40afadabb933fac51a38441f7edf8e"></script>
 	<script type="text/javascript" src="https://ak-s.tripcdn.com/modules/basebiz/i18naccountcomponentssdk/i18naccountcomponentssdk.6e306b320450e87c28afdecb4d66d8cf.js"></script>
 	 -->
-	 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	 <script type="text/javascript" src="/nadri/repository/js/activities/activities_review.js"></script>
+	 <script type="text/javascript" src="/nadri/repository/js/activities/activities.js"></script>
+	 <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+	 <script type="text/javascript" src="/nadri/repository/js/activities/jquery.bootpag.min.js"></script>
 	 <script type="text/javascript">
 		$(function(){
-			alert('start');
-			$.ajax({
-				url: '/nadri/activities/onActivities',
-				type: 'get',
-				data: 'activity_seq='+ $('#activity_seq').val(),
-				success: function(data) {
-					alert('확인');
-					alert(JSON.stringify(data));	
-				},
-				error: function(err) {
-					alert('실패');
-					console.log(err);
-				}
-				
-			});
-		});
+			//액티비티 정보 불러오기
+			onActivities();
 			
-		
+			//리뷰수 및 유저정보 불러오기
+			getActReviewCnt();
+			
+			//리뷰리스트 불러오기
+			getReviewList();
+			
+			//페이징 처리
+			pagination();
+		});
 	</script>
+	
+	<script>
+$("#check_module").click(function () {
+var IMP = window.IMP; // 생략가능
+IMP.init('imp37746914');
+// 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+// i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+IMP.request_pay({
+pg: 'inicis', // version 1.1.0부터 지원.
+/*
+'kakao':카카오페이,
+html5_inicis':이니시스(웹표준결제)
+'nice':나이스페이
+'jtnet':제이티넷
+'uplus':LG유플러스
+'danal':다날
+'payco':페이코
+'syrup':시럽페이
+'paypal':페이팔
+*/
+pay_method: 'card',
+/*
+'samsung':삼성페이,
+'card':신용카드,
+'trans':실시간계좌이체,
+'vbank':가상계좌,
+'phone':휴대폰소액결제
+*/
+merchant_uid: 'merchant_' + new Date().getTime(),
+/*
+merchant_uid에 경우
+https://docs.iamport.kr/implementation/payment
+위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+참고하세요.
+나중에 포스팅 해볼게요.
+*/
+name: '주문명:결제테스트',
+//결제창에서 보여질 이름
+amount: 1000,
+//가격
+buyer_email: 'iamport@siot.do',
+buyer_name: '구매자이름',
+buyer_tel: '010-1234-5678',
+buyer_addr: '서울특별시 강남구 삼성동',
+buyer_postcode: '123-456',
+m_redirect_url: 'https://www.yourdomain.com/payments/complete'
+/*
+모바일 결제시,
+결제가 끝나고 랜딩되는 URL을 지정
+(카카오페이, 페이코, 다날의 경우는 필요없음. PC와 마찬가지로 callback함수로 결과가 떨어짐)
+*/
+}, function (rsp) {
+console.log(rsp);
+if (rsp.success) {
+var msg = '결제가 완료되었습니다.';
+msg += '고유ID : ' + rsp.imp_uid;
+msg += '상점 거래ID : ' + rsp.merchant_uid;
+msg += '결제 금액 : ' + rsp.paid_amount;
+msg += '카드 승인번호 : ' + rsp.apply_num;
+} else {
+var msg = '결제에 실패하였습니다.';
+msg += '에러내용 : ' + rsp.error_msg;
+}
+alert(msg);
+});
+});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

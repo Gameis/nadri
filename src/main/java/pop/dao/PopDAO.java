@@ -1,18 +1,19 @@
 package pop.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import pop.bean.TripPopCountDTO;
 import pop.bean.TripPopImgDTO;
 import pop.bean.TripPopLocationDTO;
 import pop.bean.TripPopReviewContentDTO;
 import pop.bean.TripPopReviewDTO;
-import pop.bean.TripPopReviewImgDTO;
 import pop.bean.TripPopReviewSearchDTO;
+import pop.bean.TripPopUserInfoDTO;
 
 public interface PopDAO {
 
-	public TripPopLocationDTO getLocation(int pop_seq);
+	public TripPopLocationDTO getLocation(Map<String, Object> resultMap);
 
 	public List<TripPopImgDTO> getPopImg(int pop_seq);
 
@@ -31,5 +32,8 @@ public interface PopDAO {
 	public Object getReviewContentPhoto(TripPopReviewSearchDTO tripPopReviewSearchDTO);
 
 	public Object getReviewContentPhotoList(TripPopReviewSearchDTO tripPopReviewSearchDTO);
+
+	public TripPopUserInfoDTO getUserInfo(String member_seq);
+
 
 }

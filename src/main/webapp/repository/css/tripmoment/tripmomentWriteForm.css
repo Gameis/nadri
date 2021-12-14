@@ -200,6 +200,14 @@ button, input {
 	display: none;
 }
 
+.PublicPrivacyContainer .privacy-unagree-tips {
+	margin-top: 10px;
+    font-size: 14px;
+    color: rgb(238, 59, 40);
+    line-height: 18px;
+    display: none;
+}
+
 /* 유효성검사 끝 */
 
 

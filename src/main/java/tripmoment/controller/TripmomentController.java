@@ -31,14 +31,19 @@ public class TripmomentController {
 	@Autowired
 	private TripmomentService tripmomentService;
 	
+	@RequestMapping(value = "/tripmoment_writeForm", method = RequestMethod.GET)
+	public String tripmoment_writeForm() {	
+		return "/repository/jsp/tripmoment/tripmoment_writeForm";
+	}
+	
 	@RequestMapping(value = "/tripmoment_writeForm", method=RequestMethod.POST)
 	@ResponseBody
-	public String tripmoment_writeForm(
+	public void tripmoment_writeForm(
 									   @ModelAttribute TripmomentDTO tripmomentDTO,
 									   @ModelAttribute ImgDTO imgDTO,
 									   @RequestParam("img[]") List<MultipartFile> list) {
 		
-		
+		System.out.println("member_seq = " + tripmomentDTO.getMember_seq());
 		tripmomentService.tripmoment_write(tripmomentDTO);
 		
 		int count = 0;
@@ -48,9 +53,6 @@ public class TripmomentController {
 			tripmomentService.tripmoment_writeForm(imgDTO, tripmomentDTO.getPop_name());
 			count++;
 		} //for
-
-		
-		return "/main/tripmoment_writeForm";
 	}
 	
 	private boolean checkImageType(File file) {
@@ -88,13 +90,22 @@ public class TripmomentController {
 		return tripmomentService.getTripView(moment_seq);
 	}
 	
+	@RequestMapping(value="/onReTripmoment", method=RequestMethod.GET)
+	@ResponseBody
+	public List<MainTripmomentDTO> onReTripmoment(@RequestParam("moment_seq") String moment_seq) {
+		return tripmomentService.onReTripmoment(moment_seq);
+	}
+	
 		public void imgReNameCopy(ImgDTO imgDTO, MultipartFile img, String isMain, String img_path, String path) {
+//			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
+			//String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
+			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
+
 //			String filePath = "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //수정
 //			String filePath = "C:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img" + path; //건휘
 //			String filePath = "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img" + path; //현석
-			String filePath = "D:\\git\\nadri\\src\\main\\webapp\\repository\\img" + path; //병림
-			
-			
+//			String filePath = "D:\\git\\nadri\\src\\main\\webapp\\repository\\img" + path; //병림
+						
 			String fileName = null;
 			File file = null;
 			

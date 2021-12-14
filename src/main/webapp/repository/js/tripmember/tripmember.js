@@ -1,7 +1,7 @@
 
-
 //로그인
-$('#loginBtn').click(function(){
+$('#modalLoginBtn').click(function(){
+	alert('로그인버튼은 눌려요');
 	$('#modalidDiv').empty();
   	$('#modalpwdDiv').empty();
 
@@ -12,7 +12,7 @@ $('#loginBtn').click(function(){
 		$('#modalpwdDiv').html('비밀번호를 입력해주세요');
 	}	
 	else{
-
+		alert("로그인 버튼 클릭")
 		$.ajax({
 			url:'/nadri/tripmember/login',
 			type: 'post',

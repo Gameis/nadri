@@ -12,14 +12,12 @@
 		#{content_seq}, main_seq.currval, main_seq.currval, #{mainImg})
 	</insert>
 
-	<select id="mainImgPrint" resultType="tripMain">
-		select * from tripmain
-		join (select img_name, img_path, seq
+	<select id="mainImgPrint" resultType="tripMainImg" parameterType="tripMainImg">
+		select img_name, img_path, a.main_seq, main_name 
 		from img
-		where content_seq = 2 and main_seq = 3
-		) on(main_seq = seq)
+		join (select main_seq, main_name
+		from tripmain)a on(a.main_seq = seq)
+		where content_seq = 1
 	</select>
-	
-	
 
 </mapper>

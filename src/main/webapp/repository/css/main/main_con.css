@@ -36,6 +36,10 @@ button, input, optgroup, select, textarea {
 	margin: 0;
 }
 
+.modal-open {
+	opacity: 0.9 !important;
+}
+
 * {
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
@@ -284,7 +288,7 @@ a, a:hover {
 	color: rgb(15, 41, 77);
 	line-height: 34px;
 	font-family: arial, sans-serif;
-	margin: 64px 0px 24px;
+	margin: 64px 0px 41px;
 	display: block;
 	font-weight: bold;
 }
@@ -302,13 +306,13 @@ a, a:hover {
 
 .index_popular-dest {
 	width: 100%;
-    position: absolute;
-    z-index: -1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+	position: absolute;
+	z-index: -1;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .index_popular {
@@ -317,7 +321,6 @@ a, a:hover {
 	margin-top: 5px;
 	width: 80px;
 	height: 300px;
-	
 }
 
 .DestinationStyle {
@@ -383,7 +386,7 @@ a, a:hover {
 }
 
 video {
-	position: absolute; 
+	position: absolute;
 	top: 0px;
 	opacity: 0;
 }
@@ -449,6 +452,16 @@ video {
 }
 
 /* 인기여행지 타이틀(전체) */
+.popular_trip_destination svg {
+	margin-bottom: 10px !important;
+	align-self: center;
+	width: 31px !important;
+	height: 27px !important;
+	margin-left: 7px !important;
+	transform-style: preserve-3d;
+	cursor: pointer;
+}
+
 .img-wrap_title .title {
 	color: #fff;
 	font-size: 25px;
@@ -477,6 +490,10 @@ video {
 	text-decoration: none;
 }
 
+.popularcitylist {
+	margin-bottom: 170px;
+}
+
 /* 트립모먼트 */
 .trip_moment_title {
 	text-align: center;
@@ -484,7 +501,7 @@ video {
 	color: rgb(15, 41, 77);
 	line-height: 34px;
 	font-family: arial, sans-serif;
-	margin: 32px 0px 24px;
+	margin: 32px 0px 45px;
 	display: block;
 	font-weight: bold;
 }
@@ -494,6 +511,7 @@ video {
 	position: absolute;
 	right: 10px;
 	top: -5px;
+	cursor: pointer;
 }
 
 .release_btn {
@@ -532,6 +550,10 @@ video {
 	cursor: pointer;
 	vertical-align: top;
 	height: 420px;
+}
+
+.card-group>.card {
+	flex: none !important;
 }
 
 .slide_img {
@@ -651,39 +673,39 @@ video {
 }
 
 .carousel-control-prev {
-    left: -83px !important;
-    top: 166px !important; 
+	left: -83px !important;
+	top: 166px !important;
 }
 
 .carousel-control-next {
 	right: -83px !important;
-	top: 166px !important; 
+	top: 166px !important;
 }
 
-.carousel-control-prev-icon{
-    background-image: url(/nadri/repository/img/main/leftBtn.png) !important;
+.carousel-control-prev-icon {
+	background-image: url(/nadri/repository/img/main/leftBtn.png) !important;
 	border: 1px solid #dadfe6;
 	left: -14px;
-    background-color: #fff !important;
-    border-radius: 0%;
-    box-shadow: none;
-    border: 1px solid #dadfe6;
-    width: 3rem !important;
-    height: 3rem !important;
+	background-color: #fff !important;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	width: 3rem !important;
+	height: 3rem !important;
 }
 
-.carousel-control-next-icon{
-	background-image: url(/nadri/repository/img/main/rightBtn.png) !important;
+.carousel-control-next-icon {
+	background-image: url(/nadri/repository/img/main/rightBtn.png)
+		!important;
 	border: 1px solid #dadfe6;
 	left: -14px;
-    background-color: #fff !important;
-    border-radius: 0%;
-    box-shadow: none;
-    border: 1px solid #dadfe6;
-    width: 3rem !important;
-    height: 3rem !important;
+	background-color: #fff !important;
+	border-radius: 0%;
+	box-shadow: none;
+	border: 1px solid #dadfe6;
+	width: 3rem !important;
+	height: 3rem !important;
 }
-
 
 /* footer */
 #wrap_foot {

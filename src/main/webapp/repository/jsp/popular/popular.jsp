@@ -8,36 +8,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>트립닷컴</title>
+    <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popular.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popreview.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-	<!-- Header -->
-	<%-- <div class="trip_common_head_con">
-		<jsp:include page="../main/main_top.jsp">
-			<jsp:param value="param1" name="param1" />
-		</jsp:include>
-	</div> --%>
-	
+
 	<input type="hidden" id="pop_seq" value="${param.pop_seq }"/>
-	<input type="hidden" id="pageNum" value="1" />
+	<input type="hidden" id="pageNum" value="1"/>
 	<input type="hidden" id="searchType" value="" />
 	<input type="hidden" id="isDesc" value="" />
+	<input type="hidden" id="member_seq" value="${member_seq }"/>
+	<input type="hidden" id="memName" value="${memName }"/>
+	<input type="hidden" id="memId" value="${memId }"/>
 	
     <div id="areaWrap" class="areaWrap">
         <div id="areaHeader" class="areaHeader">
             
             <div id="areaPath">
-                <div class="areaPathItem"><a href="#">홈</a></div>
-                <div class="areaPathItem"><a href="#">서울</a></div>
-                <div class="areaPathItem"><a href="#">명동</a></div>
+                <div class="areaPathItem"><a href="/nadri/">&nbsp;&nbsp;홈&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;아시아&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;대한민국&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="/nadri/main/area?main_seq=${param.main_seq }">&nbsp;&nbsp;${param.main_name }&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;명동&nbsp;&nbsp;</a></div>
             </div><!--areaPath-->
             
             <div id="areaSearch" class="areaSearch">
                 <div id="areaSearch_input">
-                    <input type="text" placeholder="여행지, 명소, 호텔 등으로 검색">
+                    <input type="text" placeholder="여행지, 명소, 호텔 등으로 검색" class="search" onkeyup="searchEnterkey()">
                 </div>
                 <a href="#">
 	                <div id="areaSearch_button">
@@ -56,7 +56,7 @@
 	    	<div class="score-review-wrap">
 	    		<span class="pop-score">
 	    			<span class="pop-score-avg">avg_score</span>
-	    			<span style="font-size:14px; padding:3px 0; color: #8592A6">/5</span>
+	    			<span style="font-size:15px; padding:4px 0; color: #8592A6">/5</span>
 	    		</span><!-- pop-score -->
 	    		
 	    		<span class="pop-review-reviewIcon">
@@ -76,7 +76,7 @@
 	    		<i class="fas fa-heart" style="margin:0; padding:3px 5px; color: rgb(206, 210, 217); vertical-align: center;"></i>
 	    		
 	    		<span class="favorite-count">
-	    			좋아요 total_like개
+	    			좋아요 35개
 	    		</span>
 	    	</div>
 
@@ -156,8 +156,7 @@
 						    <img id="col-img1" class="col" src="#"></img>
 						    <img id="col-img2" class="col" src="#"></img>
 						    <img id="col-img3" class="col" src="#"></img>
-				  		</div><!-- row-cols-4 -->
-				  		
+				  		</div><!-- row-cols-4 -->		
 					</div><!-- container -->
 				</div><!-- carouselWrap -->
 		    </div><!-- content-wrap -->
@@ -187,7 +186,29 @@
 				</div>
 			</div>
 		</div>
+		
+		<!-- tripmoment slide -->
+	<div class="tripmomentSlide">
+		<div id="carousel_tripmoment_slide" class="carousel slide"
+			data-bs-ride="carousel">
+			<div class="carousel-inner" id="moment_carousel_inner"></div>
+			<button id="carousel-control-prev" class="carousel-control-prev" type="button"
+				data-bs-target="#carousel_tripmoment_slide" data-bs-slide="prev">
+				<span id="carousel-control-prev-icon" class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carousel_tripmoment_slide" data-bs-slide="next">
+				<span id="carousel-control-next-icon" class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+	<!-- tripmoment slide -->
+		
 	</div><!-- areaWrap -->
+	
+	
 	
 	<!-- footer -->
 	<div id="wrap_foot">
@@ -206,7 +227,30 @@
 <script type="text/javascript" src="/nadri/repository/js/pop/popular_review.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff2d2d7e5f1af84f318ffb51614f637a&libraries=services,clusterer,drawing"></script>
 <script type="text/javascript" src="/nadri/repository/js/pop/jquery.bootpag.min.js"></script>
-<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
+<script type="text/javascript">
+function searchEnterkey() {
+    if (window.event.keyCode == 13) {
+		
+        if($('.search').val() != "") 
+        $.ajax({
+        	url: '/nadri/area/search',
+        	type: 'get',
+        	data: 'searchText=' + $('.search').val(),
+        	success: function(data) {
+        		if(data.content_seq == '2') location.href="/nadri/main/area?main_seq=" + data.seq;
+        		else if(data.content_seq == '3') location.href="/nadri/area/popular?pop_seq=" + data.seq;
+        		else if(data.content_seq == '5') location.href="/nadri/area/activity?activity_seq=" + data.seq;
+        		else alert('검색어를 제대로 입력 해 주세요');
+        	},
+        	error: function(err) {
+        		alert('실패');
+        		console.log(err);
+        	}
+        });
+    }
+}
+</script>
+
 <script type="text/javascript">
 //온로드부분
 $(function(){
@@ -224,6 +268,12 @@ $(function(){
 	
 	//페이징 처리
     pagination();
+
+	//유저정보 처리
+	getUserInfo();
+	
+	//트립모멘트 불러오기
+	getTripMoment();
 
 });
 
