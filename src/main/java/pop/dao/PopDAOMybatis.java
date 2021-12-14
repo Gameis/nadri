@@ -47,9 +47,9 @@ public class PopDAOMybatis implements PopDAO {
 	}
 
 	@Override
-	public TripPopCountDTO getCountView() {
+	public TripPopCountDTO getCountView(String pop_seq) {
 		
-		return sqlSession.selectOne("popSQL.getCountView");
+		return sqlSession.selectOne("popSQL.getCountView", pop_seq);
 	}
 	
 	@Override

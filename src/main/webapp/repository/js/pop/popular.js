@@ -31,9 +31,6 @@ function getLocation(){
 			type: 'get',
 			data: 'pop_seq='+$('#pop_seq').val(),
 			success: function(data){
-				alert(JSON.stringify(data));
-				
-				debugger;
 				
 				$('#popularLocation_name h1').text(data.pop_name);
 				$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
@@ -91,7 +88,6 @@ function getLocation(){
 				
 			},error: function(err){
 				console.log(err);
-				alert('실패했따');
 			}
 		});
 	}
@@ -109,8 +105,9 @@ function getLocation(){
 		//평점,평점내용,긍정,부정,리뷰수 출력
 		$.ajax({
 			url: '/nadri/popular/getCountView',
+			type: 'get',
+			data: 'pop_seq=' + $('#pop_seq').val(),
 			success: function(data){
-				alert(JSON.stringify(data));
 				
 				var avg_score_content = null;
 				const avg_score = parseFloat($.trim(data.avg_score));
@@ -154,7 +151,6 @@ function getLocation(){
 			type: 'post',
 			data: 'pop_seq='+$('#pop_seq').val(),
 			success: function(data){
-				alert(JSON.stringify(data));
 				
 				//이미지 데이터 넣기
 				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
@@ -185,7 +181,6 @@ function getLocation(){
 			},
 			error: function(err){
 				console.log(err);
-				alert('이미지 ajax 실패했다')
 			}
 		});
 	}
@@ -195,28 +190,25 @@ function getLocation(){
         var pageNum = $.trim($('#pageNum').val() || 0);
         var searchType = $.trim($('#searchType').val() || '');
         var isDesc = $.trim($('#isDesc').val() || '');
-        
+        var pop_seq = $.trim($('#pop_seq').val() || '');
         //리스트삭제
         removeReviewList();
-        
         $.ajax({
             url: '/nadri/popular/getReviewContent',
             type: 'get',
-            data: 'pageNum='+pageNum+'&searchType='+searchType+'&isDesc='+isDesc,
+            data: 'pageNum='+pageNum+'&searchType='+searchType+'&isDesc='+isDesc+'&pop_seq='+pop_seq,
             success: function(data){
-                alert(JSON.stringify(data));
                 const list = data.list;
                 const contentList = data.contentList;
-				const photoList = data.photoList;
-				var profileImg = $.trim(data.profileImg || "");
-				
-				if(profileImg == ""){
-					profileImg = "defaultImg.png"
-				}
-				
-                
+				const photoList = data.photoList;				
+                                
                 if(searchType=='IMAGE'){//사진버튼 클릭시출력부
 	                for(var i = 0; i < contentList.length; i++){
+						var profileImg = $.trim(data.contentList[i].profileImg || "");
+						if(profileImg == ""){
+							profileImg = "defaultImg.png"
+						}
+						
 	                    var private_score_content = null;
 	                    const private_score = parseFloat($.trim(contentList[i].review_score));
 	                    var img_path = ($.trim(photoList[i].imgList[0].img_path) || "");
@@ -243,9 +235,16 @@ function getLocation(){
 	                    }
 	                    
 	                    //img_name 빈값 정리
-						
-	                        if(photoList[i].imgList.length == 1){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
+							if(data.photoList[i].imgList[1] == undefined && data.photoList[i].imgList[0].img_name == 'noImg.jpg'){
+	                            image_name1 = noImge;
+	                            image_name2 = noImge;
+	                            image_name3 = noImge;
+	                            image_name4 = noImge;
+	                            image_name5 = noImge;
+	                            image_name6 = noImge;
+	                            image_name7 = noImge;
+	                        }else if(data.photoList[i].imgList[1] == undefined && data.photoList[i].imgList[0].img_name != 'noImg.jpg'){
+	                        	image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
 	                            image_name2 = noImge;
 	                            image_name3 = noImge;
 	                            image_name4 = noImge;
@@ -253,59 +252,61 @@ function getLocation(){
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        if(photoList[i].imgList.length == 2){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
+							
+							
+	                        if(data.photoList[i].imgList[1] != undefined && data.photoList[i].imgList[1].img_name != 'noImg.jpg'){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[1].img_name);
 	                            image_name3 = noImge;
 	                            image_name4 = noImge;
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        if(photoList[i].imgList.length == 3){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
+	                        if(data.photoList[i].imgList[2] != undefined && data.photoList[i].imgList[2].img_name != 'noImg.jpg'){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[2].img_name);
 	                            image_name4 = noImge;
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        if(photoList[i].imgList.length == 4){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
+	                        if(data.photoList[i].imgList[3] != undefined && data.photoList[i].imgList[3].img_name != 'noImg.jpg'){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[3].img_name);
 	                            image_name5 = noImge;
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        if(photoList[i].imgList.length == 5){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
-	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[4].img_name);
+	                        if(data.photoList[i].imgList[4] != undefined && data.photoList[i].imgList[4].img_name != 'noImg.jpg'){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[4].img_name);
 	                            image_name6 = noImge;
 	                            image_name7 = noImge;
 	                        }
-	                        if(photoList[i].imgList.length == 6){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
-	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[4].img_name);
-	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[5].img_name);
+	                        if(data.photoList[i].imgList[5] != undefined && data.photoList[i].imgList[5].img_name != 'noImg.jpg'){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[4].img_name);
+	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[5].img_name);
 	                            image_name7 = noImge;
 	                        }
-	                        if(photoList[i].imgList.length == 7){
-	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[0].img_name);
-	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[1].img_name);
-	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[2].img_name);
-	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[3].img_name);
-	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[4].img_name);
-	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[5].img_name);
-	                            image_name7 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(photoList[i].imgList[6].img_name);
+	                        if(data.photoList[i].imgList[6] != undefined && data.photoList[i].imgList[6].img_name != 'noImg.jpg'){
+	                            image_name1 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[0].img_name);
+	                            image_name2 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[1].img_name);
+	                            image_name3 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[2].img_name);
+	                            image_name4 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[3].img_name);
+	                            image_name5 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[4].img_name);
+	                            image_name6 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[5].img_name);
+	                            image_name7 = "/nadri/repository/img/popular/"+img_path+"/"+$.trim(data.photoList[i].imgList[6].img_name);
 	                        }
 	                    
 	                    
@@ -388,6 +389,10 @@ function getLocation(){
 	                }//for
                 }else{//모두보기, 최신순, 긍정, 부정 클릭시출력부
  	 				for(var i = 0; i < data.list.length; i++){
+ 	 					var profileImg = $.trim(data.list[i].profileImg || "");
+						if(profileImg == ""){
+							profileImg = "defaultImg.png"
+						}
 	                    var private_score_content = null;
 	                    const private_score = parseFloat($.trim(list[i].review_score));
 	                    var img_path = ($.trim(list[i].imgList[0].img_path));
@@ -586,7 +591,6 @@ function getLocation(){
 			url: '/nadri/popular/getUserInfo',
 			type: 'post',
 			success: function(data){
-				alert(JSON.stringify(data));
 				var nickName = $.trim(data.nickName || "");
 				
 				
@@ -613,8 +617,6 @@ function getLocation(){
 			url : '/nadri/tripmoment/onTripmoment',
 			type : 'get',
 			success : function(data) {
-				alert('성공');
-				alert(JSON.stringify(data));
 					var count = -1;
 			        var momentCount = 1;	
 
@@ -672,7 +674,6 @@ function getLocation(){
 				
 			},
 			error : function(err) {
-				alert('실패')
 			}
 		});
 	}

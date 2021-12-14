@@ -52,7 +52,6 @@ function pagination(){
 }
 
 $('#btnradio1').click(function(){
-	alert('모두보기눌렀다');
 	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('');
@@ -61,7 +60,6 @@ $('#btnradio1').click(function(){
 });
 
 $('#btnradio2').click(function(){
-	alert('최신순눌렀다');
 	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('');
@@ -70,7 +68,6 @@ $('#btnradio2').click(function(){
 });
 
 $('#btnradio3').click(function(){
-	alert('긍정');
 	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('POSITIVE');
@@ -79,7 +76,6 @@ $('#btnradio3').click(function(){
 });
 
 $('#btnradio4').click(function(){
-	alert('부정');
 	resetValue();
 	$("#pageNum").val(1);
 	$("#searchType").val('NEGATIVE');
@@ -88,7 +84,6 @@ $('#btnradio4').click(function(){
 });
 
 $('#btnradio5').click(function(){
-	alert('사진');
 	$("#pageNum").val(1);
 	$("#searchType").val('IMAGE');
 	$("#isDesc").val('');

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+#profileImgsize{
+	width:20px; 
+	height:20px;
+	
+}
+
+.wrap{
+	margin:50px;
+}
+
+.span{
+	display:inline-block;
+	width:250px;
+	background:#E2E2E2;
+	font-size:25px;
+	font-style:italic;
+	text-align:center;
+	color:white;
+	padding:10px;
+	padding-left:10px;
+	height:33px;
+}
+
+#getTripmemberForm{
+	align:center;
+}
+
+.nameinput,.idinput, 
+.nickinput,.telinput,
+.emailinput,.dateinput,
+.addressinput1,.addressinput2{
+	display:inline-block;
+	border:none;
+	text-align:center;
+	font-size:25px;
+	width:70%;
+		
+}

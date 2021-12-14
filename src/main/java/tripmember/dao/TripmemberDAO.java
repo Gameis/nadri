@@ -12,6 +12,8 @@ public interface TripmemberDAO {
 	public TripmemberDTO login(TripmemberDTO tripmemberDTO);
 
 	public TripmemberDTO checkId(String id);
+	
+	public TripmemberDTO checkNickName(String nickName);
 		
 	public List<ZipcodeDTO> checkPostSearch(ZipcodeDTO zipcodeDTO);
 	
@@ -28,6 +30,8 @@ public interface TripmemberDAO {
 	public void modify(TripmemberDTO memeberDTO);
 
 	public void delete(String id);
+
+	public void imgModify(TripmemberDTO tripmemberDTO);
 
 
 

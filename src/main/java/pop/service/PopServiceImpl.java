@@ -44,8 +44,8 @@ public class PopServiceImpl implements PopService {
 	}
 
 	@Override
-	public TripPopCountDTO getCountView() {
-		return popDAO.getCountView();
+	public TripPopCountDTO getCountView(String pop_seq) {
+		return popDAO.getCountView(pop_seq);
 	}
 	
 	@Override

@@ -39,6 +39,11 @@ public class TripmemberDAOMybatis implements TripmemberDAO {
 		return sqlSession.selectOne("tripmemberSQL.checkId",id);
 	}
 	
+	@Override
+	public TripmemberDTO checkNickName(String nickName) {
+		return sqlSession.selectOne("tripmemberSQL.checkNickName",nickName);
+	}
+	
 	
 	@Override
 	public List<ZipcodeDTO> checkPostSearch(ZipcodeDTO zipcodeDTO) {
@@ -47,7 +52,7 @@ public class TripmemberDAOMybatis implements TripmemberDAO {
 
 	@Override
 	public void write(TripmemberDTO tripmemberDTO) {
-	//	System.out.println("2번 연결됫니"+userDTO);		
+		System.out.println("2번 연결됫니"+tripmemberDTO);		
 		sqlSession.insert("tripmemberSQL.write",tripmemberDTO);
 	}
 
@@ -71,6 +76,7 @@ public class TripmemberDAOMybatis implements TripmemberDAO {
 	
 	@Override
 	public void modify(TripmemberDTO tripmemberDTO) {
+		System.out.println(tripmemberDTO);
 		sqlSession.update("tripmemberSQL.modify",tripmemberDTO);
 	}
 
@@ -78,6 +84,14 @@ public class TripmemberDAOMybatis implements TripmemberDAO {
 	public void delete(String id) {
 		sqlSession.delete("tripmemberSQL.delete",id);
 		
+	}
+
+
+	@Override
+	public void imgModify(TripmemberDTO tripmemberDTO) {
+
+		System.out.println(tripmemberDTO);
+		sqlSession.update("tripmemberSQL.imgModify",tripmemberDTO);
 	}
 
 

@@ -1,11 +1,10 @@
 package activities.dao;
 
-import java.util.List;
+import java.util.Map;
 
 import activities.bean.OnActivitiesDTO;
 import activities.bean.TripActReviewCntDTO;
 import activities.bean.TripActReviewDTO;
-import activities.bean.TripActReviewListDTO;
 import activities.bean.TripActReviewUserDTO;
 
 public interface ActivitiesDAO {
@@ -14,12 +13,13 @@ public interface ActivitiesDAO {
 
 	public TripActReviewDTO actReviewWrite(TripActReviewDTO tripActReviewDTO);
 
-	public TripActReviewCntDTO getActReviewCnt();
+	public TripActReviewCntDTO getActReviewCnt(String activity_seq);
 
 	public TripActReviewUserDTO getActReviewUserInfo(TripActReviewUserDTO tripActReviewUserDTO);
 
-	public int getReviewContentCnt();
+	public int getReviewContentCnt(String activity_seq);
 
-	public List<TripActReviewListDTO> getReviewContent(int pageNum);
+	public Object getReviewContent(Map<String, Object> activityMap);
+
 
 }

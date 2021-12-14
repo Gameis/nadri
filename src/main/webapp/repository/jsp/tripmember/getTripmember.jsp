@@ -5,83 +5,96 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/getTripmember.css">
+
 </head>
 <body>
-<img alt="기본이미지" src="/nadri/repository/img/tripmember/defaultimage.jfif" width="70" height="70" 
-style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/tripmember/imageForm.jsp'">
-<h3 style="display:inline;color:green;">등록된 이미지</h3>
+	
+<div class="wrapper">
 
-	<table id="memberTable" border="0" cellspacing="0" cellpadding="5" width="1000">
+	<form id="getTripmemberForm">
+		<div class="wrap">
+		
+	
+			
+			<div class="name_wrap">
+				<span class="span">이름</span>
+				<span class="nameinputbox">
+					<input class="nameinput" type="text"  id="nameinput" name="nameinput" readonly>
+				</span>					
+			</div>
+			
+			<div class="id_wrap">
+				<span class="span">아이디</span>
+				<span class="idinputbox">
+					<input class="idinput" type="text" id="idinput" name="idinput" readonly>
+				</span>						
+			</div>
+						
+			<div class="nick_wrap">
+				<span class="span">닉네임</span>
+				<span class="nickinputbox">
+					<input class="nickinput" type="text" id="nickinput" name="nickinput" readonly>
+				</span>						
+			</div>
+				
+			<div class="tel_wrap">
+				<span class="span">핸드폰번호</span>
+				<span class="telinputbox">
+					<input class="telinput"  type="text" name="telinput"  id="telinput"  readonly>
+				</span>
+			</div>
+		
+			<div class="email_wrap">
+				<span class="span">이메일</span> 
+				<span class="emailinputbox">
+					<input class="emailinput" type="text" name="emailinput" id="emailinput" readonly >
+				</span>
+			</div>
 					
-		<tr>
-			<td>이름</td>
-			<td>
-				<input type="text" name="name" id="name" readonly>
+			<div class="address_wrap">
+				<span class="span">주소지</span>
+				<span class="addressinputbox1">
+					<input class="addressinput1" type="text" id="addressinput1" name="addressinput1" readonly>
+				</span>
+			</div>	
+				
+			<div class="address2-wrap">
+				<span class="span">상세주소</span>
+				<span class ="addressinputbox2">
+					<input class="addressinput2" type="text" id="addressinput2" name="addressinput2" readonly>
+				</span>
+			</div> 
 
-			</td>
-		</tr>
+		<!-- 					
+			<div class="rank-wrap">
+				<span class="span">회원등급</span>
+				<span class="rankinputbox">
+					<input class="rankinput" type="text" name="rankinput" id="rankinput" readonly>
+				</span>
+			</div> 
+		-->
+			
+			<div class="date-wrap">
+				<span class="span">가입일</span>
+				<span class="dateinputbox">
+					<input class="dateinput" type="text" name="dateinput" id="dateinput" readonly>
+				</span>
+			</div>	
+			
+			<div class="profile_wrap">
+				<span class="imgname">내이미지</span>
+				 <span id="profileImgsize">
+				 	<img id="profileImg" src="/nadri/repository/img/tripmember/storage/defaultImg.png" alt="기본이미지" style="cursor:pointer;">
+				</span>	
+	<!-- 				<input type="file" class="profileImg" name="profileImg">
+ -->				
+			</div>
 		
-		<tr>
-			<td>아이디</td>
-			<td>
-				<input type="text" name="id" id="id" readonly>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>email</td>
-			<td>
-				<input type="text" name="email" id="email" readonly>
-	
-			</td>
-		</tr>	
-		
-		<tr>
-			<td>전화번호</td>
-			<td>
-				<input type="text" name="tel" id="tel" readonly>
-	
-			</td>
-		</tr>	
-		
-		<tr>
-			<td>주소</td>
-			<td>
-				<input type="text" name="add" id="add" readonly>
-			</td>
-		</tr>								
+		</div>
+	</form>
+</div>
 
-		<tr>
-			<td>트립코인</td>
-			<td>
-				<input type="text" name="coin" id="coin" readonly>
-			</td>
-		</tr>
-
-		<tr>
-			<td>회원등급</td>
-			<td>
-				<input type="text" name="rank" id="rank" readonly>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>작성한 글목록</td>
-			<td>
-				<input type="text" name="write" id="write" readonly>
-			</td>
-		</tr>
-		
-		<tr>
-			<td>가입일</td>
-			<td>
-				<input type="text" name="date" id="date" readonly>
-			</td>
-		</tr>	
-										
-	</table>
-	
-	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 
@@ -94,13 +107,16 @@ $(function(){
 		success:function(data){
 			console.log(JSON.stringify(data));	
 		
-			$('#name').val(data.name);
-			$('#id').val(data.id);
-
-			$('#email').val(data.email1+"@"+data.email2);
-			$('#tel').val(data.tel1+"-"+data.tel2+"-"+data.tel3);
-			$('#add').val(data.zipcode+" "+data.address+" "+data.addressDetail);
-			$('#date').val(data.logtime);
+			$('#profileImg').attr('src', '/nadri/repository/img/tripmember/storage/'+data.profileImg);
+			$('#nameinput').val(data.name);
+			$('#idinput').val(data.id);
+			$('#nickinput').val(data.nickName);
+			$('#emailinput').val(data.email1+"@"+data.email2);
+			$('#telinput').val(data.tel1+" - "+data.tel2+" - "+data.tel3);
+			$('#addressinput1').val(data.zipcode+"  "+data.address);
+			$('#addressinput2').val(data.addressDetail);
+			
+			$('#dateinput').val(data.logtime);
 
 		},	//success
 		error:function(err){
@@ -109,6 +125,27 @@ $(function(){
 	
 	});	//ajax
 });	//function
+
+/*
+$('#memberImg').click(function(){
+	$.ajax({
+		url:"/nadri/tripmember/memberImg",
+		type:'post',	
+		success:function(data){
+			if(data=='exist'){
+				$('#idDiv').text("사용이 불가능합니다");
+			}else if(data=='non-exist'){
+				$('#idDiv').text('사용이 가능합니다');
+			}		
+		},	
+		error:function(err){
+			console.log(err);
+		}
+	});		//ajax
+}		//else	
+});
+	
+*/	
 	
 </script>
 </body>

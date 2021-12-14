@@ -5,141 +5,161 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/nadri/repository/css/tripmember/modifyForm.css">
+
 </head>
 <body>
+		
+<div class="wrapper">
 
-<img alt="기본이미지" src="/nadri/repository/img/tripmember/defaultimage.jfif" width="70" height="70" 
-style="cursor:pointer;" onclick="location.href='/nadri/repository/jsp/tripmember/imageForm.jsp'">
-<h3 style="display:inline;color:green;">등록된 이미지</h3>
-<input type="button" value="이미지변경하기">
-
-
-<form id="modifyForm">
-
-	<table border="1" cellspacing="0" cellpadding="5">
-
-		<tr>
-			<td>아이디</td>
-			<td>
-				<input type="text" name="id" id="id" readonly>
-			</td>
-		</tr>
+	<form id="modifyForm">
+	<div class="wrap">
+		<div class="subjecet">
+			<span>내정보수정</span>
+		</div>
 		
-		<tr>
-			<td>email</td>
-			<td>
-				<input type="text" name="email" id="email" readonly>
-			</td>
-		</tr>	
-		
-		<tr>
-			<td>전화번호</td>
-			<td>
-				<input type="text" name="tel" id="tel" readonly>	
-			</td>
-		</tr>	
-		
-		<tr>
-			<td>주소</td>
-			<td>
-				<input type="text" name="add" id="add" readonly>
-			</td>
-		</tr>		
-	</table>
-<%-- 
-	변경할 내용	
-	<table border="1" cellspacing="0" cellpadding="5">
-		
-		<tr>
-			<td width="100" align="center">비밀번호</td>
-			<td>
-				<input type="password" name="pwd" id="pwd" size="30" placeholder="비밀번호 입력">
-				<div id= "pwdDiv"></div>
-			</td>	
-		</tr>
-		
-		<tr>
-			<td width="100" align="center">재확인</td>
-			<td>
-				<input type="password" name="repwd" id="repwd" size="30" placeholder="비밀번호 확인">
-				<div id= "repwdDiv"></div>
-			</td>	
-		</tr>
-		
-
-		<tr>
-			<td width="100" align="center">이메일</td>
-			<td>
-				<input type="text" name="email1">
-				@
-				<input type="text" name="email2" list="email2" placeholder="직접입력">
-				<datalist id="email2">
-					<option value="naver.com">naver.com
-					<option value="daum.net">daum.net
-					<option value="gmail.com">gmail.com
-				</datalist>
-				<div id= "emailDiv"></div>
-			</td>
-		</tr>
-		
-		<tr>
-			<td width="100" align="center">핸드폰</td>
-			<td>
-				<select name="tel1" style="width: 70px;">
-					<option value="010" selected>010</option>
-					<option value="011" >011</option>
-					<option value="019" >019</option>
-				</select>
-				-
-				<input type="text" name="tel2" size="6" maxlength="4">
-				-
-				<input type="text" name="tel3" size="6" maxlength="4">
+		<div>			
+			<div>
+				<h3 style="display:left;color:green;">내 이미지</h3>
+				<img id="memberImgchange" src=""  class="myImg" alt="변경이미지" src=""  
+				style="cursor:pointer;">
+			</div>
 			
-				<div id= "telDiv"></div>	
-			</td>
-		</tr>
+			<div> 
+				<input type="file" class="memberImgchange" name="memberImgchange" >	
+			</div>		
+		</div>
+				
+	<!-- 
+			<div class="profile_wrap">
+				<div class="imgname"></div>
+				<div class="imginput_box">
+					<input type="hidden" class="imginput" id="profileImg" name="profileImg" value="defaultImg.png">
+				</div>
+			</div>		
+			 -->
+			<div class="pw_wrap">
+				<div class="pwname">비밀번호 변경</div><div id="pwdDiv"></div>
+				<div class="pwinputbox">
+					<input class="pwinput" type="password"  id="pwd" name="pwd">
+				</div>
+			</div>
+			
+			<div class="pwck_wrap">
+				<div class="pwckname">비밀번호 확인</div><div id="repwdDiv"></div>
+				<div class="pwckinputbox">
+					<input class="pwckinput" type="password" id="repwd" name="repwd">
+				</div>
+			</div>
+			
+			
+			<div class="nick_wrap">
+				<div class="nickname">닉네임변경</div><div id="nickDiv"></div>
+				<div class="nickinputbox">
+					<input class="nickinput" id="nickName" name="nickName">
+				</div>
+			</div>
+				
+			<div class="tel_wrap">
+				<div class="telname">핸드폰번호변경</div><div id="telDiv"></div>
+				<div class="teltext">
+					<input class="tel1" name="tel1"  id="tel1"  list="tellist">
+					<datalist id="tellist">
+						<option value="010">010
+						<option value="011">011
+						<option value="019">019
+					</datalist>		
+					-
+					<input class="telinput" id="tel2" name="tel2"  size="6" maxlength="4">
+					-
+					<input class="telinput" id="tel3" name="tel3"  size="6" maxlength="4">
+				</div>
+			</div>
 		
-		<tr>
-			<td width="100" align="center">주소</td>
-			<td>
-				<input type="text" name="zipcode" id="zipcode" readonly>
-				<input type="button" value="우편번호 검색" id="zipcodeBtn"><br>
-				<input type="text" name="addr1" id="addr1" size="60" placeholder="주소" readonly><br>
-				<input type="text" name="addr2" id="addr2" size="60" placeholder="상세주소">
-				<div id= "addrDiv"></div>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2" align="center">
-				<input type="button" id="modifyBtn" value="정보수정">
-				<input type="reset" value="다시작성">
-			</td>
-		</tr>
-	</table>
-	--%>
-	
-</form>
+			<div class="email_wrap">
+				<div class="emailname">이메일변경</div> <div id="emailDiv"></div>
+					<div class="emailtext">
+						<input type="text" name="email1" id="email1" class="emailinputbox">
+						@
+						<input type="text" name="email2" id="email2" list="email2" class="emailinputbox" placeholder="직접입력">
+						<datalist id="email2">
+							<option value="naver.com">naver.com
+							<option value="daum.net">daum.net
+							<option value="gmail.com">gmail.com
+						</datalist>
+						<div class="emailcheckbutton" id="emailcheckbutton">
+							<span>인증메일전송</span>
+					</div>
+					</div>
+								
+				<div class="emailcheck_wrap">
+					<div id="emailcheckDiv"></div>
+					<div class="emailcheckinputbox">
+						<input class="emailcheckinput" id="emailcheck">
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+					
+			<div class="address_wrap">
+				<div class="addressname">주소변경</div><div id="addressDiv"></div>
+				<div class="addressinput1_wrap">
+					<div class="addressinput1box">
+						<input class="addressinput1" id="zipcode" name="zipcode" readonly>
+					</div>
+					
+					<div class="addressbutton" id="zipcodeBtn">
+						<span>우편번호검색</span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				<div class ="addressinput2_wrap">
+					<div class="addressinput2box">
+						<input class="addressinput2" placeholder="도로주소" id="address" name="address" readonly>
+						
+					</div>
+				</div>
+				
+				<div class ="addressinput3_wrap">
+					<div class="addressinput3box">
+						<input class="addressinput3" placeholder="상세주소" id="addressDetail" name="addressDetail">
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="modifybutton_wrap">
+				<input type="button" class="modifyBtn" id="modifyBtn" value="수정하기">
+			</div>
+			
+		</div>
+	</form>
+</div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<%-- 
-<script type="text/javascript" src="/nadri/repository/js/member/modifyForm.js"></script>
- --%>
- <script type="text/javascript">
+<script type="text/javascript">
 $(function(){
 	$.ajax({
-		url: '/nadri/tripmember/getMemberInfo',
+		url: '/nadri/tripmember/getTripmemberInfo',
 		type: 'post',
 		dataType: 'json',
 		success:function(data){
 			console.log(JSON.stringify(data));		//json을 안썼지만 json형식으로 뜸 오류가 안뜸
 		
-			$('#id').val(data.id);
+			$('#memberImgchange').attr('src', '/nadri/repository/img/tripmember/storage/'+data.profileImg);
+			$('#nickName').val(data.nickName);
+			$('#tel1').val(data.tel1);
+			$('#tel2').val(data.tel2);
+			$('#tel3').val(data.tel3);			
+			$('#email1').val(data.email1);
+			$('#email2').val(data.email2);	
+			$('#zipcode').val(data.zipcode);
+			$('#address').val(data.address);
+			$('#addressDetail').val(data.addressDetail);
+				
 
-			$('#email').val(data.email1+"@"+data.email2);
-			$('#tel').val(data.tel1+"-"+data.tel2+"-"+data.tel3);
-			$('#add').val(data.zipcode+" "+data.address+" "+data.addressDetail);
-		},
+},
 		error:function(err){
 			console.log(err);
 		}
@@ -148,22 +168,23 @@ $(function(){
 });	//function		
 			
 $('#modifyBtn').click(function(){
-	$('#pwdDiv').empty();
-	$('#emailDiv').empty();
-	$('#telDiv').empty();
-	$('#addrDiv').empty();
-	
-
-	if($('#pwd').val()==''){
-		$('#pwdDiv').html('비밀번호를 입력해주세요 ');
+	$('#repwdDiv').empty();
 		
-	}else if($('#pwd').val() != $('#repwd').val()){
-		$('#repwdDiv').html('비밀번호가 다릅니다');
-	}else if($('#email1').val()==''||$('#email2').val()==''){
-		$('#emailDiv').html('메일주소가 제대로 입력되지 않았습니다');
+ 	if($('#pwd').val()==''){
+		$('#pwdDiv').html('변경될 비밀번호를 입력해주세요 ');
+		
+	}else if(($('#repwd').val()=='')||($('#pwd').val() != $('#repwd').val())){
+		$('#repwdDiv').html('비밀번호를 확인해주세요 ');
+		
+	}else if($('#nickName').val()==''){
+		$('#repwdDiv').html('');
+		$('#nickDiv').html('닉네임을 입력해주세요');
 
 	}else if($('#tel1').val()==''||$('#tel2').val()==''||$('#tel3').val()==''){
-		$('#telDiv').html('핸드폰번호가 제대로 입력되지 않았습니다');
+		$('#telDiv').html('핸드폰번호가 제대로 입력되지 않았습니다');		
+		
+	}else if($('#email1').val()==''||$('#email2').val()==''){	
+		$('#emailDiv').html('메일주소가 제대로 입력되지 않았습니다');
 
 	}else if($('#zipcode').val()==''||$('#addr1').val()==''){
 		$('#addrDiv').html('주소가 제대로 입력되지 않았습니다');
@@ -185,6 +206,34 @@ $('#modifyBtn').click(function(){
 	
 });	//modifyBtn click 
 
+
+$('.memberImgchange').change(function(){
+
+	var formData = new FormData($('#modifyForm')[0]);
+//	alert("뜨냐");
+	$.ajax({
+		url:"/nadri/tripmember/memberImgchange",
+		type: 'post',
+		enctype: 'multipart/form-data',
+		processData: false,
+		contentType: false,
+		data: formData,
+		dataType:'text',
+		
+		success: function(data) {
+			alert('이미지 수정 완료' + data);
+			var date=new Date();
+			//$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data+'?timestamp='+date.getTime());
+			$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data);
+			location.reload();
+	
+		},
+		error:function(err){
+			console.log(err);
+		}
+	});		//ajax
+
+});
 
 </script>
 </body>
