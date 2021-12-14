@@ -1,8 +1,12 @@
 package activities.service;
 
+import java.util.List;
+
 import activities.bean.OnActivitiesDTO;
 import activities.bean.TripActReviewCntDTO;
 import activities.bean.TripActReviewDTO;
+import activities.bean.TripActReviewListDTO;
+import activities.bean.TripActReviewUserDTO;
 
 public interface ActivitiesService {
 	public OnActivitiesDTO onActivities(String activity_seq);
@@ -11,6 +15,10 @@ public interface ActivitiesService {
 
 	public TripActReviewCntDTO getActReviewCnt();
 
-	public Object getActReviewUserInfo(String member_seq);
+	public TripActReviewUserDTO getActReviewUserInfo(TripActReviewUserDTO tripActReviewUserDTO);
+
+	public int getReviewContentCnt();
+
+	public List<TripActReviewListDTO> getReviewContent(int pageNum);
 
 }

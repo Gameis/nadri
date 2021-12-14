@@ -81,7 +81,6 @@
 							
 						</form>
 					</div><!-- review-write-content -->
-					
 				</li><!-- review-write-detail -->
 			</div><!-- review-write-form -->
 		</ul><!-- review-write-list -->

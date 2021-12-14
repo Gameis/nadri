@@ -22,6 +22,7 @@
 	<!-- 몸통 -->
 	<input type="hidden" id="activity_seq" value="${param.activity_seq}"/>
 	<input type="hidden" id="member_seq" value="${member_seq }"/>
+	<input type="hidden" id="pageNum" value="1"/>
 	<div class="productdetail-container">
 		<input type="hidden" id="page_id" value="10650010429">
 		<!-- 눈썹 -->
@@ -54,8 +55,8 @@
 			<div class="comment-height">
 				<div class="comment-sold">
 					<section>
-						<span class="comment-score"> <em class="good-comment">3.3</em> /5
-						</span> <span class="comment-count">리뷰 3개</span>
+						<span class="comment-score"> <em class="good-comment">total_avg_act_review</em> /5
+						</span><span class="comment-count">리뷰 total_cnt_act_review개</span>
 					</section>
 				</div>
 				<div class="collection default-collection">
@@ -358,16 +359,21 @@
 	 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	 <script type="text/javascript" src="/nadri/repository/js/activities/activities_review.js"></script>
 	 <script type="text/javascript" src="/nadri/repository/js/activities/activities.js"></script>
-	 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	 <!-- <script src="https://code.jquery.com/jquery-latest.min.js"></script> -->
+	 <script type="text/javascript" src="/nadri/repository/js/activities/jquery.bootpag.min.js"></script>
 	 <script type="text/javascript">
 		$(function(){
 			//액티비티 정보 불러오기
 			onActivities();
 			
-			//리뷰테이블 정보 불러오기
+			//리뷰수 및 유저정보 불러오기
 			getActReviewCnt();
 			
+			//리뷰리스트 불러오기
+			getReviewList();
 			
+			//페이징 처리
+			pagination();
 		});
 			
 		

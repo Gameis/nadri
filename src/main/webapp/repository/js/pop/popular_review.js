@@ -1,6 +1,6 @@
 //imageboardWriteForm.jsp 이미지 등록 버튼클릭
 $('#pop_review_writeBtn').click(function(){
-	debugger
+	
 	if($.trim($('#member_seq').val() || "") == ""){
 		alert('로그인 후 이용 가능합니다.');
 		return
@@ -28,10 +28,20 @@ $('#pop_review_writeBtn').click(function(){
 		});
 	}//if
 });
+
+function removeReviewList() {
+//review list 전체 삭제
+	
+	var list = document.getElementById("review-comment-detail");
+	while(list.hasChildNodes()){
+		list.removeChild(list.firstChild);
+	}
+}
+	
 //페이징 처리
 function pagination(){
 	 // init bootpag
-    $('#page-selection').bootpag({
+	$('#page-selection').bootpag({
 	    total: 7,          // total pages
 	    page: 1,            // default page
 	    leaps: true         // next/prev leaps through maxVisible
