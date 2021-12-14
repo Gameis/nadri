@@ -380,9 +380,6 @@
 		});
 	</script>
 	
-	
-	
-	
 	<script>
 $("#check_module").click(function () {
 var IMP = window.IMP; // 생략가능
