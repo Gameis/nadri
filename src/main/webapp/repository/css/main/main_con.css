@@ -36,6 +36,10 @@ button, input, optgroup, select, textarea {
 	margin: 0;
 }
 
+.modal-open {
+	opacity: 0.9 !important;
+}
+
 * {
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }

@@ -12,9 +12,7 @@ $('.pop-review-reviewIcon #goReview').click(function(){
 
 //like 버튼 클릭
 $('.favorite-wrap').click(function(){
-
 	$('.fa-heart').toggleClass('checked');
-
 });
 
 function resetValue(){
@@ -35,6 +33,8 @@ function getLocation(){
 			success: function(data){
 				alert(JSON.stringify(data));
 				
+				debugger;
+				
 				$('#popularLocation_name h1').text(data.pop_name);
 				$('.pop-businesstime .one-line .field').text(data.pop_businesstime);
 				$('.pop-tourismtime .one-line .field').text(data.pop_tourismtime);
@@ -43,8 +43,7 @@ function getLocation(){
 				$('title').text(data.pop_name+'정보 및 후기 | 트립닷컴');
 				$('.detailInfo-content').text(data.detailInfo);
 				
-				
-				
+
 				//카카오맵 API
 				let location1 = data.pop_name;
 				let map_x = data.map_y;
