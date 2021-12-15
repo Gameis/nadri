@@ -18,8 +18,10 @@
     <div id="areaWrap">
         <div id="areaHeader">
             <div id="areaPath">
-                <div class="areaPathItem"><a href="/nadri">홈</a></div>
-                <div class="areaPathItem"><a href="#">지역 이름</a></div>
+                <div class="areaPathItem"><a href="/nadri">&nbsp;&nbsp;홈&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;아시아&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;대한민국&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem" style="color: black;">지역 이름</div>
             </div><!--areaPath-->
             <div id="areaSearch">
                 <div id="areaSearch_input">
@@ -72,7 +74,7 @@
             </div>
         </div><!--areaMainImg-->
         <div class="areaSlideTitle">
-          <h2 style="font-weight: bold;"><span>지역 이름 인기명소</span><input type="button" id="addPopBtn" class="addButton" value="+"></h2>
+          <h2 style="font-weight: bold;"><span>지역 이름 인기명소</span><button class="btn btn-primary addButton" id="addPopBtn">+</button></h2>
           <!--divSlide-->
           <div class="areaSlide" style="background: rgba(40, 125, 250, .1);">
             <div id="areaPopularLocation_slide" class="carousel slide" data-bs-ride="carousel">
@@ -93,7 +95,7 @@
         <!--여기까지 인기명소-->
         <!--여기부터 인기호텔-->
         <div class="areaSlideTitle">
-          <h2 style="font-weight: bold;">인기 호텔 <input type="button" id="addHotelBtn" class="addButton" value="+"></h2>
+          <h2 style="font-weight: bold;"><span>인기 호텔</span> <button class="btn btn-primary addButton" id="addHotelBtn">+</button></h2>
           <!--divSlide-->
           <div class="areaSlide">
             <div id="areaHotel_slide" class="carousel slide" data-bs-ride="carousel">
@@ -113,7 +115,7 @@
         <!--여기까지 인기호텔-->
         <!--여기부터 액티비티-->
         <div class="areaSlideTitle">
-          <h2 style="font-weight: bold;">액티비티 <input type="button" id="addActivityBtn" class="addButton" value="+"></h2>
+          <h2 style="font-weight: bold;"><span>액티비티</span> <button class="btn btn-primary addButton" id="addActivityBtn">+</button></h2>
           <!--divSlide-->
           <div class="areaSlide">
             <div id="areaActivity_slide" class="carousel slide" data-bs-ride="carousel">
@@ -227,15 +229,12 @@
 	//검색
 	function searchEnterkey() {
 	    if (window.event.keyCode == 13) {
-	        alert('엔터키가 눌렸어요~');
 	        if($('.search').val() != "") 
 	        $.ajax({
 	        	url: '/nadri/area/search',
 	        	type: 'get',
 	        	data: 'searchText=' + $('.search').val(),
 	        	success: function(data) {
-	        		alert('성공');
-	        		alert(JSON.stringify(data));
 	        		if(data.content_seq == '2') location.href="/nadri/main/area?main_seq=" + data.seq;
 	        		else if(data.content_seq == '3') location.href="/nadri/area/popular?pop_seq=" + data.seq;
 	        		else if(data.content_seq == '5') location.href="/nadri/area/activity?activity_seq=" + data.seq;
@@ -259,9 +258,9 @@
 			type: 'get',
 			data: 'main_seq=' + $('#main_seq').val(),
 			success: function(data) {
-				alert(JSON.stringify(data));
 				num = 0;
 				$.each(data, function(index, items){
+					$('.areaPathItem').last().text(items.main_name);
 					$('#main_name').val(items.main_name);
 					$('.areaPathItem:eq(1) > a').text(items.main_name);
 					$('#areaDestination_name').text(items.main_name);
@@ -291,9 +290,10 @@
       success: function(data) {
         var count = -1;
         var popCount = 1;
+        
         $.each(data, function(index, items){
           if(index % 4 == 0) {
-
+		
             if(index == 0) {
               $('<div/>', {
                 class: 'carousel-item active'
@@ -355,8 +355,6 @@
     	url: '/nadri/area/onAreaHotel',
     	type: 'get',
     	success: function(data) {
-    		alert('호텔 성공');
-    		alert(JSON.stringify(data));
     		var count = -1;
             var activityCount = 1;
             
@@ -384,8 +382,6 @@
                 var facility = ((items.hotel_facility / (110/19)).toFixed(2) * 100) + '%;';
                 var location = ((items.hotel_location / (110/19)).toFixed(2) * 100) + '%;';
                 var service = ((items.hotel_service / (110/19)).toFixed(2) * 100) + '%;';
-                
-                alert("clean = " + clean + ", facility = " + facility + ", location = " + location + ", service = " + service)
                 
                 $('<div/>', {
                 	class: 'card hotelCard'  

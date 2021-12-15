@@ -23,6 +23,7 @@
 
 					<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
 					
+<<<<<<< HEAD
 						 <c:if test="${memId == null}">
 							<!-- Login Button trigger modal -->
 							<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal" id="loginBtn">
@@ -40,6 +41,62 @@
 							 <div class="clearfix"></div>
 						</c:if>
 									
+=======
+					 <c:if test="${memId == null}">
+						<!-- Login Button trigger modal -->
+						<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal">
+							<span>로그인</span>/<span>회원가입</span>	
+							   
+							
+						</div>
+						   <div onclick="kakaoLogin();">
+      								  <a href="javascript:void(0)">
+            						<span>카카오 로그인</span>
+      								  </a>
+    							  </div>
+					</c:if> 
+					
+					
+					<c:if test="${memId != null }">
+						<div>
+							<p><a href="/nadri/tripmember/myPage">${sessionScope.memName}님 환영 합니다.</a></p>
+						</div>
+					</c:if>
+					
+					<c:if test="${memId == null}">
+						<!-- Login Button trigger modal -->
+						<div class="btn btn-primary" data-bs-toggle="modal"
+							data-bs-target="#loginmodal" id="loginBtn">
+							<span>로그인</span>/<span>회원가입</span>
+						</div>
+					</c:if>
+
+
+					<c:if test="${memId != null }">
+						<div>
+							<p>
+								<a href="/nadri/tripmember/myPage">${sessionScope.memName}님
+									환영 합니다.</a>
+							</p>
+							<button id="logoutBtn" type="button">로그아웃</button>
+>>>>>>> 40e9f2d03cbcf203c37950f80028483547f02e76
+						</div>
+						<div class="logout_wrap"><button id="logoutBtn" type="button">로그아웃</button>
+						</div>
+						 <div class="clearfix"></div>
+					</c:if>
+<<<<<<< HEAD
+			
+			
+			
+					
+					<c:if test="${userId != null }">
+						<div>
+							<form name="logout" action="http://localhost:8080/logout"></form>
+						</div>	
+					</c:if>					 	
+						
+>>>>>>> c00dbb6f1608874172de161a2e5989a65e6a506d
 					</div>
 					
 					<div class="trip_main_hd_nav"></div>

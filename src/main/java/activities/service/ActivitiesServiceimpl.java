@@ -1,6 +1,7 @@
 package activities.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -28,8 +29,8 @@ public class ActivitiesServiceimpl implements ActivitiesService {
 	}
 
 	@Override
-	public TripActReviewCntDTO getActReviewCnt() {
-		return activitiesDAO.getActReviewCnt();
+	public TripActReviewCntDTO getActReviewCnt(String activity_seq) {
+		return activitiesDAO.getActReviewCnt(activity_seq);
 	}
 
 	@Override
@@ -38,13 +39,14 @@ public class ActivitiesServiceimpl implements ActivitiesService {
 	}
 
 	@Override
-	public int getReviewContentCnt() {
-		return activitiesDAO.getReviewContentCnt();
+	public int getReviewContentCnt(String activity_seq) {
+		return activitiesDAO.getReviewContentCnt(activity_seq);
 	}
 
 	@Override
-	public List<TripActReviewListDTO> getReviewContent(int pageNum) {
-		return activitiesDAO.getReviewContent(pageNum);
+	public Object getReviewContent(Map<String, Object> activityMap) {
+		return activitiesDAO.getReviewContent(activityMap);
 	}
 
+	
 }

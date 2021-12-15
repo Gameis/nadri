@@ -189,12 +189,7 @@ button, input, optgroup, select, textarea {
     border-radius: 2px;
 }
 
-.addButton {
-    width: 50px;
-    height: auto;
-    background-color: white;
-    color: black;
-}
+h2 span { vertical-align: middle; }
 /*div �����̵�*/
 .areaSlideTitle {
     font-size: 18px;

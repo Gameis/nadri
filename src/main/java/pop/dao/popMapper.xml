@@ -38,7 +38,7 @@
 		insert into trippop_review values(#{member_seq}, #{pop_review_content}, pop_review_seq.nextval, #{pop_review_score}, sysdate, #{pop_seq}, #{main_seq})
 	</insert>
 	
-	<select id="getCountView" resultType="popCount">
+	<select id="getCountView" parameterType="String" resultType="popCount">
 		<!-- total_review, avg_score -->
 		select * from
 		(select * from
@@ -46,22 +46,22 @@
 		    (select nvl(count(pop_review_seq),0) as total_review
 		            , round(nvl(avg(pop_review_score),0),1) as avg_score 
 		            from (select count(img_name) as count_photo, seq as pop_review_seq 
-		                    from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		                    from img where content_seq=3 and img_path='review' and seq in (select pop_review_seq from trippop_review where pop_seq = #{pop_seq})group by seq) join trippop_review
 		                    using(pop_review_seq))
 		    cross join 
 		    <!-- 4점이상 review, total_positiveReivew -->
 		    (select nvl(count(*),0) as total_positiveReview
 		    from (select count(img_name) as count_photo, seq as pop_review_seq 
-		    from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		                    from img where content_seq=3 and img_path='review' and seq in (select pop_review_seq from trippop_review where pop_seq = #{pop_seq})group by seq) join trippop_review
 		    using(pop_review_seq)
-		    <![CDATA[
+		    
 		    where pop_review_score >=3))
-		    ]]>
+		    
 		cross join
 		<!-- 2점이하 total_negativeReview -->
 		(select nvl(count(*),0) as total_negativeReview
 		from (select count(img_name) as count_photo, seq as pop_review_seq 
-		from img where content_seq=3 and img_path='review' group by seq) join trippop_review
+		                    from img where content_seq=3 and img_path='review' and seq in (select pop_review_seq from trippop_review where pop_seq = #{pop_seq})group by seq) join trippop_review
 		using(pop_review_seq)
 		<![CDATA[
 		where pop_review_score <=2))
@@ -70,7 +70,7 @@
 		<!-- total_photo 개수 -->
 		(select nvl(count(count_photo),0) as total_photo
 		        from (select count(img_name) as count_photo, seq as pop_review_seq 
-		              from img where content_seq=3 and not img_name = 'noImg.jpg' and img_path='review' group by seq) join trippop_review
+		                    from img where content_seq=3 and not img_name = 'noImg.jpg' and img_path='review' and seq in (select pop_review_seq from trippop_review where pop_seq = #{pop_seq})group by seq) join trippop_review
 		              using(pop_review_seq))
 	</select>
 	
@@ -100,7 +100,7 @@
                from trippop_review,
                     tripmember
       <where>
-        and trippop_review.member_seq = tripmember.member_seq
+        trippop_review.member_seq = tripmember.member_seq and pop_seq = #{pop_seq}
         <if test="searchType != null and searchType != ''">
             <choose>
                 <when test="searchType == 'POSITIVE'">
@@ -139,7 +139,7 @@
                from trippop_review,
                     tripmember
       <where>
-        and trippop_review.member_seq = tripmember.member_seq
+        trippop_review.member_seq = tripmember.member_seq and trippop_review.pop_seq = #{pop_seq}
         <if test="searchType != null and searchType != ''">
             <choose>
                 <when test="searchType == 'POSITIVE'">
@@ -170,6 +170,7 @@
 		        from (select count(img_name) as count_photo, seq as pop_review_seq 
 		              from img where content_seq=3 and not img_name = 'noImg.jpg' and img_path='review' group by seq) join trippop_review
 		              using(pop_review_seq)
+		              where pop_seq = #{pop_seq}
 	</select>
 	
 	
@@ -182,7 +183,7 @@
 		       trippop_review.pop_review_content as review_content,
 		       to_char(trippop_review.pop_review_logtime, 'YYYY"년"MM"월"DD"일"') as review_logtime
 		from img, trippop_review, tripmember
-		where img.seq= trippop_review.pop_review_seq
+		where img.seq= trippop_review.pop_review_seq and pop_seq = #{pop_seq}
 		      and img.content_seq = '3' 
 		      and trippop_review.member_seq = tripmember.member_seq
 		      and not img.img_name = 'noImg.jpg'
@@ -199,6 +200,7 @@
         where seq=pop_review_seq
             and img_path='review'
             and not img_name='noImg.jpg'
+            and pop_seq=#{pop_seq}
         order by seq
 	</select>
 	
