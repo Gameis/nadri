@@ -9,7 +9,7 @@
 <body>
 	<form id="activityWriteForm">
 		<input type="hidden" name="content_seq" id="content_seq" value="5"/>
-    	<input type="hidden" name="main_seq" id="main_seq" value="99"/>
+    	<input type="hidden" name="main_seq" id="main_seq" value="${param.main_seq }"/>
    		액티비티 이름 : <input type="text" name="activity_name" id="activity_name"><br/>
 		액티비티 핵심 포인트 : <input type="text" name="activity_point" id="activity_point"><br/>
 		액티비티 가격 : <input type="text" name="activity_price" id="activity_price"><br/>

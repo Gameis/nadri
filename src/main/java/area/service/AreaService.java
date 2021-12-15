@@ -23,7 +23,7 @@ public interface AreaService {
 
 	public void imgActivityWrite(ImgDTO imgDTO);
 
-	public List<PopMainDTO> onAreaActivity(int main_seq);
+	public List<PopMainDTO> onAreaActivity(String main_seq);
 
 	public List<OnAreaDTO> onArea(String main_seq);
 
@@ -33,5 +33,5 @@ public interface AreaService {
 
 	public void imgHotelWrite(ImgDTO imgDTO);
 
-	public List<HotelMainDTO> onAreaHotel();
+	public List<HotelMainDTO> onAreaHotel(String main_seq);
 }

@@ -356,6 +356,7 @@
     $.ajax({
     	url: '/nadri/area/onAreaHotel',
     	type: 'get',
+    	data: 'main_seq=' + $('#main_seq').val(),
     	success: function(data) {
     		var count = -1;
             var activityCount = 1;
@@ -457,6 +458,7 @@
      $.ajax({
     	url: '/nadri/area/onAreaActivity',
     	type: 'get',
+    	data: 'main_seq=' + $('#main_seq').val(),
     	success: function(data) {
     		var count = -1;
             var activityCount = 1;
