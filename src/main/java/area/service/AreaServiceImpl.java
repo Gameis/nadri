@@ -52,7 +52,7 @@ public class AreaServiceImpl implements AreaService {
 	}
 
 	@Override
-	public List<PopMainDTO> onAreaActivity(int main_seq) {
+	public List<PopMainDTO> onAreaActivity(String main_seq) {
 		return areaDAO.printActivityMain(main_seq);
 	}
 
@@ -79,8 +79,8 @@ public class AreaServiceImpl implements AreaService {
 	}
 
 	@Override
-	public List<HotelMainDTO> onAreaHotel() {
-		return areaDAO.onAreaHotel();
+	public List<HotelMainDTO> onAreaHotel(String main_seq) {
+		return areaDAO.onAreaHotel(main_seq);
 	}
 
 

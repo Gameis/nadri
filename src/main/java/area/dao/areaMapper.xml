@@ -71,7 +71,7 @@
 	
 	
 	
-	<select id="printActivityMain" resultType="activityMain">
+	<select id="printActivityMain" parameterType="String" resultType="activityMain">
 		select activity_seq, activity_name, activity_salerate, activity_price * ((100 - activity_salerate)/100) as price, img_name, img_path
 		from tripactivity
 		join (select img_name, img_path, seq
@@ -98,7 +98,7 @@
 		select activity_seq from tripactivity where activity_name = #{searchText}
 	</select>
 	
-	<select id="onAreaHotel" resultType="hotelMain">
+	<select id="onAreaHotel" parameterType="String" resultType="hotelMain">
 		select hotel_seq, 
 		       hotel_name, 
 		       hotel_address, 
@@ -115,6 +115,6 @@
 		       img_path
 		from triphotel
 		join img on(hotel_seq = seq)
-		where content_seq = 4
+		where content_seq = 4 and triphotel.main_seq = #{main_seq}
 	</select>
 </mapper>

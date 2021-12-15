@@ -24,7 +24,7 @@ public interface AreaDAO {
 
 	public void imgActivityWrite(ImgDTO imgDTO);
 
-	public List<PopMainDTO> printActivityMain(int main_seq);
+	public List<PopMainDTO> printActivityMain(String main_seq);
 
 	public List<OnAreaDTO> onArea(String main_seq);
 
@@ -34,6 +34,6 @@ public interface AreaDAO {
 
 	public void imgHotelWrite(ImgDTO imgDTO);
 
-	public List<HotelMainDTO> onAreaHotel();
+	public List<HotelMainDTO> onAreaHotel(String main_seq);
 
 }
