@@ -99,6 +99,7 @@
 			</div>
 
 			<div class="modal-body">
+			
 				<form class="loginForm">
 					<svg id="ryan" viewBox="0 0 120 120"
 						xmlns="http://www.w3.org/2000/svg">
@@ -157,21 +158,13 @@
 					</div>
 
 					<!-- 카카오 -->
-					<div>
-						<a style="text-decoration: none" href="javascript:void(0)"> 
-<<<<<<< HEAD
-						<img src="" alt="kakao"
-							onclick="kakaoLogin();">
-=======
-						<img src="/nadri/repository/img/member/kakao.png" alt="kakao" onclick="kakaoLogin();" class="kakaoPNG kakaologin">
->>>>>>> c00dbb6f1608874172de161a2e5989a65e6a506d
-						</a>
-					</div>
 
 					<div>
-						<input type="button" id	="modalLoginBtn" value="로그인">
-					</div>
-					<div id="loginResult"></div>
+	         		  <img onclick="kakaoLogin();" src="/nadri/repository/img/tripmember/kakao_login_large_wide.png" style="cursor: pointer;" width="270" height="45">
+	     			 </div>
+	     			 
+					 <div><input type="button" id="modalLoginBtn" value="회원 계정 로그인"></div>
+					 <div id="loginResult"></div>
 				</form>
 			</div>
 
