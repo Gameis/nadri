@@ -1,413 +1,665 @@
 @charset "UTF-8";
 
-*{
+* {
 	margin: 0;
-	padding:0;
+	padding: 0;
 }
-    background-color: #8EC0E4;
-/* 화면 전체 렙 */
-.wrapper{
-	width: 800px;	
+
+background-color: #8EC0E4 ;
+	/* 화면 전체 렙 */ 
+.wrapper {
+	width: 800px;
 }
 
 /* content 랩 */
-.wrap{
-	width : 700px;
+.wrap {
+	width: 700px;
 	margin: auto;
 }
 
 /* 페이지 제목 */
-.subjecet{
+.subjecet {
 	width: 100%;
-    height: 40px;
-    background-color: #8EC0E4;
+	height: 40px;
+	background-color: #8EC0E4;
 }
-.subjecet span{
+
+.subjecet span {
 	margin-left: 5px;
-    font-size: 30px;
-    font-weight: 90;
-    color: white;
+	font-size: 30px;
+	font-weight: 90;
+	color: white;
 }
 
 /* 이름 영역 */
-
-
-.user_wrap{
-
+.user_wrap {
 	width: 100%;
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
-.username{
-	float:left;
-	font-style:italic;
+.username {
+	float: left;
+	font-style: italic;
 	font-size: 25px;
-    font-weight: bold;
+	font-weight: bold;
 }
 
-#nameDiv{
-	color:red;
-	float:right;
-	font-size:20px;
-}
-
-.userinputbox{
-	clear:both;
+.user_input_box {
 	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	
+	height: 34px;
+	padding: 3px 3px;
 }
-.userinput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+
+.user_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 22px;
 }
 
 /* 아이디 영역 */
-
-.id_wrap{
-	width: 100%;
-    margin-top: 20px;
+.id_wrap { ======= #nameDiv { color:red;
+	float: right;
+	font-size: 20px;
 }
 
-.idname{
-	float:left;
-	font-style:italic;
-	font-size: 25px;
-    font-weight: bold;
-}
-
-#idDiv{
-	color:red;
-	float:right;
-	font-size:20px;
-}
-
-.idinputbox{
-	clear:both;
+.userinputbox {
+	clear: both;
 	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	
-}
-.idinput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+	height: 35px;
+	padding: 2px 2px;
 }
 
-/* 비밀번호 영역 */
-.pw_wrap{
+.userinput {
 	width: 100%;
-    margin-top: 20px;
-}
-.pwname{
-	float:left;
-	font-style:italic;
-	font-size: 25px;
-    font-weight: bold;
+	height: 100%;
+	border: none;
+	font-size: 24px;
 }
 
-#pwdDiv{
-	color:red;
-	float:right;
-	font-size:20px;
+/* 아이디 영역 */
+.id_wrap { >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf width: 100%;
+	margin-top: 20px;
 }
 
-.pwinputbox{
-	clear:both;
+<<<<<<<
+HEAD
+.id_name {
+	font-style: italic; ======= . idname { float : left;
+	font-style: italic; >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-weight: bold;
+}
+
+<<<<<<<
+HEAD
+.id_input_box {
 	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	
-}
-.pwinput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+	height: 34px;
+	padding: 3px 3px;
 }
 
-/* 비밀번호 확인 영역 */
-.pwck_wrap{
+.id_input {
 	width: 100%;
-    margin-top: 10px;
-}
-.pwckname{
-	float:left;
-	font-style:italic;
-	font-size: 25px;
-    font-weight: bold;
-}
-
-#repwdDiv{
-	color:red;
-	float:right;
-	font-size:20px;
-}
-
-.pwckinputbox{
-	clear:both;
-	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;		
-}
-
-.pwckinput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+	height: 100%;
+	border: none;
+	font-size: 22px;
 }
 
 /* 닉네임 영역 */
-.nick_wrap{
-	width: 100%;
-    margin-top: 20px;
-}
-.nickname{
-	float:left;
-	font-style:italic;
-	font-size: 25px;
-    font-weight: bold;
+.nick_wrap { ======= #idDiv { color:red;
+	float: right;
+	font-size: 20px;
 }
 
-#nickDiv{
-	color:red;
-	float:right;
-	font-size:20px;
-}
-.nickinputbox{
-	clear:both;
+.idinputbox {
+	clear: both;
 	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	
+	height: 35px;
+	padding: 2px 2px;
 }
-.nickinput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+
+.idinput {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
+}
+
+/* 비밀번호 영역 */
+.pw_wrap { >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf width: 100%;
+	margin-top: 20px;
+}
+
+<<<<<<<
+HEAD
+
+.nick_name {
+	font-style: italic; ======= . pwname { float : left;
+	font-style: italic; >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-weight: bold;
+}
+
+<<<<<<<
+HEAD
+.nick_input_box {
+	border: 1px solid black;
+	height: 34px;
+	padding: 3px 3px;
+}
+
+.nick_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 22px;
+}
+
+/* 비밀번호 영역 */
+.pw_wrap {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.pw_name {
+	font-style: italic; ======= # pwdDiv { color : red;
+	float: right;
+	font-size: 20px;
+}
+
+.pwinputbox {
+	clear: both;
+	border: 1px solid black;
+	height: 35px;
+	padding: 2px 2px;
+}
+
+.pwinput {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
+}
+
+/* 비밀번호 확인 영역 */
+.pwck_wrap {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.pwckname {
+	float: left;
+	font-style: italic; >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-weight: bold;
+}
+
+<<<<<<<
+HEAD
+.pw_input_box {
+	border: 1px solid black;
+	height: 34px;
+	padding: 3px 3px;
+}
+
+.pw_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 22px;
+}
+
+/* 비밀번호 확인 영역 */
+.pwck_wrap {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.pwck_name {
+	font-style: italic; ======= # repwdDiv { color : red;
+	float: right;
+	font-size: 20px;
+}
+
+.pwckinputbox {
+	clear: both;
+	border: 1px solid black;
+	height: 35px;
+	padding: 2px 2px;
+}
+
+.pwckinput {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
+}
+
+/* 닉네임 영역 */
+.nick_wrap {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.nickname {
+	float: left;
+	font-style: italic; >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-weight: bold;
+}
+
+<<<<<<<
+HEAD
+.pwck_input_box {
+	border: 1px solid black;
+	height: 34px;
+	padding: 3px 3px;
+}
+
+.pwck_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 22px; ======= # nickDiv { color : red;
+	float: right;
+	font-size: 20px;
+}
+
+.nickinputbox {
+	clear: both;
+	border: 1px solid black;
+	height: 35px;
+	padding: 2px 2px;
+}
+
+.nickinput {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
+	>>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
 }
 
 /* 핸드폰 영역 */
-.tel_wrap{
+.tel_wrap {
 	width: 100%;
-    margin-top: 20px;
+	margin-top: 20px;
 }
-.telname{
-	float:left;
-	font-style:italic;
+
+<<<<<<<
+HEAD
+
+.tel_name {
+	font-style: italic;
 	font-size: 25px;
-    font-weight: bold;
+	font-weight: bold;
 }
 
-#telDiv{
-	color:red;
-	float:right;
-	font-size:20px;
+.tel {
+	width: 170px;
+	height: 34px;
+	text-align: center;
+	padding: 0px 0px;
+	font-size: 22px; ======= . telname { float : left;
+	font-style: italic;
+	font-size: 25px;
+	font-weight: bold;
 }
 
-.teltext{
-	clear:both;
+#telDiv {
+	color: red;
+	float: right;
+	font-size: 20px;
 }
 
-.tel1{
-	width:25%;
-	height:35px;
-	text-align:center;
-	padding: 0px 0px;	
-	font-size:24px;
+.teltext {
+	clear: both;
 }
 
-.telinput{
+.tel1 {
+	width: 25%;
+	height: 35px;
+	text-align: center;
+	padding: 0px 0px;
+	font-size: 24px;
+}
+
+.telinput {
 	border: 1px solid black;
-	width:25%;
-	height:35px;
-	text-align:center;
-	padding: 0px 0px;	
-	font-size:24px;	
+	width: 25%;
+	height: 35px;
+	text-align: center;
+	padding: 0px 0px;
+	font-size: 24px;
+	>>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
 }
 
+.tel2 {
+	width: 170px;
+	height: 30px;
+	text-align: center;
+	padding: 0px 0px;
+	font-size: 22px;
+}
 
 /* 메일 영역 */
-.email_wrap{
+<<<<<<<
+HEAD
+.mail_wrap { ======= .email_wrap { >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf width:100%;
+	margin-top: 20px;
+}
+
+<<<<<<<
+HEAD
+
+.mail_name {
+	font-style: italic; ======= . emailname { float : left;
+	font-style: italic; >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-weight: bold;
+}
+
+<<<<<<<
+HEAD
+.mail_input_box {
+	border: 1px solid black;
+	height: 25px;
+	padding: 3px 3px;
+	width: 30%;
+	font-size: 27px;
+}
+
+.mail_input {
 	width: 100%;
-    margin-top: 20px;
+	height: 100%;
+	border: none;
+	font-size: 14px;
 }
-.emailname{
-	float:left;
-	font-style:italic;
+
+.mail_check_wrap {
+	margin-top: 10px;
+}
+
+.mail_check_input_box {
+	border: 1px solid black;
+	height: 25px;
+	padding: 3px 3px;
+	width: 65%;
+	float: left;
+}
+
+.mail_check_input {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 22px;
+}
+
+.mail_check_button {
+	border: 1px solid black;
+	height: 35px;
+	width: 30%;
+	float: right;
+	line-height: 30px;
+	text-align: center;
 	font-size: 25px;
-    font-weight: bold;
+	font-weight: 600;
+	background-color: #ececf7;
+	cursor: pointer; ======= # emailDiv { color : red;
+	float: right;
+	font-size: 20px;
 }
 
-#emailDiv{
-	color:red;
-	float:right;
-	font-size:20px;
+.emailtext {
+	clear: both;
 }
 
-.emailtext{
-	clear:both;
-}
-
-.emailinputbox{
+.emailinputbox {
 	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	width:31%;
-	font-size: 24px;	
+	height: 35px;
+	padding: 2px 2px;
+	width: 31%;
+	font-size: 24px;
 }
 
-.emailinput{
-
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+.emailinput {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
 }
 
-.emailcheck_wrap{
-	margin-top: 10px;	
+.emailcheck_wrap {
+	margin-top: 10px;
 }
 
-#emailcheckDiv{
-	align:center;
-	color:black;
-	float:left;
-	font-size:28px;
+#emailcheckDiv {
+	align: center;
+	color: black;
+	float: left;
+	font-size: 28px;
 }
 
-
-.emailcheckinputbox{
-	align:center;
+.emailcheckinputbox {
+	align: center;
 	border: 1px solid black;
-    height: 35px;
-    padding: 2px 2px;
-    width: 30%;
-    float: right;
+	height: 35px;
+	padding: 2px 2px;
+	width: 30%;
+	float: right;
 }
 
-.emailcheckinput{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+.emailcheckinput {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
 }
 
-.emailcheckbutton{
-    border: 1px solid black;
-    height: 35px;
-    width: 30%;
-    float: right;
-    line-height: 30px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    background-color: #ececf7;
-    cursor: pointer;
+.emailcheckbutton {
+	border: 1px solid black;
+	height: 35px;
+	width: 30%;
+	float: right;
+	line-height: 30px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	background-color: #ececf7;
+	cursor: pointer;
+	>>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
 }
 
 /* 주소 영역 */
-.address_wrap{
+.address_wrap {
 	width: 100%;
-    margin-top: 20px;
+	margin-top: 20px;
 }
-.addressname{
-	float:left;
-	font-style:italic;
+
+<<<<<<<
+HEAD
+
+.address_name {
+	font-style: italic; ======= . addressname { float : left;
+	font-style: italic; >>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-weight: bold;
+}
+
+.address_input_1_box {
+	border: 1px solid black;
+	height: 30px;
+	padding: 3px 3px;
+	width: 65%;
+	float: left;
+}
+
+.address_input_1 {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 27px;
+}
+
+<<<<<<<
+HEAD
+.address_button {
+	border: 1px solid black;
+	height: 35px;
+	width: 30%;
+	float: right;
+	line-height: 30px;
+	text-align: center;
 	font-size: 25px;
-    font-weight: bold;
+	font-weight: 600;
+	background-color: #ececf7;
+	cursor: pointer;
 }
 
-#addressDiv{
-	color:red;
-	float:right;
-	font-size:20px;
+.address_input_2_wrap {
+	margin-top: 20px;
 }
 
-.addressinput1_wrap{
-	clear:both;
-	margin-top: 20px;
-}
-.addressinput1box{
+.address_input_2_box {
 	border: 1px solid black;
-    height: 35px;
-    padding: 3px 3px;
-    width: 65%;
-    float: left;	
-}
-.addressinput1{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:27px;	
-}
-.addressbutton{
-  border: 1px solid black;
-    height: 35px;
-    width: 30%;
-    float: right;
-    line-height: 30px;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 600;
-    background-color: #ececf7;
-    cursor: pointer;	
-}
-.addressinput2_wrap{
-	margin-top: 20px;
-}
-.addressinput2box{
-	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	
-}
-.addressinput2{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+	height: 31px;
+	padding: 3px 3px;
 }
 
-.addressinput3_wrap{
+.address_input_2 {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 27px;
+}
+
+.address_input_3_wrap {
 	margin-top: 20px;
 }
-.addressinput3box{
+
+.address_input_3_box {
 	border: 1px solid black;
-	height:35px;
-	padding: 2px 2px;	
-	
+	height: 31px;
+	padding: 3px 3px;
 }
-.addressinput3{
-	width:100%;
-	height:100%;
-	border:none;
-	font-size:24px;
+
+.address_input_3 {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 28px;
 }
 
 /* 가입하기 버튼 */
-.memberbutton_wrap{
+.member_button_wrap {
 	margin-top: 40px;
 	text-align: center;
 }
-.memberbutton{
-	border:none;
+
+.member_button {
 	width: 100%;
-    height: 40px;
-    background-color: #6AAFE6;
-    font-size: 25px;
-    font-weight: 300;
-    color: white;
+	height: 40px;
+	background-color: #6AAFE6;
+	font-size: 20px;
+	font-weight: 90;
+	color: white; ======= # addressDiv { color : red;
+	float: right;
+	font-size: 20px;
+}
+
+.addressinput1_wrap {
+	clear: both;
+	margin-top: 20px;
+}
+
+.addressinput1box {
+	border: 1px solid black;
+	height: 35px;
+	padding: 3px 3px;
+	width: 65%;
+	float: left;
+}
+
+.addressinput1 {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 27px;
+}
+
+.addressbutton {
+	border: 1px solid black;
+	height: 35px;
+	width: 30%;
+	float: right;
+	line-height: 30px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+	background-color: #ececf7;
+	cursor: pointer;
+}
+
+.addressinput2_wrap {
+	margin-top: 20px;
+}
+
+.addressinput2box {
+	border: 1px solid black;
+	height: 35px;
+	padding: 2px 2px;
+}
+
+.addressinput2 {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
+}
+
+.addressinput3_wrap {
+	margin-top: 20px;
+}
+
+.addressinput3box {
+	border: 1px solid black;
+	height: 35px;
+	padding: 2px 2px;
+}
+
+.addressinput3 {
+	width: 100%;
+	height: 100%;
+	border: none;
+	font-size: 24px;
+}
+
+/* 가입하기 버튼 */
+.memberbutton_wrap {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.memberbutton {
+	border: none;
+	width: 100%;
+	height: 40px;
+	background-color: #6AAFE6;
+	font-size: 25px;
+	font-weight: 300;
+	color: white;
+	>>>>>>>
+	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
 }
 
 /* float 속성 해제 */
-.clearfix{
+.clearfix {
 	clear: both;
 }

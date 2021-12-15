@@ -14,7 +14,7 @@
 
 	<form id="modifyForm">
 	<div class="wrap">
-		<div class="subjecet">
+		<div class="modifysubject">
 			<span>내정보수정</span>
 		</div>
 		

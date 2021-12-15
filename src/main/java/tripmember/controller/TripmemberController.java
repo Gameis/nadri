@@ -76,25 +76,7 @@ public class TripmemberController {
 		}
 	} // login
 
-	// 비밀번호 비교
-	@RequestMapping(value = "/compare", method = RequestMethod.POST)
-	@ResponseBody
-	public String compare(@RequestParam String pwd, HttpSession session) {
 
-		String inputPwd = null;
-		String dbPwd = null;
-		String id = (String) session.getAttribute("memId");
-		TripmemberDTO tripmemberDTO2 = tripmemberService.getTripmemberInfo(id);// db갔다온 정보
-		inputPwd = pwd; // 비교창에서 입력한 비번
-		dbPwd = tripmemberDTO2.getPwd(); // db에서 꺼내온 비번
-
-		if (!passwordEncoder.matches(inputPwd, dbPwd)) {
-			return "fail";
-		} else {
-			return "ok";
-
-		}
-	} // compare
 
 	@RequestMapping(value = "/logOut", method = RequestMethod.POST)
 	@ResponseBody
@@ -167,7 +149,7 @@ public class TripmemberController {
 	@PostMapping("/modify")
 	@ResponseBody
 	public void modify(@ModelAttribute TripmemberDTO tripmemberDTO, HttpSession session) { // dto 여러개는 ModelAttribute로
-																							// 보냄
+		tripmemberDTO.setPwd(passwordEncoder.encode(tripmemberDTO.getPwd())); 	//비번 복호화																				
 		String id = (String) session.getAttribute("memId");
 		tripmemberDTO.setId(id);
 		tripmemberService.modify(tripmemberDTO);
@@ -179,6 +161,26 @@ public class TripmemberController {
 		return "/repository/jsp/tripmember/myPage";
 	}
 
+	// 비밀번호 비교
+	@RequestMapping(value = "/compare", method = RequestMethod.POST)
+	@ResponseBody
+	public String compare(@RequestParam String pwd, HttpSession session) {
+
+		String inputPwd = null;
+		String dbPwd = null;
+		String id = (String) session.getAttribute("memId");
+		TripmemberDTO tripmemberDTO2 = tripmemberService.getTripmemberInfo(id);// db갔다온 정보
+		inputPwd = pwd; // 비교창에서 입력한 비번
+		dbPwd = tripmemberDTO2.getPwd(); // db에서 꺼내온 비번
+
+		if (!passwordEncoder.matches(inputPwd, dbPwd)) {
+			return "fail";
+		} else {
+			return "ok";
+
+		}
+	} // compare
+		
 	@PostMapping("/delete")
 	@ResponseBody
 	public void delete(HttpSession session) {
