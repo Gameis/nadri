@@ -11,7 +11,7 @@ $(function() {
 
     $('#addActivityBtn').click(function() {
         alert('addActivityBtn');
-        window.open("/nadri/area/activityWriteForm", "activityWriteForm", "width=800, height=1200");
+        window.open("/nadri/area/activityWriteForm?main_seq=" + $('#main_seq').val(), "activityWriteForm", "width=800, height=1200");
     });
 
     $('#popWriteBtn').click(function() {
