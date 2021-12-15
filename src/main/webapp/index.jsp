@@ -834,7 +834,6 @@ $('.con_search_button_icon').click(function(){
 				
 			},
 			error : function(err) {
-				alert('???')
 			}
 		});
 	});
@@ -852,10 +851,8 @@ $(function() {
 			contentType : false,
 			data : formData,
 			success : function() {
-				alert('데이터 작성 완료');
 			},
 			error : function() {
-				alert('데이터 어디갔나융? 당장 찾아오세용');
 			}
 		});
 	});

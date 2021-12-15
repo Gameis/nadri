@@ -292,7 +292,6 @@
               contentType : false,
               data : formData,
               success : function() {
-                 alert('이미지 등록 완료');
                  location.href = '/nadri';
               },
               error : function(err) {

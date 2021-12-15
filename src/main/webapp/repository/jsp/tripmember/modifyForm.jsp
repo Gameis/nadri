@@ -229,7 +229,6 @@ $('.memberImgchange').change(function(){
 		dataType:'text',
 		
 		success: function(data) {
-			alert('이미지 수정 완료' + data);
 			var date=new Date();
 			//$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data+'?timestamp='+date.getTime());
 			$('#memberImgchange').attr('src','/nadri/repository/img/tripmember/storage/'+data);

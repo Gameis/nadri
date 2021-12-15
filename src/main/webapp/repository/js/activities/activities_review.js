@@ -26,7 +26,6 @@ $('#act_review_writeBtn').click(function(){
 			type: 'get',
 			data: $('#pop_review_writeForm').serialize(),
 			success: function(data){
-				alert('글쓰기 등록 완료');
 				getReviewList();
 				getActReviewCnt();
 			},
@@ -69,7 +68,6 @@ function getActReviewCnt(){
 		data: 'activity_seq='+activity_seq,
 		success: function(data){
 		
-			alert(JSON.stringify(data));
 			
 			const total_cnt_act_review = parseFloat($.trim(data.reviewCnt.total_cnt_act_review || 0));
 			const total_avg_act_review = parseFloat($.trim(data.reviewCnt.total_avg_act_review || 0));
@@ -105,7 +103,6 @@ function getReviewList(){
         type: 'get',
         data: 'pageNum='+pageNum+'&activity_seq='+activity_seq,
         success: function(data){
-			alert(JSON.stringify(data));
         	
 			for(var i = 0; i < data.contentList.length; i++){
 				($('<div/>',{

@@ -35,7 +35,6 @@ $('#pop_name').focusout(function(){
         headers: { 'Authorization': 'KakaoAK 32efaa6ae080dc2a02583db85d1065eb' },
         data: { 'query': location_name},
         success: function(data){
-            alert(JSON.stringify(data));
             var address_name = data.documents[0].address_name;
             var map_x = data.documents[0].x; 
             var map_y = data.documents[0].y;

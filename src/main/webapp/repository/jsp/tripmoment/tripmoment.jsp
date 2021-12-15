@@ -514,7 +514,6 @@ function searchEnterkey() {
         		else alert('검색어를 제대로 입력 해 주세요');
         	},
         	error: function(err) {
-        		alert('실패');
         		console.log(err);
         	}
         });
@@ -562,7 +561,6 @@ function searchEnterkey() {
 			},
 			
 			error : function(err) {
-				alert('어디갔어 찾아와')
 			
 			}
 		});
@@ -579,7 +577,6 @@ function searchEnterkey() {
 			},
 			
 			error : function(err) {
-				alert('ㅠㅠ')
 			}
 		});
 		
@@ -633,7 +630,6 @@ function searchEnterkey() {
 				})//each	
 			},
 			error : function(err) {
-				alert('실~~~~~~~~~~패~~~~~~~')
 			}
 		});
 	});
@@ -695,7 +691,6 @@ $(function() {
 			
 		},
 			error : function(err) {
-			alert('바보');
 		}
 	});
 });
