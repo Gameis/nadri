@@ -75,10 +75,10 @@ function getActReviewCnt(){
 			const total_avg_act_review = parseFloat($.trim(data.reviewCnt.total_avg_act_review || 0));
 			
 			if(data.userInfo != undefined){
-				$('.review-write-userImg').prop("src", "/nadri/repository/img/member/"+$.trim(data.userInfo.profileImg));
+				$('.review-write-userImg').prop("src", "/nadri/repository/img/tripmember/"+$.trim(data.userInfo.profileImg));
 				$('.review-write-userInfo .reivew-write-userName').text($.trim(data.userInfo.nickName));
 			}else{
-				$('.review-write-userImg').prop("src", "/nadri/repository/img/member/defaultImg.png");
+				$('.review-write-userImg').prop("src", "/nadri/repository/img/tripmember/defaultImg.png");
 				$('.review-write-userInfo .reivew-write-userName').text("로그인해주세요");
 			}
 			

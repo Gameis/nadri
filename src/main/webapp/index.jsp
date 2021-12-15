@@ -718,7 +718,7 @@ function searchEnterkey() {
         		else alert('검색어를 제대로 입력 해 주세요');
         	},
         	error: function(err) {
-        		alert('실패');
+        		
         		console.log(err);
         	}
         });
@@ -737,7 +737,7 @@ $('.con_search_button_icon').click(function(){
         		else alert('검색어를 제대로 입력 해 주세요');
         	},
         	error: function(err) {
-        		alert('실패');
+        		
         		console.log(err);
         	}
         });
@@ -965,7 +965,7 @@ function locationhref(moment_seq) {
 				})//each
 			},
 			error : function(err) {
-				alert('실패')
+				
 			}
 		});
 	});

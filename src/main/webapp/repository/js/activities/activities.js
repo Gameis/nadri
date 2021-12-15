@@ -17,7 +17,6 @@ function onActivities(){
 
 		},
 		error: function(err) {
-			alert('실패');
 			console.log(err);
 		}
 		

@@ -242,7 +242,6 @@
 	        		else alert('검색어를 제대로 입력 해 주세요');
 	        	},
 	        	error: function(err) {
-	        		alert('실패');
 	        		console.log(err);
 	        	}
 	        });
@@ -280,7 +279,6 @@
 				 }); 
 			},
 			error: function(err) {
-				alert('실패');
 				console.log(err);
 			}
 		});
@@ -349,7 +347,6 @@
       },
       error: function(err) {
         console.log(err);
-        alert('실패');
       }
     });
     
@@ -529,7 +526,6 @@
     	},
     	error: function(err) {
     		console.log(err);
-    		alert('실패');
     	}
     }); 
     
@@ -606,7 +602,6 @@
             
         },
         error: function(err) {
-            alert('실패');
             console.log(err);
         }
     });
