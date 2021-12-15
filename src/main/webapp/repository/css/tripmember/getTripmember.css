@@ -1,19 +1,50 @@
 @charset "UTF-8";
 
+#gettripmemberForm{
+	margin-left:10px;	
+	margin-right:15px;
 
-#profileImgsize{
-	width:20px; 
-	height:20px;
+	padding: 5px 5px;
+}
+
+#profileImg{
+	width:200px; 
+	height:200px;
 	
 }
 
+/* 화면 전체 렙 */
+.wrapper{
+	width: 1150px;	
+}
+
+/* content 랩 */
 .wrap{
-	margin:50px;
+	width : 1100px;
+	margin: auto;
+}
+
+.mysubject{
+	width: 90%;
+    height: 40px;
+    background-color: #6DF6EA;
+    margin:5px; 5px;
+}
+.mysubject span{
+	margin-left: 5px;
+    font-size: 30px;
+    font-weight: 90;
+    color: white;
+}
+
+#first {
+	position: relative;
+	top: -160px;	
 }
 
 .span{
 	display:inline-block;
-	width:250px;
+	width:200px;
 	background:#E2E2E2;
 	font-size:25px;
 	font-style:italic;
@@ -36,6 +67,6 @@
 	border:none;
 	text-align:center;
 	font-size:25px;
-	width:70%;
+	width:750px;
 		
 }

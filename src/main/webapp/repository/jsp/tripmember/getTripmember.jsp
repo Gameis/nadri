@@ -15,6 +15,19 @@
 	<form id="getTripmemberForm">
 		<div class="wrap">
 		
+			<div class="mysubject">
+				<span>내정보확인</span>
+			</div>
+			
+			<div class="profile_wrap">
+	
+				<span id="first" class="span">내이미지</span>
+				 <span id="profileImgsize"">
+				 	<img id="profileImg" src="/nadri/repository/img/tripmember/storage/defaultImg.png" alt="기본이미지" style="cursor:pointer;">
+				</span>	
+	<!-- 				<input type="file" class="profileImg" name="profileImg">
+ -->				
+			</div>
 	
 			
 			<div class="name_wrap">
@@ -81,15 +94,6 @@
 					<input class="dateinput" type="text" name="dateinput" id="dateinput" readonly>
 				</span>
 			</div>	
-			
-			<div class="profile_wrap">
-				<span class="imgname">내이미지</span>
-				 <span id="profileImgsize">
-				 	<img id="profileImg" src="/nadri/repository/img/tripmember/storage/defaultImg.png" alt="기본이미지" style="cursor:pointer;">
-				</span>	
-	<!-- 				<input type="file" class="profileImg" name="profileImg">
- -->				
-			</div>
 		
 		</div>
 	</form>

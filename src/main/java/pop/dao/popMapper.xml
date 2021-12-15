@@ -20,9 +20,10 @@
 	</insert> -->
 	
 	<select id="getLocation" resultType="popLocation">
-		select * from trippop
-		join trippopmap using (pop_seq)
-		where pop_seq = #{pop_seq}
+		select * from
+		(select * from trippop
+				join trippopmap using (pop_seq)
+				where pop_seq = #{pop_seq}) join tripmain using(main_seq)
 	</select>
 	
 	<select id="getPopImg" parameterType="int" resultType="popImg">
