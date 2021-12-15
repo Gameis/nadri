@@ -71,8 +71,8 @@ public class AreaController {
 	
 	@RequestMapping(value="/onAreaPop", method=RequestMethod.GET)
 	@ResponseBody
-	public List<PopMainDTO> onAreaPop() {
-		return areaService.onAreaPop(99);
+	public List<PopMainDTO> onAreaPop(@RequestParam("main_seq") String main_seq) {
+		return areaService.onAreaPop(main_seq);
 	}
 	
 	@RequestMapping(value="/onAreaActivity", method=RequestMethod.GET)

@@ -47,7 +47,7 @@ public class AreaServiceImpl implements AreaService {
 	}
 
 	@Override
-	public List<PopMainDTO> onAreaPop(int main_seq) {
+	public List<PopMainDTO> onAreaPop(String main_seq) {
 		return areaDAO.printPopMain(main_seq);
 	}
 
