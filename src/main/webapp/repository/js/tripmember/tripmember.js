@@ -1,7 +1,7 @@
 
 //로그인
-$('#modalLoginBtn').click(function(){
-	alert('로그인버튼은 눌려요');
+$('#modalLoginBtn').on('click', function(){
+alert("로그인 버튼 클릭")
 	$('#modalidDiv').empty();
   	$('#modalpwdDiv').empty();
 

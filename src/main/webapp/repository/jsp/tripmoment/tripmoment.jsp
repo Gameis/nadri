@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>전 세계 인기 여행지 & 꼭 가봐야 할 명소 추천 | 트립닷컴</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -12,13 +13,15 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet"
-	href="/nadri/repository/css/tripmoment/tripmoment.css">
+<link rel="stylesheet" href="/nadri/repository/css/tripmoment/tripmoment.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all">
-<link rel="stylesheet" type="text/css" href="/nadri/repository/css/main/main_top.css">
+<link rel="stylesheet" type="text/css"
+	href="/nadri/repository/css/main/main_top.css">
+<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="/nadri/repository/css/tripmember/loginmodal.css">
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -54,29 +57,30 @@
 						<a class="trip" href="#">trip.com</a>
 					</div>
 
-
 					<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
+
 
 						<c:if test="${memId == null}">
 							<!-- Login Button trigger modal -->
 							<div class="btn btn-primary" data-bs-toggle="modal"
 								data-bs-target="#loginmodal" id="loginBtn">
-								<span>로그인</span>/<span>회원가입</span>
+								<span class="loginWrite">로그인&nbsp;&nbsp;/&nbsp;&nbsp;회원가입</span>
 							</div>
 						</c:if>
-
 
 						<c:if test="${memId != null }">
 							<div>
 								<p>
 									<a href="/nadri/tripmember/myPage">${sessionScope.memName}님
-										환영 합니다.</a>
+										환영합니다.</a>
 								</p>
+
+							</div>
+							<div class="logout_wrap">
 								<button id="logoutBtn" type="button">로그아웃</button>
 							</div>
+							<div class="clearfix"></div>
 						</c:if>
-
-
 					</div>
 
 					<div class="trip_main_hd_nav"></div>
@@ -149,7 +153,6 @@
 							<div id="modalidDiv"></div>
 						</div>
 
-
 						<div class="form-floating">
 							<input type="password" class="form-control" id="floatingPassword"
 								name="floatingPassword" placeholder="Password"> <label
@@ -157,16 +160,15 @@
 							<div id="modalpwdDiv"></div>
 						</div>
 
-						<!-- 카카오 -->
 						<div>
-							<a style="text-decoration: none" href="javascript:void(0)"> <img
-								src="/nadri/repository/img/tripmember/kakao.png" alt="kakao"
-								onclick="kakaoLogin();">
-							</a>
+							<img onclick="kakaoLogin();"
+								src="/nadri/repository/img/tripmember/kakao_login_large_wide.png"
+								style="cursor: pointer;" width="270" height="45">
 						</div>
 
+
 						<div>
-							<input type="button" id="loginBtn" value="로그인">
+							<input type="button" id="modalLoginBtn" value="회원 계정 로그인">
 						</div>
 						<div id="loginResult"></div>
 					</form>
@@ -175,8 +177,8 @@
 
 				아직 회원가입을 하지 않으셨나요?
 				<div class="modal-footer">
-					<button class="btn btn-primary" data-bs-target="#agreementmodal"
-						data-bs-toggle="modal">회원가입하기</button>
+					<button id="tripmemberBtn" class="btn btn-primary"
+						data-bs-target="#agreementmodal" data-bs-toggle="modal">회원가입하기</button>
 				</div>
 
 			</div>
@@ -192,16 +194,15 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalToggleLabel2"
-						style="color: #8EC0E4;">약관신청</h5>
+						style="color: #8EC0E4;">trip.com 약관신청</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
 
-				<%--회원가입신청 --%>
+				<%--이용약관동의 --%>
 				<div class="modal-body">
 					<jsp:include page="../main/main_top_loginmodal/agreement.jsp" />
 				</div>
-
 
 				<div class="modal-footer">
 					<div class="login">
@@ -209,10 +210,12 @@
 							data-bs-toggle="modal">로그인화면으로</button>
 					</div>
 					<div class="membership">
-						<button class="btn btn-primary" data-bs-target="#membershipmodal"
-							data-bs-toggle="modal" onclick='return false;'>회원가입으로</button>
+						<button id="membershipmodalBtn" class="btn btn-primary"
+							data-bs-target="#membershipmodal" data-bs-toggle="modal"
+							onclick='return false;' disabled="disabled">회원가입으로</button>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -226,7 +229,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalToggleLabel3"
-						style="color: #8EC0E4;">회원가입</h5>
+						style="color: #8EC0E4;">trip.com 회원가입</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
@@ -245,7 +248,6 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- header end -->
 
 	<input type="hidden" id="moment_seq" value="${param.moment_seq}" />
@@ -255,6 +257,9 @@
 	<div class="travel_guide_root_class">
 		<div class="TravelDetailContainer">
 			<div id="tripmoment">
+
+				<div class="devider-t"></div>
+
 				<!-- 경로 및 검색창 -->
 				<div class="tripmoment_path">
 
@@ -418,7 +423,82 @@
 		src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript"
 		src="/nadri/repository/js/tripmoment/tripmoment.js"></script>
+	<script src="/nadri/repository/js/modal/modal.js"></script>
 	<script type="text/javascript">
+
+
+
+$('.btn-close').click(function(){
+	location.href='/nadri/index.jsp';	
+});
+	
+//로그인
+$('#modalLoginBtn').click(function(){
+	$('#modalidDiv').empty();
+	$('#modalpwdDiv').empty();
+
+	if($('#floatingInput').val()==''){
+		$('#modalidDiv').html('아이디를 입력해주세요');
+	}	
+	else if($('#floatingPassword').val()==''){
+		$('#modalpwdDiv').html('비밀번호를 입력해주세요');
+	}	
+	else{
+		$.ajax({
+			url:'/nadri/tripmember/login',
+			type: 'post',
+		//	data:$('#loginForm').serialize(),
+			
+			data: {'id':$('#floatingInput').val(),
+				   'pwd':$('#floatingPassword').val()},//{'id':$('#id').val()}
+				
+			success: function(data){
+				//console.log(JSON.stringify(data));
+				
+				if(data=='ok'){
+					//	alert('로그인에 성공하셨습니다');	
+					location.href='/nadri/tripmoment/tripmomentView?moment_seq=' + $('#moment_seq').val();
+				}else if(data=='fail'){
+					$('#loginResult').text('로그인에 실패하셨습니다');
+					$('#loginResult').css('color', 'red');
+					$('#loginResult').css('font-size', '15pt');
+					$('#loginResult').css('font-weight', 'bold');
+				}	
+				
+			},		//success
+			
+			error: function(err){
+				console.log(err);
+				
+			}
+			
+		});		//ajax
+	} 		//else			
+});		//click	
+
+
+//로그아웃				
+$('#logoutBtn').click(function(){
+	$.ajax({
+			url:'/nadri/tripmember/logOut',
+			type: 'post',
+						
+		success: function(){
+			alert('로그아웃 하셨습니다');	
+			location.href='/nadri/index.jsp';
+		},	//success
+			
+		error: function(err){
+			console.log(err);			
+		}	
+			
+	});	// ajax
+
+});		//logOutBtn click			
+
+</script>
+	<script type="text/javascript">
+	
 //검색
 function searchEnterkey() {
     if (window.event.keyCode == 13) {
@@ -428,8 +508,6 @@ function searchEnterkey() {
         	type: 'get',
         	data: 'searchText=' + $('.search').val(),
         	success: function(data) {
-        		alert('성공');
-        		alert(JSON.stringify(data));
         		if(data.content_seq == '2') location.href="/nadri/main/area?main_seq=" + data.seq;
         		else if(data.content_seq == '3') location.href="/nadri/area/popular?pop_seq=" + data.seq;
         		else if(data.content_seq == '5') location.href="/nadri/area/activity?activity_seq=" + data.seq;
@@ -548,7 +626,7 @@ function searchEnterkey() {
 				}).append($('<i>', {
 					class : 'bi bi-person-circle'			
 				})).append($('<span>', {
-					class : 'nickname',
+					class : 'nickname-t',
 					text : items.nickname
 				}))))).appendTo($('#PhotoListStyle > div'));
 				
@@ -587,7 +665,6 @@ $(function() {
 		type : 'get',
 		data : 'moment_seq=' + $('#moment_seq').val(),
 		success : function(data) {
-			alert(JSON.stringify(data));
 			
 			$.each(data, function(index, items){
 				
