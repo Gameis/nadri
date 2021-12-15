@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 #modifyForm{
 	margin-left:10px;	
 	margin-right:15px;
@@ -10,25 +9,25 @@
 }
 
 .myImg{
-	
+	margin-top:15px;
 	width:200px; 
 	height:200px;
 }
 
-
 /* 화면 전체 렙 */
 .wrapper{
-	width: 800px;	
+	width: 1000px;	
 }
 
 /* content 랩 */
 .wrap{
-	width : 700px;
+	width : 950px;
 	margin: auto;
 }
 
 /* 페이지 제목 */
 .modifysubject{
+	margin-top:10px;
 	width: 100%;
     height: 40px;
     background-color: #bfff00;

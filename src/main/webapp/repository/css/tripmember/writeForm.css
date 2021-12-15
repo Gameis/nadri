@@ -5,8 +5,9 @@
 	padding: 0;
 }
 
-background-color: #8EC0E4 ;
-	/* 화면 전체 렙 */ .wrapper {
+
+/* 화면 전체 렙 */ 
+.wrapper {
 	width: 800px;
 }
 
@@ -17,18 +18,19 @@ background-color: #8EC0E4 ;
 }
 
 /* 페이지 제목 */
-.subjecet {
+.subject {
 	width: 100%;
 	height: 40px;
 	background-color: #8EC0E4;
 }
 
-.subjecet span {
+.subject span {
 	margin-left: 5px;
 	font-size: 30px;
 	font-weight: 90;
 	color: white;
 }
+
 
 /* 이름 영역 */
 .user_wrap {
@@ -43,20 +45,6 @@ background-color: #8EC0E4 ;
 	font-weight: bold;
 }
 
-.user_input_box {
-	border: 1px solid black;
-	height: 34px;
-	padding: 3px 3px;
-}
-
-.user_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 22px;
-}
-
-/* 아이디 영역 */
 #nameDiv {
 	color: red;
 	float: right;
@@ -77,38 +65,21 @@ background-color: #8EC0E4 ;
 	font-size: 24px;
 }
 
+
 /* 아이디 영역 */
-.id_wrap { >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf width: 100%;
+.id_wrap {
+	width: 100%;
 	margin-top: 20px;
 }
 
-<<<<<<<
-HEAD
-.id_name {
-	font-style: italic; ======= . idname { float : left;
-	font-style: italic; >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+.idname { 
+	float : left;
+	font-style: italic;  
+	font-size: 25px;
 	font-weight: bold;
 }
 
-<<<<<<<
-HEAD
-.id_input_box {
-	border: 1px solid black;
-	height: 34px;
-	padding: 3px 3px;
-}
-
-.id_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 22px;
-}
-
-/* 닉네임 영역 */
-.nick_wrap { ======= #idDiv { color:red;
+#idDiv { color:red;
 	float: right;
 	font-size: 20px;
 }
@@ -127,36 +98,6 @@ HEAD
 	font-size: 24px;
 }
 
-/* 비밀번호 영역 */
-.pw_wrap { >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf width: 100%;
-	margin-top: 20px;
-}
-
-<<<<<<<
-HEAD
-
-.nick_name {
-	font-style: italic; ======= . pwname { float : left;
-	font-style: italic; >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
-	font-weight: bold;
-}
-
-<<<<<<<
-HEAD
-.nick_input_box {
-	border: 1px solid black;
-	height: 34px;
-	padding: 3px 3px;
-}
-
-.nick_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 22px;
-}
 
 /* 비밀번호 영역 */
 .pw_wrap {
@@ -164,8 +105,15 @@ HEAD
 	margin-top: 20px;
 }
 
-.pw_name {
-	font-style: italic; ======= # pwdDiv { color : red;
+.pwname { 
+	float : left;
+	font-style: italic;  
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#pwdDiv { 
+	color : red;
 	float: right;
 	font-size: 20px;
 }
@@ -184,6 +132,7 @@ HEAD
 	font-size: 24px;
 }
 
+
 /* 비밀번호 확인 영역 */
 .pwck_wrap {
 	width: 100%;
@@ -192,34 +141,13 @@ HEAD
 
 .pwckname {
 	float: left;
-	font-style: italic; >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-style: italic;  
+	font-size: 25px;
 	font-weight: bold;
 }
 
-<<<<<<<
-HEAD
-.pw_input_box {
-	border: 1px solid black;
-	height: 34px;
-	padding: 3px 3px;
-}
-
-.pw_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 22px;
-}
-
-/* 비밀번호 확인 영역 */
-.pwck_wrap {
-	width: 100%;
-	margin-top: 10px;
-}
-
-.pwck_name {
-	font-style: italic; ======= # repwdDiv { color : red;
+#repwdDiv { 
+	color : red;
 	float: right;
 	font-size: 20px;
 }
@@ -238,6 +166,7 @@ HEAD
 	font-size: 24px;
 }
 
+
 /* 닉네임 영역 */
 .nick_wrap {
 	width: 100%;
@@ -246,24 +175,13 @@ HEAD
 
 .nickname {
 	float: left;
-	font-style: italic; >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+	font-style: italic;
+	font-size: 25px;
 	font-weight: bold;
 }
 
-<<<<<<<
-HEAD
-.pwck_input_box {
-	border: 1px solid black;
-	height: 34px;
-	padding: 3px 3px;
-}
-
-.pwck_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 22px; ======= # nickDiv { color : red;
+#nickDiv{
+	color : red;
 	float: right;
 	font-size: 20px;
 }
@@ -280,9 +198,8 @@ HEAD
 	height: 100%;
 	border: none;
 	font-size: 24px;
-	>>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
 }
+
 
 /* 핸드폰 영역 */
 .tel_wrap {
@@ -290,21 +207,8 @@ HEAD
 	margin-top: 20px;
 }
 
-<<<<<<<
-HEAD
-
-.tel_name {
-	font-style: italic;
-	font-size: 25px;
-	font-weight: bold;
-}
-
-.tel {
-	width: 170px;
-	height: 34px;
-	text-align: center;
-	padding: 0px 0px;
-	font-size: 22px; ======= . telname { float : left;
+.telname { 
+	float : left;
 	font-style: italic;
 	font-size: 25px;
 	font-weight: bold;
@@ -335,83 +239,22 @@ HEAD
 	text-align: center;
 	padding: 0px 0px;
 	font-size: 24px;
-	>>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
 }
 
-.tel2 {
-	width: 170px;
-	height: 30px;
-	text-align: center;
-	padding: 0px 0px;
-	font-size: 22px;
-}
 
 /* 메일 영역 */
-<<<<<<<
-HEAD
-.mail_wrap { ======= .email_wrap { >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf width:100%;
+.email_wrap { 
+	width:100%;
 	margin-top: 20px;
 }
 
-<<<<<<<
-HEAD
-
-.mail_name {
-	font-style: italic; ======= . emailname { float : left;
-	font-style: italic; >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+.emailname { float : left;
+	font-style: italic; 
+	font-size: 25px;
 	font-weight: bold;
 }
 
-<<<<<<<
-HEAD
-.mail_input_box {
-	border: 1px solid black;
-	height: 25px;
-	padding: 3px 3px;
-	width: 30%;
-	font-size: 27px;
-}
-
-.mail_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 14px;
-}
-
-.mail_check_wrap {
-	margin-top: 10px;
-}
-
-.mail_check_input_box {
-	border: 1px solid black;
-	height: 25px;
-	padding: 3px 3px;
-	width: 65%;
-	float: left;
-}
-
-.mail_check_input {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 22px;
-}
-
-.mail_check_button {
-	border: 1px solid black;
-	height: 35px;
-	width: 30%;
-	float: right;
-	line-height: 30px;
-	text-align: center;
-	font-size: 25px;
-	font-weight: 600;
-	background-color: #ececf7;
-	cursor: pointer; ======= # emailDiv { color : red;
+#emailDiv { color : red;
 	float: right;
 	font-size: 20px;
 }
@@ -427,14 +270,22 @@ HEAD
 	width: 31%;
 	font-size: 24px;
 }
-
-.emailinput {
-	width: 100%;
-	height: 100%;
-	border: none;
+/* 인증메일버튼  */
+.emailcheckbutton {
+	border: 1px solid black;
+	height: 35px;
+	width: 30%;
+	float: right;
+	line-height: 30px;
+	text-align: center;
 	font-size: 24px;
+	font-weight: 600;
+	background-color: #ececf7;
+	cursor: pointer;
+
 }
 
+/* 이메일 인증  */
 .emailcheck_wrap {
 	margin-top: 10px;
 }
@@ -462,20 +313,6 @@ HEAD
 	font-size: 24px;
 }
 
-.emailcheckbutton {
-	border: 1px solid black;
-	height: 35px;
-	width: 30%;
-	float: right;
-	line-height: 30px;
-	text-align: center;
-	font-size: 24px;
-	font-weight: 600;
-	background-color: #ececf7;
-	cursor: pointer;
-	>>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
-}
 
 /* 주소 영역 */
 .address_wrap {
@@ -483,93 +320,16 @@ HEAD
 	margin-top: 20px;
 }
 
-<<<<<<<
-HEAD
 
-.address_name {
-	font-style: italic; ======= . addressname { float : left;
-	font-style: italic; >>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf font-size: 25px;
+.addressname { 
+	float : left;
+	font-style: italic; 
+	 font-size: 25px;
 	font-weight: bold;
 }
 
-.address_input_1_box {
-	border: 1px solid black;
-	height: 30px;
-	padding: 3px 3px;
-	width: 65%;
-	float: left;
-}
-
-.address_input_1 {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 27px;
-}
-
-<<<<<<<
-HEAD
-.address_button {
-	border: 1px solid black;
-	height: 35px;
-	width: 30%;
-	float: right;
-	line-height: 30px;
-	text-align: center;
-	font-size: 25px;
-	font-weight: 600;
-	background-color: #ececf7;
-	cursor: pointer;
-}
-
-.address_input_2_wrap {
-	margin-top: 20px;
-}
-
-.address_input_2_box {
-	border: 1px solid black;
-	height: 31px;
-	padding: 3px 3px;
-}
-
-.address_input_2 {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 27px;
-}
-
-.address_input_3_wrap {
-	margin-top: 20px;
-}
-
-.address_input_3_box {
-	border: 1px solid black;
-	height: 31px;
-	padding: 3px 3px;
-}
-
-.address_input_3 {
-	width: 100%;
-	height: 100%;
-	border: none;
-	font-size: 28px;
-}
-
-/* 가입하기 버튼 */
-.member_button_wrap {
-	margin-top: 40px;
-	text-align: center;
-}
-
-.member_button {
-	width: 100%;
-	height: 40px;
-	background-color: #6AAFE6;
-	font-size: 20px;
-	font-weight: 90;
-	color: white; ======= # addressDiv { color : red;
+#addressDiv { 
+	color : red;
 	float: right;
 	font-size: 20px;
 }
@@ -607,6 +367,7 @@ HEAD
 	cursor: pointer;
 }
 
+/*address2 2개  */
 .addressinput2_wrap {
 	margin-top: 20px;
 }
@@ -624,6 +385,7 @@ HEAD
 	font-size: 24px;
 }
 
+/* address3 3개  */
 .addressinput3_wrap {
 	margin-top: 20px;
 }
@@ -641,7 +403,9 @@ HEAD
 	font-size: 24px;
 }
 
-/* 가입하기 버튼 */
+
+
+/* 가입하기 버튼 2개 */
 .memberbutton_wrap {
 	margin-top: 40px;
 	text-align: center;
@@ -655,8 +419,7 @@ HEAD
 	font-size: 25px;
 	font-weight: 300;
 	color: white;
-	>>>>>>>
-	be90fa5728fb6c7d1b447bfc21db3453ab5a6ecf
+
 }
 
 /* float 속성 해제 */

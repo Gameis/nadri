@@ -19,6 +19,21 @@ ul.agree_box{border: 1px solid #ddd;background-color: #fff;}	/*#ddd 회색 #fff 
 
 .footBtwrap{margin-top: 15px;}
 .footBtwrap>li{float: left;width: 50%;height: 60px;}
-.footBtwrap>li>div>button{border-radius: 10px 10px 10px 10px; width: 50%;height: 80%; font-size: 20px;line-height: 60px;}
-.nextBtn2{background-color: #0d6efd;color:#fff}/ * #888 회색 비슷한색 */
-.nextBtn{background-color: #E2E2E2;color: #fff}
+
+/* 동의 버튼 */
+.footBtwrap>li>div>button{
+	border-radius: 10px 10px 10px 10px; 
+	box-sahdow:3px 3px 3px black;
+	transition-duration:0.3s;
+	width: 50%;height: 80%; font-size: 20px;line-height: 60px;}
+
+
+.footBtwrap>li>div>button:active{
+margin-left:5px;
+margin-top:5px;
+box-shadow:noen;	
+	
+}
+
+.nextBtn2{background-color: #8EC0E4;color: #fff; }/ * #888 회색 비슷한색 */
+.nextBtn{background-color: #E2E2E2;color: #fff;}  

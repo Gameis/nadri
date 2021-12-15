@@ -148,10 +148,16 @@ public class TripmemberController {
 
 	@PostMapping("/modify")
 	@ResponseBody
-	public void modify(@ModelAttribute TripmemberDTO tripmemberDTO, HttpSession session) { // dto 여러개는 ModelAttribute로
+	public void modify(@ModelAttribute TripmemberDTO tripmemberDTO,
+					   @RequestParam MultipartFile memberImgchange,
+					   HttpSession session) { // dto 여러개는 ModelAttribute로
+		
+		String profileImg = memberImgchange.getOriginalFilename();
+		
 		tripmemberDTO.setPwd(passwordEncoder.encode(tripmemberDTO.getPwd())); 	//비번 복호화																				
 		String id = (String) session.getAttribute("memId");
 		tripmemberDTO.setId(id);
+		tripmemberDTO.setProfileImg(profileImg);
 		tripmemberService.modify(tripmemberDTO);
 	}
 
@@ -240,8 +246,8 @@ public class TripmemberController {
 		  
 	 
 		  String filePath=
-//		  "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
-		  "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";//현석
+		  "D:\\Spring\\workspace\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";
+//		  "C:\\Users\\downc\\Desktop\\git_home\\nadri\\src\\main\\webapp\\repository\\img\\tripmember\\storage";//현석
 		  String profileImg = memberImgchange.getOriginalFilename(); 
 		 
 		  File file=new File(filePath,profileImg);

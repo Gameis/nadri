@@ -5,8 +5,8 @@
  <mapper namespace="activitiesSQL">
  	<select id="onActivities" parameterType="String" resultType="onActivities">
  		select * from tripactivity 
-		cross join (select img_name as "main_img" from img where content_seq = '5' and seq = '81' and mainimg = 'T')
-		cross join (select img_name as "sub_img" from img where content_seq = '5' and seq = '81' and mainimg = 'F')
+		cross join (select img_name as "main_img" from img where content_seq = '5' and seq = #{activity_seq} and mainimg = 'T')
+		cross join (select img_name as "sub_img" from img where content_seq = '5' and seq = #{activity_seq} and mainimg = 'F')
 		where activity_seq = #{activity_seq}
  	</select>
  	

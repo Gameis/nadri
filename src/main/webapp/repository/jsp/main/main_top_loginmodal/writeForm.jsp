@@ -12,7 +12,7 @@
 <div class="wrapper">
 	<form id="writeForm">
 	<div class="wrap">
-			<div class="subjecet">
+			<div class="subject">
 				<span>회원가입</span>
 			</div>
 			
@@ -22,7 +22,6 @@
 					<input class="userinput" id="name" name="name">
 				</div>
 			</div>
-			
 			<div class="id_wrap">
 				<div class="idname">아이디</div><div id="idDiv"></div>
 				<div class="idinputbox">
