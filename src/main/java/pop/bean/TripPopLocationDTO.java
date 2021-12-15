@@ -13,4 +13,6 @@ public class TripPopLocationDTO {
 	private String map_x;
 	private String map_y;
 	private String detailInfo;
+	private String main_seq;
+	private String main_name;
 }

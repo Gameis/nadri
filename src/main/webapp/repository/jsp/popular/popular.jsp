@@ -28,11 +28,11 @@
         <div id="areaHeader" class="areaHeader">
             
             <div id="areaPath">
-                <div class="areaPathItem"><a href="/nadri/">&nbsp;&nbsp;홈&nbsp;&nbsp;</a></div>
-                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;아시아&nbsp;&nbsp;</a></div>
-                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;대한민국&nbsp;&nbsp;</a></div>
-                <div class="areaPathItem"><a href="/nadri/main/area?main_seq=${param.main_seq }">&nbsp;&nbsp;${param.main_name }&nbsp;&nbsp;</a></div>
-                <div class="areaPathItem"><a href="#">&nbsp;&nbsp;명동&nbsp;&nbsp;</a></div>
+                <div class="areaPathItem"><a href="/nadri/">홈</a></div>
+                <div class="areaPathItem"><a href="#">아시아</a></div>
+                <div class="areaPathItem"><a href="#">대한민국</a></div>
+                <div class="areaPathItem"><a href="/nadri/main/area?main_seq=${param.main_seq }">main_name</a></div>
+                <div class="areaPathItem"><a href="#">pop_name</a></div>
             </div><!--areaPath-->
             
             <div id="areaSearch" class="areaSearch">

@@ -39,6 +39,8 @@ function getLocation(){
 				$('.pop-call .one-line .field').text(data.pop_call);
 				$('title').text(data.pop_name+'정보 및 후기 | 트립닷컴');
 				$('.detailInfo-content').text(data.detailInfo);
+				$('.areaPathItem:eq(3) a').text(data.main_name);
+				$('.areaPathItem:eq(4) a').text(data.pop_name);
 				
 
 				//카카오맵 API
