@@ -76,7 +76,7 @@
 	    		<i class="fas fa-heart" style="margin:0; padding:3px 5px; color: rgb(206, 210, 217); vertical-align: center;"></i>
 	    		
 	    		<span class="favorite-count">
-	    			좋아요 35개
+	    			좋아요
 	    		</span>
 	    	</div>
 
