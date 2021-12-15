@@ -31,7 +31,7 @@
 		      group by pop_seq) using(pop_seq)
 		join (select img_name, img_path, seq
 		      from img 
-		      where content_seq = 3 and main_seq = 99 and mainImg = 'T') on(pop_seq = seq)
+		      where content_seq = 3 and main_seq = #{main_seq} and mainImg = 'T') on(pop_seq = seq)
 		left join (select pop_seq, count(*) as "pop_review_count"
 		      from trippop_review
 		      group by pop_seq) using(pop_seq)
