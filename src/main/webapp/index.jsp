@@ -70,7 +70,7 @@
 						<div>
 							<p>
 								<a href="/nadri/tripmember/myPage">${sessionScope.memName}님
-									환영 합니다.</a>
+									환영합니다.</a>
 							</p>
 							<button id="logoutBtn" type="button">로그아웃</button>
 						</div>
@@ -852,7 +852,7 @@ $(function() {
 			contentType : false,
 			data : formData,
 			success : function() {
-				
+				alert('데이터 작성 완료');
 			},
 			error : function() {
 				alert('데이터 어디갔나융? 당장 찾아오세용');
