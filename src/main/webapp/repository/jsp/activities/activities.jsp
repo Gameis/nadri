@@ -68,7 +68,7 @@
 
 			<section id="imageContainer" class="flex imageContainer">
 				<div class="imgBox productdetail-common-width svg-default-img">
-					<a title="서울 N서울타워 전망대 입장권" href="https://kr.trip.com/things-to-do/detail/36756741/"> <img id="main_img" alt="서울 N서울타워 전망대 입장권" class="imgClass" src="">
+					<a title="서울 N서울타워 전망대 입장권" href=""> <img id="main_img" alt="서울 N서울타워 전망대 입장권" class="imgClass" src="">
 					</a>
 				</div>
 
