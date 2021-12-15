@@ -17,7 +17,7 @@ public interface AreaService {
 
 	public void imgPopWrite(ImgDTO imgDTO);
 
-	public List<PopMainDTO> onAreaPop(int main_seq);
+	public List<PopMainDTO> onAreaPop(String main_seq);
 
 	public void activityWrite(TripActivityDTO tripActivityDTO);
 

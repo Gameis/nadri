@@ -287,6 +287,7 @@
     $.ajax({
       url: '/nadri/area/onAreaPop',
       type: 'get',
+      data: 'main_seq=' + $('#main_seq').val(),
       success: function(data) {
         var count = -1;
         var popCount = 1;

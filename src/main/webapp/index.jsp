@@ -292,7 +292,7 @@
 							</div> -->
 						</div>
 						<div class="con_search_button">
-							<button type="button" class="con_search_button_icon" ></button>
+							<div class="con_search_button_icon" ></div>
 						</div>
 					</div>
 				</div>
@@ -378,11 +378,11 @@
 										<video id="video" class="Video_module"
 											style="width: 100%; height: 100%;" muted="muted"
 											autoplay="true" loop="loop">
-											<source src="/nadri/repository/img/main/Seoul_intro.mp4"
+											<source src="/nadri/repository/img/main/seoul/Seoul_intro.mp4"
 												type="video/mp4">
 										</video>
 										<img class="Video_module"
-											src="/nadri/repository/img/main/seoul_3.jpg" alt="서울"
+											src="/nadri/repository/img/main/seoul/seoul_3.jpg" alt="서울"
 											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
 											<a class="title" title="서울"
@@ -399,14 +399,14 @@
 										<video id="video" class="Video_module"
 											style="width: 100%; height: 100%;" muted="muted"
 											autoplay="true" loop="loop">
-											<source src="/nadri/repository/img/main/Jeju_intro.mp4"
+											<source src="/nadri/repository/img/main/jeju/Jeju_intro.mp4"
 												type="video/mp4">
 										</video>
 										<img class="Video_module"
-											src="/nadri/repository/img/main/jeju_2.jpg" alt="제주"
+											src="/nadri/repository/img/main/jeju/jeju_2.jpg" alt="제주"
 											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
-											<a class="title" title="제주" href="">제주</a>
+											<a class="title" title="제주" href="/nadri/main/area?main_seq=98">제주</a>
 										</p>
 									</div>
 								</div>
@@ -420,14 +420,14 @@
 										<video id="video" class="Video_module"
 											style="width: 100%; height: 100%;" muted="muted"
 											autoplay="true" loop="loop">
-											<source src="/nadri/repository/img/main/Gangneung_intro.mp4"
+											<source src="/nadri/repository/img/main/gangneung/Gangneung_intro.mp4"
 												type="video/mp4">
 										</video>
 										<img class="Video_module"
-											src="/nadri/repository/img/main/gangneung_3.jpg" alt="강릉"
+											src="/nadri/repository/img/main/gangneung/gangneung_3.jpg" alt="강릉"
 											style="width: 100%; height: 100%;"></img>
 										<p class="img-wrap_title">
-											<a class="title" title="강릉" href="">강릉</a>
+											<a class="title" title="강릉" href="/nadri/main/area?main_seq=97">강릉</a>
 										</p>
 									</div>
 								</div>
@@ -441,14 +441,14 @@
 										<video id="video" class="Video_module"
 											style="width: 100%; height: 100%;" muted="muted"
 											autoplay="true" loop="loop">
-											<source src="/nadri/repository/img/main/Jeonju_intro.mp4"
+											<source src="/nadri/repository/img/main/jeonju/Jeonju_intro.mp4"
 												type="video/mp4">
 										</video>
 										<img class="Video_module"
-											src="/nadri/repository/img/main/jeonju_7.jpg"
+											src="/nadri/repository/img/main/jeonju/jeonju_7.jpg"
 											style="width: 100%; height: 100%;">
 										<p class="img-wrap_title">
-											<a class="title" title="전주" href="">전주</a>
+											<a class="title" title="전주" href="/nadri/main/area?main_seq=96">전주</a>
 										</p>
 									</div>
 								</div>

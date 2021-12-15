@@ -41,18 +41,18 @@ public class ActivitiesController {
 	
 	@RequestMapping(value = "/getActReviewCnt", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> getActReviewCnt(HttpServletRequest request,
+	public Map<String, Object> getActReviewCnt(HttpSession session,
 											   @ModelAttribute TripActReviewUserDTO tripActReviewUserDTO,
 											   @ModelAttribute TripActReviewCntDTO tripActireviewCntDTO,
 											   @RequestParam("activity_seq") String activity_seq) {
-		HttpSession session = request.getSession();
-		
+		System.out.println("member_seq = " + session.getAttribute("member_seq"));
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("reviewCnt", activitiesService.getActReviewCnt(activity_seq));
 		
 		if(session.getAttribute("member_seq") != null) {
 			String member_seq = (String)session.getAttribute("member_seq");
 			tripActReviewUserDTO.setMember_seq(member_seq);
+			System.out.println("dto = " + tripActReviewUserDTO.getMember_seq());
 			resultMap.put("userInfo", activitiesService.getActReviewUserInfo(tripActReviewUserDTO));
 			
 		}

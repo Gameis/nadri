@@ -20,5 +20,7 @@ public class OnActivitiesDTO {
 	private String activity_information;
 	private String activity_warning;
 	private int main_seq;
+	private String main_img;
+	private String sub_img;
 
 }

@@ -19,5 +19,4 @@
 		from tripmain)a on(a.main_seq = seq)
 		where content_seq = 1
 	</select>
-
 </mapper>

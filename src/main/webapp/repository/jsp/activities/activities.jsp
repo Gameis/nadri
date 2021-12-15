@@ -49,7 +49,7 @@
 		<!-- 얼굴 -->
 		<header class="detail-header-container productdetail-common-inner-width">
 			<section class="flex title fjc-sb">
-				<h1 class="productName ffps">title</h1>
+				<h1 class="productName ffps" id="activity_name">title</h1>
 				<p class="ffpr c6 fs2">상품번호: 36756741</p>
 			</section>
 
@@ -68,7 +68,7 @@
 
 			<section id="imageContainer" class="flex imageContainer">
 				<div class="imgBox productdetail-common-width svg-default-img">
-					<a title="서울 N서울타워 전망대 입장권" href="https://kr.trip.com/things-to-do/detail/36756741/"> <img alt="서울 N서울타워 전망대 입장권" class="imgClass" src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1136_640_Q60.jpg?proc=source/trip;namelogo/d_40" data-src="https://ak-d.tripcdn.com/images/100t0y000000lnt6n0666_C_1136_640_Q60.jpg?proc=source/trip;namelogo/d_40">
+					<a title="서울 N서울타워 전망대 입장권" href="https://kr.trip.com/things-to-do/detail/36756741/"> <img id="main_img" alt="서울 N서울타워 전망대 입장권" class="imgClass" src="">
 					</a>
 				</div>
 
@@ -81,12 +81,12 @@
 									<div class="m_footer_info">최저가</div>
 									<div class="m_footer_flex">
 										<div class="u_price">
-											<span class="u_price_content"> <span class="u_price_number">8,800</span> <span class="u_price_currency">원</span>
+											<span class="u_price_content"> <span class="u_price_number" id="activity_salePrice">8,800</span> <span class="u_price_currency">원</span>
 											</span>
 										</div>
 
 										<div class="u_price">
-											<span class="u_price_content u_price_content_lineThrough"> <span class="u_price_number">11,800</span> <span class="u_price_currency">원</span>
+											<span class="u_price_content u_price_content_lineThrough"> <span class="u_price_number" id="activity_price">11,800</span> <span class="u_price_currency">원</span>
 											</span>
 										</div>
 									</div>
@@ -247,7 +247,7 @@
 						<h2 class="title ffps">상품 소개</h2>
 						<div id="_productDesc" class="mainText ffpr fs3">
 							<p>
-								<strong> <img src="">
+								<strong> <img id="sub_img" src="">
 								</strong>
 							</p>
 

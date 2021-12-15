@@ -18,7 +18,7 @@ public interface AreaDAO {
 
 	public void popWrite(TripPopDTO tripPopDTO, TripPopMapDTO tripPopMapDTO);
 
-	public List<PopMainDTO> printPopMain(int main_seq);
+	public List<PopMainDTO> printPopMain(String main_seq);
 
 	public void activityWrite(TripActivityDTO tripActivityDTO);
 

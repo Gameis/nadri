@@ -47,7 +47,8 @@ public class AreaDAOMybatis implements AreaDAO {
 	}
 
 	@Override
-	public List<PopMainDTO> printPopMain(int main_seq) {
+	public List<PopMainDTO> printPopMain(String main_seq) {
+		System.out.println("main_seq = " + main_seq);
 		return sqlSession.selectList("areaSQL.printPopMain", main_seq);
 	}
 

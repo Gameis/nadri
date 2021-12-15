@@ -151,30 +151,30 @@ function getLocation(){
 			type: 'post',
 			data: 'pop_seq='+$('#pop_seq').val(),
 			success: function(data){
-				
+				 
 				//이미지 데이터 넣기
-				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
-				$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
-				$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
-				$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[4].img_path + '/popmain/' + data[4].img_name);
+				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+				$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
 				
-				$('#col-img0').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
-				$('#col-img1').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
-				$('#col-img2').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
-				$('#col-img3').prop('src', '/nadri/repository/img/' + data[4].img_path + '/popmain/' + data[4].img_name);
+				$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
+				$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
 				
 				//이미지 클릭시 보여주기
 				$('.row-cols-4').find('#col-img0').click(function() {
-					$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+					$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
 				});
 				$('.row-cols-4').find('#col-img1').click(function() {
-					$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+					$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
 				});
 				$('.row-cols-4').find('#col-img2').click(function() {
-					$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+					$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
 				});
 				$('.row-cols-4').find('#col-img3').click(function() {
-                    $('.active img').prop('src', '/nadri/repository/img/' + data[4].img_path + '/popmain/' + data[4].img_name);
+                    $('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
 				});
 
 
