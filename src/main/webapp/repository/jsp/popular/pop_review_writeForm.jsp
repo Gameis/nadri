@@ -26,7 +26,7 @@
 				
 					<div class="review-write-user">
 						<a style="color: rgb(15, 41, 77); text-decoration: none;">
-							<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="/nadri/repository/img/member/defaultImg.png">
+							<img class="review-write-userImg" alt="user_icon" width="50" height="50" src="/nadri/repository/img/tripmember/defaultImg.png">
 						</a>
 						<div class="review-write-userInfo">
 							<div class="reivew-write-userName">

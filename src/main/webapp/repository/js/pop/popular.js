@@ -153,28 +153,28 @@ function getLocation(){
 			success: function(data){
 				
 				//이미지 데이터 넣기
-				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
-				$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
-				$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
-				$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				$('#carousel-item0').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				$('#carousel-item1').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				$('#carousel-item2').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				$('#carousel-item3').prop('src', '/nadri/repository/img/' + data[4].img_path + '/popmain/' + data[4].img_name);
 				
-				$('#col-img0').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
-				$('#col-img1').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
-				$('#col-img2').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
-				$('#col-img3').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				$('#col-img0').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
+				$('#col-img1').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
+				$('#col-img2').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				$('#col-img3').prop('src', '/nadri/repository/img/' + data[4].img_path + '/popmain/' + data[4].img_name);
 				
 				//이미지 클릭시 보여주기
 				$('.row-cols-4').find('#col-img0').click(function() {
-					$('.active img').prop('src', '/nadri/repository/img/' + data[0].img_path + '/popmain/' + data[0].img_name);
-				});
-				$('.row-cols-4').find('#col-img1').click(function() {
 					$('.active img').prop('src', '/nadri/repository/img/' + data[1].img_path + '/popmain/' + data[1].img_name);
 				});
-				$('.row-cols-4').find('#col-img2').click(function() {
+				$('.row-cols-4').find('#col-img1').click(function() {
 					$('.active img').prop('src', '/nadri/repository/img/' + data[2].img_path + '/popmain/' + data[2].img_name);
 				});
+				$('.row-cols-4').find('#col-img2').click(function() {
+					$('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+				});
 				$('.row-cols-4').find('#col-img3').click(function() {
-                    $('.active img').prop('src', '/nadri/repository/img/' + data[3].img_path + '/popmain/' + data[3].img_name);
+                    $('.active img').prop('src', '/nadri/repository/img/' + data[4].img_path + '/popmain/' + data[4].img_name);
 				});
 
 
@@ -323,7 +323,7 @@ function getLocation(){
 	                        alt: "user_icon",
 	                        width: "50",
 	                        heigth: "50",
-	                        src: "/nadri/repository/img/member/"+profileImg
+	                        src: "/nadri/repository/img/tripmember/"+profileImg
 	                    }))).append($('<div/>',{
 	                        class:"review-user-info"
 	                    }).append($('<div/>',{
@@ -509,7 +509,7 @@ function getLocation(){
 	                        alt: "user_icon",
 	                        width: "50",
 	                        heigth: "50",
-	                        src: "/nadri/repository/img/member/"+profileImg
+	                        src: "/nadri/repository/img/tripmember/"+profileImg
 	                    }))).append($('<div/>',{
 	                        class:"review-user-info"
 	                    }).append($('<div/>',{
@@ -596,10 +596,10 @@ function getLocation(){
 				
 				if(nickName != ""){
 					$('.reivew-write-userName').text(nickName);
-					$('.review-write-userImg').prop("src", "/nadri/repository/img/member/"+data.profileImg);
+					$('.review-write-userImg').prop("src", "/nadri/repository/img/tripmember/"+data.profileImg);
 				}else{
 					$('.reivew-write-userName').text("로그인해주세요");
-					$('.review-write-userImg').prop("src", "/nadri/repository/img/member/defaultImg.png");
+					$('.review-write-userImg').prop("src", "/nadri/repository/img/tripmember/defaultImg.png");
 				}
 				
 			}, error: function(err){

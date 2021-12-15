@@ -51,7 +51,7 @@ function removeReviewList() {
 function pagination(){
 	 // init bootpag
     $('#page-selection').bootpag({
-	    total: 7,          // total pages
+	    total: 1,          // total pages
 	    page: 1,            // default page
 	    leaps: true         // next/prev leaps through maxVisible
 	}).on("page", function(event, num){
@@ -117,7 +117,7 @@ function getReviewList(){
 				}).append($('<div/>',{
 					class:"user-image-position"
 				}).append($('<img/>',{
-					src:"/nadri/repository/img/member/"+data.contentList[i].profileImg
+					src:"/nadri/repository/img/tripmember/"+data.contentList[i].profileImg
 				})))).append($('<div/>',{
 					class:"user-commentinfo-position"
 				}).append($('<div/>',{
@@ -144,7 +144,7 @@ function getReviewList(){
 				}))).append($('<div/>',{
 					class:"show-hide-comment dn"
 				}).append($('<img/>',{
-					src:"/nadri/repository/img/member/"+data.contentList[i].profileImg
+					src:"/nadri/repository/img/tripmember/"+data.contentList[i].profileImg
 				}))))).appendTo($('#append-startingPoint'));
             
             

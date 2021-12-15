@@ -42,7 +42,7 @@ function removeReviewList() {
 function pagination(){
 	 // init bootpag
 	$('#page-selection').bootpag({
-	    total: 7,          // total pages
+	    total: 1,          // total pages
 	    page: 1,            // default page
 	    leaps: true         // next/prev leaps through maxVisible
 	}).on("page", function(event, num){
