@@ -204,8 +204,8 @@
 						data-bs-toggle="modal">로그인화면으로</button>
 				</div>
 				<div class="membership">
-					<button class="btn btn-primary" data-bs-target="#membershipmodal"
-						data-bs-toggle="modal" onclick='return false;'>회원가입으로</button>
+					<button class="btn btn-primary" data-bs-target="#membershipmodal" id="membershipmodalBtn"
+						data-bs-toggle="modal" onclick='return false;' disabled="disabled">회원가입으로</button>	
 				</div>
 			</div>
 		</div>
@@ -505,6 +505,13 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
+
+
+
+$('.btn-close').click(function(){
+	location.href='/nadri/index.jsp';	
+});
+
 //로그인
 $('#modalLoginBtn').click(function(){
 	alert('로그인버튼은 눌려요');

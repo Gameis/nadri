@@ -49,10 +49,11 @@
  -->
 
  	<update id="modify" parameterType="tripmember">
- 		update tripmember set    pwd=#{pwd}, email1=#{email1}, email2=#{email2}
-								,tel1=#{tel1}, tel2=#{tel2}, tel3=#{tel3}, zipcode=#{zipcode}
-								,address=#{address}, addressDetail=#{addressDetail} 
-								,profileImg=#{profileImg}, nickName=#{nickName} where id=#{id}
+ 		update tripmember set   profileImg=#{profileImg}, pwd=#{pwd}, nickName=#{nickName}
+								,tel1=#{tel1}, tel2=#{tel2}, tel3=#{tel3} 
+								,email1=#{email1}, email2=#{email2}
+								,zipcode=#{zipcode}, address=#{address}, addressDetail=#{addressDetail} 
+								 where id=#{id}
  	</update>
  	
 	 <update id="imgModify" parameterType="tripmember" >

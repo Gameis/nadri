@@ -13,16 +13,19 @@
 <div class="wrapper">
 
 	<form id="modifyForm">
+
 	<div class="wrap">
+		<br>
 		<div class="modifysubject">
 			<span>내정보수정</span>
 		</div>
 		
 		<div>			
 			<div>
-				<h3 style="display:left;color:green;">내 이미지</h3>
-				<img id="memberImgchange" src=""  class="myImg" alt="변경이미지" src=""  
+				<img id="memberImgchange" src="/nadri/repository\img/tripmember/defaultImg.png"  class="myImg" alt="변경이미지"  
 				style="cursor:pointer;">
+				<h3 style="display:left;color:green;">이미지 바꾸기</h3>
+				
 			</div>
 			
 			<div> 
@@ -177,7 +180,7 @@ $('#modifyBtn').click(function(){
 		$('#repwdDiv').html('비밀번호를 확인해주세요 ');
 		
 	}else if($('#nickName').val()==''){
-		$('#repwdDiv').html('');
+		$('#pwdDiv').html('');
 		$('#nickDiv').html('닉네임을 입력해주세요');
 
 	}else if($('#tel1').val()==''||$('#tel2').val()==''||$('#tel3').val()==''){
@@ -188,14 +191,19 @@ $('#modifyBtn').click(function(){
 
 	}else if($('#zipcode').val()==''||$('#addr1').val()==''){
 		$('#addrDiv').html('주소가 제대로 입력되지 않았습니다');
-
+	
 	}else{
+		var formData = new FormData($('#modifyForm')[0]);
+
 		$.ajax({
 			url:'/nadri/tripmember/modify',
 			type:'post',		
-			data:$('#modifyForm').serialize(),
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: formData,
 
-			success(){
+			success:function(){
 				alert('회원정보가 변경되었습니다 ');
 			},
 			error(err){
@@ -208,7 +216,7 @@ $('#modifyBtn').click(function(){
 
 
 $('.memberImgchange').change(function(){
-
+//시리얼 라이즈로 멀티파트 즉 그림형태는 못넘기는듯
 	var formData = new FormData($('#modifyForm')[0]);
 //	alert("뜨냐");
 	$.ajax({

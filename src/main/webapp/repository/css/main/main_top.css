@@ -79,9 +79,11 @@
 	line-height: 0px
 }
 
+/* 
 .modal-backdrop {
 	z-index: 0 !important;
-}
+} */
+
 /* .main_hd:before, main_hd_line:before {
 	content: "";
 	display: table;

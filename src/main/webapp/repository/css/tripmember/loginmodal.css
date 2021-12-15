@@ -1,15 +1,5 @@
 @charset "UTF-8";
 
-/* float 속성 해제 */
-.clearfix {
-	clear: both;
-}
-
-/* 모달 화면처리 완전해결안됨  */
-.modal-backdrop {
-	z-index: 0;
-}
-
 /* .kakaoPNG {
 	background-position: 0 -48px !important;
 } */
@@ -70,20 +60,6 @@
 	overflow: hidden;
 }
 
-/*곰돌이 얼굴  */
-svg {
-	width: 70%;
-	border-radius: 50%;
-	background: #fff;
-	margin-bottom: 40px;
-	align-self: center;
-	transform-style: preserve-3d;
-}
-
-<!--
-아이디 비밀번호 입력창 -->.form-floating:focus-within {
-	z-index: 2;
-}
 
 .form-floating input[type="text"] {
 	margin-bottom: -1px;
@@ -102,126 +78,103 @@ svg {
 	justify-content: space-between;
 }
 
-@
-keyframes lookaway-up {from { transform:rotate3d(.2, 0, -.01, 20deg);
-	
+
+
+.loginForm {
+    width: 320px;
+    padding: 60px 25px 80px;
+    margin: 50px auto;
+    background: #f8d348;
+    display: flex;
+    flex-direction: column;
 }
 
-to {
-	transform: rotate3d(.2, -.05, -.01, 20deg);
+/*곰돌이 얼굴  */
+svg {
+    width: 70%;
+    border-radius: 50%;
+    background: #fff;
+    margin-bottom: 40px;
+    align-self: center;
+    transform-style: preserve-3d;
 }
 
+input {
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    padding: 10px 15px;
+    margin-top: 15px;
 }
-@
-keyframes lookaway-down { 0% {
-	transform: rotate3d(-.2, 0, -.01, 20deg);
+
+@keyframes lookaway-up {
+    from {
+        transform: rotate3d(.2, 0, -.01, 20deg);
+    }
+
+    to {
+        transform: rotate3d(.2, -.05, -.01, 20deg);
+    }
 }
 
-100
+@keyframes lookaway-down {
+    0% {
+        transform: rotate3d(-.2, 0, -.01, 20deg);
+    }
 
-
-
-
-
-
-%
-{
-transform
-
-
-
-
-
-
-:
-
-
-
-
-
-
-rotate3d
-
-
-
-
-(
-
-
-
-
-
-
--
-
-
-
-
-.2
-,
--
-
-
-
-
-.05
-,
-.01
-,
-20deg
-
-
-
-
-
-
-)
-
-
-
-
-;
+    100% {
+        transform: rotate3d(-.2, -.05, .01, 20deg);
+    }
 }
-}
+
 .ears {
-	transform-origin: 50% 50% 5px;
+    transform-origin: 50% 50% 5px;
 }
 
 .eyes {
-	transform-origin: 50% 50% -40px;
+    transform-origin: 50% 50% -40px;
 }
 
 .muzzle {
-	transform-origin: 50% 50% -44px;
+    transform-origin: 50% 50% -44px;
 }
 
 .ears, .eyes, .muzzle {
-	transition: transform .5s;
+    transition: transform .5s;
 }
 
 .focused {
-	transition: transform .1s;
+    transition: transform .1s;
 }
 
-.look-away .ears, .look-away .eyes, .look-away .muzzle {
-	transition-duration: .3s;
-	animation: 3s infinite alternate;
+.look-away .ears,
+.look-away .eyes,
+.look-away .muzzle {
+    transition-duration: .3s;
+    animation: 3s infinite alternate;
 }
 
-.look-away.up .ears, .look-away.up .eyes, .look-away.up .muzzle {
-	transform: rotate3d(.2, 0, 0, 20deg) !important;
+.look-away.up .ears,
+.look-away.up .eyes,
+.look-away.up .muzzle {
+    transform: rotate3d(.2, 0, 0, 20deg) !important;
 }
 
-.look-away.down .ears, .look-away.down .eyes, .look-away.down .muzzle {
-	transform: rotate3d(-.2, 0, 0, 20deg) !important;
+.look-away.down .ears,
+.look-away.down .eyes,
+.look-away.down .muzzle {
+    transform: rotate3d(-.2, 0, 0, 20deg) !important;    
 }
 
-.look-away.playing.up .ears, .look-away.playing.up .eyes, .look-away.playing.up .muzzle
-	{
-	animation-name: lookaway-up;
+.look-away.playing.up .ears,
+.look-away.playing.up .eyes,
+.look-away.playing.up .muzzle {
+    animation-name: lookaway-up;
 }
 
-.look-away.playing.down .ears, .look-away.playing.down .eyes, .look-away.playing.down .muzzle
-	{
-	animation-name: lookaway-down;
+.look-away.playing.down .ears,
+.look-away.playing.down .eyes,
+.look-away.playing.down .muzzle {
+    animation-name: lookaway-down;
 }
