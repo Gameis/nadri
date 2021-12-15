@@ -35,6 +35,7 @@ public class MainController {
 	@RequestMapping(value = "/kakaoLogin", method = RequestMethod.POST)
 	@ResponseBody
 	public void kakaoLogin(@RequestParam("memId") String memId, HttpSession session) {
+		session.setAttribute("member_seq", "0");
 		session.setAttribute("memId", memId);
 		session.setAttribute("memName", "guest");
 	}
