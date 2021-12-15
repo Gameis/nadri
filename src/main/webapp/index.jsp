@@ -159,7 +159,12 @@
 					<!-- 카카오 -->
 					<div>
 						<a style="text-decoration: none" href="javascript:void(0)"> 
+<<<<<<< HEAD
+						<img src="" alt="kakao"
+							onclick="kakaoLogin();">
+=======
 						<img src="/nadri/repository/img/member/kakao.png" alt="kakao" onclick="kakaoLogin();" class="kakaoPNG kakaologin">
+>>>>>>> c00dbb6f1608874172de161a2e5989a65e6a506d
 						</a>
 					</div>
 

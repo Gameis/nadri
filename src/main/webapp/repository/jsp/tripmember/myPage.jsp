@@ -12,7 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
  
     <!-- Custom styles for this template -->
-<link href="/nadri/repository/css/tripmember/myPage.css" rel="stylesheet">
+<link rel="stylesheet" href="/nadri/repository/css/tripmember/myPage.css">
   </head>
 <body>
 
@@ -54,7 +54,7 @@
 				
 		      <li class="mb-1">
 		        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-		          My 포인트
+		          CSS 구경하기
 		        </button>
 		        <div class="collapse" id="orders-collapse">
 		          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -87,8 +87,20 @@
   	</section>
 
   <aside id="right-sidebar">
-  광고하실분 구합니다
+		<div class="banner_wraper">
+           	 <img src="/nadri/repository/img/tripmember/sky1.jpg"></img>
+       		 <img src="/nadri/repository/img/tripmember/sky2.jpg"></img>
+      		 <img src="/nadri/repository/img/tripmember/sky3.jpg"></img>
+        	 <img src="/nadri/repository/img/tripmember/sky4.jpg"></img>
+     	  	 <img src="/nadri/repository/img/tripmember/sky5.jpg"></img>
+         	 <img src="/nadri/repository/img/tripmember/sky6.jpg"></img>
+        	 <img src="/nadri/repository/img/tripmember/sky7.jpg"></img>
+        	 <img src="/nadri/repository/img/tripmember/sky8.jpg"></img>
+       		 <img src="/nadri/repository/img/tripmember/sky9.jpg"></img>
+        	 <img src="/nadri/repository/img/tripmember/sky10.jpg"></img>
+		</div>
   </aside>
+  
  </main> 
 
 	<!-- footer -->
@@ -103,5 +115,53 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/nadri/repository/js/tripmember/myPage.js"></script>
+
+<script type="text/javascript">
+
+//client rolling banner
+window.onload = function() {
+var bannerLeft=0;
+var first=1;
+var last;
+var imgCnt=0;
+var $img = $(".banner_wraper img");
+var $first;
+var $last;
+
+	$img.each(function(){   // 5px 간격으로 배너 처음 위치 시킴
+	    $(this).css("left",bannerLeft);
+	    bannerLeft += $(this).width()+5;
+	    $(this).attr("id", "banner"+(++imgCnt));  // img에 id 속성 추가
+	});
+	
+
+	if( imgCnt > 9){                //배너 9개 이상이면 이동시킴
+	
+	    last = imgCnt;
+	
+	    setInterval(function() {
+	        $img.each(function(){
+	            $(this).css("left", $(this).position().left-1); // 1px씩 왼쪽으로 이동
+	        });
+	        $first = $("#banner"+first);
+	        $last = $("#banner"+last);
+	        if($first.position().left < -990) {    // 제일 앞에 배너 제일 뒤로 옮김
+	            $first.css("left", $last.position().left + $last.width()+5 );
+	            first++;
+	            last++;
+	            if(last > imgCnt) { last=1; }   
+	            if(first > imgCnt) { first=1; }
+	        }
+	    }, 50);   //여기 값을 조정하면 속도를 조정할 수 있다.(위에 1px 이동하는 부분도 조정하면 
+	
+	//깔끔하게 변경가능하다           
+	
+	}
+
+};
+
+
+</script>
+
 </body>
 </html>

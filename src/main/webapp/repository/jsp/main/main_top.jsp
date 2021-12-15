@@ -21,31 +21,25 @@
 						<a class="trip" href="#">trip.com</a>
 					</div>
 
-				<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
-				
-					 <c:if test="${memId == null}">
-						<!-- Login Button trigger modal -->
-						<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal" id="loginBtn">
-							<span>로그인</span>/<span>회원가입</span>					
-						</div>
-					</c:if> 
-									
-					<c:if test="${memId != null }">
-						<div>
-							<p><a href="/nadri/tripmember/myPage">${sessionScope.memName}님 환영 합니다.</a></p>
-
-						</div>
-						<div class="logout_wrap"><button id="logoutBtn" type="button">로그아웃</button>
-						</div>
-						 <div class="clearfix"></div>
-					</c:if>
+					<div class="main_hd_account main_hd_dropdown trip_main_hd_no_login">
 					
-					<c:if test="${userId != null }">
-						<div>
-							<form name="logout" action="http://localhost:8080/logout"></form>
-						</div>	
-					</c:if>					 	
-						
+
+						 <c:if test="${memId == null}">
+							<!-- Login Button trigger modal -->
+							<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal" id="loginBtn">
+								<span>로그인</span>/<span>회원가입</span>					
+							</div>
+						</c:if> 
+										
+						<c:if test="${memId != null }">
+							<div>
+								<p><a href="/nadri/tripmember/myPage">${sessionScope.memName}님 환영 합니다.</a></p>
+	
+							</div>
+							<div class="logout_wrap"><button id="logoutBtn" type="button">로그아웃</button>
+							</div>
+							 <div class="clearfix"></div>
+						</c:if>
 					</div>
 					
 					<div class="trip_main_hd_nav"></div>
@@ -182,155 +176,6 @@
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>	
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script>
-Kakao.init('3e185ce5fc211a923e30507eac3d2f59'); //발급받은 키 중 javascript키를 사용해준다.
-console.log(Kakao.isInitialized()); // sdk초기화여부판단
-function kakaoLogin() {
 
-   window.Kakao.Auth.login({
-       scope: 'profile_nickname, account_email', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
-       success: function(response) {
-           console.log(response) // 로그인 성공하면 받아오는 데이터
-           window.Kakao.API.request({ // 사용자 정보 가져오기 
-               url: '/v2/user/me',
-               success: (res) => {
-                   const kakao_account = res.kakao_account;
-                   const properties = res.properties;
-                   console.log(kakao_account)
-                   console.log(res)
-                   
-                   //---------------------------------
-                   
-                   $.ajax({
-                  type: 'post',
-                  url: '/nadri/tripmember/checkId',
-                  data: 'id='+res.id,
-                  dataType: 'text',
-                  success: function(data){
-                     if(data == 'exist'){
-                        $.ajax({
-                           type : 'post',
-                           url: '/nadri/tripmember/login',
-                           data: {
-                              'id': res.id,
-                              'pwd': res.id		//이부분 이해못함
-                           },
-                           dataType: 'text',
-                           success: function(data){
-                              if(data == 'success'){
-                                 location.href = '/nadri/index.jsp';
-                              }else{
-                                 alert('로그인 실패');
-                              }
-                           },
-                           error: function(err){
-                              console.log(err);
-                           }
-                        });
-                        
-                     }else if(data == 'non_exist'){
-                        
-                        $.ajax({
-                           type: 'post',
-                           url: '/nadri/tripmember/write',
-                           data: {
-                              'name': properties.nickname,
-                              'id': res.id,
-                              'pwd': res.id,      //이부분이해못함                     
-                              'email': kakao_account.email
-                           },
-                           success: function(){
-                              alert('회원가입을 축하합니다');
-                              location.href = '/nadri/index.jsp';
-                           },
-                           error: function(err){
-                              console.log(err);
-                           }
-                        });		//ajax
-                        
-                     }
-                     
-                  },
-                  error: function(err){
-                     console.log(err);
-                  }
-               });	//	바깥쪽 ajax
-                                   
-                   /*
-                   $.ajax({
-                  type : 'post',
-                  url: '/JAVACOMICS/toonmember/login',
-                  data: {
-                     'id': res.id,
-                     'pwd': res.id
-                  },
-                  dataType: 'text',
-                  success: function(data){
-                     if(data == 'success'){
-                        location.href = '/JAVACOMICS/index.jsp';
-                     }else{
-                        alert('로그인 실패');
-                     }
-                  },
-                  error: function(err){
-                     console.log(err);
-                  }
-               });
-                   */
-                   //---------------------------------
-               }
-           });
-           //window.location.href='/JAVACOMICS/toonmember/kakaoLogin' //리다이렉트 되는 코드
-           
-       },	//success
-       
-       fail: function(error) {
-           console.log(error);
-       }
-       
-   });
-  
-}
- 
-</script> 
- 
-<%-- 
- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <script>
-  //카카오로그인
-  function kakaoLogin() {
-
-    $.ajax({
-        url: '/nadri/login/getKakaoAuthUrl',
-        type: 'get',
-        async: false,
-        dataType: 'text',
-        success: function (res) {
-            location.href = res;
-        }
-    });
-
-  }
-
-
-  $(document).ready(function() {
-
-      var kakaoInfo = '${kakaoInfo}';
-
-      if(kakaoInfo != ""){
-          var data = JSON.parse(kakaoInfo);
-
-          alert("카카오로그인 성공 \n accessToken : " + data['accessToken']);
-          alert(
-          "user : \n" + "email : "
-          + data['email']  
-          + "\n nickname : " 
-          + data['nickname']);
-      }
-  });  
-
-  </script>
---%>
 </body>
 </html>
