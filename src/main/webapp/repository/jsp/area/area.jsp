@@ -174,43 +174,43 @@
           <h2>서울 날씨</h2>
           <div class="area-weather-Info">
             <div class="weather">
-              <div class="weather-text">오늘</div>
-              <div class="weather-day">2021년 12월 3일</div>
+              <div class="weather-text" style="text-align: center; font-size: 20px; color: rgb(15, 41, 77); font-weight: bold;">오늘</div>
+              <div class="weather-day" style="text-align: center; font-size: 16px; color: rgb(69, 88, 115); line-height: 22px;">2021년 12월 3일</div>
               <div class="weather-num-con">
-                <div class="weather-num">-5</div>
+                <div class="weather-num" style="font-size: 90px; margin-right: 12px; color: rgb(15, 41, 77);">-5</div>
                 <div class="weather-tem-log">
-                  <div class="log">º</div>
-                  <i></i>
+                  <div class="log" style="font-size: 50px; color: rgb(15, 41, 77)">º</div>
+                  <i style="font-size: 40px;"></i>
                 </div>
               </div>
-              <div class="weather-weather">구름많음</div>
-              <div class="weather-tem">-5~3ºC</div>
+              <div class="weather-weather" style="text-align: center; font-size: 18px; color: rgb(69, 88, 115); line-height: 24px; font-weight: bold;">구름많음</div>
+              <div class="weather-tem" style="text-align: center; font-weight: bold; color: rgb(69, 88, 115)">-5~3ºC</div>
             </div>
             <div class="weather">
-              <div class="weather-text">내일</div>
-              <div class="weather-day">2021년 12월 3일</div>
+              <div class="weather-text" style="text-align: center; font-size: 20px; color: rgb(15, 41, 77); font-weight: bold;">내일</div>
+              <div class="weather-day" style="text-align: center; font-size: 16px; color: rgb(69, 88, 115); line-height: 22px;">2021년 12월 3일</div>
               <div class="weather-num-con">
-                <div class="weather-num">-5</div>
+                <div class="weather-num" style="font-size: 90px; margin-right: 12px; color: rgb(15, 41, 77);">-5</div>
                 <div class="weather-tem-log">
-                  <div class="log">º</div>
-                  <i></i>
+                  <div class="log" style="font-size: 50px; color: rgb(15, 41, 77)">º</div>
+                  <i style="font-size: 40px;"></i>
                 </div>
               </div>
-              <div class="weather-weather">구름많음</div>
-              <div class="weather-tem">-5~3ºC</div>
+              <div class="weather-weather" style="text-align: center; font-size: 18px; color: rgb(69, 88, 115); line-height: 24px; font-weight: bold;">구름많음</div>
+              <div class="weather-tem" style="text-align: center; font-weight: bold; color: rgb(69, 88, 115)">-5~3ºC</div>
             </div>
             <div class="weather">
-              <div class="weather-text">모레</div>
-              <div class="weather-day">2021년 12월 3일</div>
+              <div class="weather-text" style="text-align: center; font-size: 20px; color: rgb(15, 41, 77); font-weight: bold;">모레</div>
+              <div class="weather-day" style="text-align: center; font-size: 16px; color: rgb(69, 88, 115); line-height: 22px;">2021년 12월 3일</div>
               <div class="weather-num-con">
-                <div class="weather-num">-5</div>
+                <div class="weather-num" style="font-size: 90px; margin-right: 12px; color: rgb(15, 41, 77);">-5</div>
                 <div class="weather-tem-log">
-                  <div class="log">º</div>
-                  <i></i>
+                  <div class="log" style="font-size: 50px; color: rgb(15, 41, 77)">º</div>
+                  <i style="font-size: 40px;"></i>
                 </div>
               </div>
-              <div class="weather-weather">구름많음</div>
-              <div class="weather-tem">-5~3ºC</div>
+              <div class="weather-weather" style="text-align: center; font-size: 18px; color: rgb(69, 88, 115); line-height: 24px; font-weight: bold;">구름많음</div>
+              <div class="weather-tem" style="text-align: center; font-weight: bold; color: rgb(69, 88, 115)">-5~3ºC</div>
             </div>
           </div><!-- area-weather-Info -->          
         </div>
