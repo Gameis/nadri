@@ -7,12 +7,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>트립닷컴</title>
+    <title>트립닷컴에서 서울 명동의 영업시간, 위치 그리고 여행객들의 생생한 후기까지 한 번에 알아보세요</title>
     <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popular.css">
     <link rel="stylesheet" href="/nadri/repository/css/popular/popreview.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 
