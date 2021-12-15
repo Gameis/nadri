@@ -35,6 +35,7 @@
 		left join (select pop_seq, count(*) as "pop_review_count"
 		      from trippop_review
 		      group by pop_seq) using(pop_seq)
+		where main_seq = '98'
 	</select>
 	
 	<insert id="activityWrite" parameterType="tripActivity">
