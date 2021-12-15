@@ -27,7 +27,7 @@
 						 <c:if test="${memId == null}">
 							<!-- Login Button trigger modal -->
 							<div class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginmodal" id="loginBtn">
-								<span>로그인</span>/<span>회원가입</span>					
+								<span class="loginWrite">로그인&nbsp;&nbsp;/&nbsp;&nbsp;회원가입</span>					
 							</div>
 						</c:if> 
 										
