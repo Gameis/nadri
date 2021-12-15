@@ -514,7 +514,6 @@ $('.btn-close').click(function(){
 	
 //로그인
 $('#modalLoginBtn').click(function(){
-	alert('로그인버튼은 눌려요');
 	$('#modalidDiv').empty();
 	$('#modalpwdDiv').empty();
 
@@ -525,7 +524,6 @@ $('#modalLoginBtn').click(function(){
 		$('#modalpwdDiv').html('비밀번호를 입력해주세요');
 	}	
 	else{
-		alert("로그인 버튼 클릭")
 		$.ajax({
 			url:'/nadri/tripmember/login',
 			type: 'post',
@@ -819,7 +817,7 @@ $('.con_search_button_icon').click(function(){
 					class : 'img-wrap'
 				}).append($('<a>', {
 					title: '',
-					href : ''
+					href : '/nadri/main/area?main_seq=' + items.main_seq
 				}).append($('<img>', {
 					alt : '',
 					src : '/nadri/repository/img/' + items.img_path + '/' + items.img_name
@@ -828,7 +826,7 @@ $('.con_search_button_icon').click(function(){
 				}).append($('<a>', {
 					class : "title",
 					title : "",
-					href : "",
+					href : '/nadri/main/area?main_seq=' + items.main_seq,
 					text : items.main_name
 				}))))).appendTo($('#index_popular-dest'));
 				
@@ -854,7 +852,6 @@ $(function() {
 			contentType : false,
 			data : formData,
 			success : function() {
-				alert('성공');
 				
 			},
 			error : function() {
