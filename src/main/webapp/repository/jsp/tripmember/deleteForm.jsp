@@ -17,25 +17,10 @@
 				<span>회원탈퇴</span>
 			</div>
 		
-			<div class="deletenamewrap">
-				<div class="deletename">이름</div>
-				<div class="deletenameinputbox">
-					<input class="deletenameinput" type="text"  id="deletename" name="deletename" readonly>
-				</div>
-			</div>
-			
-			<div class="deleteidwrap">
-				<div class="deleteid">아이디</div>
-				<div class="deleteidinputbox">
-					<input class="deleteidinput" type="text" id="deleteid" name="deleteid" readonly>
-				</div>
-			</div>
-
 			<div class="deletepwdwrap">
 				<div class="deletepwd">비밀번호확인</div><div id="deletepwdDiv"></div>
 				<div class="deletepwdinputbox">
 					<input class="deletepwdinput" type="password"  id="deletepwd" name="deletepwd">
-					<input class="deletehiddenpwdinput" type="hidden"  id="deletehiddenpwd" name="deletehiddenpwd">			
 				</div>
 			</div>
 	</div>
@@ -104,39 +89,18 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-$(function(){
-	
-	$.ajax({
-		url: '/nadri/tripmember/getTripmemberInfo',
-		type: 'post',
-		dataType: 'json',
-		success:function(data){
-		
-			console.log(JSON.stringify(data));		//json을 안썼지만 json형식으로 뜸 오류가 안뜸
-
-			
-			$('#deletename').val(data.name);
-			$('#deleteid').val(data.id);
-			$("#deletehiddenpwd").val(data.pwd);
-		},	//success
-		
-		error:function(err){
-			console.log(err);
-		}
-	
-	});	//ajax
-});	//function
 
 
 $('#deleteBtn').click(function(){
 
 	$('#deletepwdDiv').empty();
-	
 	if($('#deletepwd').val()==''){
+		alert("비밀번호를 입력해주세요");
 		$('#deletepwdDiv').html('비밀번호를 입력해주세요 ');
-	
-	}else {
-		
+		$('#deletepwdDiv').css('color', 'red');
+		$('#deletepwdDiv').css('font-size', '15pt');
+		$('#deletepwdDiv').css('font-weight', 'bold');
+	}else{
 		$.ajax({
 			url:'/nadri/tripmember/compare',
 			type: 'post',
@@ -145,61 +109,53 @@ $('#deleteBtn').click(function(){
 				
 			success: function(data){
 				//console.log(JSON.stringify(data));
-				
-				if(data=='ok'){
-				//	location.href='/nadri/index.jsp';
-					$('#deletepwdDiv').html('비밀번호가 확인되었습니다');
-					if(!$("#deletecheckbox").is(":checked")){
-		        		alert("회원 탈퇴에 동의 하셔야 다음 단계로 진행 가능합니다 ");	
-
-					}else if(confirm('정말로 탈퇴하시겠습니까')){
-						
-						$.ajax({
-							url:'/nadri/tripmember/delete',
-							type:'post',
-							
-							success:function(){
-								alert("회원탈퇴가 완료되었습니다");
 								
-								$.ajax({
-									url:'/nadri/tripmember/logOut',
-									type: 'post',
-													
-									success: function(){	
-										location.href='/nadri/index.jsp';
-									},		//success
-										
-									error: function(err){
-										console.log(err);			
-									}	
-									
-								});		// ajax
-											
-							},		//success
-							
-							error:function(err){
-								console.log(err);
-							}	
-							
-						});		//ajax		
-					}
-									
-				}else if(data=='fail'){
+				if(data=='fail'){		
+					alert("비밀번호를 확인해주세요");
+	
 					$('#deletepwdDiv').html('비밀번호가 다릅니다');
 					$('#deletepwdDiv').css('color', 'red');
 					$('#deletepwdDiv').css('font-size', '15pt');
 					$('#deletepwdDiv').css('font-weight', 'bold');
-				}	
-				
-			},		//success
-			
-			error: function(err){
-				console.log(err);			
+				}
+				else if(!$("#deletecheckbox").is(":checked")){
+					//	location.href='/nadri/index.jsp';
+		      		alert("회원 탈퇴에 동의 하셔야 다음 단계로 진행 가능합니다 ");	
+						
+				}else if((data=='ok') && $("#deletecheckbox").is(":checked")){
+					confirm('정말로 탈퇴하시겠습니까')
+					$.ajax({
+						url:'/nadri/tripmember/delete',
+						type:'post',
+						
+						success:function(){
+							alert("회원탈퇴가 완료되었습니다");		
+							$.ajax({
+								url:'/nadri/tripmember/logOut',
+								type: 'post',						
+								success: function(){	
+									location.href='/nadri/index.jsp';
+								},		//success	
+								error: function(err){
+									console.log(err);			
+								}	
+								
+							});		// ajax
+						},
+						error: function(err){
+							console.log(err);			
+						}	
+					});			//ajax
+				}	//else if
+			},	//success
+			error:function(err){
+				console.log(err);
 			}
-			
-		});		//ajax
+		});		//ajax	
 	}	//else
-});	// click
+
+});		//click
+
 
 </script>
 </body>
