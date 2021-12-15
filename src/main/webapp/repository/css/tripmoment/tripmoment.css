@@ -331,16 +331,20 @@ button, input, optgroup, select, textarea {
 
 /* 댓글 부착되는 부분 */
 .comment_container {
-	width: 100%;
-	border-top: 1px solid rgb(234, 234, 234);
-	box-sizing: border-box;
-	padding-left: 32px;
-	padding-right: 32px;
+	width: 100% !important;
+	border-top: 1px solid rgb(234, 234, 234) !important;
+	box-sizing: border-box !important;
+	padding-left: 32px !important;
+	padding-right: 32px !important;
 }
 
 .scroll_comment {
 	position: relative;
-	width: 100%;
+	width: 100% !important;
+	border-top: 1px solid rgb(234, 234, 234) !important;
+	box-sizing: border-box !important;
+	padding-left: 32px !important;
+	padding-right: 32px !important;
 }
 
 .scroll_comment .user {

@@ -6,8 +6,7 @@
 }
 
 background-color: #8EC0E4 ;
-	/* 화면 전체 렙 */ 
-.wrapper {
+	/* 화면 전체 렙 */ .wrapper {
 	width: 800px;
 }
 
@@ -58,7 +57,8 @@ background-color: #8EC0E4 ;
 }
 
 /* 아이디 영역 */
-.id_wrap { ======= #nameDiv { color:red;
+#nameDiv {
+	color: red;
 	float: right;
 	font-size: 20px;
 }
