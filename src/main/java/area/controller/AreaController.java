@@ -77,8 +77,8 @@ public class AreaController {
 	
 	@RequestMapping(value="/onAreaActivity", method=RequestMethod.GET)
 	@ResponseBody
-	public List<PopMainDTO> onAreaActivity() {
-		return areaService.onAreaActivity(99);
+	public List<PopMainDTO> onAreaActivity(@RequestParam("main_seq") String main_seq) {
+		return areaService.onAreaActivity(main_seq);
 	}
 	
 	@RequestMapping(value="/popular", method=RequestMethod.GET)
@@ -107,8 +107,8 @@ public class AreaController {
 	
 	@RequestMapping(value = "/onAreaHotel", method = RequestMethod.GET)
 	@ResponseBody
-	public List<HotelMainDTO> onAreaHotel() {
-		return areaService.onAreaHotel();
+	public List<HotelMainDTO> onAreaHotel(@RequestParam("main_seq") String main_seq) {
+		return areaService.onAreaHotel(main_seq);
 	}
 	
 	@RequestMapping(value="/activity", method=RequestMethod.GET)

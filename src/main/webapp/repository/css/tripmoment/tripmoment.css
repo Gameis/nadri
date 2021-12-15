@@ -569,7 +569,7 @@ a, a:hover {
 }
 
 .tripphoto .item-title {
-	font-size: 16px;
+	font-size: 14px;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
@@ -606,7 +606,7 @@ a {
 	background: rgb(235, 235, 242);
 }
 
-.tripphoto .nickname {
-	margin-left: 32px;
+.tripphoto .nickname-t {
+	margin-left: 8px;
 	overflow: hidden;
 }

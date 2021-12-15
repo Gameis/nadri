@@ -6,11 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<title>dd</title>
+<title>전 세계 인기 여행지 & 꼭 가봐야 할 명소 추천 | 트립닷컴</title>
 <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities.css">
 <link rel="stylesheet" type="text/css" href="/nadri/repository/css/activities/activities_review.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 

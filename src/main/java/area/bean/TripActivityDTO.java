@@ -19,5 +19,5 @@ public class TripActivityDTO {
 	private String activity_used;
 	private String activity_information;
 	private String activity_warning;
-	private int main_seq;
+	private String main_seq;
 }

@@ -175,9 +175,13 @@
 
 .nickname {
 	float: left;
-	font-style: italic;
 	font-size: 25px;
 	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+.main_hd_line {
+	border-bottom: 1px solid #ddd;
 }
 
 #nickDiv{

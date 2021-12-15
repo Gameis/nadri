@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>서울 여행 코스 & 인기 여행지 추천 | 트립닷컴</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/nadri/repository/css/area/area.css">
+    <link href="/nadri/repository/img/main/trip.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
 	<input type="hidden" id="main_seq" value="${param.main_seq}"/>
@@ -173,43 +174,43 @@
           <h2>서울 날씨</h2>
           <div class="area-weather-Info">
             <div class="weather">
-              <div class="weather-text">오늘</div>
-              <div class="weather-day">2021년 12월 3일</div>
+              <div class="weather-text" style="text-align: center; font-size: 20px; color: rgb(15, 41, 77); font-weight: bold;">오늘</div>
+              <div class="weather-day" style="text-align: center; font-size: 16px; color: rgb(69, 88, 115); line-height: 22px;">2021년 12월 3일</div>
               <div class="weather-num-con">
-                <div class="weather-num">-5</div>
+                <div class="weather-num" style="font-size: 90px; margin-right: 12px; color: rgb(15, 41, 77);">-5</div>
                 <div class="weather-tem-log">
-                  <div class="log">º</div>
-                  <i></i>
+                  <div class="log" style="font-size: 50px; color: rgb(15, 41, 77)">º</div>
+                  <i style="font-size: 40px;"></i>
                 </div>
               </div>
-              <div class="weather-weather">구름많음</div>
-              <div class="weather-tem">-5~3ºC</div>
+              <div class="weather-weather" style="text-align: center; font-size: 18px; color: rgb(69, 88, 115); line-height: 24px; font-weight: bold;">구름많음</div>
+              <div class="weather-tem" style="text-align: center; font-weight: bold; color: rgb(69, 88, 115)">-5~3ºC</div>
             </div>
             <div class="weather">
-              <div class="weather-text">내일</div>
-              <div class="weather-day">2021년 12월 3일</div>
+              <div class="weather-text" style="text-align: center; font-size: 20px; color: rgb(15, 41, 77); font-weight: bold;">내일</div>
+              <div class="weather-day" style="text-align: center; font-size: 16px; color: rgb(69, 88, 115); line-height: 22px;">2021년 12월 3일</div>
               <div class="weather-num-con">
-                <div class="weather-num">-5</div>
+                <div class="weather-num" style="font-size: 90px; margin-right: 12px; color: rgb(15, 41, 77);">-5</div>
                 <div class="weather-tem-log">
-                  <div class="log">º</div>
-                  <i></i>
+                  <div class="log" style="font-size: 50px; color: rgb(15, 41, 77)">º</div>
+                  <i style="font-size: 40px;"></i>
                 </div>
               </div>
-              <div class="weather-weather">구름많음</div>
-              <div class="weather-tem">-5~3ºC</div>
+              <div class="weather-weather" style="text-align: center; font-size: 18px; color: rgb(69, 88, 115); line-height: 24px; font-weight: bold;">구름많음</div>
+              <div class="weather-tem" style="text-align: center; font-weight: bold; color: rgb(69, 88, 115)">-5~3ºC</div>
             </div>
             <div class="weather">
-              <div class="weather-text">모레</div>
-              <div class="weather-day">2021년 12월 3일</div>
+              <div class="weather-text" style="text-align: center; font-size: 20px; color: rgb(15, 41, 77); font-weight: bold;">모레</div>
+              <div class="weather-day" style="text-align: center; font-size: 16px; color: rgb(69, 88, 115); line-height: 22px;">2021년 12월 3일</div>
               <div class="weather-num-con">
-                <div class="weather-num">-5</div>
+                <div class="weather-num" style="font-size: 90px; margin-right: 12px; color: rgb(15, 41, 77);">-5</div>
                 <div class="weather-tem-log">
-                  <div class="log">º</div>
-                  <i></i>
+                  <div class="log" style="font-size: 50px; color: rgb(15, 41, 77)">º</div>
+                  <i style="font-size: 40px;"></i>
                 </div>
               </div>
-              <div class="weather-weather">구름많음</div>
-              <div class="weather-tem">-5~3ºC</div>
+              <div class="weather-weather" style="text-align: center; font-size: 18px; color: rgb(69, 88, 115); line-height: 24px; font-weight: bold;">구름많음</div>
+              <div class="weather-tem" style="text-align: center; font-weight: bold; color: rgb(69, 88, 115)">-5~3ºC</div>
             </div>
           </div><!-- area-weather-Info -->          
         </div>
@@ -355,6 +356,7 @@
     $.ajax({
     	url: '/nadri/area/onAreaHotel',
     	type: 'get',
+    	data: 'main_seq=' + $('#main_seq').val(),
     	success: function(data) {
     		var count = -1;
             var activityCount = 1;
@@ -456,6 +458,7 @@
      $.ajax({
     	url: '/nadri/area/onAreaActivity',
     	type: 'get',
+    	data: 'main_seq=' + $('#main_seq').val(),
     	success: function(data) {
     		var count = -1;
             var activityCount = 1;

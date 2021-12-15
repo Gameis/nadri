@@ -23,6 +23,9 @@
 	background-size: 500%;
 }
 
+.modal-backdrop {
+	z-index : 0 !important;
+}
 
 #modalLoginBtn {
 	margin-top: 10px;
@@ -33,7 +36,6 @@
 	background: #f8e348;
 	border-radius: 5%;
 	overflow: hidden;
-
 }
 
 .loginForm {
@@ -50,16 +52,17 @@
 }
 /* 로그아웃버튼 */
 #logoutBtn {
-	color: #808080;
-	padding: 1px 1px;
-	width: 100px;
+	color: black;
+	padding: 0px 0px;
+	width: 89px;
 	height: 25px;
-	border: 1px solid #7EC0E4;
-	background: #8EC0E4;
+	/* border: 0px solid #0d6efd; */
+	background: #fff;
 	border-radius: 5%;
 	overflow: hidden;
+	margin-top: 8px;
+	font-size: 14px;
 }
-
 
 .form-floating input[type="text"] {
 	margin-bottom: -1px;
@@ -78,103 +81,104 @@
 	justify-content: space-between;
 }
 
-
-
 .loginForm {
-    width: 320px;
-    padding: 60px 25px 80px;
-    margin: 50px auto;
-    background: #f8d348;
-    display: flex;
-    flex-direction: column;
+	width: 320px;
+	padding: 60px 25px 80px;
+	margin: 50px auto;
+	background: #f8d348;
+	display: flex;
+	flex-direction: column;
 }
 
 /*곰돌이 얼굴  */
 svg {
-    width: 70%;
-    border-radius: 50%;
-    background: #fff;
-    margin-bottom: 40px;
-    align-self: center;
-    transform-style: preserve-3d;
+	width: 70%;
+	border-radius: 50%;
+	background: #fff;
+	margin-bottom: 40px;
+	align-self: center;
+	transform-style: preserve-3d;
 }
 
 input {
-    font-size: 16px;
-    border: 0;
-    border-radius: 5px;
-    outline: 0;
-    padding: 10px 15px;
-    margin-top: 15px;
+	font-size: 16px;
+	border: 0;
+	border-radius: 5px;
+	outline: 0;
+	padding: 10px 15px;
+	margin-top: 15px;
 }
 
-@keyframes lookaway-up {
-    from {
-        transform: rotate3d(.2, 0, -.01, 20deg);
-    }
-
-    to {
-        transform: rotate3d(.2, -.05, -.01, 20deg);
-    }
+@
+keyframes lookaway-up {from { transform:rotate3d(.2, 0, -.01, 20deg);
+	
 }
 
-@keyframes lookaway-down {
-    0% {
-        transform: rotate3d(-.2, 0, -.01, 20deg);
-    }
-
-    100% {
-        transform: rotate3d(-.2, -.05, .01, 20deg);
-    }
+to {
+	transform: rotate3d(.2, -.05, -.01, 20deg);
 }
 
+}
+@
+keyframes lookaway-down { 0% {
+	transform: rotate3d(-.2, 0, -.01, 20deg);
+}
+
+100
+%
+{
+transform
+:
+rotate3d(
+-.2
+,
+-.05
+,
+.01
+,
+20deg
+);
+}
+}
 .ears {
-    transform-origin: 50% 50% 5px;
+	transform-origin: 50% 50% 5px;
 }
 
 .eyes {
-    transform-origin: 50% 50% -40px;
+	transform-origin: 50% 50% -40px;
 }
 
 .muzzle {
-    transform-origin: 50% 50% -44px;
+	transform-origin: 50% 50% -44px;
 }
 
 .ears, .eyes, .muzzle {
-    transition: transform .5s;
+	transition: transform .5s;
 }
 
 .focused {
-    transition: transform .1s;
+	transition: transform .1s;
 }
 
-.look-away .ears,
-.look-away .eyes,
-.look-away .muzzle {
-    transition-duration: .3s;
-    animation: 3s infinite alternate;
+.look-away .ears, .look-away .eyes, .look-away .muzzle {
+	transition-duration: .3s;
+	animation: 3s infinite alternate;
 }
 
-.look-away.up .ears,
-.look-away.up .eyes,
-.look-away.up .muzzle {
-    transform: rotate3d(.2, 0, 0, 20deg) !important;
+.look-away.up .ears, .look-away.up .eyes, .look-away.up .muzzle {
+	transform: rotate3d(.2, 0, 0, 20deg) !important;
 }
 
-.look-away.down .ears,
-.look-away.down .eyes,
-.look-away.down .muzzle {
-    transform: rotate3d(-.2, 0, 0, 20deg) !important;    
+.look-away.down .ears, .look-away.down .eyes, .look-away.down .muzzle {
+	transform: rotate3d(-.2, 0, 0, 20deg) !important;
 }
 
-.look-away.playing.up .ears,
-.look-away.playing.up .eyes,
-.look-away.playing.up .muzzle {
-    animation-name: lookaway-up;
+.look-away.playing.up .ears, .look-away.playing.up .eyes, .look-away.playing.up .muzzle
+	{
+	animation-name: lookaway-up;
 }
 
-.look-away.playing.down .ears,
-.look-away.playing.down .eyes,
-.look-away.playing.down .muzzle {
-    animation-name: lookaway-down;
+.look-away.playing.down .ears, .look-away.playing.down .eyes, .look-away.playing.down .muzzle
+	{
+	animation-name: lookaway-down;
 }

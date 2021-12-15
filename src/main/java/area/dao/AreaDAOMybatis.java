@@ -53,7 +53,7 @@ public class AreaDAOMybatis implements AreaDAO {
 	}
 
 	@Override
-	public List<PopMainDTO> printActivityMain(int main_seq) {
+	public List<PopMainDTO> printActivityMain(String main_seq) {
 		return sqlSession.selectList("areaSQL.printActivityMain", main_seq);
 	}
 
@@ -94,7 +94,7 @@ public class AreaDAOMybatis implements AreaDAO {
 	}
 
 	@Override
-	public List<HotelMainDTO> onAreaHotel() {
-		return sqlSession.selectList("areaSQL.onAreaHotel");
+	public List<HotelMainDTO> onAreaHotel(String main_seq) {
+		return sqlSession.selectList("areaSQL.onAreaHotel", main_seq);
 	}
 }

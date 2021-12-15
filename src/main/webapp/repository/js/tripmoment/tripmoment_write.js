@@ -9,7 +9,6 @@ $(function() {
             contentType: false,
             data: formData,
             success: function() {
-                alert('데이터 등록 완료');
             },
             error: function() {
                 console.log(err);
