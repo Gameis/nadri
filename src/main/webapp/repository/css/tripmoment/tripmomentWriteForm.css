@@ -67,8 +67,13 @@ a, article, aside, audio, blockquote, body, canvas, caption, cite, dd,
 	flex-wrap: wrap;
 }
 
+#moment_content {
+	width: 1100px;
+    height: 230px;
+}
+
 #att_zone{
-	width: 660px;
+	width: 830px;
 	min-height:150px;
 	padding:10px;
 }

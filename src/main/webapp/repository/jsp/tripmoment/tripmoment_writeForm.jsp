@@ -47,8 +47,7 @@
                               			</svg>
 									</div>
 									<p class="current-total">
-										<input type="file" id="btnAtt" style="overflow: hidden;"
-											multiple='multiple' name="img[]" class="">
+										<input type="file" id="btnAtt" multiple='multiple' name="img[]" class="">
 
 										<!--  -->
 										/
@@ -78,10 +77,10 @@
 								여행 스토리를 공유해주세요! <span class="supplement">(필수)</span>
 							</div>
 							<div class="nadritripmoment input">
-								<input id="moment_content"
+								<textarea id="moment_content"
 									placeholder="나만의 여행 스토리를 다른 여행자와 함께 공유해보세요! 특별한 사진을 추가하면 더 많은 여행자들이 볼 수 있어요. (예시 : 여행 팁, 맛집, 카페 등 추천)"
 									class="nadritripmoment" contenteditable="true"
-									data-tribute="true" name="moment_content">
+									data-tribute="true" name="moment_content"></textarea>
 								<div class="nadritripmoment tipsView">
 									<span class="nadritripmoment tipsContent">50자 이상 작성 시, </span>
 									<span class="nadritripmoment tipsReword"> &nbsp; '최고에요'

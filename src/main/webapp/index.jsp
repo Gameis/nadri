@@ -61,7 +61,7 @@
 						<!-- Login Button trigger modal -->
 						<div class="btn btn-primary" data-bs-toggle="modal"
 							data-bs-target="#loginmodal" id="loginBtn">
-							<span>로그인</span>/<span>회원가입</span>
+							<span class="login-Btn">로그인</span>&nbsp;&nbsp;/&nbsp;&nbsp;<span>회원가입</span>
 						</div>
 					</c:if>
 
@@ -363,7 +363,6 @@
 					</div>
 				</div>
 			</span>
-
 
 			<div class="popular_trip_destination_index_content">
 				<div class="popularcitylist">
