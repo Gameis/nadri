@@ -46,12 +46,11 @@
  -->		          
  					<li><a href="/nadri/tripmember/modifyForm" class="link-dark rounded">회원정보수정</a></li>
 		            <li><a href="/nadri/tripmember/deleteForm" class="link-dark rounded">회원탈퇴</a></li>        
-		            <li><a href="#" class="link-dark rounded">알림설정</a></li>         
 		          </ul>
 		        </div>
 		        
 		      </li>
-				
+	<!-- 			
 		      <li class="mb-1">
 		        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
 		          CSS 구경하기
@@ -64,7 +63,7 @@
 		            <li><a href="#" class="link-dark rounded">사용내역</a></li>
 		          </ul>
 		        </div>
-		      </li>
+		      </li> -->
 	    </ul>
 	  </div>
 	</aside>
@@ -73,12 +72,12 @@
   
 
   	<section id="contents">
-<%--   	
+	
   		<c:if test="${empty display }">
-			<jsp:include page="/nadri/repository/jsp/member/body/mainbody.jsp"/>
+			<jsp:include page="/repository/jsp/tripmember/mainbody.jsp"/>
   		</c:if>
   		
-   --%>
+
    
   		<c:if test="${not empty display }">
   			<jsp:include page="${display }"/>
