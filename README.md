@@ -8,6 +8,7 @@
 -개발도구 : SqlDeveloper, jdk 11.0.13, STS, git/github, Lombok, Notion,  bdiagram.io, postman, VisualStudioCode
 -사용API : 카카오로그인API, 카카오지도API, 아임포트API, 기상청API
 
+![db](https://user-images.githubusercontent.com/89234468/150729274-a5c17d91-ce1b-44df-99a3-b8690b0772e2.PNG)
 ![메인](https://user-images.githubusercontent.com/89234468/150724486-91ea000b-7dad-4b17-9061-a5e445546684.PNG)
 ![로그인](https://user-images.githubusercontent.com/89234468/150728248-1a426514-b312-421f-82ed-6bb7055167da.PNG)
 ![지역1](https://user-images.githubusercontent.com/89234468/150725075-33f23ac4-8874-4607-869c-36269a2a12d9.PNG)
